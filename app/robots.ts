@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://www.quickcalcs.app/sitemap.xml', // Replace with actual domain later
+    sitemap: 'https://www.quickcalcs.app/sitemap.xml', 
   };
 }

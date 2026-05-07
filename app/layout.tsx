@@ -6,6 +6,7 @@ import Sidebar from "@/components/Sidebar";
 import SidebarOverlay from "@/components/SidebarOverlay";
 import Footer from "@/components/Footer";
 import { SidebarProvider } from "@/context/SidebarContext";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 // Font loading removed to avoid external requests
 
@@ -103,6 +104,7 @@ export default function RootLayout({
             </main>
           </div>
         </SidebarProvider>
+        <GoogleAnalytics gaId="G-VJNR9Q5GEF" />
       </body>
     </html>
   );
