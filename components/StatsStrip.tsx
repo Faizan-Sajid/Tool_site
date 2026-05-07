@@ -3,7 +3,7 @@ import React from "react";
 const StatsStrip = () => {
   const stats = [
     { num: "24+", label: "Free Tools" },
-    { num: "UAE · KSA · UK", label: "Countries Covered" },
+    { num: "200+", label: "Countries Supported" },
     { num: "100%", label: "Free Forever" },
     { num: "No Login", label: "Required" },
   ];
