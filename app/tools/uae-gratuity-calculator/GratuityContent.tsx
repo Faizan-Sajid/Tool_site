@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function GratuityContent() {
@@ -110,6 +111,49 @@ export default function GratuityContent() {
           </p>
         </div>
       </div>
+    
+      {/* ===== Explore Other Tools ===== */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold mb-6 text-white">Explore Other QuickCalcs Tools</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Link href="/tools/gold-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">💰</span>
+              <div>
+                <p className="font-semibold text-white">Gold Price Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">Live 24K, 22K, 21K, 18K rates for UAE & GCC. Includes Zakat and unit converter.</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/tools/zakat-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">☪️</span>
+              <div>
+                <p className="font-semibold text-white">Zakat Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">Calculate Zakat on savings, gold, investments & business assets. Nisab auto-updated.</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/tools/ksa-gosi-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🛡️</span>
+              <div>
+                <p className="font-semibold text-white">Saudi GOSI Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">GOSI contributions for Saudi nationals and expats. Updated 2026 KSA rates.</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/tools/pakistan-freelancer-tax-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🧾</span>
+              <div>
+                <p className="font-semibold text-white">Pakistan Freelancer Tax Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">FBR income tax for freelancers. Supports PSEB 0.25%, non-PSEB 1%, non-filer 2%.</p>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
     </section>
   );
 }

@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; 
+import Link from "next/link"
 import {
   TrendingUp,
   Calculator,
@@ -284,12 +285,12 @@ export default function GoldCalculator() {
               <div className="flex-1 p-2 overflow-x-auto no-scrollbar">
                 <div className="min-w-[280px] sm:min-w-0">
                   {[
-                    { n: "UAE", f: "🇦🇪", r: "AED", u: "AED" },
-                    { n: "Saudi Arabia", f: "🇸🇦", r: "SAR", u: "SAR" },
-                    { n: "Kuwait", f: "🇰🇼", r: "KWD", u: "KWD" },
-                    { n: "Qatar", f: "🇶🇦", r: "AED", u: "QAR" },
-                    { n: "Bahrain", f: "🇧🇭", r: "SAR", u: "BHD" },
-                  ].map((row, i) => (
+  { n: "UAE", f: "🇦🇪", r: "AED", u: "AED" },
+  { n: "Saudi Arabia", f: "🇸🇦", r: "SAR", u: "SAR" },
+  { n: "Kuwait", f: "🇰🇼", r: "KWD", u: "KWD" },
+  { n: "Qatar", f: "🇶🇦", r: "AED", u: "QAR" },
+  { n: "Bahrain", f: "🇧🇭", r: "SAR", u: "BHD" },
+].map((row, i) => (
                     <div
                       key={row.n}
                       className={`flex items-center justify-between px-6 py-4 rounded-xl hover:bg-[#1a1e2e] transition-colors group ${
@@ -543,7 +544,7 @@ export default function GoldCalculator() {
                   {liveData ? formatPrice(87.48 * liveData.rates[zakCurrency]["24K"], zakCurrency) : '50,113'} {zakCurrency}
                 </div>
                 <div className="text-[13px] text-[#3e3c38] font-medium italic">
-                  ≈ ${liveData ? formatPrice(87.48 * liveData.rates["USD"]["24K"], "USD") : '13,645.00'} USD
+                  â‰ˆ ${liveData ? formatPrice(87.48 * liveData.rates["USD"]["24K"], "USD") : '13,645.00'} USD
                 </div>
               </div>
             </div>
@@ -680,7 +681,7 @@ export default function GoldCalculator() {
                       <div className={`flex items-center gap-2 px-3 py-1 rounded-full border transition-colors ${zakResult.nisabMet ? 'bg-[#2dd4a010] border-[#2dd4a020]' : 'bg-red-500/10 border-red-500/20'}`}>
                         <div className={`w-1.5 h-1.5 rounded-full ${zakResult.nisabMet ? 'bg-[#2dd4a0]' : 'bg-red-500'}`} />
                         <span className={`text-[9px] font-bold uppercase tracking-widest ${zakResult.nisabMet ? 'text-[#2dd4a0]' : 'text-red-500'}`}>
-                          {zakResult.nisabMet ? 'Nisab Met — Zakat Due' : 'Below Nisab — No Zakat'}
+                          {zakResult.nisabMet ? 'Nisab Met â€” Zakat Due' : 'Below Nisab â€” No Zakat'}
                         </span>
                       </div>
                     )}
@@ -852,6 +853,52 @@ export default function GoldCalculator() {
           </div>
         </div>
       )}
+
+      
+
+      {/* ===== Explore Other Tools ===== */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold mb-6 text-white">Explore Other QuickCalcs Tools</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Link href="/tools/zakat-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">☪️</span>
+              <div>
+                <p className="font-semibold text-white">Zakat Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">Calculate Zakat on savings, gold, investments & business assets. Nisab auto-updated.</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/tools/uae-gratuity-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🧮</span>
+              <div>
+                <p className="font-semibold text-white">UAE Gratuity Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">End-of-service benefits as per UAE Labour Law 2026. Limited & unlimited contracts.</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/tools/ksa-gosi-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🛡️</span>
+              <div>
+                <p className="font-semibold text-white">Saudi GOSI Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">GOSI contributions for Saudi nationals and expats. Updated 2026 KSA rates.</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/tools/pakistan-freelancer-tax-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🧾</span>
+              <div>
+                <p className="font-semibold text-white">Pakistan Freelancer Tax Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">FBR income tax for freelancers. Supports PSEB 0.25%, non-PSEB 1%, non-filer 2%.</p>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
+
