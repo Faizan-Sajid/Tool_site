@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
 import StatsStrip from "@/components/StatsStrip";
 import FeaturedToolsSection from "@/components/FeaturedToolsSection";
@@ -63,7 +64,9 @@ export default function Home() {
       />
       <HeroSection />
       <StatsStrip />
-      <FeaturedToolsSection />
+      <Suspense fallback={<div className="h-40 flex items-center justify-center text-[#87847d]">Loading tools...</div>}>
+        <FeaturedToolsSection />
+      </Suspense>
       <FAQ items={homeFaqs} />
     </main>
   );

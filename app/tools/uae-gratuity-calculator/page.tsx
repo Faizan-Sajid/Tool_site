@@ -60,12 +60,12 @@ export default function GratuityPage() {
       <div className="max-w-[860px] mx-auto pt-8 pb-16">
         
         {/* BREADCRUMBS */}
-        <nav className="px-[20px] sm:px-[36px] flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#3e3c38] mb-8">
+        <nav className="px-[20px] sm:px-[36px] flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#8b8a87] mb-8">
           <Link href="/" className="hover:text-[#c9a84c] flex items-center gap-1.5 transition-colors">
             <Home className="w-3 h-3" /> Home
           </Link>
           <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
-          <Link href="/hr" className="hover:text-[#c9a84c] transition-colors">HR Tools</Link>
+          <Link href="/?category=hr" className="hover:text-[#c9a84c] transition-colors">HR Tools</Link>
           <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
           <span className="text-[#c9a84c]">Gratuity Calculator</span>
         </nav>
@@ -99,7 +99,7 @@ export default function GratuityPage() {
             </div>
             <div>
               <h2 className="text-2xl font-bold text-[#e6e3db]">Frequently Asked Questions</h2>
-              <p className="text-xs text-[#3e3c38] mt-1">Everything you need to know about UAE End of Service</p>
+              <p className="text-xs text-[#8b8a87] mt-1">Everything you need to know about UAE End of Service</p>
             </div>
           </div>
           <FAQ items={gratuityFaqs} />

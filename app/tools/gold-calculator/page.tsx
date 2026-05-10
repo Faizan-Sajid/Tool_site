@@ -117,10 +117,10 @@ export default function GoldCalculatorPage() {
         aria-label="Breadcrumb"
         className="px-4 md:px-9 pt-8 sm:pt-12"
       >
-        <ol className="flex items-center gap-2.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-[#3e3c38]">
+        <ol className="flex items-center gap-2.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-[#8b8a87]">
           <li><a href="/" className="hover:text-[#c9a84c] transition-colors">Home</a></li>
           <li aria-hidden="true" className="text-[#1a1c24]">/</li>
-          <li><a href="/tools" className="hover:text-[#c9a84c] transition-colors">Tools</a></li>
+          <li><a href="/?category=finance" className="hover:text-[#c9a84c] transition-colors">Tools</a></li>
           <li aria-hidden="true" className="text-[#1a1c24]">/</li>
           <li className="text-[#c9a84c]">Gold Calculator</li>
         </ol>

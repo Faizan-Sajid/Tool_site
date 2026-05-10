@@ -158,7 +158,7 @@ export default function GosiCalculatorPage() {
       />
       <nav
         aria-label="Breadcrumb"
-        className="px-[20px] pt-[20px] sm:px-[36px] text-xs text-[#3e3c38]"
+        className="px-[20px] pt-[20px] sm:px-[36px] text-xs text-[#8b8a87]"
       >
         <ol className="flex items-center gap-1.5">
           <li>
@@ -168,7 +168,7 @@ export default function GosiCalculatorPage() {
           </li>
           <li aria-hidden="true">›</li>
           <li>
-            <a href="/tools" className="hover:text-[#87847d] transition-colors">
+            <a href="/?category=finance" className="hover:text-[#87847d] transition-colors">
               Tools
             </a>
           </li>

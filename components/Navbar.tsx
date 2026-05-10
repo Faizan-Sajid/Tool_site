@@ -30,7 +30,7 @@ const Navbar = () => {
               <span className="text-[17px] font-bold tracking-tight text-white leading-tight">
                 QuickCalcs
               </span>
-              <span className="text-[9px] font-bold text-[#3e3c38] uppercase tracking-[0.2em] leading-tight">Professional</span>
+              <span className="text-[9px] font-bold text-[#8b8a87] uppercase tracking-[0.2em] leading-tight">Professional</span>
             </div>
           </Link>
         </div>
@@ -51,18 +51,18 @@ const Navbar = () => {
               onFocus={() => {
                 if (searchQuery) openSidebar();
               }}
-              className="h-10 w-48 lg:w-64 rounded-xl border border-[rgba(255,255,255,0.05)] bg-[#131620] pl-9 pr-10 py-2 text-[13px] text-[#e6e3db] placeholder:text-[#3e3c38] focus:outline-none focus:border-[rgba(201,168,76,0.3)] focus:bg-[#1a1e2e] transition-all"
+              className="h-10 w-48 lg:w-64 rounded-xl border border-[rgba(255,255,255,0.05)] bg-[#131620] pl-9 pr-10 py-2 text-[13px] text-[#e6e3db] placeholder:text-[#8b8a87] focus:outline-none focus:border-[rgba(201,168,76,0.3)] focus:bg-[#1a1e2e] transition-all"
             />
             {searchQuery && (
               <button 
                 onClick={() => setSearchQuery("")}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 rounded-md hover:bg-[#252a41] text-[#3e3c38] hover:text-[#e6e3db] transition-colors"
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 rounded-md hover:bg-[#252a41] text-[#8b8a87] hover:text-[#e6e3db] transition-colors"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
             )}
             {!searchQuery && (
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center h-5 w-8 rounded bg-[#0c0e16] border border-[rgba(255,255,255,0.03)] text-[10px] text-[#3e3c38] font-bold pointer-events-none uppercase">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center h-5 w-8 rounded bg-[#0c0e16] border border-[rgba(255,255,255,0.03)] text-[10px] text-[#8b8a87] font-bold pointer-events-none uppercase">
                 /
               </div>
             )}
@@ -81,7 +81,7 @@ const Navbar = () => {
 
           {/* Sidebar Toggle (Hamburger) */}
           <button
-            onClick={toggleSidebar}
+            onClick={toggleSidebar} aria-label="Toggle Menu"
             className={`inline-flex items-center justify-center rounded-xl h-10 w-10 border transition-all duration-300 md:hidden
               ${isSidebarOpen 
                 ? "bg-[rgba(201,168,76,0.11)] border-[rgba(201,168,76,0.2)] text-[#c9a84c]" 

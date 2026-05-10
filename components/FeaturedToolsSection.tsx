@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { TOOLS, Tool } from "@/constants/tools";
 
 interface ToolCardProps {
@@ -33,9 +36,9 @@ const ToolCard = ({ tool }: ToolCardProps) => {
       </div>
 
       {/* Title */}
-      <h3 className="text-[15px] font-bold tracking-[-0.2px] text-[#e6e3db]">
+      <h2 className="text-[15px] font-bold tracking-[-0.2px] text-[#e6e3db]">
         {title}
-      </h3>
+      </h2>
 
       {/* Description */}
       <p className="flex-1 text-[12.5px] leading-[1.6] text-[#87847d]">
@@ -66,56 +69,85 @@ const ToolCard = ({ tool }: ToolCardProps) => {
 };
 
 const FeaturedToolsSection = () => {
-  const financeTools = TOOLS.filter(t => t.category === "finance" && t.country === "all");
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
+
+  // Determine what to show based on the category param
+  const showFinance = !categoryParam || categoryParam === "finance";
+  const showHR = !categoryParam || categoryParam === "hr";
+  const showDigitalGrowth = !categoryParam || categoryParam === "seo" || categoryParam === "digital-growth";
+  
+  // Filter tools based on the param
+  const filterTools = (tools: Tool[]) => {
+    if (!categoryParam) return tools;
+    return tools.filter(t => t.category === categoryParam);
+  };
+
+  const financeTools = filterTools(TOOLS.filter(t => t.category === "finance" && t.country === "all"));
+  // Include regional tools if we are showing all tools, or if the regional tool matches the current category
   const regionalTools = TOOLS.filter(t => t.country !== "all" || (t.category !== "finance" && t.category !== "visa"));
+  const filteredRegionalTools = filterTools(regionalTools);
+  const showRegional = !categoryParam || filteredRegionalTools.length > 0;
 
   return (
     <section id="all-tools" className="px-5 py-8 sm:px-9 sm:py-8 lg:px-9 lg:py-8 scroll-mt-20">
       {/* Category: Finance */}
-      <div className="mb-4 mt-0 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#3e3c38]">
-        <span>💰 Finance</span>
-        <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
-      </div>
-      <div className="mb-10 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-        {financeTools.map(tool => (
-          <ToolCard key={tool.id} tool={tool} />
-        ))}
-      </div>
+      {showFinance && financeTools.length > 0 && (
+        <>
+          <div className="mb-4 mt-0 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#8b8a87]">
+            <span>💰 Finance</span>
+            <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
+          </div>
+          <div className="mb-10 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+            {financeTools.map(tool => (
+              <ToolCard key={tool.id} tool={tool} />
+            ))}
+          </div>
+        </>
+      )}
 
       {/* Category: Regional Specialties */}
-      <div className="mb-4 mt-0 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#3e3c38]">
-        <span>🌍 Regional Specialties</span>
-        <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
-      </div>
-      <div className="mb-10 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-        {regionalTools.map(tool => (
-          <ToolCard key={tool.id} tool={tool} />
-        ))}
-      </div>
+      {showRegional && filteredRegionalTools.length > 0 && (
+        <>
+          <div className="mb-4 mt-0 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#8b8a87]">
+            <span>🌍 Regional Specialties</span>
+            <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
+          </div>
+          <div className="mb-10 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+            {filteredRegionalTools.map(tool => (
+              <ToolCard key={tool.id} tool={tool} />
+            ))}
+          </div>
+        </>
+      )}
 
       {/* Category: Digital Growth */}
-      <div className="mb-4 mt-0 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#3e3c38]">
-        <span>🚀 Digital Growth</span>
-        <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
-      </div>
-      <div className="mb-2 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-        <div className="group relative flex flex-col gap-[10px] overflow-hidden rounded-[14px] border border-dashed border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.02)] p-6 transition-all duration-[0.18s]">
-          <div className="flex h-12 w-12 items-center justify-center rounded-[12px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] text-[22px] grayscale opacity-50">
-            🔍
+      {showDigitalGrowth && (
+        <>
+          <div className="mb-4 mt-0 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#8b8a87]">
+            <span>🚀 Digital Growth</span>
+            <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
           </div>
-          <h3 className="text-[15px] font-bold tracking-[-0.2px] text-[#87847d]">
-            Keyword Research Tool
-          </h3>
-          <p className="flex-1 text-[12.5px] leading-[1.6] text-[#555]">
-            Upcoming global utility for SEO specialists and content creators. Stay tuned!
-          </p>
-          <div className="flex flex-wrap gap-[6px]">
-            <span className="rounded-[5px] px-2 py-[3px] text-[10px] font-semibold tracking-[0.3px] bg-[#1f2438] text-[#555]">
-              Coming Soon
-            </span>
+          <div className="mb-2 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+            <div className="group relative flex flex-col gap-[10px] overflow-hidden rounded-[14px] border border-dashed border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.02)] p-6 transition-all duration-[0.18s]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-[12px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] text-[22px] grayscale opacity-50">
+                🔍
+              </div>
+              <h2 className="text-[15px] font-bold tracking-[-0.2px] text-[#87847d]">
+                Keyword Research Tool
+              </h2>
+              <p className="flex-1 text-[12.5px] leading-[1.6] text-[#555]">
+                Upcoming global utility for SEO specialists and content creators. Stay tuned!
+              </p>
+              <div className="flex flex-wrap gap-[6px]">
+                <span className="rounded-[5px] px-2 py-[3px] text-[10px] font-semibold tracking-[0.3px] bg-[#1f2438] text-[#555]">
+                  Coming Soon
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </section>
   );
 };

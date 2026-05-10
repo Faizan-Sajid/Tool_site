@@ -96,7 +96,7 @@ export default function PakistanFreelancerTaxPage() {
       <main className="min-h-screen bg-[#0d0f14] text-[#e6e3db]">
         <div className="max-w-[860px] mx-auto pt-8 pb-16">
           {/* Breadcrumbs */}
-          <nav className="px-[20px] sm:px-[36px] flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#3e3c38] mb-8">
+          <nav className="px-[20px] sm:px-[36px] flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#8b8a87] mb-8">
             <Link
               href="/"
               className="hover:text-[#c9a84c] flex items-center gap-1.5 transition-colors"
@@ -105,7 +105,7 @@ export default function PakistanFreelancerTaxPage() {
             </Link>
             <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
             <Link
-              href="/finance"
+              href="/?category=finance"
               className="hover:text-[#c9a84c] transition-colors"
             >
               Finance

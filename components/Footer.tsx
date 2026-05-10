@@ -92,17 +92,17 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-[rgba(255,255,255,0.05)] mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[11px] font-medium text-[#3e3c38] tracking-wider uppercase">
+          <p className="text-[11px] font-medium text-[#8b8a87] tracking-wider uppercase">
             © 2026 QuickCalcs Professional · All Rights Reserved
           </p>
           <div className="flex items-center gap-8">
-            <Link href="/privacy-policy" className="text-[11px] text-[#3e3c38] hover:text-[#87847d] uppercase tracking-widest transition-colors">
+            <Link href="/privacy-policy" className="text-[11px] text-[#8b8a87] hover:text-[#87847d] uppercase tracking-widest transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-use" className="text-[11px] text-[#3e3c38] hover:text-[#87847d] uppercase tracking-widest transition-colors">
+            <Link href="/terms-of-use" className="text-[11px] text-[#8b8a87] hover:text-[#87847d] uppercase tracking-widest transition-colors">
               Terms of Use
             </Link>
-            <Link href="/sitemap.xml" className="text-[11px] text-[#3e3c38] hover:text-[#87847d] uppercase tracking-widest transition-colors">
+            <Link href="/sitemap.xml" className="text-[11px] text-[#8b8a87] hover:text-[#87847d] uppercase tracking-widest transition-colors">
               Sitemap
             </Link>
           </div>

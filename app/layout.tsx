@@ -5,12 +5,13 @@ import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import SidebarOverlay from "@/components/SidebarOverlay";
 import Footer from "@/components/Footer";
+import { Suspense } from "react";
 import { SidebarProvider } from "@/context/SidebarContext";
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 // Font loading removed to avoid external requests
 
-export const metadata: Metadata = {
+export const viewport = {  width: "device-width",  initialScale: 1,}; export const metadata: Metadata = {
   metadataBase: new URL("https://www.quickcalcs.app"),
   title: "QuickCalcs | Free Universal Online Calculators & Tools",
   description:
@@ -93,7 +94,7 @@ export default function RootLayout({
 
           <div className="flex min-h-screen pt-[62px]">
             {/* Sidebar stays fixed/hidden based on mobile state */}
-            <Sidebar />
+            <Suspense fallback={<aside className="fixed left-0 top-[62px] h-[calc(100vh-62px)] w-[230px] bg-[#0c0e16] border-r border-[rgba(255,255,255,0.07)] z-[100] hidden md:block"></aside>}><Sidebar /></Suspense>
 
             {/* Main content area with responsive sidebar offset */}
             <main className="flex-1 min-h-screen ml-0 md:ml-[200px] lg:ml-[230px] transition-all duration-300 flex flex-col w-full">

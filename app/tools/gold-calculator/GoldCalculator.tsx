@@ -230,7 +230,7 @@ export default function GoldCalculator() {
             {/* Card 2: Rates Per Gram */}
             <div className="lg:col-span-8 bg-[#131620] border border-[#1a1c24] rounded-2xl p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-10">
-                <h3 className="text-white text-[17px] font-medium tracking-tight">Gold Rates Per Gram</h3>
+                <h2 className="text-white text-[17px] font-medium tracking-tight">Gold Rates Per Gram</h2>
 
                 <div className="flex p-1 bg-[#0c0e16] rounded-xl border border-[#1a1c24]">
                   {(["AED", "SAR", "KWD", "USD"] as const).map((curr) => (
@@ -279,7 +279,7 @@ export default function GoldCalculator() {
             {/* Card 3: GCC Market Comparison */}
             <div className="lg:col-span-4 bg-[#131620] border border-[#1a1c24] rounded-2xl flex flex-col">
               <div className="px-6 md:px-8 py-6 border-b border-[#1a1c24]">
-                <h3 className="text-white text-[15px] font-medium tracking-tight">GCC Market Comparison</h3>
+                <h2 className="text-white text-[15px] font-medium tracking-tight">GCC Market Comparison</h2>
                 <p className="text-[10px] text-[#3e3c38] font-bold uppercase tracking-widest mt-1">24K Gold per Gram</p>
               </div>
               <div className="flex-1 p-2 overflow-x-auto no-scrollbar">
@@ -330,10 +330,10 @@ export default function GoldCalculator() {
           {/* Left Column: Inputs */}
           <div className="space-y-6">
             <div className="bg-[#131620] border border-[#1a1c24] rounded-2xl p-6 sm:p-8">
-              <h3 className="text-white text-[17px] font-medium mb-8 flex items-center gap-2">
+              <h2 className="text-white text-[17px] font-medium mb-8 flex items-center gap-2">
                 <Calculator className="w-4 h-4 text-[#c9a84c]" />
                 Calculate Gold Value
-              </h3>
+              </h2>
 
               <div className="space-y-6">
                 {/* Weight & Unit */}
@@ -454,7 +454,7 @@ export default function GoldCalculator() {
 
               <div className="p-8">
                 <div className="flex justify-between items-center mb-8">
-                  <h3 className="text-white text-[15px] font-medium uppercase tracking-wider">Result Summary</h3>
+                  <h2 className="text-white text-[15px] font-medium uppercase tracking-wider">Result Summary</h2>
                   <div className="flex items-center gap-2 text-[#3e3c38]">
                     <History className="w-4 h-4" />
                     <span className="text-[10px] font-bold uppercase">Estimated</span>
@@ -556,10 +556,10 @@ export default function GoldCalculator() {
             <div className="space-y-6">
               <div className="bg-[#131620] border border-[#1a1c24] rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center justify-between mb-8">
-                  <h3 className="text-white text-[17px] font-medium flex items-center gap-2">
+                  <h2 className="text-white text-[17px] font-medium flex items-center gap-2">
                     <Coins className="w-4 h-4 text-[#c9a84c]" />
                     Your Gold Items
-                  </h3>
+                  </h2>
                   <button
                     onClick={() => {
                       setZakItems([{ weight: "", purity: "24K" }]);
@@ -676,7 +676,7 @@ export default function GoldCalculator() {
               <div className="bg-[#131620] border border-[#1a1c24] rounded-2xl overflow-hidden sticky top-8">
                 <div className="p-8">
                   <div className="flex justify-between items-center mb-10">
-                    <h3 className="text-white text-[15px] font-medium uppercase tracking-wider">Zakat Assessment</h3>
+                    <h2 className="text-white text-[15px] font-medium uppercase tracking-wider">Zakat Assessment</h2>
                     {zakResult && (
                       <div className={`flex items-center gap-2 px-3 py-1 rounded-full border transition-colors ${zakResult.nisabMet ? 'bg-[#2dd4a010] border-[#2dd4a020]' : 'bg-red-500/10 border-red-500/20'}`}>
                         <div className={`w-1.5 h-1.5 rounded-full ${zakResult.nisabMet ? 'bg-[#2dd4a0]' : 'bg-red-500'}`} />
@@ -744,10 +744,10 @@ export default function GoldCalculator() {
         <div className="space-y-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
           {/* 1. Input Section */}
           <div className="bg-[#131620] border border-[#1a1c24] rounded-2xl p-6 sm:p-8">
-            <h3 className="text-white text-[17px] font-medium mb-8 flex items-center gap-2">
+            <h2 className="text-white text-[17px] font-medium mb-8 flex items-center gap-2">
               <RefreshCcw className="w-4 h-4 text-[#c9a84c]" />
               Gold Unit Converter
-            </h3>
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="space-y-2">
@@ -823,7 +823,7 @@ export default function GoldCalculator() {
           {/* 3. Quick Reference Table */}
           <div className="bg-[#131620] border border-[#1a1c24] rounded-2xl overflow-hidden">
             <div className="px-8 py-6 border-b border-[#1a1c24] bg-[#0c0e16]/50">
-              <h3 className="text-white text-[15px] font-medium tracking-tight">Standard Conversion Reference</h3>
+              <h2 className="text-white text-[15px] font-medium tracking-tight">Standard Conversion Reference</h2>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
