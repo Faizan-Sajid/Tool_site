@@ -96,29 +96,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="h-full"
-      style={{
-        ...jakartaPlus.style,
-        ...lora.style,
-      }}
+      className={`h-full ${jakartaPlus.variable} ${lora.variable}`}
     >
       <head>
-        {/* Preload critical fonts to reduce FCP/LCP */}
-        <link
-          rel="preload"
-          as="font"
-          href={jakartaPlus.style.fontFamily?.toString()}
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="font"
-          href={lora.style.fontFamily?.toString()}
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        
         {/* Critical CSS for LCP element (h1 heading) - inline to avoid render blocking */}
         <style dangerouslySetInnerHTML={{
           __html: `
