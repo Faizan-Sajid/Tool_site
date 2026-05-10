@@ -139,39 +139,42 @@ export default function GratuityContent() {
       </div>
 
       {/* ===== Explore Other Tools ===== */}
-      <section className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.07)]">
+      <nav
+        aria-label="Related tools navigation"
+        className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.07)]"
+      >
         <h2 className="text-2xl font-bold mb-6 text-[#e6e3db]">Explore Other QuickCalcs Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Link href="/tools/gold-calculator" className="block p-4 rounded-xl border border-[rgba(255,255,255,0.1)] hover:border-[#c9a84c] hover:bg-[rgba(201,168,76,0.05)] transition-all">
+          <Link href="/tools/gold-calculator" aria-label="Gold Price Calculator - Live 24K, 22K, 21K, 18K rates for UAE & GCC. Includes Zakat and unit converter." className="block p-4 rounded-xl border border-[rgba(255,255,255,0.1)] hover:border-[#c9a84c] hover:bg-[rgba(201,168,76,0.05)] transition-all focus:outline-none focus:ring-2 focus:ring-[#c9a84c]">
             <div className="flex items-start gap-3">
-              <span className="text-2xl">💰</span>
+              <span role="img" aria-label="Gold calculator icon" className="text-2xl flex-shrink-0">💰</span>
               <div>
                 <p className="font-semibold text-[#e6e3db]">Gold Price Calculator</p>
                 <p className="text-xs text-[#87847d] mt-1">Live 24K, 22K, 21K, 18K rates for UAE & GCC. Includes Zakat and unit converter.</p>
               </div>
             </div>
           </Link>
-          <Link href="/tools/zakat-calculator" className="block p-4 rounded-xl border border-[rgba(255,255,255,0.1)] hover:border-[#2dd4a0] hover:bg-[rgba(45,212,160,0.05)] transition-all">
+          <Link href="/tools/zakat-calculator" aria-label="Zakat Calculator - Calculate Zakat on savings, gold, investments & business assets. Nisab auto-updated." className="block p-4 rounded-xl border border-[rgba(255,255,255,0.1)] hover:border-[#2dd4a0] hover:bg-[rgba(45,212,160,0.05)] transition-all focus:outline-none focus:ring-2 focus:ring-[#2dd4a0]">
             <div className="flex items-start gap-3">
-              <span className="text-2xl">☪️</span>
+              <span role="img" aria-label="Zakat calculator icon" className="text-2xl flex-shrink-0">☪️</span>
               <div>
                 <p className="font-semibold text-[#e6e3db]">Zakat Calculator</p>
                 <p className="text-xs text-[#87847d] mt-1">Calculate Zakat on savings, gold, investments & business assets. Nisab auto-updated.</p>
               </div>
             </div>
           </Link>
-          <Link href="/tools/ksa-gosi-calculator" className="block p-4 rounded-xl border border-[rgba(255,255,255,0.1)] hover:border-[#c9a84c] hover:bg-[rgba(201,168,76,0.05)] transition-all">
+          <Link href="/tools/ksa-gosi-calculator" aria-label="Saudi GOSI Calculator - GOSI contributions for Saudi nationals and expats. Updated 2026 KSA rates." className="block p-4 rounded-xl border border-[rgba(255,255,255,0.1)] hover:border-[#c9a84c] hover:bg-[rgba(201,168,76,0.05)] transition-all focus:outline-none focus:ring-2 focus:ring-[#c9a84c]">
             <div className="flex items-start gap-3">
-              <span className="text-2xl">🛡️</span>
+              <span role="img" aria-label="Saudi GOSI calculator icon" className="text-2xl flex-shrink-0">🛡️</span>
               <div>
                 <p className="font-semibold text-[#e6e3db]">Saudi GOSI Calculator</p>
                 <p className="text-xs text-[#87847d] mt-1">GOSI contributions for Saudi nationals and expats. Updated 2026 KSA rates.</p>
               </div>
             </div>
           </Link>
-          <Link href="/tools/pakistan-freelancer-tax-calculator" className="block p-4 rounded-xl border border-[rgba(255,255,255,0.1)] hover:border-[#2dd4a0] hover:bg-[rgba(45,212,160,0.05)] transition-all">
+          <Link href="/tools/pakistan-freelancer-tax-calculator" aria-label="Pakistan Freelancer Tax Calculator - FBR income tax for freelancers. Supports PSEB 0.25%, non-PSEB 1%, non-filer 2%." className="block p-4 rounded-xl border border-[rgba(255,255,255,0.1)] hover:border-[#2dd4a0] hover:bg-[rgba(45,212,160,0.05)] transition-all focus:outline-none focus:ring-2 focus:ring-[#2dd4a0]">
             <div className="flex items-start gap-3">
-              <span className="text-2xl">🧾</span>
+              <span role="img" aria-label="Pakistan freelancer tax calculator icon" className="text-2xl flex-shrink-0">🧾</span>
               <div>
                 <p className="font-semibold text-[#e6e3db]">Pakistan Freelancer Tax Calculator</p>
                 <p className="text-xs text-[#87847d] mt-1">FBR income tax for freelancers. Supports PSEB 0.25%, non-PSEB 1%, non-filer 2%.</p>
@@ -179,7 +182,7 @@ export default function GratuityContent() {
             </div>
           </Link>
         </div>
-      </section>
+      </nav>
     </section>
   );
 }

@@ -111,7 +111,7 @@ export default function GoldCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
       {/* Breadcrumbs - CLS Optimized */}
       <nav
         aria-label="Breadcrumb"
@@ -126,6 +126,32 @@ export default function GoldCalculatorPage() {
         </ol>
       </nav>
 
+      {/* Server-Rendered LCP Heading (Zero Render Delay) */}
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-9 py-10 md:py-16">
+        <header className="mb-10 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[rgba(201,168,76,0.11)] border border-[rgba(201,168,76,0.15)] mb-6">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c9a84c] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c9a84c]"></span>
+            </span>
+            <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.08em] text-[#c9a84c]">
+              Live prices updated just now
+            </span>
+          </div>
+
+          {/* LCP Element: h1 Heading (Server-Rendered for Instant Display) */}
+          <h1 className="lcp-heading text-[32px] sm:text-[40px] md:text-[64px] lg:text-[72px] leading-[1.1] font-[var(--font-serif)] text-white font-medium mb-6 tracking-tight">
+            Gold Price Calculator <br className="hidden sm:block" />
+            <span className="text-[#c9a84c]">UAE <em className="italic font-light opacity-80">& GCC</em></span>
+          </h1>
+
+          <p className="max-w-[640px] text-[15px] md:text-[17px] leading-[1.6] text-[#87847d] font-light">
+            Real-time 24K, 22K, 21K, and 18K gold rates. Calculate jewelry value, Zakat obligations, and convert between units with professional-grade precision.
+          </p>
+        </header>
+      </div>
+
+      {/* Client Component for Interactive Features */}
       <GoldCalculator />
 
       {/* Server-Rendered SEO Content (Instant Indexing) */}

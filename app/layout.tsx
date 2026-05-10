@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-/* Font imports removed to avoid external fetch */
+import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
@@ -7,9 +7,23 @@ import SidebarOverlay from "@/components/SidebarOverlay";
 import Footer from "@/components/Footer";
 import { Suspense } from "react";
 import { SidebarProvider } from "@/context/SidebarContext";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 
-// Font loading removed to avoid external requests
+// Font optimization: display: 'swap' ensures text is visible immediately with system font fallback
+const jakartaPlus = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700"],
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-serif",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+});
 
 export const viewport = {  width: "device-width",  initialScale: 1,}; export const metadata: Metadata = {
   metadataBase: new URL("https://www.quickcalcs.app"),
@@ -83,7 +97,46 @@ export default function RootLayout({
     <html
       lang="en"
       className="h-full"
+      style={{
+        ...jakartaPlus.style,
+        ...lora.style,
+      }}
     >
+      <head>
+        {/* Preload critical fonts to reduce FCP/LCP */}
+        <link
+          rel="preload"
+          as="font"
+          href={jakartaPlus.style.fontFamily?.toString()}
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="font"
+          href={lora.style.fontFamily?.toString()}
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        
+        {/* Critical CSS for LCP element (h1 heading) - inline to avoid render blocking */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical h1 styles for Gold Price Calculator */
+            h1.lcp-heading {
+              font-family: var(--font-serif), Georgia, serif;
+              font-size: clamp(32px, 5vw, 72px);
+              line-height: 1.1;
+              font-weight: 500;
+              color: white;
+              margin-bottom: 1.5rem;
+              letter-spacing: -0.02em;
+              display: block;
+              visibility: visible;
+            }
+          `
+        }} />
+      </head>
       <body className="bg-[#0c0e16] text-[#e6e3db] min-h-screen antialiased overflow-x-hidden">
         <SidebarProvider>
           {/* Navbar stays fixed at the top */}
@@ -105,7 +158,30 @@ export default function RootLayout({
             </main>
           </div>
         </SidebarProvider>
-        <GoogleAnalytics gaId="G-VJNR9Q5GEF" />
+        
+        {/* Google Analytics - lazyOnload defers script execution until browser idle */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VJNR9Q5GEF"
+          strategy="lazyOnload"
+          async
+        />
+        
+        {/* Initialize gtag with same non-blocking strategy */}
+        <Script
+          id="google-analytics-init"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-VJNR9Q5GEF', {
+                page_path: window.location.pathname,
+                anonymize_ip: true
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );
