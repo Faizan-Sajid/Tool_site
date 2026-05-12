@@ -22,7 +22,7 @@ const FOOTER_LINKS = {
     { name: "All Tools", href: "/#all-tools" },
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms of Use", href: "/terms-of-use" },
-    { name: "Sitemap", href: "/sitemap.xml" },
+    // { name: "Sitemap", href: "/sitemap.xml" },
   ],
 };
 
@@ -102,9 +102,9 @@ export default function Footer() {
             <Link href="/terms-of-use" className="text-[11px] text-[#8b8a87] hover:text-[#87847d] uppercase tracking-widest transition-colors">
               Terms of Use
             </Link>
-            <Link href="/sitemap.xml" className="text-[11px] text-[#8b8a87] hover:text-[#87847d] uppercase tracking-widest transition-colors">
+            {/* <Link href="/sitemap.xml" className="text-[11px] text-[#8b8a87] hover:text-[#87847d] uppercase tracking-widest transition-colors">
               Sitemap
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
