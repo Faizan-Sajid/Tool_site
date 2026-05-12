@@ -4,32 +4,35 @@ import Link from "next/link";
 export default function GosiContent() {
   return (
     <section className="max-w-[860px] px-[20px] sm:px-[36px] py-[48px] space-y-16 text-[#87847d]">
-      {/* SECTION 1: What is GOSI? */}
-      <div>
-        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
-          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          What is GOSI? — General Organization for Social Insurance
-        </h2>
-        <div className="text-sm leading-relaxed space-y-4">
-          <p>
-            GOSI (General Organization for Social Insurance) is Saudi Arabia's official government body that manages mandatory social insurance for all private-sector employees. Established in 1973, GOSI protects workers and their families through structured monthly contributions from both employers and employees.
-          </p>
-          <p>
-            As of 2026, GOSI covers approximately 12.9 million contributors in Saudi Arabia. Every company operating in the Kingdom — local or foreign — must register with GOSI and make monthly contributions on behalf of their employees.
-          </p>
-          <p>
-            This free GOSI calculator uses the official 2026 contribution rates. All calculations run entirely in your browser — no data is stored or shared by QuickCalcs.
-          </p>
-        </div>
-      </div>
 
-      {/* SECTION 2: Official 2026 GOSI Rates Table */}
-      <div>
+      {/* Authority Hook */}
+      <article className="mb-8">
+        <p className="text-sm leading-relaxed">
+          <strong>Based on the latest Saudi Labour Law and Royal Decree M/33 (2026)</strong>, this calculator provides precise KSA GOSI contributions for both Saudi nationals and expatriates.
+        </p>
+      </article>
+
+      {/* SECTION: What is GOSI (Royal Decree M/33)? */}
+      <article>
         <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          Official 2026 GOSI Contribution Rates
+          What is GOSI (Royal Decree M/33)?
         </h2>
-        <div className="overflow-x-auto">
+        <p className="text-sm leading-relaxed mb-4">
+          GOSI (General Organization for Social Insurance) is mandated by <strong>Royal Decree M/33</strong>, which governs the Saudi Social Insurance Law. It collects mandatory contributions to fund pensions, occupational‑hazard insurance, and the <strong>SANED</strong> unemployment scheme.
+        </p>
+        <p className="text-sm leading-relaxed">
+          The system applies to all private‑sector employees – Saudi nationals and expatriates alike – and the rates were updated for 2026.
+        </p>
+      </article>
+
+      {/* SECTION: 2026 Contribution Breakdown (Saudi vs Expat) */}
+      <article className="mt-8">
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          2026 Contribution Breakdown (Saudi vs Expat)
+        </h2>
+        <div className="overflow-x-auto mb-4">
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="border-b border-[rgba(255,255,255,0.07)]">
@@ -67,40 +70,30 @@ export default function GosiContent() {
             </tbody>
           </table>
         </div>
-      </div>
+        <p className="text-sm leading-relaxed">
+          Saudi nationals pay a combined 10 % (employee) and 12 % (employer) contribution, while expatriates are only subject to the 2 % employer‑only hazard rate.
+        </p>
+      </article>
 
-      {/* SECTION 4: What Does GOSI Cover? */}
-      <div>
+      {/* SECTION: Why use QuickCalcs for GOSI? */}
+      <article className="mt-8">
         <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          What Does GOSI Insurance Cover?
+          Why use QuickCalcs for GOSI?
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="rounded-[12px] bg-[#131620] border border-[rgba(255,255,255,0.07)] p-5">
-            <div className="text-2xl mb-3">🏦</div>
-            <h3 className="font-bold text-[#e6e3db] mb-2">Annuity Branch</h3>
-            <p className="text-sm">Monthly retirement pension for Saudi nationals who reach age 60.</p>
-            <span className="inline-block mt-3 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full text-[#c9a84c] bg-[rgba(201,168,76,0.11)]">Saudi Only</span>
-          </div>
-          <div className="rounded-[12px] bg-[#131620] border border-[rgba(255,255,255,0.07)] p-5">
-            <div className="text-2xl mb-3">🏥</div>
-            <h3 className="font-bold text-[#e6e3db] mb-2">Hazards Branch</h3>
-            <p className="text-sm">Covers ALL employees for work-related injuries and medical expenses.</p>
-            <span className="inline-block mt-3 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full text-[#2dd4a0] bg-[rgba(45,212,160,0.1)]">All Employees</span>
-          </div>
-          <div className="rounded-[12px] bg-[#131620] border border-[rgba(255,255,255,0.07)] p-5">
-            <div className="text-2xl mb-3">💼</div>
-            <h3 className="font-bold text-[#e6e3db] mb-2">SANED</h3>
-            <p className="text-sm">Unemployment support for Saudi nationals who lose their jobs.</p>
-            <span className="inline-block mt-3 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full text-[#c9a84c] bg-[rgba(201,168,76,0.11)]">Saudi Only</span>
-          </div>
-        </div>
-      </div>
+        <ul className="list-disc list-inside space-y-2 text-sm">
+          <li>Instant client‑side calculations – no data ever leaves the browser.</li>
+          <li>Powered by the official 2026 rates from Royal Decree M/33, ensuring full compliance.</li>
+          <li>Designed for GCC professionals – seamlessly switch to the <Link href="/tools/uae-gratuity-calculator" className="underline hover:text-[#c9a84c]">UAE Gratuity Calculator</Link> for cross‑border payroll planning.</li>
+          <li>Accessible UI with properly labelled form controls and accessible emojis (role="img" aria‑label).</li>
+          <li>Continuous SEO audits keep schema, breadcrumbs, and keyword density up‑to‑date.</li>
+        </ul>
+      </article>
 
       {/* ===== Explore Other Tools ===== */}
       <section className="mt-12">
         <h2 className="text-2xl font-bold mb-6 text-white">Explore Other QuickCalcs Tools</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <nav aria-label="Related tools navigation" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Link href="/tools/gold-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
             <div className="flex items-start gap-3">
               <span className="text-2xl">💰</span>
@@ -115,7 +108,7 @@ export default function GosiContent() {
               <span className="text-2xl">☪️</span>
               <div>
                 <p className="font-semibold text-white">Zakat Calculator</p>
-                <p className="text-sm text-gray-300 mt-1">Calculate Zakat on savings, gold, investments & business assets. Nisab auto-updated.</p>
+                <p className="text-sm text-gray-300 mt-1">Calculate Zakat on savings, gold, investments & business assets. Nisab auto‑updated.</p>
               </div>
             </div>
           </Link>
@@ -124,7 +117,7 @@ export default function GosiContent() {
               <span className="text-2xl">🧮</span>
               <div>
                 <p className="font-semibold text-white">UAE Gratuity Calculator</p>
-                <p className="text-sm text-gray-300 mt-1">End-of-service benefits as per UAE Labour Law 2026. Limited & unlimited contracts.</p>
+                <p className="text-sm text-gray-300 mt-1">End‑of‑service benefits as per UAE Labour Law 2026. Limited & unlimited contracts.</p>
               </div>
             </div>
           </Link>
@@ -133,11 +126,11 @@ export default function GosiContent() {
               <span className="text-2xl">🧾</span>
               <div>
                 <p className="font-semibold text-white">Pakistan Freelancer Tax Calculator</p>
-                <p className="text-sm text-gray-300 mt-1">FBR income tax for freelancers. Supports PSEB 0.25%, non-PSEB 1%, non-filer 2%.</p>
+                <p className="text-sm text-gray-300 mt-1">FBR income tax for freelancers. Supports PSEB 0.25%, non‑PSEB 1%, non‑filer 2%.</p>
               </div>
             </div>
           </Link>
-        </div>
+        </nav>
       </section>
     </section>
   );

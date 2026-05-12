@@ -176,6 +176,15 @@ export default function GosiCalculatorPage() {
           <li className="text-[#87847d]">GOSI Calculator</li>
         </ol>
       </nav>
+      {/* Server-Rendered Header for SEO */}
+      <header className="max-w-[860px] px-[20px] pt-[40px] sm:px-[36px]">
+        <h1 className="mb-4 font-[family-name:var(--font-serif)] text-[clamp(32px,5vw,56px)] leading-[1.1] tracking-[-1px] text-[#e6e3db]">
+          KSA GOSI Calculator 2026: Accurate Saudi Social Insurance Guide
+        </h1>
+        <p className="max-w-[640px] text-[15px] leading-[1.6] text-[#87847d]">
+          Accurately calculate GOSI (General Organization for Social Insurance) contributions for Saudi nationals and expatriates. Updated for 2026 KSA regulations.
+        </p>
+      </header>
       <GosiCalculator />
       <GosiContent />
       <div className="max-w-[860px] px-[20px] pb-[60px] sm:px-[36px]">

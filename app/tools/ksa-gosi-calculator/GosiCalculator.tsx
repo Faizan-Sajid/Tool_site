@@ -79,15 +79,6 @@ export default function GosiCalculator() {
 
   return (
     <div className="max-w-[860px] px-[20px] py-[36px] sm:px-[36px] sm:py-[56px]">
-      {/* SEO Header */}
-      <header className="mb-10">
-        <h1 className="mb-4 font-[family-name:var(--font-serif)] text-[clamp(28px,4.5vw,48px)] italic leading-[1.1] tracking-[-1px] text-[#e6e3db]">
-          Free Saudi GOSI Calculator – <span className="text-[#c9a84c]">2026 Updated</span>
-        </h1>
-        <p className="max-w-[600px] text-[15px] leading-[1.75] text-[#87847d]">
-          Accurately calculate GOSI (General Organization for Social Insurance) contributions for Saudi nationals and expatriates. Our tool is updated with the latest 2026 KSA Labor Law regulations.
-        </p>
-      </header>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Input Section */}

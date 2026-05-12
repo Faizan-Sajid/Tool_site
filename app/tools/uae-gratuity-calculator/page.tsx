@@ -37,16 +37,43 @@ const gratuityFaqs = [
 export default function GratuityPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "UAE Gratuity Calculator 2026",
-    "operatingSystem": "Web",
-    "applicationCategory": "BusinessApplication",
-    "description": "Calculate UAE end-of-service gratuity based on the latest 2026 Labour Law rules.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "AED"
-    }
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "UAE Gratuity Calculator 2026",
+        "operatingSystem": "Web",
+        "applicationCategory": "BusinessApplication",
+        "description": "Calculate UAE end-of-service gratuity based on the latest 2026 Labour Law rules.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "AED"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.quickcalcs.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "HR Tools",
+            "item": "https://www.quickcalcs.app/?category=hr"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "UAE Gratuity Calculator",
+            "item": "https://www.quickcalcs.app/tools/uae-gratuity-calculator"
+          }
+        ]
+      }
+    ]
   };
 
   return (
