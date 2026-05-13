@@ -5,7 +5,10 @@ import FeaturedToolsSection from "@/components/FeaturedToolsSection";
 import FAQ from "@/components/FAQ";
 import { Metadata } from "next";
 
+// ── SEO METADATA (Added Title/Description for SEO Score) ──
 export const metadata: Metadata = {
+  title: "QuickCalcs — Free 2026 Financial & Tax Calculators (UAE, KSA, PK)",
+  description: "Access 100% free tools for VAT, GOSI, Gratuity, and Tax calculations updated for 2026. Fast, secure, and no login required.",
   alternates: {
     canonical: "https://www.quickcalcs.app",
   },
@@ -51,17 +54,39 @@ const homeFaqs = [
   },
 ];
 
+// ── FAQ SCHEMA FOR GSC ──
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": homeFaqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
 export default function Home() {
   return (
     <main className="bg-[#0c0e16]">
+      {/* Search Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {/* Organization Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
       />
+      {/* FAQ Schema Fix for Google Search Console */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <HeroSection />
       <StatsStrip />
       <Suspense fallback={<div className="h-40 flex items-center justify-center text-[#87847d]">Loading tools...</div>}>
