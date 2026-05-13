@@ -35,23 +35,66 @@ const zakatFaqs = [
 ];
 
 export default function ZakatPage() {
+  // ── COMBINED JSON-LD SCHEMA ──
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Zakat Calculator 2026",
-    "operatingSystem": "Web",
-    "applicationCategory": "FinanceApplication",
-    "description": "Calculate your mandatory Zakat dues based on the latest Nisab thresholds for 2026.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Zakat Calculator 2026",
+        "operatingSystem": "Web",
+        "applicationCategory": "FinanceApplication",
+        "description": "Calculate your mandatory Zakat dues based on the latest Nisab thresholds for 2026.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "SAR" // Localized currency
+        },
+        "brand": {
+          "@type": "Brand",
+          "name": "QuickCalcs"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.quickcalcs.app"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Finance Tools",
+            "item": "https://www.quickcalcs.app/tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Zakat Calculator",
+            "item": "https://www.quickcalcs.app/tools/zakat-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": zakatFaqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    ]
   };
 
   return (
     <main className="min-h-screen bg-[#0c0e16]">
-      {/* JSON-LD for SEO */}
+      {/* Integrated JSON-LD for Software, Breadcrumbs, and FAQ */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -59,7 +102,7 @@ export default function ZakatPage() {
 
       <div className="max-w-[860px] mx-auto pt-8 pb-16">
         
-        {/* BREADCRUMBS */}
+        {/* BREADCRUMBS UI */}
         <nav className="px-[20px] sm:px-[36px] flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#8b8a87] mb-8">
           <Link href="/" className="hover:text-[#c9a84c] flex items-center gap-1.5 transition-colors">
             <Home className="w-3 h-3" /> Home
@@ -85,13 +128,10 @@ export default function ZakatPage() {
           </p>
         </header>
 
-        {/* CALCULATOR COMPONENT */}
         <ZakatCalculator />
-
-        {/* SEO CONTENT SECTION */}
         <ZakatContent />
 
-        {/* FAQ SECTION */}
+        {/* FAQ SECTION UI */}
         <section className="px-[20px] sm:px-[36px] mt-12 border-t border-[rgba(255,255,255,0.07)] pt-16">
           <div className="flex items-center gap-3 mb-10">
             <div className="w-10 h-10 rounded-xl bg-[rgba(201,168,76,0.1)] flex items-center justify-center border border-[rgba(201,168,76,0.1)]">
