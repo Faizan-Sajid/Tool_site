@@ -5,9 +5,9 @@ import FAQ from "@/components/FAQ";
 
 // ── SEO METADATA ──
 export const metadata: Metadata = {
-  title: "GOSI Calculator Saudi Arabia 2026 — Free KSA Contribution Calculator | QuickCalcs",
+  title: "GOSI Calculator Saudi Arabia 2026 — Free KSA Contribution Tool | QuickCalcs",
   description:
-    "Calculate Saudi GOSI contributions instantly for 2026. Supports Saudi nationals (10%) and expats (2%). SAR 45,000 cap applied. No login required.",
+    "Calculate Saudi GOSI contributions instantly for 2026. Supports Saudi nationals (10%) and expats (2%) with the SAR 45,000 cap applied accurately.",
   keywords: [
     "GOSI calculator",
     "GOSI calculator Saudi Arabia 2026",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     "Saudi HR payroll tool",
   ],
   openGraph: {
-    title: "Saudi GOSI Calculator 2026 | QuickCalcs",
+    title: "GOSI Calculator Saudi Arabia 2026 — Free KSA Contribution Tool | QuickCalcs",
     description:
-      "Free GOSI contribution calculator for Saudi nationals and expats. Instant results, no login required.",
+      "Calculate Saudi GOSI contributions instantly for 2026. Supports Saudi nationals (10%) and expats (2%) with the SAR 45,000 cap applied accurately.",
     url: "https://www.quickcalcs.app/tools/ksa-gosi-calculator",
     siteName: "QuickCalcs",
     type: "website",
@@ -49,6 +49,7 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       "max-snippet": -1,
+      
       "max-image-preview": "large",
     },
   },
@@ -96,9 +97,9 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://www.quickcalcs.app/tools/ksa-gosi-calculator",
       url: "https://www.quickcalcs.app/tools/ksa-gosi-calculator",
-      name: "Saudi GOSI Calculator 2026 — Free KSA Contribution Tool",
+      name: "GOSI Calculator Saudi Arabia 2026 — Free KSA Contribution Tool | QuickCalcs",
       description:
-        "Calculate GOSI contributions for Saudi nationals and expats. 2026 updated rates.",
+        "Calculate Saudi GOSI contributions instantly for 2026. Supports Saudi nationals (10%) and expats (2%) with the SAR 45,000 cap applied accurately.",
       isPartOf: { "@id": "https://www.quickcalcs.app/" },
       breadcrumb: {
         "@type": "BreadcrumbList",
@@ -132,8 +133,9 @@ const jsonLd = {
       offers: {
         "@type": "Offer",
         price: "0",
-        priceCurrency: "USD",
+        priceCurrency: "SAR",
       },
+      brand: {"@type": "Brand", "name": "QuickCalcs"},
     },
     {
       "@type": "FAQPage",

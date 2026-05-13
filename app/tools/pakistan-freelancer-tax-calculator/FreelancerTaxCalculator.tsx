@@ -95,7 +95,7 @@ export default function FreelancerTaxCalculator() {
       <div className="w-full max-w-2xl bg-white rounded-xl md:rounded-2xl shadow-xl overflow-hidden">
         {/* Header */}
         <header className="border-b border-gray-200 p-4 md:p-6">
-          <h1 className="text-xl md:text-2xl font-bold text-[#0f172a]">Pakistan Freelancer Tax Calculator 2025–26</h1>
+          <h1 className="text-xl md:text-2xl font-bold text-[#0f172a]">Pakistan Freelancer Tax Calculator 2026</h1>
           <p className="mt-1 text-sm md:text-base text-[#64748b]">Instant tax estimate based on FBR & PSEB rules</p>
           <span className="inline-block mt-2 px-3 py-1 text-xs font-medium text-green-600 bg-green-100 rounded-full">🟢 Updated: Budget 2025–26</span>
         </header>

@@ -4,29 +4,29 @@ import { ShieldCheck, TrendingUp, AlertCircle, FileText, CheckCircle2 } from "lu
 
 const faqItems = [
   {
-    question: "Is Payoneer or Wise income taxable in Pakistan?",
+    question: "What is the freelancer tax rate in Pakistan for 2026?",
     answer:
-      "Yes. Once funds from Payoneer or Wise are withdrawn into your local Pakistani bank account, they become taxable. If properly tagged as IT services via a PRC, they fall under the 1% or 0.25% fixed tax regime.",
+      "For the tax year 2026, the FBR provides a reduced rate of 0.25% for IT freelancers registered with PSEB. Non‑registered IT exporters and technical service providers are taxed at a flat rate of 1% under Section 154S of the Income Tax Ordinance.",
   },
   {
-    question: "What if I work for local Pakistani clients?",
+    question: "How can I qualify for the 0.25% reduced tax rate?",
     answer:
-      "Income generated from local Pakistani clients is not considered an IT Export. Therefore, it does not qualify for the 0.25% or 1% rates. Local income is subject to standard progressive income tax slabs based on your total yearly earnings.",
+      "To qualify for the 0.25% tax rate, you must be registered with the Pakistan Software Export Board (PSEB) and ensure that 80% of your export proceeds are remitted to your Pakistani bank account through formal banking channels.",
   },
   {
-    question: "How to register with PSEB for the 0.25% tax rate?",
+    question: "Do I need to be an 'Active Taxpayer' (ATL) to claim these rates?",
     answer:
-      "You can register online through the official Pakistan Software Export Board (PSEB) portal. You will need your CNIC, a bank account maintenance certificate, and proof of your freelancing profiles (like Fiverr or Upwork). The annual registration fee is nominal.",
+      "Yes. Being on the Active Taxpayer List (ATL) is mandatory. Non‑filers do not qualify for the fixed export tax regimes and may face double withholding tax rates.",
   },
   {
-    question: "What is a PRC and why do I need it?",
+    question: "Is a Proceeds Realization Certificate (PRC) necessary?",
     answer:
-      "A Proceeds Realization Certificate (PRC) is a document issued by your bank confirming that foreign currency was brought into Pakistan and converted to PKR. You need it to prove to the FBR that your income qualifies for the IT Export tax discounts.",
+      "Yes, a PRC is legal evidence of your IT export income. It is crucial for tax filing and protecting your 0.25% or 1% tax status during an FBR audit.",
   },
   {
-    question: "What happens if I am not on the Active Taxpayer List (ATL)?",
+    question: "What is the tax rate for local/domestic freelancer projects?",
     answer:
-      "If you are a non-filer and not on the ATL, the bank will deduct a higher penalty rate (often 2% or more) instead of the discounted 1% or 0.25% export rates.",
+      "The fixed export rates only apply to foreign income. Local projects for Pakistani clients are taxed under the standard progressive income tax slabs for individuals/business individuals.",
   },
 ];
 
@@ -37,10 +37,10 @@ export default function FreelancerTaxContent() {
       {/* Introduction */}
       <div className="mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
-          Pakistan Freelancer Tax Calculator 2025-26: <span className="text-[#c9a84c]">FBR IT Export Rates Explained</span>
+          Pakistan Freelancer Tax Calculator 2026: <span className="text-[#c9a84c]">FBR IT Export Rates Explained</span>
         </h2>
         <p className="text-[#87847d] text-lg leading-relaxed">
-          Understanding the <strong className="text-[#e6e3db]">Pakistan Income Tax Calculator 2025-26</strong> for freelancers is critical for maximizing your earnings. If you bring foreign currency into Pakistan via IT or IT-enabled services (ITeS), the FBR (Federal Board of Revenue) offers highly subsidized fixed tax regimes. However, unlocking these benefits requires strict compliance, particularly ensuring your name is on the <strong>Active Taxpayer List (ATL)</strong>.
+          Understanding the <strong className="text-[#e6e3db]">Pakistan Income Tax Calculator 2026</strong> for freelancers is critical for maximizing your earnings. If you bring foreign currency into Pakistan via IT or IT-enabled services (ITeS), the FBR (Federal Board of Revenue) offers highly subsidized fixed tax regimes. However, unlocking these benefits requires strict compliance, particularly ensuring your name is on the <strong>Active Taxpayer List (ATL)</strong>.
         </p>
       </div>
 
@@ -159,10 +159,7 @@ export default function FreelancerTaxContent() {
       </section>
 
       {/* FAQ Section */}
-      <section className="mb-16">
-        <h3 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h3>
-        <FAQAccordion items={faqItems} />
-      </section>
+      <FAQAccordion items={faqItems} />
 
     </article>
   );
