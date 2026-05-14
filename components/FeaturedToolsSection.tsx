@@ -100,7 +100,7 @@ const FeaturedToolsSection = () => {
           </div>
           <div className="mb-10 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
             {financeTools.map(tool => (
-              <ToolCard key={tool.id} tool={tool} />
+              <ToolCard key={tool.id || tool.title} tool={tool} />
             ))}
           </div>
         </>

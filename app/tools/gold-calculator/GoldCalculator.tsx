@@ -874,6 +874,15 @@ export default function GoldCalculator() {
               </div>
             </div>
           </Link>
+          <Link href="/tools/hajj-umrah-budget-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🕋</span>
+              <div>
+                <p className="font-semibold text-white">Hajj &amp; Umrah Budget Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">Estimate pilgrimage costs – flights, hotels, visas, and food for 2026.</p>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
     </div>

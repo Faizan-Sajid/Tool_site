@@ -61,10 +61,10 @@ export const viewport = {  width: "device-width",  initialScale: 1,}; export con
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "QuickCalcs - Professional Utility Suite",
+        alt: "QuickCalcs – Free Universal Online Calculators & Tools for UAE, Saudi Arabia, Pakistan and Global Users",
       },
     ],
   },
@@ -73,7 +73,12 @@ export const viewport = {  width: "device-width",  initialScale: 1,}; export con
     title: "QuickCalcs | Free Universal Online Calculators & Tools",
     description:
       "Access a wide range of professional tools including financial calculators, regional employment utilities, and SEO growth tools for global users.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "/opengraph-image.png",
+        alt: "QuickCalcs – Free Universal Online Calculators & Tools for UAE, Saudi Arabia, Pakistan and Global Users",
+      },
+    ],
   },
   robots: {
     index: true,

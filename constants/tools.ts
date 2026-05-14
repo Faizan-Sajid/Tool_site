@@ -89,4 +89,15 @@ export const TOOLS: Tool[] = [
     ],
     isTeal: true,
   },
+  {
+    id: "hajj-umrah-budget-calculator",
+    href: "/tools/hajj-umrah-budget-calculator",
+    ariaLabel: "Hajj & Umrah Budget Calculator",
+    category: "finance",
+    country: "all",
+    icon: "🕋",
+    title: "Hajj & Umrah Budget Calculator",
+    description: "Estimate your complete Hajj or Umrah cost by country, package type, and duration. 2026 updated.",
+    tags: [],
+  },
 ];
