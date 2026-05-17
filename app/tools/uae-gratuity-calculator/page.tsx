@@ -1,4 +1,4 @@
-// Updated page.tsx with full metadata, openGraph, twitter, HowTo schema, dateModified, expanded FAQs, updated H1 and subtitle.
+// Updated page.tsx with full metadata, openGraph, twitter, HowTo schema, FAQPage schema, dateModified, expanded FAQs, updated H1 and subtitle.
 import React from "react";
 import type { Metadata } from "next";
 import GratuityCalculator from "./GratuityCalculator";
@@ -61,7 +61,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.quickcalcs.app/tools/uae-gratuity-calculator",
   },
-  // dateModified will be added to WebPage schema below.
 };
 
 // Expanded FAQ items (10 total)
@@ -136,6 +135,17 @@ export default function GratuityPage() {
         "dateModified": "2026-05-17",
       },
       {
+        "@type": "FAQPage",
+        "mainEntity": faqItems.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer,
+          },
+        })),
+      },
+      {
         "@type": "HowTo",
         "name": "How to Calculate UAE Gratuity",
         "description": "Step-by-step guide to calculate your end-of-service gratuity under UAE Labour Law 2026.",
@@ -197,7 +207,6 @@ export default function GratuityPage() {
 
         {/* FAQ */}
         <section className="px-[20px] sm:px-[36px] mt-12 border-t border-[rgba(255,255,255,0.07)] pt-16">
-          
           <FAQ items={faqItems} />
         </section>
       </div>
