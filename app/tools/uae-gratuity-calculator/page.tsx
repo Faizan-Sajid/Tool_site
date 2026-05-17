@@ -1,4 +1,4 @@
-// Updated page.tsx with full metadata, openGraph, twitter, HowTo schema, FAQPage schema, dateModified, expanded FAQs, updated H1 and subtitle.
+// Updated page.tsx with full metadata, openGraph, twitter, HowTo schema, FAQPage schema, perfected BreadcrumbList schema, dateModified, expanded FAQs, updated H1 and subtitle.
 import React from "react";
 import type { Metadata } from "next";
 import GratuityCalculator from "./GratuityCalculator";
@@ -161,11 +161,35 @@ export default function GratuityPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.quickcalcs.app/" },
-          { "@type": "ListItem", "position": 2, "name": "HR Tools", "item": "https://www.quickcalcs.app/?category=hr" },
-          { "@type": "ListItem", "position": 3, "name": "UAE Gratuity Calculator", "item": "https://www.quickcalcs.app/tools/uae-gratuity-calculator" },
-        ],
-      },
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": {
+              "@id": "https://www.quickcalcs.app/",
+              "name": "Home"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "HR Tools",
+            "item": {
+              "@id": "https://www.quickcalcs.app/?category=hr",
+              "name": "HR Tools"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "UAE Gratuity Calculator",
+            "item": {
+              "@id": "https://www.quickcalcs.app/tools/uae-gratuity-calculator",
+              "name": "UAE Gratuity Calculator"
+            }
+          }
+        ]
+      }
     ],
   };
 
