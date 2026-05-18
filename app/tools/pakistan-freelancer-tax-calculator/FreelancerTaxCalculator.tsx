@@ -87,7 +87,7 @@ export default function FreelancerTaxCalculator() {
           </h2>
           <p className="mt-1 text-sm text-[#87847d]">Instant tax estimate based on FBR &amp; PSEB rules</p>
           <span className="inline-block mt-2 px-3 py-1 text-xs font-medium text-[#2dd4a0] bg-[rgba(45,212,160,0.08)] border border-[rgba(45,212,160,0.15)] rounded-full">
-            🟢 Updated: Budget 2025–26
+            🟢 Updated: Budget 2026–27
           </span>
         </header>
 

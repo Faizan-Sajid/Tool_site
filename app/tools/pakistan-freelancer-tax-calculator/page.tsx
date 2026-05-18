@@ -280,7 +280,7 @@ export default function PakistanFreelancerTaxPage() {
             <p className="text-[#87847d] text-sm max-w-2xl leading-relaxed">
               Calculate your exact FBR tax on Upwork, Fiverr, Payoneer, and direct client income.
               Supports PSEB registered (0.25%), non-PSEB filers (1%), and non-filers (2%) under Section 154S.
-              Free, instant, updated for Budget 2025–26.
+              Free, instant, updated for Budget 2026–27.
             </p>
           </header>
 
