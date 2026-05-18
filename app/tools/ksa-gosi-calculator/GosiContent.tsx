@@ -50,26 +50,26 @@ export default function GosiContent() {
             <tbody>
               <tr className="border-b border-[rgba(255,255,255,0.03)]">
                 <td className="py-4 pr-4">Annuity (Pension)</td>
-                <td className="text-center px-4 text-[#c9a84c]">9%</td>
-                <td className="text-center px-4 text-[#c9a84c]">9%</td>
+                <td className="text-center px-4 text-[#c9a84c]">9.75%</td>
+                <td className="text-center px-4 text-[#c9a84c]">9.75%</td>
                 <td className="text-center px-4 text-[#3e3c38]">—</td>
               </tr>
               <tr className="border-b border-[rgba(255,255,255,0.03)]">
                 <td className="py-4 pr-4">SANED (Unemployment)</td>
-                <td className="text-center px-4 text-[#c9a84c]">1%</td>
-                <td className="text-center px-4 text-[#c9a84c]">1%</td>
+                <td className="text-center px-4 text-[#c9a84c]">0.75%</td>
+                <td className="text-center px-4 text-[#c9a84c]">0.75%</td>
                 <td className="text-center px-4 text-[#3e3c38]">—</td>
               </tr>
               <tr className="border-b border-[rgba(255,255,255,0.03)]">
                 <td className="py-4 pr-4">Occupational Hazards</td>
                 <td className="text-center px-4 text-[#3e3c38]">—</td>
-                <td className="text-center px-4 text-[#c9a84c]">2%</td>
+                <td className="text-center px-4 text-[#c9a84c]">2.25%</td>
                 <td className="text-center px-4 text-[#c9a84c]">2%</td>
               </tr>
               <tr className="border-t-2 border-[rgba(255,255,255,0.07)]">
                 <td className="py-4 pr-4 font-bold text-[#e6e3db]">Total</td>
-                <td className="text-center px-4 font-bold text-[#c9a84c]">10%</td>
-                <td className="text-center px-4 font-bold text-[#c9a84c]">12%</td>
+                <td className="text-center px-4 font-bold text-[#c9a84c]">10.75%</td>
+                <td className="text-center px-4 font-bold text-[#c9a84c]">12.75%</td>
                 <td className="text-center px-4 font-bold text-[#c9a84c]">2%</td>
               </tr>
             </tbody>
@@ -91,11 +91,11 @@ export default function GosiContent() {
               </thead>
               <tbody>
                 {[
-                  { year: "2024", emp: "9%", er: "11%", total: "20%" },
-                  { year: "2025", emp: "9.5%", er: "11.5%", total: "21%" },
-                  { year: "2026 (Current)", emp: "10%", er: "12%", total: "22%", current: true },
-                  { year: "2027", emp: "10.5%", er: "12.5%", total: "23%" },
-                  { year: "2028", emp: "11%", er: "13%", total: "24%" },
+                  { year: "2024", emp: "9.75%", er: "11.75%", total: "21.5%" },
+                { year: "2025", emp: "10.25%", er: "12.25%", total: "22.5%" },
+                { year: "2026 (Current)", emp: "10.75%", er: "12.75%", total: "23.5%", current: true },
+                { year: "2027", emp: "11.25%", er: "13.25%", total: "24.5%" },
+                { year: "2028", emp: "11.75%", er: "13.75%", total: "25.5%" },
                 ].map((row) => (
                   <tr
                     key={row.year}
@@ -111,19 +111,19 @@ export default function GosiContent() {
             </table>
           </div>
           <p className="text-xs text-[#3e3c38] mt-2">
-            * Rates are based on Royal Decree M/33. Verify with your HR department for the most recent official figures.
+            * The 2024–2028 schedule applies to employees registered with GOSI on or after July 3, 2024. Employees registered before this date pay 9.75% employee and 11.75% employer. Rates are based on Royal Decree M/33. Verify with your HR department for the most recent official figures.
           </p>
         </div>
 
         <div className="text-sm leading-relaxed space-y-3">
           <p>
-            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employee contribution rate in 2026</strong> is 10% of the contributory wage — 9% goes to the pension fund and 1% to SANED (unemployment insurance). This amount is taken directly from the employee's monthly salary.
+            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employee contribution rate in 2026</strong> is 10.75% of the contributory wage — 9.75% goes to the pension fund and 0.75% to SANED (unemployment insurance). This amount is taken directly from the employee's monthly salary.
           </p>
           <p>
-            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employer contribution rate in 2026</strong> is 12% — covering 9% pension, 2% occupational hazards, and 1% SANED. The employer pays this separately and it does not come out of the employee's salary.
+            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employer contribution rate in 2026</strong> is 12.75% — covering 9.75% pension, 2.25% occupational hazards, and 0.75% SANED. The employer pays this separately and it does not come out of the employee's salary.
           </p>
           <p>
-            In total, the combined GOSI contribution for a Saudi national is <strong className="text-[#e6e3db]">22% of the contributory wage</strong> — 10% from the employee and 12% from the employer.
+            In total, the combined GOSI contribution for a Saudi national is <strong className="text-[#e6e3db]">23.5% of the contributory wage</strong> — 10.75% from the employee and 12.75% from the employer.
           </p>
         </div>
       </article>
@@ -250,16 +250,16 @@ export default function GosiContent() {
                 <span className="text-[#e6e3db]">SAR 15,000</span>
               </div>
               <div className="flex justify-between border-t border-[rgba(255,255,255,0.07)] pt-2 mt-2">
-                <span>Employee GOSI Deduction (10%)</span>
-                <span className="text-[#c9a84c] font-bold">− SAR 1,500</span>
+                <span>Employee GOSI Deduction (10.75%)</span>
+                <span className="text-[#c9a84c] font-bold">− SAR 1,612.50</span>
               </div>
               <div className="flex justify-between">
-                <span>Employer Contribution (12%)</span>
-                <span className="text-[#c9a84c] font-bold">SAR 1,800</span>
+                <span>Employer Contribution (12.75%)</span>
+                <span className="text-[#c9a84c] font-bold">SAR 1,912.50</span>
               </div>
               <div className="flex justify-between border-t border-[rgba(255,255,255,0.07)] pt-2 mt-2">
                 <span className="font-bold text-[#e6e3db]">Net Salary After GOSI</span>
-                <span className="text-[#e6e3db] font-bold">SAR 13,500</span>
+                <span className="text-[#e6e3db] font-bold">SAR 13,387.50</span>
               </div>
             </div>
           </div>

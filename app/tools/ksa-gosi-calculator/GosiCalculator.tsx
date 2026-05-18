@@ -41,10 +41,10 @@ export default function GosiCalculator() {
 
     if (nationality === "saudi") {
       // Rule 2: Saudi Nationality
-      // Employee: 9% Annuity + 1% SANED = 10%
-      employeeDeduction = contributoryWage * 0.10;
-      // Employer: 9% Annuity + 2% Hazards + 1% SANED = 12%
-      employerContribution = contributoryWage * 0.12;
+      // Employee: 9% Annuity + 0.75% SANED = 10.75%
+      employeeDeduction = contributoryWage * 0.1075;
+      // Employer: 9% Annuity + 2.25% Hazards + 0.75% SANED = 12.75%
+      employerContribution = contributoryWage * 0.1275;
     } else {
       // Rule 3: Non-Saudi (Expat)
       // Employee: 0%
@@ -115,20 +115,26 @@ export default function GosiCalculator() {
 
             {/* ── ADD 3: RATES INFO BOX ── */}
             {nationality === "saudi" ? (
-              <div className="rounded-lg bg-[#0c0e16] border border-[rgba(255,255,255,0.07)] p-3 text-xs text-[#87847d] space-y-1.5">
-                <div className="flex justify-between">
-                  <span>Employee (Annuity + SANED)</span>
-                  <span className="text-[#c9a84c] font-bold">10%</span>
+              <>
+                <div className="rounded-lg bg-[#0c0e16] border border-[rgba(255,255,255,0.07)] p-3 text-xs text-[#87847d] space-y-1.5">
+                  <div className="flex justify-between">
+                    <span>Employee (Annuity + SANED)</span>
+                    <span className="text-[#c9a84c] font-bold">10.75%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Employer (Annuity + Hazards + SANED)</span>
+                    <span className="text-[#e6e3db] font-bold">12.75%</span>
+                  </div>
+                  <div className="flex justify-between border-t border-[rgba(255,255,255,0.07)] pt-1.5">
+                    <span>Wage Cap</span>
+                    <span className="text-[#e6e3db] font-bold">SAR 45,000</span>
+                  </div>
                 </div>
-                <div className="flex justify-between">
-                  <span>Employer (Annuity + Hazards + SANED)</span>
-                  <span className="text-[#e6e3db] font-bold">12%</span>
-                </div>
-                <div className="flex justify-between border-t border-[rgba(255,255,255,0.07)] pt-1.5">
-                  <span>Wage Cap</span>
-                  <span className="text-[#e6e3db] font-bold">SAR 45,000</span>
-                </div>
-              </div>
+                <p className="text-[10px] text-[#3e3c38] mt-2 leading-relaxed">
+                  Rates apply to employees registered with GOSI on or after July 3, 2024.
+                  Employees registered before this date pay 9.75% (employee) and 11.75% (employer).
+                </p>
+              </>
             ) : (
               <div className="rounded-lg bg-[#0c0e16] border border-[rgba(255,255,255,0.07)] p-3 text-xs text-[#87847d] space-y-1.5">
                 <div className="flex justify-between">
@@ -145,6 +151,7 @@ export default function GosiCalculator() {
                 </div>
               </div>
             )}
+
 
             {/* Basic Salary Input */}
             <div>
