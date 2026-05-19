@@ -10,7 +10,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Pakistan Freelancer Tax Calculator 2026 | FBR 0.25%, 1% & 2% Rates",
   description:
-    "Calculate your exact FBR freelancer tax for 2026. PSEB registered: 0.25%. Non-PSEB filer: 1%. Non-filer: 2%. Covers Upwork, Fiverr, Payoneer income. Section 154S updated. Free, instant, no login.",
+     "Calculate your 2026 FBR freelancer tax instantly. Supports 0.25% PSEB rates, 1% filers, 2% non-filers, and Section 154S for Upwork, Fiverr & Payoneer.",
   keywords: [
     "Pakistan freelancer tax calculator 2026",
     "FBR tax on Upwork income Pakistan",
