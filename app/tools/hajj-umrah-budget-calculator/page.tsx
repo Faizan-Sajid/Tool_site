@@ -7,9 +7,9 @@ import { Home, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Umrah Cost Calculator 2026 – Free Hajj & Umrah Budget Estimator by Country | QuickCalcs",
+  title: "Umrah Cost Calculator 2026 – Free Budget Estimator",
   description:
-    "Free Umrah cost calculator for 2026. Estimate your complete Umrah budget from Pakistan, India, UK, USA, Bangladesh, Canada — including flights, hotel, visa & transport. Instant results, no login.",
+    "Free Umrah cost calculator for 2026. Estimate your complete budget from Pakistan, India, UK, USA, and Canada including flights, hotels, visa, and transport.",
   keywords: [
     "umrah cost calculator",
     "umrah budget calculator",
