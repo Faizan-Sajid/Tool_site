@@ -7,7 +7,7 @@ import FAQ from "@/components/FAQ";
 export const metadata: Metadata = {
   title: "Free GOSI Calculator 2026 — Saudi & Expat Net Salary After Deductions",
   description:
-    "Calculate your exact net salary after GOSI deductions — free, instant, no login. Covers Saudi nationals registered after July 2024 (10.75%/12.75%), legacy employees (9.75%/11.75%), and non-Saudi expats (2%). Updated 2026 KSA rates with SANED, pension formula, and SAR 45,000 cap.",
+    "Calculate your exact Saudi net salary after GOSI and SANED deductions. Supports 2026 KSA rates for citizens and expats up to the SAR 45,000 cap.",
   keywords: [
     "GOSI calculator",
     "GOSI salary calculator",

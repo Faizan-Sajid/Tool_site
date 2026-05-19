@@ -4,7 +4,7 @@ import FAQ from "@/components/FAQ";
 import { TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Gold Price Calculator UAE 2026 — Live Rates, Zakat & Unit Converter | QuickCalcs",
+  title: "Gold Price Calculator UAE 2026 — Live Rates & Zakat",
   description:
     "Live gold prices for UAE & GCC. Calculate gold value, Zakat, and convert units (grams, tola, ounces) instantly with real-time 24K, 22K, 21K, 18K rates.",
   keywords: [
