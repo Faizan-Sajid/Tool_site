@@ -19,6 +19,7 @@ const FOOTER_LINKS = {
   ],
   company: [
     { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
     { name: "All Tools", href: "/#all-tools" },
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms of Use", href: "/terms-of-use" },
@@ -96,6 +97,9 @@ export default function Footer() {
             © 2026 QuickCalcs Professional · All Rights Reserved
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
+            <Link href="/about" className="text-[11px] text-[#8b8a87] hover:text-[#87847d] uppercase tracking-widest transition-colors min-h-[44px] flex items-center">
+              About Us
+            </Link>
             <Link href="/privacy-policy" className="text-[11px] text-[#8b8a87] hover:text-[#87847d] uppercase tracking-widest transition-colors min-h-[44px] flex items-center">
               Privacy Policy
             </Link>
