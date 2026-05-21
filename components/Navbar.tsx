@@ -69,25 +69,27 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Search Icon (Triggers Sidebar) */}
-          <button 
+          <button
             onClick={() => {
               openSidebar();
               // In a real app, you'd focus the sidebar input here
             }}
-            className="flex md:hidden items-center justify-center w-10 h-10 rounded-xl bg-[#131620] border border-[rgba(255,255,255,0.05)] text-[#87847d] hover:text-[#c9a84c] transition-colors"
+            aria-label="Search Tools"
+            className="flex md:hidden items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-xl bg-[#131620] border border-[rgba(255,255,255,0.05)] text-[#87847d] hover:text-[#c9a84c] transition-colors"
           >
-            <Search className="w-4.5 h-4.5" />
+            <Search className="w-5 h-5" />
           </button>
 
           {/* Sidebar Toggle (Hamburger) */}
           <button
             onClick={toggleSidebar} aria-label="Toggle Menu"
-            className={`inline-flex items-center justify-center rounded-xl h-10 w-10 border transition-all duration-300 md:hidden
-              ${isSidebarOpen 
-                ? "bg-[rgba(201,168,76,0.11)] border-[rgba(201,168,76,0.2)] text-[#c9a84c]" 
+            className={`inline-flex items-center justify-center rounded-xl h-11 w-11 min-w-[44px] min-h-[44px] border transition-all duration-300 md:hidden
+              ${isSidebarOpen
+                ? "bg-[rgba(201,168,76,0.11)] border-[rgba(201,168,76,0.2)] text-[#c9a84c]"
                 : "bg-[#131620] border-[rgba(255,255,255,0.05)] text-[#87847d] hover:text-white"
               }`}
             aria-expanded={isSidebarOpen}
+            aria-controls="mobile-sidebar"
           >
             <span className="sr-only">Toggle menu</span>
             {isSidebarOpen ? (

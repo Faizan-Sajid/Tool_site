@@ -25,20 +25,29 @@ const lora = Lora({
   style: ["normal", "italic"],
 });
 
-export const viewport = {  width: "device-width",  initialScale: 1,}; export const metadata: Metadata = {
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
+export const metadata: Metadata = {
   metadataBase: new URL("https://www.quickcalcs.app"),
-  title: "QuickCalcs | Free Universal Online Calculators & Tools",
+  title: {
+    default: "QuickCalcs — Free UAE Gratuity, GOSI & Zakat Calculators 2026",
+    template: "%s | QuickCalcs",
+  },
   description:
-    "Access a wide range of professional tools including financial calculators, regional employment utilities, and SEO growth tools for global users.",
+    "Free online calculators for UAE gratuity, Saudi GOSI contributions, Zakat 2026, gold price per tola, and Umrah budgeting. Updated quarterly, no login required, instantly in your browser.",
   keywords: [
     "Free Online Calculators",
     "Financial Tools",
-    "SEO Utilities",
-    "Global Business Tools",
     "UAE Gratuity",
+    "Saudi GOSI",
     "Zakat Calculator",
+    "Gold Price Tola",
+    "Umrah Budget",
   ],
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -52,9 +61,9 @@ export const viewport = {  width: "device-width",  initialScale: 1,}; export con
     ],
   },
   openGraph: {
-    title: "QuickCalcs | Free Universal Online Calculators & Tools",
+    title: "QuickCalcs — Free UAE Gratuity, GOSI & Zakat Calculators 2026",
     description:
-      "Access a wide range of professional tools including financial calculators, regional employment utilities, and SEO growth tools for global users.",
+      "Free online calculators for UAE gratuity, Saudi GOSI contributions, Zakat 2026, gold price per tola, and Umrah budgeting. Updated quarterly, no login required.",
     url: "https://www.quickcalcs.app",
     siteName: "QuickCalcs",
     locale: "en_US",
@@ -64,19 +73,19 @@ export const viewport = {  width: "device-width",  initialScale: 1,}; export con
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "QuickCalcs – Free Universal Online Calculators & Tools for UAE, Saudi Arabia, Pakistan and Global Users",
+        alt: "QuickCalcs – Free UAE Gratuity, GOSI & Zakat Calculators 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuickCalcs | Free Universal Online Calculators & Tools",
+    title: "QuickCalcs — Free UAE Gratuity, GOSI & Zakat Calculators 2026",
     description:
-      "Access a wide range of professional tools including financial calculators, regional employment utilities, and SEO growth tools for global users.",
+      "Free online calculators for UAE gratuity, Saudi GOSI contributions, Zakat 2026, gold price per tola, and Umrah budgeting. Updated quarterly, no login required.",
     images: [
       {
         url: "/opengraph-image.png",
-        alt: "QuickCalcs – Free Universal Online Calculators & Tools for UAE, Saudi Arabia, Pakistan and Global Users",
+        alt: "QuickCalcs – Free UAE Gratuity, GOSI & Zakat Calculators 2026",
       },
     ],
   },

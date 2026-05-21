@@ -19,7 +19,7 @@ export default function FAQ({ items = [] }: FAQProps) {
   };
 
   return (
-    <section className="w-full max-w-[860px] mx-auto py-12 md:py-20 px-4 md:px-0" aria-labelledby="faq-heading">
+    <section className="w-full max-w-[860px] mx-auto py-12 md:py-20 px-4 sm:px-6 md:px-8" aria-labelledby="faq-heading">
       <div className="flex items-center gap-4 mb-10">
         <div className="h-[1px] w-8 md:w-12 bg-[#c9a84c]" />
         <h2
@@ -30,13 +30,13 @@ export default function FAQ({ items = [] }: FAQProps) {
         </h2>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-3">
         {items?.map((item, index) => (
           <div
             key={index}
             className={`group border border-[rgba(255,255,255,0.05)] rounded-2xl overflow-hidden transition-all duration-300 ${
-              activeIndex === index 
-                ? "bg-[#131620] border-[#c9a84c40] shadow-[0_10px_30px_rgba(0,0,0,0.3)]" 
+              activeIndex === index
+                ? "bg-[#131620] border-[#c9a84c40] shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
                 : "bg-[#0c0e16] hover:bg-[#131620]/60 hover:border-[rgba(255,255,255,0.1)]"
             }`}
             itemScope
@@ -44,10 +44,10 @@ export default function FAQ({ items = [] }: FAQProps) {
           >
             <button
               onClick={() => toggleAccordion(index)}
-              className="w-full flex justify-between items-center p-5 md:p-6 cursor-pointer font-medium text-white text-left focus:outline-none transition-all"
+              className="w-full min-h-[48px] flex justify-between items-center p-5 md:p-6 cursor-pointer font-medium text-white text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] transition-all"
               aria-expanded={activeIndex === index}
             >
-              <span className="pr-6 text-[14px] md:text-[16px] leading-snug group-hover:text-[#c9a84c] transition-colors" itemProp="name">
+              <span className="pr-6 text-base md:text-lg leading-relaxed group-hover:text-[#c9a84c] transition-colors" itemProp="name">
                 {item.question}
               </span>
               <div
@@ -71,7 +71,7 @@ export default function FAQ({ items = [] }: FAQProps) {
               itemType="https://schema.org/Answer"
             >
               <div className="p-5 md:p-6 pt-0 border-t border-[rgba(255,255,255,0.03)]">
-                <p className="text-[14px] md:text-[15px] text-[#87847d] leading-relaxed font-light" itemProp="text">
+                <p className="text-base leading-relaxed text-[#87847d]" itemProp="text">
                   {item.answer}
                 </p>
               </div>

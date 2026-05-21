@@ -7,9 +7,9 @@ import { ChevronRight, Home, Info } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Zakat Calculator 2026 - Calculate Your Zakat Online | QuickCalcs",
-  description: "Accurate Zakat calculator based on current Nisab. Calculate Zakat on cash, gold, silver, and investments easily for 2026. Purify your wealth with precision.",
-  keywords: "Zakat calculator 2026, calculate zakat online, gold nisab 2026, zakat on investments, islamic finance tools gulf",
+  title: "Zakat Calculator 2026 — Live Gold & Silver Nisab Value [Free]",
+  description: "Calculate your Zakat accurately using the 2026 dynamic Gold & Silver Nisab standards. Easily calculate Zakat on gold jewelry, crypto, salary savings, cash, and property.",
+  keywords: "Zakat calculator 2026, today gold nisab value 2026, silver nisab in pkr 2026, how to calculate zakat nisab manually, zakat on gold jewelry, hanafi zakat calculator, zakat on crypto",
   alternates: {
     canonical: "https://www.quickcalcs.app/tools/zakat-calculator",
   },
@@ -17,20 +17,24 @@ export const metadata: Metadata = {
 
 const zakatFaqs = [
   {
+    question: "Is Zakat applicable on salary savings?",
+    answer: "Yes, Zakat is applicable on your salary savings if the total amount of your wealth (including cash, gold, and other assets) meets or exceeds the Nisab threshold and has been in your possession for one lunar year (Hawl).",
+  },
+  {
+    question: "How do I choose between Silver Nisab vs Gold Nisab?",
+    answer: "Most scholars and the Hanafi school of thought recommend using the Silver Nisab threshold (612.36g) because it is lower, allowing more people to contribute to charity and helping a larger number of recipients. However, some modern scholars suggest the Gold Nisab (87.48g) is more reflective of wealth in the current economy.",
+  },
+  {
+    question: "Can I use this as a Hanafi Zakat calculator online?",
+    answer: "Yes, this tool is fully compliant with Hanafi Zakat rules. It allows you to calculate Zakat at the 2.5% rate and includes fields for gold, silver, and business assets. Note that in the Hanafi school, Zakat is generally due on all gold and silver jewelry, whether worn or stored.",
+  },
+  {
     question: "How is Zakat calculated?",
     answer: "Zakat is calculated as 2.5% of your total qualifying wealth (cash, gold, shares, business assets) that has been held for one lunar year, provided it exceeds the Nisab threshold.",
   },
   {
     question: "What is Nisab?",
     answer: "Nisab is the minimum amount of wealth a Muslim must own before Zakat becomes mandatory. It is usually equivalent to the value of 87.48g of gold or 612.36g of silver.",
-  },
-  {
-    question: "Do I pay Zakat on my primary home or car?",
-    answer: "No, Zakat is not due on your primary residence, personal vehicle, or tools used for your trade. It is only due on productive wealth and savings.",
-  },
-  {
-    question: "Can I subtract my debts from Zakat?",
-    answer: "Yes, you can subtract immediate liabilities and short-term debts from your total assets before calculating the zakatable amount.",
   },
 ];
 
@@ -41,19 +45,47 @@ export default function ZakatPage() {
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Zakat Calculator 2026",
+        "name": "Zakat Calculator 2026 — Nisab Updated",
         "operatingSystem": "Web",
         "applicationCategory": "FinanceApplication",
-        "description": "Calculate your mandatory Zakat dues based on the latest Nisab thresholds for 2026.",
+        "description": "Calculate your mandatory Zakat dues based on the latest Nisab thresholds for 2026. Supports Gold & Silver standards.",
+        "featureList": [
+          "Gold & Silver Nisab calculation",
+          "Sharia-compliant 2.5% wealth purification",
+          "Deduction for immediate liabilities",
+          "Supports AED, SAR, PKR, and USD"
+        ],
         "offers": {
           "@type": "Offer",
           "price": "0",
-          "priceCurrency": "SAR" // Localized currency
+          "priceCurrency": "SAR"
         },
         "brand": {
           "@type": "Brand",
           "name": "QuickCalcs"
         }
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Calculate Zakat 2026",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "text": "Identify all zakatable assets including cash at home, bank savings, gold, silver, and business investments."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Determine the current Nisab value (87.48g for gold or 612.36g for silver)."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Subtract your immediate debts and liabilities from your total assets."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "If the remaining net wealth is above the Nisab, multiply the amount by 0.025 (2.5%) to find your Zakat due."
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",

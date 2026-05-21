@@ -176,6 +176,30 @@ First 5 years: 21 days/year | Beyond 5 years: 30 days/year | Cap: 2 years' salar
         </ul>
       </article>
 
+      {/* ── SECTION 11: Internal Links ── */}
+      <section className="mb-14">
+        <h2 className="text-2xl font-bold text-white mb-6">Explore Other QuickCalcs Tools</h2>
+        <nav aria-label="Related tools navigation" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { href: "/tools/ksa-gosi-calculator", icon: "🛡️", title: "Saudi GOSI Calculator", desc: "Calculate GOSI contributions for Saudi nationals and expats. Updated 2026 KSA rates." },
+            { href: "/tools/pakistan-freelancer-tax-calculator", icon: "🧾", title: "Pakistan Freelancer Tax Calculator", desc: "FBR income tax for freelancers. Supports PSEB 0.25%, non-PSEB 1%, and non-filers." },
+            { href: "/tools/zakat-calculator", icon: "☪️", title: "Zakat Calculator", desc: "Calculate Zakat on savings, gold, investments and business assets. Nisab auto-updated." },
+            { href: "/tools/gold-calculator", icon: "💰", title: "Gold Price Calculator", desc: "Live 24K, 22K, 21K, 18K rates for UAE and GCC. Includes Zakat and unit converter." },
+            { href: "/tools/hajj-umrah-budget-calculator", icon: "🕋", title: "Hajj & Umrah Budget Calculator", desc: "Estimate pilgrimage costs — flights, hotels, visas, and food for 2026." },
+          ].map((tool) => (
+            <Link key={tool.href} href={tool.href} className="block p-4 rounded-xl border border-[rgba(255,255,255,0.07)] hover:border-[#c9a84c] hover:shadow-md transition-all">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">{tool.icon}</span>
+                <div>
+                  <p className="font-semibold text-[#e6e3db]">{tool.title}</p>
+                  <p className="text-sm text-[#87847d] mt-1">{tool.desc}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </nav>
+      </section>
+
     </section>
   );
 }

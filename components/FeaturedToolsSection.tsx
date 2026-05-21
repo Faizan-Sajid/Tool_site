@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -17,13 +18,15 @@ const ToolCard = ({ tool }: ToolCardProps) => {
       aria-label={ariaLabel}
       data-category={category}
       data-country={country}
-      className="group relative flex flex-col gap-[10px] overflow-hidden rounded-[14px] border border-[rgba(255,255,255,0.07)] bg-[#131620] p-6 transition-all duration-[0.18s] hover:-translate-y-[2px] hover:border-[rgba(255,255,255,0.13)] hover:bg-[#1a1e2e] hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+      className="group relative flex flex-col gap-[10px] min-h-[auto] overflow-hidden rounded-[14px] border border-[rgba(255,255,255,0.07)] bg-[#131620] p-6 transition-all duration-[0.18s] hover:-translate-y-[2px] hover:border-[rgba(255,255,255,0.13)] hover:bg-[#1a1e2e] hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
     >
       {/* Top Gold Line */}
       <span className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-[#c9a84c] to-transparent opacity-0 transition-opacity duration-[0.18s] group-hover:opacity-100" />
 
       {/* Icon Box */}
       <div
+        role="img"
+        aria-label={`${title} Icon`}
         className={`flex h-12 w-12 items-center justify-center rounded-[12px] border text-[22px]
           ${
             isTeal
@@ -36,21 +39,21 @@ const ToolCard = ({ tool }: ToolCardProps) => {
       </div>
 
       {/* Title */}
-      <h2 className="text-[15px] font-bold tracking-[-0.2px] text-[#e6e3db]">
+      <h2 className="text-[16px] font-bold tracking-[-0.2px] text-[#e6e3db]">
         {title}
       </h2>
 
       {/* Description */}
-      <p className="flex-1 text-[12.5px] leading-[1.6] text-[#87847d]">
+      <p className="flex-1 text-[13px] sm:text-[14px] leading-relaxed text-[#87847d]">
         {description}
       </p>
 
       {/* Tags Row */}
-      <div className="flex flex-wrap gap-[6px]">
+      <div className="flex flex-wrap gap-[6px] mt-auto">
         {tags.map((tag, idx) => (
           <span
             key={idx}
-            className={`rounded-[5px] px-2 py-[3px] text-[10px] font-semibold tracking-[0.3px]
+            className={`rounded-[5px] px-2 py-[3px] text-[10px] font-semibold tracking-[0.3px] min-h-[24px] flex items-center
               ${
                 tag.variant === "gold"
                   ? "bg-[rgba(201,168,76,0.11)] text-[#c9a84c]"
@@ -90,7 +93,7 @@ const FeaturedToolsSection = () => {
   const showRegional = !categoryParam || filteredRegionalTools.length > 0;
 
   return (
-    <section id="all-tools" className="px-5 py-8 sm:px-9 sm:py-8 lg:px-9 lg:py-8 scroll-mt-20">
+    <section id="all-tools" className="px-4 sm:px-6 md:px-8 py-8 lg:py-12 scroll-mt-20 overflow-x-hidden">
       {/* Category: Finance */}
       {showFinance && financeTools.length > 0 && (
         <>
@@ -98,7 +101,7 @@ const FeaturedToolsSection = () => {
             <span>💰 Finance</span>
             <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
           </div>
-          <div className="mb-10 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+          <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {financeTools.map(tool => (
               <ToolCard key={tool.id || tool.title} tool={tool} />
             ))}
@@ -113,7 +116,7 @@ const FeaturedToolsSection = () => {
             <span>🌍 Regional Specialties</span>
             <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
           </div>
-          <div className="mb-10 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+          <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {filteredRegionalTools.map(tool => (
               <ToolCard key={tool.id} tool={tool} />
             ))}
@@ -128,7 +131,7 @@ const FeaturedToolsSection = () => {
             <span>🚀 Digital Growth</span>
             <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
           </div>
-          <div className="mb-2 grid grid-cols-1 gap-[14px] min-[480px]:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+          <div className="mb-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             <div className="group relative flex flex-col gap-[10px] overflow-hidden rounded-[14px] border border-dashed border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.02)] p-6 transition-all duration-[0.18s]">
               <div className="flex h-12 w-12 items-center justify-center rounded-[12px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] text-[22px] grayscale opacity-50">
                 🔍
