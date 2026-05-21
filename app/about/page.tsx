@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { ShieldCheck, Zap, Lock, Code, Calculator } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | QuickCalcs.app — Transparency & E-E-A-T",
-  description: "Learn about the mission, trust pillars, and privacy-first approach behind QuickCalcs.app. Expert financial and utility tools for 2026.",
+  title: "About Us | QuickCalcs.app — Free & Accurate Financial Tools",
+  description: "Learn about the mission, core trust pillars, and privacy-first approach behind QuickCalcs.app. Your trusted source for 2026 regional financial calculators.",
 };
 
 export default function AboutPage() {
