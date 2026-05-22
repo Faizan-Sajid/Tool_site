@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import { Suspense } from "react";
 import { SidebarProvider } from "@/context/SidebarContext";
 import Script from 'next/script';
+// 1. Speed Insights ko yahan import karen
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Font optimization: display: 'swap' ensures text is visible immediately with system font fallback
 const jakartaPlus = Plus_Jakarta_Sans({
@@ -176,6 +178,9 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* 2. Speed Insights component ko body ke bilkul aakhir ma add kar dein */}
+        <SpeedInsights />
       </body>
     </html>
   );
