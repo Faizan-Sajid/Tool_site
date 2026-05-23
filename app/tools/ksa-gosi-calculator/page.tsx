@@ -42,12 +42,28 @@ export const metadata: Metadata = {
     url: "https://www.quickcalcs.app/tools/ksa-gosi-calculator",
     siteName: "QuickCalcs",
     type: "website",
+    images: [
+      {
+        url: "https://www.quickcalcs.app/tools/ksa-gosi-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Saudi GOSI Calculator | QuickCalcs",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "GOSI Calculator 2026 — Saudi & Non-Saudi Expat Deductions | QuickCalcs",
     description:
       "Enter your salary and get your exact GOSI deduction instantly. Saudi nationals and non-Saudi expats. Free, updated 2026 rates.",
+    images: [
+      {
+        url: "https://www.quickcalcs.app/tools/ksa-gosi-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Saudi GOSI Calculator | QuickCalcs",
+      },
+    ],
   },
   alternates: {
     canonical: "https://www.quickcalcs.app/tools/ksa-gosi-calculator",

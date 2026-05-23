@@ -13,6 +13,34 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.quickcalcs.app/tools/zakat-calculator",
   },
+  openGraph: {
+    title: "Zakat Calculator 2026 — Live Gold & Silver Nisab Value [Free]",
+    description: "Calculate your Zakat accurately using the 2026 dynamic Gold & Silver Nisab standards.",
+    url: "https://www.quickcalcs.app/tools/zakat-calculator",
+    siteName: "QuickCalcs",
+    type: "website",
+    images: [
+      {
+        url: "https://www.quickcalcs.app/tools/zakat-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Zakat Calculator | QuickCalcs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zakat Calculator 2026 | QuickCalcs",
+    description: "Calculate your Zakat accurately using the 2026 dynamic Gold & Silver Nisab standards.",
+    images: [
+      {
+        url: "https://www.quickcalcs.app/tools/zakat-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Zakat Calculator | QuickCalcs",
+      },
+    ],
+  },
 };
 
 const zakatFaqs = [

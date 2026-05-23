@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
-export const alt = 'QuickCalcs – Free Universal Online Calculators & Tools for UAE, Saudi Arabia, Pakistan and Global Users'
+export const alt = "QuickCalcs – Free UAE Gratuity, GOSI & Zakat Calculators 2026"
 
 export default function OgImage() {
   return new ImageResponse(

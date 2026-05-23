@@ -46,6 +46,27 @@ export const metadata: Metadata = {
     siteName: "QuickCalcs",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Hajj & Umrah Budget Calculator | QuickCalcs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Umrah Cost Calculator 2026 – Free Hajj & Umrah Budget Estimator | QuickCalcs",
+    description: "Instantly calculate your Umrah cost from Pakistan, India, UK, USA, Bangladesh & more.",
+    images: [
+      {
+        url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Hajj & Umrah Budget Calculator | QuickCalcs",
+      },
+    ],
   },
   robots: {
     index: true,

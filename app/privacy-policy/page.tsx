@@ -1,9 +1,46 @@
 import type { Metadata } from "next";
 
+
 export const metadata: Metadata = {
   title: "Privacy Policy – QuickCalcs",
   description:
     "Learn how QuickCalcs collects data, uses Google Analytics and Google AdSense, and your privacy rights under GDPR and CCPA.",
+  alternates: {
+    canonical: "https://www.quickcalcs.app/privacy-policy",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.quickcalcs.app/privacy-policy",
+    siteName: "QuickCalcs",
+    title: "Privacy Policy – QuickCalcs",
+    description:
+      "Learn how QuickCalcs collects data, uses Google Analytics and Google AdSense, and your privacy rights under GDPR and CCPA.",
+    images: [
+      {
+        url: "https://www.quickcalcs.app/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "QuickCalcs – Free Universal Online Calculators & Tools",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy – QuickCalcs",
+    description:
+      "Learn how QuickCalcs collects data, uses Google Analytics and Google AdSense, and your privacy rights under GDPR and CCPA.",
+    images: ["https://www.quickcalcs.app/opengraph-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function PrivacyPolicyPage() {

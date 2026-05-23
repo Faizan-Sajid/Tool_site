@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.quickcalcs.app/og-freelancer-tax.png",
+        url: "https://www.quickcalcs.app/tools/pakistan-freelancer-tax-calculator/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Pakistan Freelancer Tax Calculator 2026 — FBR Rates",
+        alt: "Pakistan Freelancer Tax Calculator | QuickCalcs",
       },
     ],
   },
@@ -56,7 +56,14 @@ export const metadata: Metadata = {
     title: "Pakistan Freelancer Tax Calculator 2026 | FBR 0.25%, 1% & 2%",
     description:
       "Calculate your FBR tax on Upwork, Fiverr and Payoneer income. PSEB 0.25% | Non-PSEB 1% | Non-Filer 2%. Free, instant, updated 2026.",
-    images: ["https://www.quickcalcs.app/og-freelancer-tax.png"],
+    images: [
+      {
+        url: "https://www.quickcalcs.app/tools/pakistan-freelancer-tax-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Pakistan Freelancer Tax Calculator | QuickCalcs",
+      },
+    ],
   },
   alternates: {
     canonical: "https://www.quickcalcs.app/tools/pakistan-freelancer-tax-calculator",

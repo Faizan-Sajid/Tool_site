@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         url: "https://www.quickcalcs.app/tools/uae-gratuity-calculator/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "UAE Gratuity Calculator 2026 — Free End of Service Benefits Calculator",
+        alt: "UAE Gratuity Calculator | QuickCalcs",
       },
     ],
   },
@@ -55,7 +55,12 @@ export const metadata: Metadata = {
     description:
       "Calculate your exact UAE end-of-service gratuity in seconds. Free MOHRE-compliant tool for limited and unlimited contracts — resignation and termination. Updated for 2026 UAE Labour Law.",
     images: [
-      "https://www.quickcalcs.app/tools/uae-gratuity-calculator/opengraph-image",
+      {
+        url: "https://www.quickcalcs.app/tools/uae-gratuity-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "UAE Gratuity Calculator | QuickCalcs",
+      },
     ],
   },
   alternates: {

@@ -29,11 +29,27 @@ export const metadata: Metadata = {
     url: "https://www.quickcalcs.app/tools/gold-calculator",
     siteName: "QuickCalcs",
     type: "website",
+    images: [
+      {
+        url: "https://www.quickcalcs.app/tools/gold-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Gold Price Calculator | QuickCalcs",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Gold Calculator UAE 2026 | QuickCalcs",
     description: "Live gold prices + value calculator + Zakat + unit converter. Free for GCC.",
+    images: [
+      {
+        url: "https://www.quickcalcs.app/tools/gold-calculator/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Gold Price Calculator | QuickCalcs",
+      },
+    ],
   },
   robots: {
     index: true,

@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "QuickCalcs – Free UAE Gratuity, GOSI & Zakat Calculators 2026",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
       "Free online calculators for UAE gratuity, Saudi GOSI contributions, Zakat 2026, gold price per tola, and Umrah budgeting. Updated quarterly, no login required.",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/opengraph-image",
         alt: "QuickCalcs – Free UAE Gratuity, GOSI & Zakat Calculators 2026",
       },
     ],
