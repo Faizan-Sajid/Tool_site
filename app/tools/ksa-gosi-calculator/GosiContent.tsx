@@ -50,8 +50,8 @@ export default function GosiContent() {
             <tbody>
               <tr className="border-b border-[rgba(255,255,255,0.03)]">
                 <td className="py-4 pr-4">Annuity (Pension)</td>
-                <td className="text-center px-4 text-[#c9a84c]">9.75%</td>
-                <td className="text-center px-4 text-[#c9a84c]">9.75%</td>
+                <td className="text-center px-4 text-[#c9a84c]">10%</td>
+                <td className="text-center px-4 text-[#c9a84c]">10%</td>
                 <td className="text-center px-4 text-[#3e3c38]">—</td>
               </tr>
               <tr className="border-b border-[rgba(255,255,255,0.03)]">
@@ -63,7 +63,7 @@ export default function GosiContent() {
               <tr className="border-b border-[rgba(255,255,255,0.03)]">
                 <td className="py-4 pr-4">Occupational Hazards</td>
                 <td className="text-center px-4 text-[#3e3c38]">—</td>
-                <td className="text-center px-4 text-[#c9a84c]">2.25%</td>
+                <td className="text-center px-4 text-[#c9a84c]">2%</td>
                 <td className="text-center px-4 text-[#c9a84c]">2%</td>
               </tr>
               <tr className="border-t-2 border-[rgba(255,255,255,0.07)]">
@@ -117,10 +117,10 @@ export default function GosiContent() {
 
         <div className="text-sm leading-relaxed space-y-3">
           <p>
-            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employee contribution rate in 2026</strong> is 10.75% of the contributory wage — 9.75% goes to the pension fund and 0.75% to SANED (unemployment insurance). This amount is taken directly from the employee's monthly salary.
+            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employee contribution rate in 2026</strong> is 10.75% of the contributory wage — 10% goes to the pension fund and 0.75% to SANED (unemployment insurance). This amount is taken directly from the employee's monthly salary.
           </p>
           <p>
-            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employer contribution rate in 2026</strong> is 12.75% — covering 9.75% pension, 2.25% occupational hazards, and 0.75% SANED. The employer pays this separately and it does not come out of the employee's salary.
+            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employer contribution rate in 2026</strong> is 12.75% — covering 10% pension, 2% occupational hazards, and 0.75% SANED. The employer pays this separately and it does not come out of the employee's salary.
           </p>
           <p>
             In total, the combined GOSI contribution for a Saudi national is <strong className="text-[#e6e3db]">23.5% of the contributory wage</strong> — 10.75% from the employee and 12.75% from the employer.
@@ -223,7 +223,7 @@ export default function GosiContent() {
               <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.3)] text-[#c9a84c] text-xs font-bold flex items-center justify-center">3</span>
               <div>
                 <p className="font-bold text-[#e6e3db] mb-1">Apply the right rate</p>
-                <p>Saudi nationals: Employee pays 10%, employer pays 12%.<br />Non-Saudi expats: Employer pays 2%, employee pays 0%.</p>
+                <p>Saudi nationals: Employee pays 10.75%, employer pays 12.75%.<br />Non-Saudi expats: Employer pays 2%, employee pays 0%.</p>
                 <p className="mt-2 text-[#c9a84c] font-mono text-xs bg-[rgba(201,168,76,0.05)] px-3 py-2 rounded-lg inline-block">GOSI Amount = Contributory Wage × Rate</p>
               </div>
             </div>
@@ -338,17 +338,17 @@ export default function GosiContent() {
         </h2>
         <div className="text-sm leading-relaxed space-y-4">
           <p>
-            SANED (Saudi Unemployment Insurance) is part of the GOSI system. It gives Saudi nationals financial support if they lose their job. Both the employee and the employer pay 1% each toward SANED — this is already included in the 10% employee rate and 12% employer rate shown above.
+            SANED (Saudi Unemployment Insurance) is part of the GOSI system. It gives Saudi nationals financial support if they lose their job. Both the employee and the employer pay 0.75% each toward SANED — this is already included in the 10.75% employee rate and 12.75% employer rate shown above.
           </p>
           <div className="bg-[rgba(201,168,76,0.05)] border border-[rgba(201,168,76,0.15)] rounded-[14px] p-5">
             <p className="text-[#c9a84c] text-xs font-bold mb-3 uppercase tracking-wider">SANED at a Glance</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
               <div className="text-center">
-                <p className="text-[#c9a84c] text-2xl font-bold">1%</p>
+                <p className="text-[#c9a84c] text-2xl font-bold">0.75%</p>
                 <p className="text-[#87847d] mt-1">Employee pays</p>
               </div>
               <div className="text-center">
-                <p className="text-[#c9a84c] text-2xl font-bold">1%</p>
+                <p className="text-[#c9a84c] text-2xl font-bold">0.75%</p>
                 <p className="text-[#87847d] mt-1">Employer pays</p>
               </div>
               <div className="text-center">
@@ -372,7 +372,7 @@ export default function GosiContent() {
         <ul className="space-y-3 text-sm">
           <li className="flex gap-3">
             <span className="text-[#c9a84c] flex-shrink-0 mt-0.5">✓</span>
-            <span><strong className="text-[#e6e3db]">Accurate 2026 rates:</strong> Built on the official rates from Royal Decree M/33 — 10% employee and 12% employer for Saudi nationals, 2% employer for expats.</span>
+            <span><strong className="text-[#e6e3db]">Accurate 2026 rates:</strong> Built on the official rates from Royal Decree M/33 — 10.75% employee and 12.75% employer for Saudi nationals, 2% employer for expats.</span>
           </li>
           <li className="flex gap-3">
             <span className="text-[#c9a84c] flex-shrink-0 mt-0.5">✓</span>

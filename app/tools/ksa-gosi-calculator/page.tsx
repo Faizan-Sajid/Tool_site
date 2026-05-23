@@ -5,9 +5,9 @@ import FAQ from "@/components/FAQ";
 
 // ✅ UPDATED: Title & description — click-worthy, tool-intent focused, broader keywords
 export const metadata: Metadata = {
-  title: "Free GOSI Calculator 2026 — Saudi & Expat Net Salary After Deductions",
+  title: "GOSI Calculator 2026 — Saudi Nationals & Non-Saudi Expats | KSA Deductions",
   description:
-    "Calculate your exact Saudi net salary after GOSI and SANED deductions. Supports 2026 KSA rates for citizens and expats up to the SAR 45,000 cap.",
+    "Free GOSI calculator updated May 2026. Calculate exact deductions for Saudi nationals (10.75%) and non-Saudi expats (2% employer only). SAR 45,000 cap applied automatically. No login required.",
   keywords: [
     "GOSI calculator",
     "GOSI salary calculator",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "Saudi social insurance calculator",
   ],
   openGraph: {
-    title: "Free GOSI Calculator 2026 — Saudi & Expat Net Salary After Deductions",
+    title: "GOSI Calculator 2026 — Saudi Nationals & Non-Saudi Expats | KSA Deductions",
     description:
       "Not sure what GOSI will deduct from your salary? Enter your basic and housing allowance — get your exact net salary instantly. Free, no login. Saudi & expat rates included.",
     url: "https://www.quickcalcs.app/tools/ksa-gosi-calculator",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free GOSI Calculator 2026 — Net Salary After KSA Deductions",
+    title: "GOSI Calculator 2026 — Saudi & Non-Saudi Expat Deductions | QuickCalcs",
     description:
       "Enter your salary and get your exact GOSI deduction instantly. Saudi nationals and non-Saudi expats. Free, updated 2026 rates.",
   },
@@ -73,12 +73,12 @@ const faqItems = [
   {
     question: "What is the GOSI employee contribution rate in Saudi Arabia for 2026?",
     answer:
-      "For Saudi nationals, the GOSI employee contribution rate is 10.75% of the contributory wage — 9.75% goes to the pension (annuity) fund and 0.75% to SANED (unemployment insurance). For non‑Saudi expats, the employee rate is 0%. Only the employer pays 2% for expats.",
+      "For Saudi nationals, the GOSI employee contribution rate is 10.75% of the contributory wage — 10% goes to the pension (annuity) fund and 0.75% to SANED (unemployment insurance). For non‑Saudi expats, the employee rate is 0%. Only the employer pays 2% for expats.",
   },
   {
     question: "What are the GOSI contribution rates for Saudi Arabia employer and employee in 2026?",
     answer:
-      "Saudi national employee: 10.75% (9.75% annuity + 0.75% SANED). Saudi national employer: 12.75% (9.75% annuity + 2.25% occupational hazards + 0.75% SANED). Non-Saudi expat employee: 0%. Non-Saudi expat employer: 2% (occupational hazards only). All rates are based on Royal Decree M/33.",
+      "Saudi national employee: 10.75% (10% annuity + 0.75% SANED). Saudi national employer: 12.75% (10% annuity + 2% occupational hazards + 0.75% SANED). Non-Saudi expat employee: 0%. Non-Saudi expat employer: 2% (occupational hazards only). All rates are based on Royal Decree M/33.",
   },
   {
     question: "What is the GOSI pension calculation formula in Saudi Arabia?",
@@ -108,12 +108,12 @@ const faqItems = [
   {
     question: "What is SANED and does it affect my GOSI deduction?",
     answer:
-      "SANED is Saudi Arabia's unemployment insurance program. It is part of the GOSI contribution — Saudi nationals pay 1% and employers also pay 1% toward SANED. These amounts are already included in the 10% employee rate and 12% employer rate. Non-Saudi expats are not covered by SANED and do not pay into it.",
+      "SANED is Saudi Arabia's unemployment insurance program. It is part of the GOSI contribution — Saudi nationals pay 0.75% and employers also pay 0.75% toward SANED. These amounts are already included in the 10.75% employee rate and 12.75% employer rate shown above. Non-Saudi expats are not covered by SANED and do not pay into it.",
   },
   {
     question: "How do I calculate my net salary after GOSI deduction?",
     answer:
-      "To find your net salary after GOSI: take your total monthly salary, subtract the GOSI employee deduction (10% of contributory wage for Saudi nationals, or 0% for expats). For example, if your basic salary is SAR 12,000 and housing allowance is SAR 3,000, your contributory wage is SAR 15,000. A Saudi national would have SAR 1,500 deducted (10%), leaving a net salary of SAR 13,500. Use the free GOSI salary calculator at the top of this page for instant results.",
+      "To find your net salary after GOSI: take your total monthly salary, subtract the GOSI employee deduction (10% of contributory wage for Saudi nationals, or 0% for expats). For example, if your basic salary is SAR 12,000 and housing allowance is SAR 3,000, your contributory wage is SAR 15,000. A Saudi national would have SAR 1,612.50 deducted (10.75%), leaving a net salary of SAR 13,387.50. Use the free GOSI salary calculator at the top of this page for instant results.",
   },
 ];
 
@@ -125,10 +125,10 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://www.quickcalcs.app/tools/ksa-gosi-calculator",
       url: "https://www.quickcalcs.app/tools/ksa-gosi-calculator",
-      name: "Free GOSI Calculator 2026 — Saudi & Expat Net Salary After Deductions",
+      name: "GOSI Calculator 2026 — Saudi Nationals & Non-Saudi Expats | KSA Deductions",
       description:
         "Calculate your exact net salary after GOSI deductions. Covers Saudi nationals (10.75%/12.75%) and non‑Saudi expats (2%). Free, instant, updated for 2026 KSA rates.",
-      dateModified: "2026-05-18",
+      dateModified: "2026-05-23",
       isPartOf: { "@id": "https://www.quickcalcs.app/" },
       breadcrumb: {
         "@type": "BreadcrumbList",
@@ -167,7 +167,7 @@ const jsonLd = {
         "Saudi national GOSI calculation (10.75% employee, 12.75% employer)",
         "Non-Saudi expat GOSI calculation (2% employer only)",
         "SAR 45,000 contributory wage cap applied automatically",
-        "SANED unemployment insurance included (1% employee, 1% employer, already in rates)",
+        "SANED unemployment insurance included (0.75% employee, 0.75% employer, already in rates)",
         "GOSI pension formula calculator",
       ],
       offers: {
@@ -263,10 +263,10 @@ export default function GosiCalculatorPage() {
       {/* ✅ UPDATED: H1 + subheading — broader keyword + clear value prop */}
       <header className="max-w-[860px] px-[20px] pt-[40px] sm:px-[36px]">
         <h1 className="mb-4 font-[family-name:var(--font-serif)] text-[clamp(32px,5vw,56px)] leading-[1.1] tracking-[-1px] text-[#e6e3db]">
-          GOSI Salary Calculator — Net Salary After Deductions 2026
+          GOSI Calculator 2026 — Saudi Nationals & Non-Saudi Expats
         </h1>
         <p className="max-w-[640px] text-[15px] leading-[1.6] text-[#87847d]">
-          Enter your basic salary and housing allowance to see your exact GOSI deduction and net salary instantly. Free, accurate, and updated for 2026 KSA rates — for Saudi nationals and non-Saudi expats.
+          Enter your basic salary and housing allowance to see your exact GOSI deduction and net salary instantly. Free, accurate, and updated for May 2026 KSA rates — for Saudi nationals and non-Saudi expats.
         </p>
       </header>
 
