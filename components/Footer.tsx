@@ -44,7 +44,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-[13px] text-[#87847d] leading-relaxed max-w-[280px]">
-              The leading professional utility suite for Finance, HR, and SEO in the Middle East. Delivering precision and Sharia-compliant logic to professionals from Dubai to Riyadh.
+              Free financial calculators for UAE, Saudi Arabia & Pakistan — GOSI, gratuity, Zakat, gold, Umrah, and freelancer tax tools. Updated for 2026.
             </p>
           </div>
 

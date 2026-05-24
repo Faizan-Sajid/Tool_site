@@ -35,20 +35,29 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.quickcalcs.app"),
+  // SEO UPDATE 2026: Title and description updated for GOSI-first keyword strategy
   title: {
-    default: "QuickCalcs — Free UAE Gratuity, GOSI & Zakat Calculators 2026",
+    default: "Free GOSI, Gratuity & Zakat Calculators 2026 | QuickCalcs",
     template: "%s | QuickCalcs",
   },
   description:
-    "Free online calculators for UAE gratuity, Saudi GOSI contributions, Zakat 2026, gold price per tola, and Umrah budgeting. Updated quarterly, no login required, instantly in your browser.",
+    "Calculate GOSI deductions, UAE end-of-service gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free, no login, updated for 2026 laws.",
   keywords: [
-    "Free Online Calculators",
-    "Financial Tools",
-    "UAE Gratuity",
-    "Saudi GOSI",
-    "Zakat Calculator",
-    "Gold Price Tola",
-    "Umrah Budget",
+    "GOSI calculator 2026",
+    "GOSI calculator Saudi Arabia",
+    "net salary after GOSI",
+    "UAE gratuity calculator 2026",
+    "end of service calculator UAE",
+    "zakat calculator 2026",
+    "zakat nisab 2026",
+    "gold price calculator UAE",
+    "Pakistan freelancer tax calculator",
+    "FBR tax 2026",
+    "umrah cost calculator 2026",
+    "Gulf financial calculators free",
+    "free online calculators no login",
+    "MOHRE gratuity calculator",
+    "end of service benefits UAE",
   ],
   icons: {
     icon: [
@@ -63,33 +72,37 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "QuickCalcs — Free UAE Gratuity, GOSI & Zakat Calculators 2026",
+    title: "Free GOSI, Gratuity & Zakat Calculators 2026 | QuickCalcs",
     description:
-      "Free online calculators for UAE gratuity, Saudi GOSI contributions, Zakat 2026, gold price per tola, and Umrah budgeting. Updated quarterly, no login required.",
+      "Calculate GOSI deductions, UAE end-of-service gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free, no login, updated for 2026 laws.",
     url: "https://www.quickcalcs.app",
     siteName: "QuickCalcs",
     locale: "en_US",
+    alternateLocale: ["en_SA", "ar_SA"],
     type: "website",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "QuickCalcs – Free UAE Gratuity, GOSI & Zakat Calculators 2026",
+        alt: "QuickCalcs – Free GOSI, Gratuity & Zakat Calculators 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuickCalcs — Free UAE Gratuity, GOSI & Zakat Calculators 2026",
+    title: "Free GOSI, Gratuity & Zakat Calculators 2026 | QuickCalcs",
     description:
-      "Free online calculators for UAE gratuity, Saudi GOSI contributions, Zakat 2026, gold price per tola, and Umrah budgeting. Updated quarterly, no login required.",
+      "Calculate GOSI deductions, UAE end-of-service gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free, no login, updated for 2026 laws.",
     images: [
       {
         url: "/opengraph-image",
-        alt: "QuickCalcs – Free UAE Gratuity, GOSI & Zakat Calculators 2026",
+        alt: "QuickCalcs – Free GOSI, Gratuity & Zakat Calculators 2026",
       },
     ],
+  },
+  other: {
+    "last-modified": "2026-05",
   },
   robots: {
     index: true,
@@ -115,6 +128,10 @@ export default function RootLayout({
       className={`h-full ${jakartaPlus.variable} ${lora.variable}`}
     >
       <head>
+        {/* SEO UPDATE 2026: hreflang for worldwide English + Gulf English targeting */}
+        <link rel="alternate" hrefLang="x-default" href="https://www.quickcalcs.app/" />
+        <link rel="alternate" hrefLang="en" href="https://www.quickcalcs.app/" />
+        <link rel="alternate" hrefLang="en-sa" href="https://www.quickcalcs.app/" />
         {/* Critical CSS for LCP element (h1 heading) - inline to avoid render blocking */}
         <style dangerouslySetInnerHTML={{
           __html: `

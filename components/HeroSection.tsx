@@ -10,7 +10,7 @@ const HeroSection = () => {
         {/* Hero Badge */}
         <div className="animate-fadeInDown mb-6 inline-flex items-center gap-[7px] rounded-full border border-[rgba(201,168,76,0.24)] bg-[rgba(201,168,76,0.11)] px-4 py-[5px] pl-[10px] text-[11px] font-semibold tracking-[0.2px] text-[#c9a84c]">
           <span className="animate-pulse-custom h-[6px] w-[6px] rounded-full bg-[#c9a84c]" />
-          <span>Universal Tools for Finance, SEO &amp; Productivity</span>
+          <span>GOSI deductions, UAE end-of-service gratuity, Zakat, live gold rates, and Pakistan freelancer tax — all free, no login, updated for 2026.</span>
         </div>
 
         {/* H1 Heading */}
@@ -18,12 +18,14 @@ const HeroSection = () => {
           id="hero-heading"
           className="animate-fadeInUp delay-100 mb-[18px] font-[family-name:var(--font-serif)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl italic leading-tight tracking-tight text-[#e6e3db] max-w-prose"
         >
-          Free UAE Gratuity, GOSI &amp; Zakat Calculators — Updated 2026
+          Free Financial Calculators for UAE, Saudi Arabia & Pakistan — 2026
         </h1>
 
         {/* Paragraph */}
         <p className="animate-fadeInUp delay-200 mb-8 max-w-prose text-base sm:text-lg leading-relaxed text-[#87847d]">
-          From specialized regional calculators to global SEO and financial tools, QuickCalcs empowers your digital workflow. No login, no fees, instant results.
+          Working in the Gulf — or managing money from anywhere in the world — means dealing with rules that change every year. GOSI rates in Saudi Arabia have a scheduled increase through 2028. UAE Labour Law changed the contract system in 2022 and HR teams are still adjusting. Zakat Nisab shifts every time gold prices move. And Pakistan's FBR tax structure for freelancers has its own layers that most online tools get wrong.
+          <br /><br />
+          QuickCalcs was built because we got tired of opening government PDFs, running manual spreadsheet formulas, and second-guessing outdated calculators. Every tool here is built on the official legal source — MOHRE for UAE gratuity, Royal Decree M/33 for GOSI, and FBR circulars for Pakistan tax. We update them every quarter. And we never ask you to sign up, log in, or pay anything.
         </p>
 
         {/* Trust Pills Row */}
@@ -32,7 +34,7 @@ const HeroSection = () => {
           aria-label="Trust indicators"
           className="animate-fadeInUp delay-300 flex flex-wrap gap-2 sm:gap-3"
         >
-          {[{ icon: "✅", text: "100% Free Forever" },{ icon: "🔒", text: "No Login Required" },{ icon: "⚡", text: "Instant Results" },{ icon: "📅", text: "2026 Law Updated" }].map((pill, idx) => (
+          {[{ icon: "✅", text: "100% Free Forever" },{ icon: "🔒", text: "No Login Required" },{ icon: "⚡", text: "Instant Results" },{ icon: "📅", text: "Updated for 2026 Laws" }].map((pill, idx) => (
             <span
               key={idx}
               role="listitem"
@@ -114,23 +116,24 @@ const HeroSection = () => {
             </div>
             <p className="text-sm text-[#87847d] leading-[1.8]">
               Saudi nationals pay{" "}
-              <span className="text-[#c9a84c] font-medium 
-                bg-[#131525] border border-[#222440] rounded 
-                px-1.5 py-px text-xs">10.5% employee</span>
+              <span className="text-[#c9a84c] font-medium
+                bg-[#131525] border border-[#222440] rounded
+                px-1.5 py-px text-xs">10.75% employee</span>
               {" "}— employer adds{" "}
-              <span className="text-[#c9a84c] font-medium 
-                bg-[#131525] border border-[#222440] rounded 
-                px-1.5 py-px text-xs">12.5%</span>
-              {" "}covering Annuities, OAHI, and SANED unemployment 
-              insurance. Non-Saudi expats pay nothing from salary; 
+              <span className="text-[#c9a84c] font-medium
+                bg-[#131525] border border-[#222440] rounded
+                px-1.5 py-px text-xs">12.75%</span>
+              {" "}covering Annuities, OAHI, and SANED unemployment
+              insurance. // GOSI RATE FIX 2026: Corrected to official Royal Decree M/33 rate
+              Non-Saudi expats pay nothing from salary;
               only the employer contributes{" "}
-              <span className="text-[#c9a84c] font-medium 
-                bg-[#131525] border border-[#222440] rounded 
+              <span className="text-[#c9a84c] font-medium
+                bg-[#131525] border border-[#222440] rounded
                 px-1.5 py-px text-xs">2% OAHI</span>
-              . Everything calculated on basic + housing allowance, 
+              . Everything calculated on basic + housing allowance,
               hard-capped at{" "}
-              <span className="text-[#c9a84c] font-medium 
-                bg-[#131525] border border-[#222440] rounded 
+              <span className="text-[#c9a84c] font-medium
+                bg-[#131525] border border-[#222440] rounded
                 px-1.5 py-px text-xs">SAR 45,000/month</span>
               . Salary above the cap is excluded from GOSI entirely.
             </p>
@@ -205,23 +208,8 @@ const HeroSection = () => {
           <span className="text-[#c9a84c] text-sm mt-0.5
             flex-shrink-0">✦</span>
           <p className="text-xs text-[#4a4845] leading-relaxed">
-            All rates reviewed quarterly.{" "}
-            <span className="text-[#87847d] font-medium">
-              UAE gratuity
-            </span>{" "}
-            follows MOHRE 2026 ·{" "}
-            <span className="text-[#87847d] font-medium">
-              Saudi GOSI
-            </span>{" "}
-            follows General Organization for Social Insurance KSA ·{" "}
-            <span className="text-[#87847d] font-medium">
-              Zakat Nisab
-            </span>{" "}
-            updated based on live gold prices ·{" "}
-            <span className="text-[#87847d] font-medium">
-              Umrah costs
-            </span>{" "}
-            based on 2026 Pakistan travel agency averages.
+            {/* SEO UPDATE 2026: Visible date freshness signal for Google */}
+            Last updated: May 2026 — All calculators reviewed against official 2026 government sources.
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
-export const alt = "QuickCalcs – Free UAE Gratuity, GOSI & Zakat Calculators 2026"
+export const alt = "QuickCalcs – Free GOSI, Gratuity & Zakat Calculators 2026"
 
 export default function OgImage() {
   return new ImageResponse(
@@ -21,13 +21,13 @@ export default function OgImage() {
         }}
       >
         <div style={{ color: '#ffffff', fontSize: 72, fontWeight: 700 }}>
-          ⚡ QuickCalcs
+          Free GOSI, Gratuity & Zakat Calculators 2026
         </div>
-        <div style={{ color: '#94a3b8', fontSize: 36, textAlign: 'center' }}>
-          Free Universal Online Calculators & Tools
+        <div style={{ color: '#94a3b8', fontSize: 32, textAlign: 'center' }}>
+          Calculate GOSI deductions, UAE end-of-service gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free, no login, updated for 2026 laws.
         </div>
         <div style={{ display: 'flex', gap: 24, marginTop: 16 }}>
-          {['24+ Free Tools', '200+ Countries', '100% Free'].map((badge) => (
+          {['UAE · Saudi Arabia · Pakistan', 'Free, No Login', '2026 Laws'].map((badge) => (
             <div
               key={badge}
               style={{

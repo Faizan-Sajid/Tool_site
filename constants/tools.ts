@@ -19,8 +19,8 @@ export const TOOLS: Tool[] = [
     category: "finance",
     country: "all",
     icon: "💰",
-    title: "Gold Price Calculator",
-    description: "Live rates, Zakat calculator, and unit converter for UAE & GCC. Real-time 24K, 22K, 21K, and 18K gold rates.",
+    title: "Live Gold Price Calculator",
+    description: "Real-time 24K, 22K, 21K, and 18K gold prices for UAE, Saudi Arabia, Kuwait, Qatar, and Bahrain. Enter weight in grams, tolas, or troy ounces and get instant values in AED, SAR, or USD. Includes Zakat calculation tab based on today's live gold rate.",
     tags: [
       { text: "Gold", variant: "gold" },
       { text: "Finance", variant: "default" },
@@ -34,8 +34,8 @@ export const TOOLS: Tool[] = [
     category: "finance",
     country: "all",
     icon: "☪️",
-    title: "Zakat Calculator",
-    description: "Calculate your annual Zakat on savings, gold, business assets & investments. Nisab threshold auto-updated with live gold prices.",
+    title: "Zakat Calculator 2026",
+    description: "Calculate your annual Zakat obligation with live gold-price Nisab thresholds. Supports AED, SAR, USD, and PKR. Enter cash, gold, investments, and business assets — the calculator subtracts liabilities and returns your exact 2.5% Zakat amount with a full asset breakdown.",
     isTeal: true,
     tags: [
       { text: "Islamic", variant: "gold" },
@@ -51,7 +51,7 @@ export const TOOLS: Tool[] = [
     country: "uae",
     icon: "🧮",
     title: "UAE Gratuity Calculator",
-    description: "Calculate end-of-service gratuity as per UAE Labour Law. Supports limited & unlimited contracts with 2026 updated rates.",
+    description: "Calculate your UAE end-of-service gratuity (EOSB) under Federal Decree-Law No. 33 of 2021. Covers limited and unlimited contracts, the 21-day/30-day formula, 2-year salary cap, and MOHRE 14-day payment rule. Enter your salary and service dates for an instant breakdown.",
     tags: [
       { text: "UAE", variant: "gold" },
       { text: "HR", variant: "default" },
@@ -65,8 +65,8 @@ export const TOOLS: Tool[] = [
     category: "finance",
     country: "sa",
     icon: "🛡️",
-    title: "Saudi GOSI Calculator (2026)",
-    description: "Calculate GOSI contributions for Saudi nationals and expats based on the latest KSA Labor Law.",
+    title: "Saudi GOSI Calculator",
+    description: "Calculate your exact GOSI deductions and net salary for 2026. Covers Saudi national rates (10.75% employee / 12.75% employer), expat rates, contributory wage cap of SAR 45,000, and the 2024–2028 phased rate schedule. Instant results, no login required.",
     tags: [
       { text: "KSA", variant: "gold" },
       { text: "Finance", variant: "default" },
@@ -81,7 +81,7 @@ export const TOOLS: Tool[] = [
     country: "all",
     icon: "🧾",
     title: "Pakistan Freelancer Tax Calculator",
-    description: "Calculate your FBR income tax as a freelancer. Supports Upwork, Fiverr & direct clients.",
+    description: "Calculate your FBR IT export tax for 2026. PSEB-registered ATL filers pay 0.25% under Section 154S. Non-PSEB ATL filers pay 1%. Non-filers face double withholding. Enter your annual income and PSEB/filer status to see your exact tax liability and take-home in PKR.",
     tags: [
       { text: "PKR", variant: "default" },
       { text: "Finance", variant: "default" },
@@ -96,8 +96,8 @@ export const TOOLS: Tool[] = [
     category: "finance",
     country: "all",
     icon: "🕋",
-    title: "Hajj & Umrah Budget Calculator",
-    description: "Estimate your complete Hajj or Umrah cost by country, package type, and duration. 2026 updated.",
+    title: "Umrah Cost Calculator 2026",
+    description: "Estimate your full Umrah budget from Pakistan, UK, USA, Canada, and 6 other countries. Breaks down flights, hotel zone (3-star/4-star/5-star), Umrah visa, ground transport, and daily expenses. Economy packages from Pakistan start at PKR 250,000–400,000 in 2026.",
     tags: [],
   },
 ];
