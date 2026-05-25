@@ -100,4 +100,20 @@ export const TOOLS: Tool[] = [
     description: "Estimate your full Umrah budget from Pakistan, UK, USA, Canada, and 6 other countries. Breaks down flights, hotel zone (3-star/4-star/5-star), Umrah visa, ground transport, and daily expenses. Economy packages from Pakistan start at PKR 250,000–400,000 in 2026.",
     tags: [],
   },
+  {
+    id: "malaysia-epf-calculator",
+    href: "/tools/malaysia-epf-calculator",
+    ariaLabel: "Malaysia EPF Calculator 2026",
+    category: "finance",
+    country: "all",
+    icon: "🇲🇾",
+    title: "Malaysia EPF Calculator 2026",
+    description: "Calculate your exact EPF (KWSP) contributions for 2026. Covers Malaysian citizen rates (11% employee / 13% employer for salary ≤RM5,000, 12% above), age 60+ reduced rates, foreign worker mandatory 2% rate effective October 2025, and full take-home salary breakdown. Official KWSP Third Schedule rates.",
+    isTeal: false,
+    tags: [
+      { text: "Malaysia", variant: "gold" },
+      { text: "Finance", variant: "default" },
+      { text: "New", variant: "teal" },
+    ],
+  },
 ];
