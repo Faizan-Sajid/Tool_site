@@ -1,7 +1,6 @@
-
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { TOOLS, Tool } from "@/constants/tools";
@@ -71,7 +70,7 @@ const ToolCard = ({ tool }: ToolCardProps) => {
   );
 };
 
-const FeaturedToolsSection = () => {
+const FeaturedToolsContent = () => {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
 
@@ -79,7 +78,7 @@ const FeaturedToolsSection = () => {
   const showFinance = !categoryParam || categoryParam === "finance";
   const showHR = !categoryParam || categoryParam === "hr";
   const showDigitalGrowth = !categoryParam || categoryParam === "seo" || categoryParam === "digital-growth";
-  
+
   // Filter tools based on the param
   const filterTools = (tools: Tool[]) => {
     if (!categoryParam) return tools;
@@ -93,7 +92,8 @@ const FeaturedToolsSection = () => {
   const showRegional = !categoryParam || filteredRegionalTools.length > 0;
 
   return (
-    <section id="all-tools" className="px-4 sm:px-6 md:px-8 py-8 lg:py-12 scroll-mt-20 overflow-x-hidden">
+    /* Main Section: Added max-w-[1280px] and mx-auto to perfectly contain and center the content on large screens */
+    <section id="all-tools" className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 py-8 lg:py-12 scroll-mt-20 overflow-x-hidden">
       {/* Category: Finance */}
       {showFinance && financeTools.length > 0 && (
         <>
@@ -101,7 +101,8 @@ const FeaturedToolsSection = () => {
             <span>💰 Finance</span>
             <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
           </div>
-          <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          {/* Changed xl:grid-cols-4 to xl:grid-cols-3 for a solid 3-card structure */}
+          <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
             {financeTools.map(tool => (
               <ToolCard key={tool.id || tool.title} tool={tool} />
             ))}
@@ -116,7 +117,8 @@ const FeaturedToolsSection = () => {
             <span>🌍 Regional Specialties</span>
             <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
           </div>
-          <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          {/* Changed xl:grid-cols-4 to xl:grid-cols-3 */}
+          <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
             {filteredRegionalTools.map(tool => (
               <ToolCard key={tool.id} tool={tool} />
             ))}
@@ -131,27 +133,17 @@ const FeaturedToolsSection = () => {
             <span>🚀 Digital Growth</span>
             <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
           </div>
-          <div className="mb-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-            <div className="group relative flex flex-col gap-[10px] overflow-hidden rounded-[14px] border border-dashed border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.02)] p-6 transition-all duration-[0.18s]">
-              <div className="flex h-12 w-12 items-center justify-center rounded-[12px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] text-[22px] grayscale opacity-50">
-                🔍
-              </div>
-              <h2 className="text-[15px] font-bold tracking-[-0.2px] text-[#87847d]">
-                Keyword Research Tool
-              </h2>
-              <p className="flex-1 text-[12.5px] leading-[1.6] text-[#555]">
-                Upcoming global utility for SEO specialists and content creators. Stay tuned!
-              </p>
-              <div className="flex flex-wrap gap-[6px]">
-                <span className="rounded-[5px] px-2 py-[3px] text-[10px] font-semibold tracking-[0.3px] bg-[#1f2438] text-[#555]">
-                  Coming Soon
-                </span>
-              </div>
-            </div>
-          </div>
         </>
       )}
     </section>
+  );
+};
+
+const FeaturedToolsSection = () => {
+  return (
+    <Suspense fallback={<div className="h-40 flex items-center justify-center text-[#87847d]">Loading tools...</div>}>
+      <FeaturedToolsContent />
+    </Suspense>
   );
 };
 
