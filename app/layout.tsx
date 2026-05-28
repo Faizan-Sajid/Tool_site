@@ -124,7 +124,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-MY"
       className={`h-full ${jakartaPlus.variable} ${lora.variable}`}
     >
       <head>

@@ -2,13 +2,14 @@ import React from "react";
 import type { Metadata } from "next";
 import EpfCalculator from "./EpfCalculator";
 import EpfContent from "./EpfContent";
-import FAQ from "@/components/FAQ";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Malaysia EPF Calculator 2026 | KWSP Contribution Rate — Employee, Employer & Foreign Worker",
+  title: {
+    absolute: "Malaysia EPF Calculator 2026 | KWSP Contribution Rate",
+  },
   description: "Calculate Malaysia EPF (KWSP) contributions instantly. Official Third Schedule 2026 rates — 11% employee, 13%/12% employer, 2% foreign worker (Oct 2025 mandatory). Retirement projection + Akaun Fleksibel breakdown. Free, no login.",
   keywords: [
     "malaysia epf calculator 2026",
@@ -29,6 +30,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.quickcalcs.app/tools/malaysia-epf-calculator",
+    languages: {
+      "en-MY": "https://www.quickcalcs.app/tools/malaysia-epf-calculator",
+      "x-default": "https://www.quickcalcs.app/tools/malaysia-epf-calculator",
+    },
   },
   openGraph: {
     title: "Malaysia EPF Calculator 2026 | KWSP Contribution Rate",
@@ -117,6 +122,31 @@ const faqItems = [
 const jsonLd = [
   {
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Malaysia EPF Calculator 2026 | KWSP Contribution Rate",
+    "url": "https://www.quickcalcs.app/tools/malaysia-epf-calculator",
+    "description": "Calculate Malaysia EPF (KWSP) contributions instantly using 2026 statutory rates for Malaysian employees, age 60+ employees, and foreign workers.",
+    "inLanguage": "en-MY",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "QuickCalcs",
+      "url": "https://www.quickcalcs.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "QuickCalcs",
+      "url": "https://www.quickcalcs.app",
+      "logo": "https://www.quickcalcs.app/favicon.ico"
+    },
+    "mainEntity": {
+      "@type": "WebApplication",
+      "name": "Malaysia EPF Calculator 2026",
+      "url": "https://www.quickcalcs.app/tools/malaysia-epf-calculator"
+    },
+    "dateModified": "2026-05-28"
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Malaysia EPF Calculator 2026",
     "alternateName": "KWSP Contribution Calculator Malaysia",
@@ -141,9 +171,9 @@ const jsonLd = [
       "@type": "Audience",
       "audienceType": "Malaysian employees, employers, HR professionals, expats in Malaysia"
     },
-    "inLanguage": "en",
+    "inLanguage": "en-MY",
     "isAccessibleForFree": true,
-    "dateModified": "2026-05-25"
+    "dateModified": "2026-05-28"
   },
   {
     "@context": "https://schema.org",
@@ -170,14 +200,52 @@ const jsonLd = [
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Tools",
-        "item": "https://www.quickcalcs.app/tools"
+        "name": "Finance Tools",
+        "item": "https://www.quickcalcs.app/?category=finance"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Malaysia EPF Calculator 2026",
         "item": "https://www.quickcalcs.app/tools/malaysia-epf-calculator"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate EPF Contributions in Malaysia 2026",
+    "description": "Step-by-step guide to calculating KWSP EPF employee and employer contributions using the official Third Schedule 2026 rates.",
+    "totalTime": "PT2M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "MYR",
+      "value": "0"
+    },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Enter your gross monthly salary",
+        "text": "Type your gross monthly salary in Ringgit. Include all fixed allowances subject to EPF. There is no upper salary ceiling for EPF — all wages are included."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Select your employee category",
+        "text": "Choose Malaysian/PR for standard rates, Age 60+ for reduced rates, or Foreign Worker for the 2% mandatory rule effective October 2025."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "View your EPF contribution breakdown",
+        "text": "The calculator applies statutory employee and employer contribution rates, the RM5,000 employer-rate threshold, and upward Ringgit rounding. Results appear instantly."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Check your retirement projection",
+        "text": "Optionally enter your current EPF balance and age to see a projection of your savings at age 55, using the 6.15% conventional dividend rate."
       }
     ]
   }
@@ -216,6 +284,17 @@ export default function EpfPage() {
           <p className="text-[#87847d] text-sm max-w-2xl leading-relaxed">
             Calculate employee & employer contributions instantly — based on official KWSP Third Schedule rates effective October 2025. Includes foreign worker 2% mandate and retirement projections.
           </p>
+          <p className="text-[11px] text-[#3e3c38] mt-3 mb-1">
+            Last verified: May 2026{" · "}Source:{" "}
+            <a
+              href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#c9a84c] hover:underline"
+            >
+              KWSP Official Portal ↗
+            </a>
+          </p>
 
           <div className="flex flex-wrap gap-3 mt-6">
             {["✅ Third Schedule Rates", "✅ Foreign Worker 2% Rule", "✅ No Login Required", "✅ Updated Oct 2025"].map((tag) => (
@@ -229,13 +308,22 @@ export default function EpfPage() {
         {/* Calculator Component */}
         <EpfCalculator />
 
-        {/* Content Section */}
-        <EpfContent />
-
-        {/* FAQ Section */}
-        <section className="px-[20px] sm:px-[36px] mt-12 border-t border-[rgba(255,255,255,0.07)] pt-16">
-          <FAQ items={faqItems} />
+        <section className="px-[20px] sm:px-[36px]" aria-labelledby="epf-methodology-heading">
+          <div className="p-4 rounded-xl border border-[rgba(201,168,76,0.15)] bg-[rgba(201,168,76,0.03)] text-xs text-[#87847d] leading-relaxed">
+            <h2 id="epf-methodology-heading" className="font-bold text-[#e6e3db] mb-2 text-sm">
+              Calculation methodology
+            </h2>
+            <p>
+              This calculator applies current KWSP/EPF statutory contribution rates for Malaysian/PR employees,
+              age 60+ employees, and foreign workers. It factors in the RM5,000 employer-rate threshold and rounds
+              employee and employer shares up to the nearest Ringgit. Results are estimates for planning and payroll
+              checking only; always verify final statutory obligations with KWSP or your employer.
+            </p>
+          </div>
         </section>
+
+        {/* Content Section */}
+        <EpfContent faqItems={faqItems} />
       </div>
     </main>
   );

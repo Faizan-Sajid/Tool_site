@@ -7,15 +7,15 @@ import { Metadata } from "next";
 
 // ── SEO METADATA (Added Title/Description for SEO Score) ──
 export const metadata: Metadata = {
-  // SEO UPDATE 2026: Homepage metadata — GOSI-first keyword strategy
-  title: "Free GOSI, Gratuity & Zakat Calculators 2026 | QuickCalcs",
-  description: "Calculate GOSI deductions, UAE end-of-service gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free, no login, updated for 2026 laws.",
+  // SEO UPDATE 2026: Homepage metadata — global tools platform positioning
+  title: "Free EPF, GOSI, Gratuity & Zakat Calculators 2026 | QuickCalcs",
+  description: "Calculate Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free global calculators, no login.",
   alternates: {
     canonical: "https://www.quickcalcs.app/",
   },
   openGraph: {
-    title: "Free GOSI, Gratuity & Zakat Calculators 2026 | QuickCalcs",
-    description: "Calculate GOSI deductions, UAE end-of-service gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free, no login, updated for 2026 laws.",
+    title: "Free EPF, GOSI, Gratuity & Zakat Calculators 2026 | QuickCalcs",
+    description: "Calculate Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free global calculators, no login.",
     url: "https://www.quickcalcs.app/",
     type: "website",
   },
@@ -66,6 +66,10 @@ const homeFaqs = [
   {
     question: "What is the PSEB tax rate for Pakistani freelancers in 2026?",
     answer: "PSEB-registered freelancers who are active ATL filers pay 0.25% on foreign IT export remittances under Section 154S. Non-PSEB ATL filers pay 1%. Non-filers do not qualify for either rate and face double withholding tax. To get the PSEB rate, you must register with the Pakistan Software Export Board and ensure 80% of business receipts enter Pakistan through formal banking channels."
+  },
+  {
+    question: "How is Malaysia EPF calculated in 2026?",
+    answer: "Malaysia EPF/KWSP contributions are estimated from statutory employee and employer rates. For Malaysian citizens and permanent residents under age 60, the standard employee rate is 11%. Employer contributions depend on the monthly wage threshold, with higher employer rates for wages at or below RM5,000 and lower rates above RM5,000. The calculator also supports age 60+ and foreign-worker categories, then applies upward Ringgit rounding."
   },
   {
     question: "Are QuickCalcs tools compliant with 2026 UAE Labour Law and Saudi GOSI regulations?",
@@ -132,6 +136,14 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      "name": "How is Malaysia EPF calculated in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Malaysia EPF/KWSP contributions are estimated from statutory employee and employer rates. For Malaysian citizens and permanent residents under age 60, the standard employee rate is 11%. Employer contributions depend on the monthly wage threshold, with higher employer rates for wages at or below RM5,000 and lower rates above RM5,000. The calculator also supports age 60+ and foreign-worker categories, then applies upward Ringgit rounding."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Are QuickCalcs tools compliant with 2026 UAE Labour Law and Saudi GOSI regulations?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -155,7 +167,7 @@ const websiteSchema = {
   "@type": "WebSite",
   "name": "QuickCalcs",
   "url": "https://www.quickcalcs.app",
-  "description": "Free financial calculators for UAE, Saudi Arabia, and Pakistan. GOSI, gratuity, Zakat, gold price, Umrah budget, and freelancer tax tools.",
+  "description": "Free global financial calculators for Malaysia, Saudi Arabia, UAE, Pakistan, and more. EPF/KWSP, GOSI, gratuity, Zakat, gold price, Umrah budget, and freelancer tax tools.",
   "inLanguage": "en",
   "potentialAction": {
     "@type": "SearchAction",

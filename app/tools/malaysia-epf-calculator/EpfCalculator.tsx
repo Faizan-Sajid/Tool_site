@@ -194,7 +194,12 @@ export default function EpfCalculator() {
   };
 
   return (
-    <div className="max-w-[860px] px-4 sm:px-6 lg:px-8 py-10 mx-auto">
+    <div
+      id="epf-calculator"
+      role="region"
+      aria-label="Malaysia EPF Contribution Calculator"
+      className="max-w-[860px] px-4 sm:px-6 lg:px-8 py-10 mx-auto"
+    >
       <div className="bg-[#131620] border border-[rgba(255,255,255,0.07)] rounded-[24px] p-6 sm:p-8 shadow-2xl relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#c9a84c]/5 rounded-full blur-3xl" />
@@ -207,14 +212,18 @@ export default function EpfCalculator() {
               <Users className="w-4 h-4 text-[#c9a84c]" />Employee Type
             </label>
             <div className="flex flex-wrap gap-2 p-1 bg-[#0c0e16] rounded-xl border border-[rgba(255,255,255,0.07)] sm:flex-nowrap">
-              {[
-                { id: "malaysian", label: "Malaysian / PR" },
-                { id: "age_60_plus", label: "Age 60 & Above" },
-                { id: "foreign", label: "Foreign Worker" }
-              ].map((type) => (
+              {(
+                [
+                  { id: "malaysian", label: "Malaysian / PR" },
+                  { id: "age_60_plus", label: "Age 60 & Above" },
+                  { id: "foreign", label: "Foreign Worker" },
+                ] as const
+              ).map((type) => (
                 <button
                   key={type.id}
-                  onClick={() => setEmployeeType(type.id as any)}
+                  type="button"
+                  aria-pressed={employeeType === type.id}
+                  onClick={() => setEmployeeType(type.id)}
                   className={`flex-1 min-h-[44px] py-2 px-3 text-[10px] font-bold rounded-lg transition-all ${
                     employeeType === type.id
                       ? "bg-[#c9a84c] text-[#0c0e16]"
@@ -233,15 +242,18 @@ export default function EpfCalculator() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Monthly Salary */}
             <div className="space-y-3">
-              <label className="text-sm font-medium text-[#87847d] flex items-center gap-2">
+              <label htmlFor="monthly-salary" className="text-sm font-medium text-[#87847d] flex items-center gap-2">
                 <Wallet className="w-4 h-4 text-[#c9a84c]" />Monthly Salary (RM)
               </label>
               <div className="relative group">
                 <input
+                  id="monthly-salary"
                   type="number"
+                  inputMode="decimal"
                   value={monthlySalary}
                   onChange={(e) => setMonthlySalary(e.target.value)}
                   placeholder="e.g. 5,000"
+                  aria-label="Monthly gross salary in Malaysian Ringgit"
                   className={`w-full min-h-[44px] h-14 bg-[#0c0e16] border rounded-[14px] px-5 pr-14 text-[#e6e3db] focus:outline-none transition-all group-hover:border-[rgba(255,255,255,0.15)] ${
                     validation.salary ? "border-red-500 ring-1 ring-red-500/20" : 
                     validation.salaryWarning ? "border-yellow-500 ring-1 ring-yellow-500/20" : 
@@ -259,12 +271,14 @@ export default function EpfCalculator() {
 
             {/* Current EPF Balance */}
             <div className="space-y-3">
-              <label className="text-sm font-medium text-[#87847d] flex items-center gap-2">
+              <label htmlFor="current-balance" className="text-sm font-medium text-[#87847d] flex items-center gap-2">
                 <Landmark className="w-4 h-4 text-[#c9a84c]" />Current EPF Balance (RM)
               </label>
               <div className="relative group">
                 <input
+                  id="current-balance"
                   type="number"
+                  inputMode="decimal"
                   value={currentBalance}
                   onChange={(e) => setCurrentBalance(e.target.value)}
                   placeholder="e.g. 50,000"
@@ -283,12 +297,14 @@ export default function EpfCalculator() {
 
             {/* Current Age */}
             <div className="space-y-3">
-              <label className="text-sm font-medium text-[#87847d] flex items-center gap-2">
+              <label htmlFor="current-age" className="text-sm font-medium text-[#87847d] flex items-center gap-2">
                 <TrendingUp className="w-4 h-4 text-[#c9a84c]" />Current Age
               </label>
               <div className="relative group">
                 <input
+                  id="current-age"
                   type="number"
+                  inputMode="numeric"
                   value={currentAge}
                   onChange={(e) => setCurrentAge(e.target.value)}
                   placeholder="e.g. 30"
@@ -309,6 +325,7 @@ export default function EpfCalculator() {
         {/* ACTIONS */}
         <div className="flex flex-col sm:flex-row gap-4 mb-12 relative z-10">
           <button
+            type="button"
             onClick={handleReset}
             className="w-full sm:w-auto px-8 h-14 bg-transparent border border-[rgba(255,255,255,0.07)] text-[#87847d] hover:text-[#e6e3db] hover:bg-[rgba(255,255,255,0.02)] font-medium rounded-[14px] flex items-center justify-center gap-2 transition-all min-h-[44px]"
           >

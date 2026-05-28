@@ -9,11 +9,13 @@ const FOOTER_LINKS = {
     { name: "Zakat Calculator", href: "/tools/zakat-calculator" },
     { name: "UAE Gratuity", href: "/tools/uae-gratuity-calculator" },
     { name: "Saudi GOSI", href: "/tools/ksa-gosi-calculator" },
+    { name: "Malaysia EPF", href: "/tools/malaysia-epf-calculator" },
     { name: "Business Tools", href: "/#all-tools" },
   ],
   countries: [
     { name: "UAE Tools", href: "/tools/uae-gratuity-calculator" },
     { name: "Saudi Arabia", href: "/tools/ksa-gosi-calculator" },
+    { name: "Malaysia EPF", href: "/tools/malaysia-epf-calculator" },
     { name: "Gold Price UAE", href: "/tools/gold-calculator" },
     { name: "Global Finance", href: "/tools/zakat-calculator" },
   ],
@@ -44,7 +46,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-[13px] text-[#87847d] leading-relaxed max-w-[280px]">
-              Free financial calculators for UAE, Saudi Arabia & Pakistan — GOSI, gratuity, Zakat, gold, Umrah, and freelancer tax tools. Updated for 2026.
+              Free global financial calculators for Malaysia, Saudi Arabia, UAE & Pakistan — EPF/KWSP, GOSI, gratuity, Zakat, gold, Umrah, and freelancer tax tools. Updated for 2026.
             </p>
           </div>
 

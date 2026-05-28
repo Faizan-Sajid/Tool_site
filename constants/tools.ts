@@ -3,7 +3,7 @@ export interface Tool {
   href: string;
   ariaLabel: string;
   category: "finance" | "hr" | "visa" | "legal" | "business";
-  country: "all" | "uae" | "sa" | "kw" | "uk";
+  country: "all" | "uae" | "sa" | "kw" | "uk" | "my";
   icon: string;
   title: string;
   description: string;
@@ -105,7 +105,7 @@ export const TOOLS: Tool[] = [
     href: "/tools/malaysia-epf-calculator",
     ariaLabel: "Malaysia EPF Calculator 2026",
     category: "finance",
-    country: "all",
+    country: "my",
     icon: "🇲🇾",
     title: "Malaysia EPF Calculator 2026",
     description: "Calculate your exact EPF (KWSP) contributions for 2026. Covers Malaysian citizen rates (11% employee / 13% employer for salary ≤RM5,000, 12% above), age 60+ reduced rates, foreign worker mandatory 2% rate effective October 2025, and full take-home salary breakdown. Official KWSP Third Schedule rates.",
