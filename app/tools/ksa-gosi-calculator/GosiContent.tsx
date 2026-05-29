@@ -5,6 +5,12 @@ export default function GosiContent() {
   return (
     <section className="max-w-[860px] px-[20px] sm:px-[36px] py-[48px] space-y-16 text-[#87847d]">
 
+      <div className="rounded-[14px] border border-[rgba(255,255,255,0.07)] bg-[#131620] p-5 text-xs leading-relaxed text-[#87847d]">
+        <p>
+          <strong className="text-[#e6e3db]">Last updated:</strong> May 2026. Calculation basis: Saudi GOSI employee/employer contribution rates, SANED, occupational hazard insurance, and SAR 45,000 monthly contributory wage cap. This tool provides payroll estimates for informational purposes. Confirm final deductions with your employer or the official GOSI portal.
+        </p>
+      </div>
+
       {/* SECTION 1: What is GOSI */}
       <article>
         <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
@@ -13,13 +19,39 @@ export default function GosiContent() {
         </h2>
         <div className="text-sm leading-relaxed space-y-4">
           <p>
-            GOSI stands for General Organization for Social Insurance. It is Saudi Arabia's mandatory social insurance program, set up under Royal Decree M/33. Every private-sector employer in the Kingdom must register with GOSI and pay monthly contributions for their employees.
+            GOSI stands for General Organization for Social Insurance. It is Saudi Arabia&apos;s mandatory social insurance contribution system, set up under Royal Decree M/33. Every private sector employee in the Kingdom must be registered through their employer, and monthly contributions are paid through payroll.
           </p>
           <p>
-            The scheme has three parts: pension (annuity), occupational hazard cover, and SANED unemployment protection. Saudi nationals are enrolled in all three. Non-Saudi expats are covered only for occupational hazards — and that cost is paid fully by the employer, not the employee.
+            The scheme has three parts: the annuity branch for pension, occupational hazard insurance, and SANED unemployment insurance. Saudi nationals are enrolled in all three. Non-Saudi expats are covered only for occupational hazards — and that cost is paid fully by the employer, not the employee.
           </p>
           <p>
-            GOSI is calculated on the <strong className="text-[#e6e3db]">contributory wage</strong>, which is your basic salary plus housing allowance. The maximum contributory wage is capped at SAR 45,000 per month — anything above that is not included in the GOSI calculation.
+            GOSI is calculated on the <strong className="text-[#e6e3db]">monthly contributory wage</strong>, which is your basic salary and housing allowance. The maximum contributory wage is capped at SAR 45,000 per month — anything above that is not included in the GOSI calculation.
+          </p>
+        </div>
+      </article>
+
+      <article>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          Official Source and Calculation Basis
+        </h2>
+        <div className="text-sm leading-relaxed space-y-4">
+          <p>
+            This calculator estimates the Saudi payroll deduction using GOSI contribution concepts for Saudi nationals and non-Saudi expats, including the annuity branch, SANED, occupational hazard insurance, and the SAR 45,000 monthly contributory wage cap.
+          </p>
+          <p>
+            Your final payroll estimate can depend on nationality, GOSI registration date, employer records, and whether the old GOSI rate or new GOSI rate applies to your case. Confirm final deductions with your employer or the official GOSI portal.
+          </p>
+          <p>
+            Official source: {" "}
+            <a
+              href="https://www.gosi.gov.sa/en"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="underline hover:text-[#c9a84c]"
+            >
+              General Organization for Social Insurance (Official Portal)
+            </a>
           </p>
         </div>
       </article>
@@ -117,10 +149,10 @@ export default function GosiContent() {
 
         <div className="text-sm leading-relaxed space-y-3">
           <p>
-            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employee contribution rate in 2026</strong> is 10.75% of the contributory wage — 10% goes to the pension fund and 0.75% to SANED (unemployment insurance). This amount is taken directly from the employee's monthly salary.
+            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employee contribution rate in 2026</strong> is 10.75% of the contributory wage — 10% goes to the pension fund and 0.75% to SANED (unemployment insurance). This amount is taken directly from the employee&apos;s monthly salary as a Saudi payroll deduction.
           </p>
           <p>
-            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employer contribution rate in 2026</strong> is 12.75% — covering 10% pension, 2% occupational hazards, and 0.75% SANED. The employer pays this separately and it does not come out of the employee's salary.
+            The <strong className="text-[#e6e3db]">Saudi Arabia GOSI employer contribution rate in 2026</strong> is 12.75% — covering 10% pension, 2% occupational hazards, and 0.75% SANED. The employer pays this separately and it does not come out of the employee&apos;s take-home salary.
           </p>
           <p>
             In total, the combined GOSI contribution for a Saudi national is <strong className="text-[#e6e3db]">23.5% of the contributory wage</strong> — 10.75% from the employee and 12.75% from the employer.
@@ -136,7 +168,7 @@ export default function GosiContent() {
         </h2>
         <div className="text-sm leading-relaxed space-y-4">
           <p>
-            This is one of the most common questions about GOSI. If you are a non-Saudi expat working in Saudi Arabia's private sector, here is exactly what applies to you — in plain terms:
+            This is one of the most common questions about GOSI. If you are a non-Saudi expat working in Saudi Arabia&apos;s private sector, here is exactly what applies to you — in plain terms:
           </p>
           <ul className="list-disc pl-6 space-y-3">
             <li>
@@ -152,7 +184,7 @@ export default function GosiContent() {
               <strong className="text-[#e6e3db]">No SANED for expats.</strong> Unemployment insurance only applies to Saudi nationals.
             </li>
             <li>
-              <strong className="text-[#e6e3db]">The SAR 45,000 cap still applies.</strong> If your basic salary plus housing allowance is above SAR 45,000, the employer's 2% is still calculated on SAR 45,000 only.
+              <strong className="text-[#e6e3db]">The SAR 45,000 cap still applies.</strong> If your basic salary plus housing allowance is above SAR 45,000, the employer&apos;s 2% is still calculated on SAR 45,000 only.
             </li>
           </ul>
 
@@ -187,7 +219,7 @@ export default function GosiContent() {
           </div>
 
           <p>
-            Use the <strong className="text-[#e6e3db]">GOSI calculator for non-Saudi nationals</strong> at the top of this page. Select "Expat (Non-Saudi)" and enter your basic salary and housing allowance to see the employer contribution instantly.
+            Use the <strong className="text-[#e6e3db]">GOSI calculator for non-Saudi nationals</strong> at the top of this page. Select &quot;Expat (Non-Saudi)&quot; and enter your basic salary and housing allowance to see the employer contribution instantly.
           </p>
         </div>
       </article>
@@ -401,6 +433,86 @@ export default function GosiContent() {
         </ul>
       </article>
 
+      <article>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          Common GOSI Terms in Arabic
+        </h2>
+        <div className="overflow-x-auto rounded-[14px] border border-[rgba(255,255,255,0.07)] bg-[#131620] p-5">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-[rgba(255,255,255,0.07)]">
+                <th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Arabic Search Term</th>
+                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { ar: "حاسبة التأمينات الاجتماعية", en: "GOSI Calculator" },
+                { ar: "حساب التأمينات من الراتب", en: "Calculate GOSI from salary" },
+                { ar: "نسبة التأمينات الاجتماعية", en: "Social insurance contribution rate" },
+                { ar: "نسبة التأمينات الاجتماعية للسعوديين", en: "GOSI rate for Saudi nationals" },
+                { ar: "نسبة التأمينات الاجتماعية لغير السعوديين", en: "GOSI rate for non-Saudi expats" },
+              ].map((term) => (
+                <tr key={term.ar} className="border-b border-[rgba(255,255,255,0.03)] last:border-b-0">
+                  <td dir="rtl" className="py-3 pr-4 text-right text-[#e6e3db]">{term.ar}</td>
+                  <td className="py-3 px-4">{term.en}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          GOSI Calculator FAQs
+        </h2>
+        <div className="space-y-6 text-sm leading-relaxed">
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">How much is GOSI deduction from salary in Saudi Arabia?</h3>
+            <p>For Saudi nationals under the 2026 rate, the employee GOSI deduction is 10.75% of the contributory wage. That wage is basic salary plus housing allowance, capped at SAR 45,000 per month. Non-Saudi expats have no employee deduction from salary.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">How is GOSI calculated for non-Saudi employees?</h3>
+            <p>For non-Saudi employees, GOSI is calculated only as a 2% employer contribution for occupational hazard insurance. The employee pays 0%, and the 2% is applied to the contributory wage up to the SAR 45,000 monthly cap.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">Is GOSI deducted from expat salary in Saudi Arabia?</h3>
+            <p>No. GOSI is not deducted from a non-Saudi expat&apos;s salary in Saudi Arabia. Only the employer pays 2% for occupational hazard insurance, while SANED and pension contributions do not apply to expats.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">Is GOSI deduction based on basic salary or gross salary?</h3>
+            <p>GOSI is based on the contributory wage, not the full gross salary. The contributory wage normally includes basic salary and housing allowance, while transport allowance, food allowance, overtime, and bonuses are excluded.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">Is housing allowance included in GOSI calculation?</h3>
+            <p>Yes. Housing allowance is included with basic salary when calculating the GOSI contributory wage. If basic salary plus housing allowance exceeds SAR 45,000, GOSI is calculated only on SAR 45,000.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">What is the GOSI salary cap of SAR 45,000?</h3>
+            <p>The GOSI salary cap means monthly contributions are calculated on a maximum contributory wage of SAR 45,000. Any basic salary and housing allowance above that amount is not included in the GOSI calculation.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">What are GOSI employee and employer contribution rates in 2026?</h3>
+            <p>For Saudi nationals registered under the new schedule, the 2026 employee rate is 10.75% and the employer rate is 12.75%. For non-Saudi expats, the employee rate is 0% and the employer pays 2% for occupational hazards only.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">How does SANED deduction percentage work in Saudi Arabia?</h3>
+            <p>SANED is unemployment insurance for Saudi nationals. In 2026, the SANED portion is 0.75% from the employee and 0.75% from the employer, already included in the 10.75% employee and 12.75% employer GOSI rates.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">What is the difference between old GOSI rate and new GOSI rate?</h3>
+            <p>The old GOSI rate for employees registered before July 3, 2024 is 9.75% employee and 11.75% employer. The new GOSI rate for employees registered on or after July 3, 2024 is 10.75% employee and 12.75% employer in 2026, with phased increases continuing through 2028.</p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-bold text-[#e6e3db]">How do I use a Saudi payroll GOSI deduction calculator?</h3>
+            <p>Enter your basic salary and housing allowance, then choose Saudi national or non-Saudi expat. The calculator applies the correct GOSI rate, SAR 45,000 cap, SANED treatment, and employer contribution to estimate your payroll deduction and net salary.</p>
+          </div>
+        </div>
+      </article>
+
       {/* INTERNAL LINKS */}
       <section className="mt-12">
         <h2 className="text-2xl font-bold mb-6 text-white">Explore Other QuickCalcs Tools</h2>
@@ -447,6 +559,15 @@ export default function GosiContent() {
               <div>
                 <p className="font-semibold text-white">Hajj & Umrah Budget Calculator</p>
                 <p className="text-sm text-gray-300 mt-1">Estimate pilgrimage costs — flights, hotels, visas, and food for 2026.</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/tools/malaysia-epf-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🇲🇾</span>
+              <div>
+                <p className="font-semibold text-white">Malaysia EPF Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">Calculate EPF contributions for employees and employers in Malaysia. Includes 2026 contribution rates and take-home salary breakdown.</p>
               </div>
             </div>
           </Link>

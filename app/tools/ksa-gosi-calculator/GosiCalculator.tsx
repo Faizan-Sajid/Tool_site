@@ -41,9 +41,9 @@ export default function GosiCalculator() {
 
     if (nationality === "saudi") {
       // Rule 2: Saudi Nationality
-      // Employee: 9% Annuity + 0.75% SANED = 10.75%
+      // Employee: 10% Annuity (pension) + 0.75% SANED = 10.75%
       employeeDeduction = contributoryWage * 0.1075;
-      // Employer: 9% Annuity + 2.25% Hazards + 0.75% SANED = 12.75%
+      // Employer: 10% Annuity + 2% Occupational Hazards + 0.75% SANED = 12.75%
       employerContribution = contributoryWage * 0.1275;
     } else {
       // Rule 3: Non-Saudi (Expat)

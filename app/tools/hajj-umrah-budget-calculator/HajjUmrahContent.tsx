@@ -373,6 +373,15 @@ export default function HajjUmrahContent() {
               </div>
             </div>
           </Link>
+          <Link href="/tools/malaysia-epf-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">🇲🇾</span>
+              <div>
+                <p className="font-semibold text-white">Malaysia EPF Calculator</p>
+                <p className="text-sm text-gray-300 mt-1">Calculate EPF contributions for employees and employers in Malaysia. Includes 2026 contribution rates and take-home salary breakdown.</p>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 

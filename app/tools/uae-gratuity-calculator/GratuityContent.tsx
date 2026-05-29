@@ -186,6 +186,7 @@ First 5 years: 21 days/year | Beyond 5 years: 30 days/year | Cap: 2 years' salar
             { href: "/tools/zakat-calculator", icon: "☪️", title: "Zakat Calculator", desc: "Calculate Zakat on savings, gold, investments and business assets. Nisab auto-updated." },
             { href: "/tools/gold-calculator", icon: "💰", title: "Gold Price Calculator", desc: "Live 24K, 22K, 21K, 18K rates for UAE and GCC. Includes Zakat and unit converter." },
             { href: "/tools/hajj-umrah-budget-calculator", icon: "🕋", title: "Hajj & Umrah Budget Calculator", desc: "Estimate pilgrimage costs — flights, hotels, visas, and food for 2026." },
+            { href: "/tools/malaysia-epf-calculator", icon: "🇲🇾", title: "Malaysia EPF Calculator", desc: "Calculate EPF contributions for employees and employers in Malaysia. Includes 2026 contribution rates and take-home salary breakdown." },
           ].map((tool) => (
             <Link key={tool.href} href={tool.href} className="block p-4 rounded-xl border border-[rgba(255,255,255,0.07)] hover:border-[#c9a84c] hover:shadow-md transition-all">
               <div className="flex items-start gap-3">

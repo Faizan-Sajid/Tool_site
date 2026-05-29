@@ -66,7 +66,7 @@ export const TOOLS: Tool[] = [
     country: "sa",
     icon: "🛡️",
     title: "Saudi GOSI Calculator",
-    description: "Calculate your exact GOSI deductions and net salary for 2026. Covers Saudi national rates (10.75% employee / 12.75% employer), expat rates, contributory wage cap of SAR 45,000, and the 2024–2028 phased rate schedule. Instant results, no login required.",
+    description: "Calculate Saudi payroll deduction and net salary after GOSI for Saudi nationals and expats in 2026. Includes basic salary, housing allowance, SANED, employer contribution, SAR 45,000 cap, and old vs new GOSI rate logic.",
     tags: [
       { text: "KSA", variant: "gold" },
       { text: "Finance", variant: "default" },

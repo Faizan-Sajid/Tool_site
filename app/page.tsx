@@ -21,18 +21,6 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "QuickCalcs",
-  "url": "https://www.quickcalcs.app",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.quickcalcs.app/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-};
-
 const organizationLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -44,8 +32,16 @@ const organizationLd = {
 // ── HOME FAQ DATA ──
 const homeFaqs = [
   {
-    question: "How is GOSI calculated for expats in Saudi Arabia?",
-    answer: "Non-Saudi expatriate employees pay zero GOSI deduction from their own salary. Only the employer contributes — 2% of the employee's contributory wage (basic salary + housing allowance) for occupational hazard insurance. Expats are not enrolled in the pension or SANED unemployment scheme. Use our GOSI calculator, select 'Expat (Non-Saudi)', and enter your salary to see the exact employer contribution."
+    question: "What is GOSI in Saudi Arabia?",
+    answer: "GOSI is Saudi Arabia's General Organization for Social Insurance, the system used for social insurance contributions on eligible payroll wages. It covers Saudi national pension and SANED unemployment insurance, while non-Saudi expats are generally covered only for occupational hazard insurance through an employer contribution. Use the Saudi GOSI calculator to estimate deductions from basic salary and housing allowance."
+  },
+  {
+    question: "How much GOSI is deducted from salary?",
+    answer: "For Saudi nationals under the 2026 rate, the employee GOSI deduction is 10.75% of contributory wage, which is usually basic salary plus housing allowance capped at SAR 45,000 per month. Non-Saudi expats have 0% employee deduction, while the employer pays 2% for occupational hazard insurance."
+  },
+  {
+    question: "Does GOSI apply to expats in Saudi Arabia?",
+    answer: "Yes, but expats are treated differently from Saudi nationals. Non-Saudi expatriate employees do not pay GOSI from their own salary; only the employer contributes 2% of contributory wage for occupational hazard insurance. Calculate GOSI deduction for expats by selecting 'Expat (Non-Saudi)' in the calculator."
   },
   {
     question: "How much gratuity do you get after 3 years in the UAE?",
@@ -88,10 +84,26 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How is GOSI calculated for expats in Saudi Arabia?",
+      "name": "What is GOSI in Saudi Arabia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non-Saudi expatriate employees pay zero GOSI deduction from their own salary. Only the employer contributes — 2% of the employee's contributory wage (basic salary + housing allowance) for occupational hazard insurance. Expats are not enrolled in the pension or SANED unemployment scheme."
+        "text": "GOSI is Saudi Arabia's General Organization for Social Insurance, the system used for social insurance contributions on eligible payroll wages. It covers Saudi national pension and SANED unemployment insurance, while non-Saudi expats are generally covered only for occupational hazard insurance through an employer contribution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much GOSI is deducted from salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For Saudi nationals under the 2026 rate, the employee GOSI deduction is 10.75% of contributory wage, which is usually basic salary plus housing allowance capped at SAR 45,000 per month. Non-Saudi expats have 0% employee deduction, while the employer pays 2% for occupational hazard insurance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does GOSI apply to expats in Saudi Arabia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but expats are treated differently from Saudi nationals. Non-Saudi expatriate employees do not pay GOSI from their own salary; only the employer contributes 2% of contributory wage for occupational hazard insurance."
       }
     },
     {
