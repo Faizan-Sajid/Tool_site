@@ -65,17 +65,20 @@ Use this skill when the user asks you to implement SEO, content, metadata, schem
 10. **Verification**
    - Run lint on the changed files first to isolate new errors.
    - If full lint fails due unrelated existing repo issues, say so and distinguish pre-existing errors from touched-file errors.
-   - Fix touched-file lint errors, including JSX escaped entities and Next `<Link />` requirements.
+   - Fix touched-file lint errors, including unused imports/variables introduced or exposed by the touched files, JSX escaped entities, and Next `<Link />` requirements.
    - Run `npm run build` when feasible to catch TypeScript and Next integration issues.
+   - If a tool/shell rejects an explicit Windows project path even though file tools can access it, rerun commands from the registered project root instead of stopping.
+   - For remote OpenGraph image checks, if `curl -I` or `curl.exe -I` returns no visible output in the shell, use PowerShell to print only the status code, e.g. `powershell -NoProfile -Command "try { $r = Invoke-WebRequest -Uri '<url>' -Method Head -UseBasicParsing; Write-Output $r.StatusCode } catch { Write-Output $_.Exception.Response.StatusCode.value__ }"`.
 
 ## Output Pattern
 
 - Briefly confirm full read completion before edits when the user explicitly required it.
+- If the user explicitly requested one-file-at-a-time execution, complete and report each file before moving to the next; keep progress updates short.
 - For each edited file: list concise changes and rationale.
 - Final response should include:
   - Files changed.
   - Keywords/semantic topics added.
   - Schema changes.
-  - Verification results.
+  - Verification results, including remote OG/image HTTP status when requested.
   - Any remaining repo-wide issues that are outside the task scope.
   - Estimated SEO impact in practical terms, without promising rankings.

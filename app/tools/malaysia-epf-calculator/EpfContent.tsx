@@ -11,446 +11,287 @@ interface EpfContentProps {
   faqItems?: FaqItem[];
 }
 
+const longTailFaqItems = [
+  {
+    question: "How much is EPF deducted from salary in Malaysia?",
+    answer:
+      "For Malaysian employees below 60, EPF deducts 11% from your monthly salary. On a RM5,000 salary, that is RM550 per month. Your employer adds RM650 (13%) on top — meaning your total monthly EPF contribution is RM1,200, with RM550 coming from your pocket and RM650 from your employer.",
+  },
+  {
+    question: "Does the employer EPF rate change at RM5,000?",
+    answer:
+      "Yes. The employer contribution is 13% for employees earning RM5,000 or below, and 12% for those earning above RM5,000. The employee rate stays at 11% regardless. This threshold applies to the monthly contributory wage — not total compensation including allowances.",
+  },
+  {
+    question: "Is EPF contribution calculated on basic salary or gross salary?",
+    answer:
+      "EPF is calculated on your monthly contributory wage, which typically includes basic salary plus certain fixed allowances like housing allowance. It excludes reimbursements, travel claims, and certain bonus types. Check your payslip to see which components your employer includes in the EPF calculation.",
+  },
+  {
+    question: "Does EPF apply to part-time and contract workers?",
+    answer:
+      "Yes. EPF contribution is mandatory for all employees in Malaysia regardless of employment type — full-time, part-time, or fixed-term contract. Employers must register and contribute for all employees including those on short-term contracts. The only exception is self-employed individuals, who contribute voluntarily through i-Saraan.",
+  },
+  {
+    question: "What is the EPF contribution rate for age 60 and above?",
+    answer:
+      "Once you reach age 60, the employee contribution rate reduces to 5.5% and employer rates reduce to 6.5% (salaries ≤RM5,000) or 6% (above RM5,000). You can choose to maintain the full 11% employee rate by submitting Borang KWSP 17A to your HR department.",
+  },
+  {
+    question: "Does EPF contribution apply to bonuses in Malaysia?",
+    answer:
+      "Yes, bonuses are generally subject to EPF contribution as they are considered part of wages under the EPF Act 1991. However, certain ex-gratia payments and approved allowances may be excluded. Your employer's payroll team determines which bonus components are EPF-liable based on EPF guidelines.",
+  },
+  {
+    question: "What happens if my employer does not pay EPF?",
+    answer:
+      "Under the EPF Act 1991, employers who fail to remit contributions face fines up to RM20,000 or imprisonment up to 3 years, or both. You can check whether your employer has been contributing correctly by logging into i-Akaun at kwsp.gov.my. If contributions are missing, you can report to EPF enforcement at 03-8922 6000 or visit any EPF branch.",
+  },
+  {
+    question: "How does voluntary EPF contribution reduce my tax in Malaysia?",
+    answer:
+      "Voluntary EPF contributions — including i-Saraan — qualify for up to RM4,000 in personal tax relief under the Life Insurance and EPF category. For someone in the 24% tax bracket, maximising this relief saves RM960 in income tax per year. Combined with the RM500 government match on i-Saraan, the effective first-year return on voluntary contributions is exceptionally high.",
+  },
+  {
+    question: "What is the EPF RIA Framework and basic savings target?",
+    answer:
+      "The Retirement Income Adequacy (RIA) Framework, launched January 2026, sets three retirement savings benchmarks: Basic (RM390,000), Adequate (RM600,000), and Enhanced (RM1,000,000+) — all at age 60. Check the EPF balance projection in this calculator to see if you are on track for the basic savings benchmark based on your current salary and contribution.",
+  },
+  {
+    question: "Can I withdraw from EPF Akaun Fleksibel anytime?",
+    answer:
+      "Yes. Akaun Fleksibel (10% of your contributions) can be withdrawn at any time through the i-Akaun app or EPF branch with no conditions or minimum amount. The remaining 75% in Akaun Persaraan is locked until age 55, and 15% in Akaun Sejahtera is accessible for approved purposes like housing and medical needs.",
+  },
+];
+
 export default function EpfContent({ faqItems = [] }: EpfContentProps) {
   return (
     <section className="max-w-[860px] px-[20px] sm:px-[36px] py-[48px] space-y-16 text-[#87847d]">
-      
-      {/* SECTION 1: Intro */}
+      <aside className="p-5 rounded-2xl border border-[rgba(201,168,76,0.18)] bg-[rgba(201,168,76,0.04)] text-sm leading-relaxed">
+        <p className="text-[#e6e3db] font-bold mb-2">Last reviewed: May 2026</p>
+        <p>
+          This page is for general salary and retirement planning only. EPF/KWSP contribution rules can change, and payroll treatment may differ by wage component. Always verify final statutory obligations with your employer, payroll provider, or the{" "}
+          <a
+            href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className="text-[#c9a84c] hover:underline"
+          >
+            KWSP official portal
+          </a>.
+        </p>
+      </aside>
+
       <article className="prose prose-invert max-w-none">
         <h2 className="text-2xl font-bold text-[#e6e3db] mb-6 flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          Malaysia EPF Calculator 2026 — Official KWSP Third Schedule Rates
+          What is EPF and Why Does It Matter?
         </h2>
         <div className="text-sm leading-relaxed space-y-4">
           <p>
-            This Malaysia EPF calculator estimates employee and employer KWSP contribution amounts in Ringgit using current statutory contribution rates, the RM5,000 employer-rate threshold, and upward rounding rules. It is based on the <strong>EPF Act 1991</strong>, effective October 2025, and verified against the{" "}
-            <a
-              href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#c9a84c] hover:underline"
-            >
-              KWSP official mandatory contribution guidelines
-            </a>.
+            EPF, also called KWSP in Malaysia, is the main retirement savings system for private-sector employees. Every month, part of your salary is deducted as the employee EPF contribution, while your employer adds a separate contribution on top.
           </p>
           <p>
-            The Employees Provident Fund (EPF) is the cornerstone of social security for Malaysia&apos;s private-sector workforce. Whether you are a local employee, a Permanent Resident (PR), or an expat affected by the new 2025 mandates, a transparent KWSP contribution estimate is essential for financial planning and payroll compliance. In 2026, the contribution rate, foreign-worker mandate, and &ldquo;Akaun Fleksibel&rdquo; structure all matter when reviewing take-home pay and retirement savings.
+            This Malaysia EPF calculator helps employees, HR teams, payroll admins, expats, and small employers estimate monthly KWSP contributions, take-home salary after EPF, employer EPF cost, Akaun Fleksibel split, and projected EPF savings.
           </p>
         </div>
       </article>
 
-      {/* SECTION 2: Contribution Rates Table */}
       <article className="space-y-6">
         <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          KWSP EPF Contribution Table 2026 — Third Schedule Rates & Breakdown
+          EPF Contribution Rates Malaysia 2026 — Official KWSP Third Schedule
         </h2>
         <div className="text-sm leading-relaxed space-y-4">
           <p>
-            Malaysia&apos;s KWSP contribution rules are not identical for every worker. For Malaysian citizens and Permanent Residents under age 60, the employee rate is normally 11%, while the employer rate depends on the monthly wage level. The RM5,000 threshold is the key payroll line: salaries at or below this amount use the higher employer rate.
+            For Malaysian citizens and Permanent Residents below age 60, the standard KWSP employee contribution rate is 11%. The employer EPF rate is 13% when the monthly contributory wage is RM5,000 or below, and 12% when it is above RM5,000.
           </p>
           <p>
-            A common payroll question is whether the employer contributes 13% or 12%. If monthly wages are RM5,000 or below, the employer contributes 13%. Once wages exceed RM5,000, the employer rate shifts to 12%. The table below gives a quick reference for the standard mandatory rates in Malaysia.
+            This tool uses statutory KWSP contribution rates and upward Ringgit rounding for planning. For salaries under RM20,000, actual payroll amounts may follow EPF Third Schedule bracket values, so small differences can appear on payslips.
           </p>
         </div>
 
         <div className="overflow-x-auto rounded-2xl border border-[rgba(255,255,255,0.07)] bg-[#131620]">
           <table className="w-full text-left border-collapse">
-            <caption className="sr-only">
-              Malaysia EPF contribution rates by employee category, salary threshold, and employer rate for 2026
-            </caption>
+            <caption className="sr-only">Contribution Rate Summary table for Malaysia EPF and KWSP in 2026</caption>
             <thead>
               <tr className="border-b border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.02)]">
-                <th className="p-4 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Employee Category</th>
-                <th className="p-4 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Monthly Salary</th>
-                <th className="p-4 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Employee Rate</th>
-                <th className="p-4 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Employer Rate</th>
-                <th className="p-4 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Total Contribution</th>
+                <th className="p-4 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Employee category</th>
+                <th className="p-4 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Monthly wage</th>
+                <th className="p-4 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Employee rate</th>
+                <th className="p-4 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Employer rate</th>
               </tr>
             </thead>
             <tbody className="text-xs text-[#87847d]">
-              <tr className="border-b border-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.01)] transition-colors">
-                <td className="p-4 font-medium text-[#e6e3db]">Standard (Under 60)</td>
-                <td className="p-4">RM0 – RM5,000</td>
-                <td className="p-4">11%</td>
-                <td className="p-4 text-amber-500 font-bold">13%</td>
-                <td className="p-4">24%</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.01)] transition-colors">
-                <td className="p-4 font-medium text-[#e6e3db]">Standard (Under 60)</td>
-                <td className="p-4">Above RM5,000</td>
-                <td className="p-4">11%</td>
-                <td className="p-4 text-amber-500 font-bold">12%</td>
-                <td className="p-4">23%</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.01)] transition-colors">
-                <td className="p-4 font-medium text-[#e6e3db]">Seniors (Age 60+)</td>
-                <td className="p-4">Any Amount</td>
-                <td className="p-4">0% (Mandatory)</td>
-                <td className="p-4 text-amber-500 font-bold">4%</td>
-                <td className="p-4">4%</td>
-              </tr>
-              <tr className="hover:bg-[rgba(255,255,255,0.01)] transition-colors">
-                <td className="p-4 font-medium text-[#e6e3db]">Foreign Workers</td>
-                <td className="p-4">Any Amount</td>
-                <td className="p-4">2%</td>
-                <td className="p-4 text-amber-500 font-bold">2%</td>
-                <td className="p-4">4%</td>
-              </tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="p-4 font-medium text-[#e6e3db]">Malaysian / PR under 60</td><td className="p-4">RM5,000 or below</td><td className="p-4">11%</td><td className="p-4 text-amber-500 font-bold">13%</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="p-4 font-medium text-[#e6e3db]">Malaysian / PR under 60</td><td className="p-4">Above RM5,000</td><td className="p-4">11%</td><td className="p-4 text-amber-500 font-bold">12%</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="p-4 font-medium text-[#e6e3db]">Age 60 and above</td><td className="p-4">Any amount</td><td className="p-4">5.5%</td><td className="p-4 text-amber-500 font-bold">6.5% / 6%</td></tr>
+              <tr><td className="p-4 font-medium text-[#e6e3db]">Foreign workers</td><td className="p-4">Any amount</td><td className="p-4">0%</td><td className="p-4 text-amber-500 font-bold">2%</td></tr>
             </tbody>
           </table>
         </div>
-        <div className="mt-4 p-4 rounded-xl border border-[rgba(201,168,76,0.15)] bg-[rgba(201,168,76,0.03)]">
-          <p className="text-xs font-bold text-[#c9a84c] mb-2 uppercase tracking-wider">
-            Why this calculator is more accurate
-          </p>
+
+        <div className="p-4 rounded-xl border border-[rgba(201,168,76,0.15)] bg-[rgba(201,168,76,0.03)]">
+          <p className="text-xs font-bold text-[#c9a84c] mb-2 uppercase tracking-wider">Why this calculator is more accurate</p>
           <ul className="text-xs text-[#87847d] space-y-1.5 list-none">
-            <li>✓ Applies current statutory employee and employer rates with required upward Ringgit rounding</li>
-            <li>✓ Includes October 2025 foreign worker 2% mandatory rule</li>
-            <li>✓ Correct 75/15/10 Akaun Fleksibel split (most tools still show outdated 70/30)</li>
-            <li>✓ No salary ceiling applied — consistent with KWSP rules</li>
-            <li>✓ Source verified: <a href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline">KWSP Third Schedule, May 2026</a></li>
+            <li>✓ Applies statutory KWSP contribution rates with upward Ringgit rounding</li>
+            <li>✓ Includes the RM5,000 employer contribution threshold</li>
+            <li>✓ Includes the foreign worker 2% employer rule effective October 2025</li>
+            <li>✓ Shows take-home salary after employee EPF deduction</li>
+            <li>✓ Shows the 75/15/10 Akaun Persaraan, Akaun Sejahtera and Akaun Fleksibel split</li>
           </ul>
         </div>
-        <p className="text-[10px] italic text-[#3e3c38]">
-          *Note: Statutory rounding rules require all contributions to be rounded up to the nearest whole Ringgit (Math.ceil). There is no salary ceiling for EPF contributions in Malaysia.
-        </p>
       </article>
 
-      {/* SECTION: Salary Bracket Table — targets "epf rate table", "epf contribution table 2026" */}
-      <article className="space-y-6">
+      <article className="space-y-4">
         <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          EPF Contribution Table 2026 — Monthly Amounts by Salary (RM)
+          What Counts as Your Monthly Contributory Wage?
         </h2>
-        <p className="text-sm text-[#87847d] leading-relaxed">
-          The table below shows common monthly EPF contribution examples for Malaysian employees under 60.
-          The figures apply the standard employee and employer rates with upward Ringgit rounding.
-          Use it as a quick payroll reference, or use the calculator above for your own salary.
-        </p>
-
-        <div className="overflow-x-auto rounded-2xl border border-[rgba(255,255,255,0.07)] bg-[#131620]">
-          <table className="w-full text-left border-collapse">
-            <caption className="sr-only">
-              Example monthly EPF employee and employer contribution amounts by salary for Malaysian employees under age 60
-            </caption>
-            <thead>
-              <tr className="border-b border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.02)]">
-                <th className="p-3 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Monthly Salary</th>
-                <th className="p-3 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Employee (RM)</th>
-                <th className="p-3 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Employer (RM)</th>
-                <th className="p-3 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Total (RM)</th>
-                <th className="p-3 text-xs font-bold text-[#e6e3db] uppercase tracking-wider">Employer Rate</th>
-              </tr>
-            </thead>
-            <tbody className="text-xs text-[#87847d]">
-              {[
-                { salary: "RM 1,500", emp: 165, er: 195, tot: 360, rate: "13%" },
-                { salary: "RM 2,000", emp: 220, er: 260, tot: 480, rate: "13%" },
-                { salary: "RM 3,000", emp: 330, er: 390, tot: 720, rate: "13%" },
-                { salary: "RM 4,000", emp: 440, er: 520, tot: 960, rate: "13%" },
-                { salary: "RM 5,000", emp: 550, er: 650, tot: 1200, rate: "13%" },
-                { salary: "RM 6,000", emp: 660, er: 720, tot: 1380, rate: "12%" },
-                { salary: "RM 7,000", emp: 770, er: 840, tot: 1610, rate: "12%" },
-                { salary: "RM 8,000", emp: 880, er: 960, tot: 1840, rate: "12%" },
-                { salary: "RM 10,000", emp: 1100, er: 1200, tot: 2300, rate: "12%" },
-                { salary: "RM 12,000", emp: 1320, er: 1440, tot: 2760, rate: "12%" },
-                { salary: "RM 15,000", emp: 1650, er: 1800, tot: 3450, rate: "12%" },
-                { salary: "RM 20,000", emp: 2200, er: 2400, tot: 4600, rate: "12%" },
-              ].map((row) => (
-                <tr
-                  key={row.salary}
-                  className="border-b border-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.01)] transition-colors"
-                >
-                  <td className="p-3 font-medium text-[#e6e3db]">{row.salary}</td>
-                  <td className="p-3">RM {row.emp.toLocaleString()}</td>
-                  <td className="p-3 text-amber-500 font-medium">RM {row.er.toLocaleString()}</td>
-                  <td className="p-3 font-bold text-[#e6e3db]">RM {row.tot.toLocaleString()}</td>
-                  <td className="p-3">{row.rate}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="text-sm leading-relaxed space-y-4">
+          <p>
+            EPF is normally calculated on monthly wages, not only the number printed as basic salary. Fixed allowances such as housing allowance may be EPF-liable, while reimbursements, travel claims, and some one-off payments may be excluded.
+          </p>
+          <p>
+            If your payslip has several earning lines, use the amount your employer treats as EPF wages. That gives the closest result for EPF contribution table 2026 comparisons and KWSP employer contribution 13 or 12 checks.
+          </p>
         </div>
-        <p className="text-[10px] italic text-[#3e3c38]">
-          *For salaries above RM20,000, EPF uses direct percentage calculation instead of Third Schedule brackets.
-          Foreign workers: both employee and employer contribute 2% each (flat, no bracket).
-          Source: <a href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c]">KWSP Official Portal</a>
+      </article>
+
+      <article className="space-y-4">
+        <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          Take-Home Salary After EPF — What You Actually Receive
+        </h2>
+        <p className="text-sm leading-relaxed">
+          Your estimated take-home salary after EPF is your gross monthly salary minus the employee EPF deduction. It is not your final net pay, because PCB income tax, SOCSO, EIS, unpaid leave, benefits-in-kind, and other payroll items may still apply.
         </p>
       </article>
 
-      {/* SECTION: Worked Examples — targets "epf calculation" pos 74 */}
+      <article className="space-y-4">
+        <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          EPF for Foreign Workers Malaysia — October 2025 Mandatory Rule
+        </h2>
+        <p className="text-sm leading-relaxed">
+          The EPF contribution foreign worker 2026 rule makes employer contributions mandatory for eligible non-Malaysian workers from October 2025. This KWSP foreign worker calculator section applies the 2% employer rule described by KWSP. Permanent Residents should use the Malaysian / PR option because they follow standard employee and employer rates.
+        </p>
+      </article>
+
+      <article className="space-y-4">
+        <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          EPF Akaun Fleksibel — Understanding Your 3-Account Structure
+        </h2>
+        <div className="text-sm leading-relaxed space-y-4">
+          <p>
+            Since May 2024, KWSP contributions are split into three accounts: 75% to Akaun Persaraan, 15% to Akaun Sejahtera, and 10% to Akaun Fleksibel. This EPF Akaun Fleksibel calculator helps show the portion of each monthly contribution that may become more accessible.
+          </p>
+          <ul className="list-none space-y-3">
+            <li><span className="text-[#c9a84c] font-bold">Akaun Persaraan:</span> long-term retirement savings.</li>
+            <li><span className="text-[#c9a84c] font-bold">Akaun Sejahtera:</span> approved needs such as housing, education, and medical expenses.</li>
+            <li><span className="text-[#c9a84c] font-bold">Akaun Fleksibel:</span> the 10% flexible account that can be withdrawn subject to KWSP procedures.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article className="space-y-4">
+        <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          EPF Contribution at Age 60 and Above
+        </h2>
+        <p className="text-sm leading-relaxed">
+          Once a member reaches age 60, KWSP contribution rates are lower than standard under-60 rates. Many payroll teams also handle Borang KWSP 17A elections for members who want to maintain a higher employee contribution. If you are close to retirement, compare the calculator result with your HR payroll setting and KWSP account record.
+        </p>
+      </article>
+
+      <article className="space-y-4">
+        <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          EPF Voluntary Contribution — i-Saraan, i-Saraan Plus and Tax Relief
+        </h2>
+        <p className="text-sm leading-relaxed">
+          Employees and self-employed Malaysians may add voluntary EPF savings through channels such as i-Topup, i-Saraan, and i-Saraan Plus. These contributions can support retirement goals and may qualify for personal tax relief, subject to current LHDN rules and annual limits.
+        </p>
+      </article>
+
       <article className="space-y-6">
         <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          EPF Calculation Examples 2026 — Step by Step
+          EPF RIA Framework — Are You Saving Enough for Retirement?
         </h2>
-        <p className="text-sm text-[#87847d] leading-relaxed">
-          Here is how EPF calculation works for common Malaysian salary levels using statutory rates,
-          the RM5,000 employer-rate threshold, and upward rounding. These worked examples show how
-          the 2026 KWSP contribution rules apply in practice.
+        <p className="text-sm leading-relaxed">
+          The EPF Retirement Income Adequacy Framework gives members clearer savings targets for age 60. Use the Malaysia EPF retirement projection above to compare your projected balance with the basic, adequate, and enhanced benchmarks.
         </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[
-            {
-              label: "Malaysian Employee — RM 3,500/month",
-              rows: [
-                { desc: "Employee contribution (11%)", val: "RM 385", highlight: false },
-                { desc: "Employer contribution (13%)", val: "RM 455", highlight: true },
-                { desc: "Total monthly EPF", val: "RM 840", highlight: false },
-                { desc: "Akaun Persaraan (75%)", val: "RM 630", highlight: false },
-                { desc: "Akaun Sejahtera (15%)", val: "RM 126", highlight: false },
-                { desc: "Akaun Fleksibel (10%)", val: "RM 84", highlight: false },
-              ],
-              note: "Below RM5,000 — employer contributes 13%",
-            },
-            {
-              label: "Malaysian Employee — RM 5,000/month",
-              rows: [
-                { desc: "Employee contribution (11%)", val: "RM 550", highlight: false },
-                { desc: "Employer contribution (13%)", val: "RM 650", highlight: true },
-                { desc: "Total monthly EPF", val: "RM 1,200", highlight: false },
-                { desc: "Akaun Persaraan (75%)", val: "RM 900", highlight: false },
-                { desc: "Akaun Sejahtera (15%)", val: "RM 180", highlight: false },
-                { desc: "Akaun Fleksibel (10%)", val: "RM 120", highlight: false },
-              ],
-              note: "Exactly at RM5,000 threshold — employer still 13%",
-            },
-            {
-              label: "Malaysian Employee — RM 7,000/month",
-              rows: [
-                { desc: "Employee contribution (11%)", val: "RM 770", highlight: false },
-                { desc: "Employer contribution (12%)", val: "RM 840", highlight: true },
-                { desc: "Total monthly EPF", val: "RM 1,610", highlight: false },
-                { desc: "Akaun Persaraan (75%)", val: "RM 1,208", highlight: false },
-                { desc: "Akaun Sejahtera (15%)", val: "RM 242", highlight: false },
-                { desc: "Akaun Fleksibel (10%)", val: "RM 161", highlight: false },
-              ],
-              note: "Above RM5,000 — employer drops to 12%",
-            },
-            {
-              label: "Foreign Worker — RM 4,000/month",
-              rows: [
-                { desc: "Employee contribution (2%)", val: "RM 80", highlight: false },
-                { desc: "Employer contribution (2%)", val: "RM 80", highlight: true },
-                { desc: "Total monthly EPF", val: "RM 160", highlight: false },
-                { desc: "Effective from", val: "Oct 2025", highlight: false },
-                { desc: "Rule", val: "Mandatory", highlight: false },
-                { desc: "Domestic helpers", val: "Exempt", highlight: false },
-              ],
-              note: "October 2025 mandatory rule — all non-citizens",
-            },
-          ].map((example) => (
-            <div
-              key={example.label}
-              className="p-4 rounded-xl border border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.01)]"
-            >
-              <p className="text-xs font-bold text-[#c9a84c] mb-3">{example.label}</p>
-              <div className="space-y-1.5">
-                {example.rows.map((row) => (
-                  <div key={row.desc} className="flex justify-between text-xs">
-                    <span className="text-[#87847d]">{row.desc}</span>
-                    <span className={row.highlight ? "text-amber-500 font-bold" : "text-[#e6e3db] font-medium"}>
-                      {row.val}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-[10px] text-[#3e3c38] mt-3 pt-2 border-t border-[rgba(255,255,255,0.05)]">
-                {example.note}
-              </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {[{ label: "Basic", value: "RM390,000" }, { label: "Adequate", value: "RM600,000" }, { label: "Enhanced", value: "RM1,000,000+" }].map((tier) => (
+            <div key={tier.label} className="p-4 rounded-xl border border-[rgba(255,255,255,0.05)] bg-[#0c0e16]">
+              <p className="text-[10px] text-[#c9a84c] font-bold uppercase mb-1">{tier.label} Savings</p>
+              <p className="text-lg font-bold text-[#e6e3db]">{tier.value}</p>
             </div>
           ))}
         </div>
       </article>
 
-      {/* SECTION: Official rate confirmation — targets "kwsp employee contribution rate 11% official 2026 malaysia" */}
       <article className="space-y-4">
         <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          Is the KWSP Employee Contribution Rate 11% Official for 2026?
+          Kalkulator KWSP — Soalan Lazim dalam Bahasa Malaysia
         </h2>
-        <div className="text-sm leading-relaxed space-y-3 text-[#87847d]">
-          <p>
-            Yes — the 11% employee contribution rate is officially confirmed under
-            the Third Schedule of the EPF Act 1991. This rate is in full effect for 2026 and applies
-            to all Malaysian citizens and Permanent Residents below age 60. There is no planned
-            amendment to this rate for the current financial year.
-          </p>
-          <p>
-            The 11% employee rate applies to Malaysian citizens and Permanent Residents under age 60,
-            regardless of salary amount and regardless of employer industry or company size.
-            Both employees and employers are legally bound under the EPF Act to remit contributions
-            by the 15th of each following month.
-          </p>
-          <div className="p-4 rounded-xl border border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.01)]">
-            <p className="text-xs font-bold text-[#e6e3db] mb-2">Official confirmation sources:</p>
-            <ul className="text-xs text-[#87847d] space-y-1">
-              <li>
-                →{" "}
-                <a
-                  href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#c9a84c] hover:underline"
-                >
-                  KWSP Mandatory Contribution page — Third Schedule with worked examples
-                </a>
-              </li>
-              <li>→ EPF Act 1991, Third Schedule, Part A — effective October 2025 salary month</li>
-              <li>→ Applicable to: Malaysian citizens, Permanent Residents, employees under age 60</li>
-            </ul>
-          </div>
+        <div className="text-sm leading-relaxed space-y-3">
+          <p><strong className="text-[#e6e3db]">Apa itu kalkulator KWSP?</strong> Kalkulator KWSP membantu anda anggar caruman pekerja, caruman majikan, potongan gaji, dan simpanan persaraan EPF.</p>
+          <p><strong className="text-[#e6e3db]">Berapa kadar caruman KWSP 2026?</strong> Untuk pekerja Malaysia bawah umur 60 tahun, kadar pekerja biasanya 11%, manakala majikan membayar 13% atau 12% bergantung kepada gaji bulanan.</p>
+          <p><strong className="text-[#e6e3db]">Adakah Akaun Fleksibel boleh dikeluarkan?</strong> Ya, Akaun Fleksibel boleh dikeluarkan tertakluk kepada prosedur KWSP semasa.</p>
         </div>
       </article>
 
-      {/* SECTION 3: Age 60 Rules */}
       <article className="space-y-6">
         <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          EPF Contribution Rate Age 60 Malaysia — KWSP Reduced Rates Explained
+          EPF / KWSP Glossary
         </h2>
-        <div className="text-sm leading-relaxed space-y-4">
-          <p>
-            Reaching the age of 60 is a significant milestone for EPF members. Under Malaysia&apos;s age 60+ contribution rules, the mandatory contribution rates drop sharply once an employee enters this age bracket. For most employees, the mandatory deduction from salary becomes 0%, while the employer&apos;s mandatory share is reduced to a flat 4%.
-          </p>
-          <p>
-            It is a common myth that contributions stop entirely at 60. In reality, contributions can continue at these reduced rates as long as the member remains employed. This &ldquo;Age 60+ Rate&rdquo; is designed to encourage the employment of senior citizens by lowering the cost of hiring for employers while allowing employees to take home their full gross salary. However, members and employers can still mutually agree to contribute at higher &ldquo;voluntary excess&rdquo; rates if they wish to continue building retirement capital.
-          </p>
+        <div className="overflow-x-auto rounded-2xl border border-[rgba(255,255,255,0.07)] bg-[#131620]">
+          <table className="w-full text-left border-collapse">
+            <tbody className="text-xs text-[#87847d]">
+              {[{ term: "EPF / KWSP", meaning: "Malaysia's Employees Provident Fund retirement savings system." }, { term: "Contributory wage", meaning: "The wage amount used to calculate EPF contributions." }, { term: "Akaun Fleksibel", meaning: "The 10% flexible EPF account introduced under the 3-account structure." }, { term: "RIA Framework", meaning: "EPF retirement adequacy benchmarks for age-60 savings." }].map((row) => (
+                <tr key={row.term} className="border-b border-[rgba(255,255,255,0.03)]">
+                  <td className="p-4 font-bold text-[#e6e3db]">{row.term}</td>
+                  <td className="p-4">{row.meaning}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </article>
 
-      {/* SECTION 4: Foreign Worker 2026 */}
       <article className="space-y-6">
         <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          EPF Contribution for Foreign Workers Malaysia 2026 (October 2025 Mandatory Rule)
+          Long-Tail EPF FAQ
         </h2>
-        <div className="text-sm leading-relaxed space-y-4">
-          <p>
-            One of the most significant shifts in Malaysian payroll history occurred in October 2025. Previously, EPF was voluntary for many non-citizens. Under the updated rules, non-Malaysian employees, including expats and migrant workers, are generally required to contribute.
-          </p>
-          <p>
-            The mandatory foreign-worker rate is currently set at 2% for the employee and 2% for the employer, totaling 4%. This rule applies to non-citizens with valid work permits, excluding domestic helpers. It is important to distinguish between Foreign Workers and Permanent Residents (PR): PR holders in Malaysia are treated the same as citizens and must contribute at the full standard rates of 11% and 12/13%.
-          </p>
+        <div className="space-y-6 text-sm leading-relaxed">
+          {longTailFaqItems.map((item) => (
+            <div key={item.question} className="p-4 rounded-xl border border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.01)]">
+              <h3 className="text-base font-bold text-[#e6e3db] mb-2">{item.question}</h3>
+              <p>{item.answer}</p>
+            </div>
+          ))}
         </div>
       </article>
 
-      {/* SECTION 5: Akaun Fleksibel */}
-      <article className="space-y-6">
+      <article className="space-y-4">
         <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          EPF Akaun Fleksibel Calculator — 3-Account Contribution Split 2026
+          Official EPF Source and Calculation Basis
         </h2>
-        <div className="text-sm leading-relaxed space-y-4">
-          <p>
-            Akaun Fleksibel is now part of the modern KWSP account structure. Since May 2024, monthly contributions are no longer split 70:30 between two accounts. Instead, a new three-account structure has been implemented:
-          </p>
-          <ul className="list-none space-y-3">
-            <li className="flex gap-3">
-              <span className="text-[#c9a84c] font-bold">1. Akaun Persaraan (75%):</span>
-              <span>The primary retirement fund (formerly Account 1), which cannot be accessed until age 55.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-[#c9a84c] font-bold">2. Akaun Sejahtera (15%):</span>
-              <span>Designed for life-cycle needs (formerly Account 2) such as housing, education, and medical expenses.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-[#c9a84c] font-bold">3. Akaun Fleksibel (10%):</span>
-              <span>The new &ldquo;Account 3&rdquo; that allows members to make withdrawals at any time for any purpose, providing liquidity during emergencies.</span>
-            </li>
-          </ul>
-          <p className="text-sm text-[#87847d] mt-3">
-            Planning full Islamic financial obligations alongside your EPF savings? Our{" "}
-            <Link href="/tools/zakat-calculator" className="text-[#c9a84c] hover:underline">
-              Zakat Calculator Malaysia 2026
-            </Link>{" "}
-            helps you calculate Zakat on savings and investments separately.
-          </p>
-          <p>
-            While Akaun Fleksibel provides flexibility, financial advisors often recommend leaving this account untouched whenever possible. The power of compounding at the current 6.15% dividend rate is significantly diminished if 10% of your contributions are withdrawn regularly.
-          </p>
-        </div>
+        <p className="text-sm leading-relaxed">
+          Calculation references include KWSP mandatory contribution guidance, the EPF Act 1991 contribution framework, the RM5,000 employer-rate threshold, the October 2025 foreign worker update, and the 75/15/10 three-account structure. For final payroll compliance, use KWSP records as the authority.
+        </p>
+        <a href="https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution" target="_blank" rel="nofollow noopener noreferrer" className="inline-flex text-sm text-[#c9a84c] hover:underline">
+          View KWSP mandatory contribution guidance ↗
+        </a>
       </article>
 
-      {/* SECTION 6: Retirement Projection + RIA */}
-      <article className="space-y-6">
-        <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
-          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          Malaysia EPF Retirement Projection — Are You on Track for 2026?
-        </h2>
-        <div className="text-sm leading-relaxed space-y-4">
-          <p>
-            The retirement projection feature uses the Retirement Income Adequacy (RIA) Framework introduced in early 2026. This framework sets clear benchmarks for what constitutes &ldquo;enough&rdquo; savings to support a 20-year retirement in Malaysia.
-          </p>
-          <p>
-            Under the current KWSP retirement adequacy framework, members aged 60 can compare their savings against three reference tiers:
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-            <div className="p-4 rounded-xl border border-[rgba(255,255,255,0.05)] bg-[#0c0e16]">
-              <p className="text-[10px] text-[#c9a84c] font-bold uppercase mb-1">Basic Savings</p>
-              <p className="text-lg font-bold text-[#e6e3db]">RM 390,000</p>
-              <p className="text-[10px] text-[#3e3c38]">Minimum adequacy</p>
-            </div>
-            <div className="p-4 rounded-xl border border-[#c9a84c]/20 bg-[#0c0e16]">
-              <p className="text-[10px] text-[#c9a84c] font-bold uppercase mb-1">Adequate Savings</p>
-              <p className="text-lg font-bold text-[#e6e3db]">RM 650,000</p>
-              <p className="text-[10px] text-[#3e3c38]">Comfortable lifestyle</p>
-            </div>
-            <div className="p-4 rounded-xl border border-[rgba(255,255,255,0.05)] bg-[#0c0e16]">
-              <p className="text-[10px] text-[#c9a84c] font-bold uppercase mb-1">Enhanced Savings</p>
-              <p className="text-lg font-bold text-[#e6e3db]">RM 1,300,000</p>
-              <p className="text-[10px] text-[#3e3c38]">Full income replacement</p>
-            </div>
-          </div>
-          <p className="text-sm text-[#87847d]">
-            For Shariah-compliant savings planning alongside EPF, use our{" "}
-            <Link href="/tools/zakat-calculator" className="text-[#c9a84c] hover:underline">
-              Zakat calculator
-            </Link>{" "}
-            to ensure your annual Zakat obligations on savings are met before projecting net retirement balance.
-          </p>
-          <p>
-            With the <strong>average EPF dividend hovering at 6.15%</strong> (Conventional) and 6.25% (Shariah), compound interest is your greatest ally. If your projection falls below the Basic Savings threshold, consider voluntary top-ups via the i-Topup facility or Private Retirement Schemes (PRS) to bridge the gap.
-          </p>
-        </div>
-      </article>
-
-      {/* SECTION 7: How to Use */}
-      <article className="space-y-6">
-        <h2 className="text-2xl font-bold text-[#e6e3db] flex items-center gap-3">
-          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          How to Use This EPF Calculator Malaysia
-        </h2>
-        <div className="text-sm leading-relaxed space-y-4">
-          <p>
-            Getting a practical EPF estimate is simple. The calculator applies the current employee and employer rates, the RM5,000 employer threshold, and upward Ringgit rounding so you can quickly understand your monthly contribution breakdown.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex gap-3 p-4 rounded-xl border border-[rgba(255,255,255,0.03)] bg-[rgba(255,255,255,0.01)]">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[rgba(201,168,76,0.1)] text-[#c9a84c] text-xs font-bold flex items-center justify-center">1</span>
-              <p className="text-xs">Enter your <strong>Gross Monthly Salary</strong>. Include all fixed allowances subject to EPF.</p>
-            </div>
-            <div className="flex gap-3 p-4 rounded-xl border border-[rgba(255,255,255,0.03)] bg-[rgba(255,255,255,0.01)]">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[rgba(201,168,76,0.1)] text-[#c9a84c] text-xs font-bold flex items-center justify-center">2</span>
-              <p className="text-xs">Select your <strong>Employee Category</strong> (Malaysian, Senior 60+, or Foreign Worker).</p>
-            </div>
-            <div className="flex gap-3 p-4 rounded-xl border border-[rgba(255,255,255,0.03)] bg-[rgba(255,255,255,0.01)]">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[rgba(201,168,76,0.1)] text-[#c9a84c] text-xs font-bold flex items-center justify-center">3</span>
-              <p className="text-xs">Optional: Enter your <strong>Current Balance and Age</strong> to see a 6.15% compound projection.</p>
-            </div>
-            <div className="flex gap-3 p-4 rounded-xl border border-[rgba(255,255,255,0.03)] bg-[rgba(255,255,255,0.01)]">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[rgba(201,168,76,0.1)] text-[#c9a84c] text-xs font-bold flex items-center justify-center">4</span>
-              <p className="text-xs">Review the breakdown of <strong>Employee vs Employer shares</strong> instantly.</p>
-            </div>
-          </div>
-        </div>
-      </article>
-
-     
-
-      {/* INTERNAL LINKS */}
       <section className="pt-10 border-t border-[rgba(255,255,255,0.07)]">
         <h2 className="text-xl font-bold text-white mb-6">Explore Other Finance Tools</h2>
         <nav aria-label="Related tools navigation" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -475,13 +316,11 @@ export default function EpfContent({ faqItems = [] }: EpfContentProps) {
         </nav>
       </section>
 
-      {/* FAQ Section */}
       {faqItems.length > 0 && (
         <section className="pt-10 border-t border-[rgba(255,255,255,0.07)]">
           <FAQ items={faqItems} />
         </section>
       )}
-
     </section>
   );
 }

@@ -31,7 +31,9 @@ export const metadata: Metadata = {
     "Federal Decree-Law No. 33 of 2021",
     "Article 51 UAE labour law",
     "DIFC gratuity DEWS",
-    "gratuity denied UAE Article 120",
+    "alternative end of service savings scheme UAE",
+    "Cabinet Resolution No. 96 of 2023",
+    "UAE gratuity Arabic",
   ],
   openGraph: {
     title: "Free UAE Gratuity Calculator 2026 — Dubai & All Emirates (MOHRE)",
@@ -91,24 +93,24 @@ const faqItems = [
       "The gratuity payment is capped at two years' worth of your basic salary, even if you have many more years of service.",
   },
   {
-    question: "How is gratuity calculated for unlimited contract resignation?",
+    question: "How is gratuity calculated if I resign in the UAE?",
     answer:
-      "For legacy unlimited contracts, resignation uses a sliding scale: 1–3 years = 1/3 of full gratuity, 3–5 years = 2/3, 5+ years = full amount. Termination always yields full gratuity.",
+      "For current limited or fixed-term contracts, resignation and termination use the same gratuity formula after one full year of continuous service: 21 days per year for the first 5 years and 30 days per year after that, subject to the 2-year basic-salary cap.",
   },
   {
     question: "What is the difference between limited and unlimited contract gratuity?",
     answer:
-      "Limited (fixed‑term) contracts give full gratuity after 1 year, regardless of resignation or termination. Unlimited (legacy) contracts apply the sliding‑scale reduction when resigning before 5 years.",
+      "Limited or fixed-term contracts use the same gratuity formula for resignation and termination after 1 year. Some legacy unlimited contracts may have transitional conditions, so employees with older contracts should confirm the applicable treatment with HR or MOHRE.",
   },
   {
     question: "Can my employer refuse to pay gratuity?",
     answer:
-      "Yes, under Article 120 gratuity can be withheld for gross misconduct such as theft or fraud, or if you leave without serving the notice period.",
+      "Under the current UAE Labour Law framework, eligible end-of-service gratuity should not be forfeited simply because of resignation, termination, workplace allegations, or leaving without notice. Deductions should be limited to legally documented debts such as salary advances, loans, or unreturned company property.",
   },
   {
     question: "How long does the employer have to pay gratuity?",
     answer:
-      "Article 53 requires payment of all end‑of‑service entitlements within 14 days of your last working day.",
+      "Article 53 requires payment of all end-of-service entitlements within 14 days from the contract termination date.",
   },
   {
     question: "Does gratuity apply in Dubai free zones like DIFC or ADGM?",
@@ -178,10 +180,10 @@ export default function GratuityPage() {
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "HR Tools",
+            "name": "QuickCalcs Tools",
             "item": {
-              "@id": "https://www.quickcalcs.app/?category=hr",
-              "name": "HR Tools"
+              "@id": "https://www.quickcalcs.app/",
+              "name": "QuickCalcs Tools"
             }
           },
           {
@@ -209,7 +211,7 @@ export default function GratuityPage() {
             <Home className="w-3 h-3" /> Home
           </Link>
           <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
-          <Link href="/?category=hr" className="hover:text-[#c9a84c] transition-colors">HR Tools</Link>
+          <Link href="/" className="hover:text-[#c9a84c] transition-colors">QuickCalcs Tools</Link>
           <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
           <span className="text-[#c9a84c]">Gratuity Calculator</span>
         </nav>

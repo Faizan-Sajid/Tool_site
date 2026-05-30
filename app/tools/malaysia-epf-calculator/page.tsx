@@ -8,9 +8,9 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Malaysia EPF Calculator 2026 | KWSP Contribution Rate",
+    absolute: "Malaysia EPF Calculator 2026 | KWSP Contribution Calculator",
   },
-  description: "Calculate Malaysia EPF (KWSP) contributions instantly. Official Third Schedule 2026 rates — 11% employee, 13%/12% employer, 2% foreign worker (Oct 2025 mandatory). Retirement projection + Akaun Fleksibel breakdown. Free, no login.",
+  description: "Calculate EPF/KWSP contributions instantly — 11% employee, 13%/12% employer, foreign worker 2% rule. Akaun Fleksibel split, take-home salary & retirement projection. Free, no login.",
   keywords: [
     "malaysia epf calculator 2026",
     "epf calculator malaysia",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Malaysia EPF Calculator 2026 | KWSP Contribution Rate",
-    description: "Free Malaysia EPF calculator with official 2026 Third Schedule rates. Employee 11%, employer 13%/12%, foreign worker 2% (Oct 2025). Retirement projection included.",
+    title: "Malaysia EPF / KWSP Calculator 2026 | Free Contribution Tool",
+    description: "Free EPF/KWSP calculator with 2026 Third Schedule rates. Employee 11%, employer 13%/12%, foreign worker 2% (Oct 2025). Akaun Fleksibel breakdown and retirement projection included.",
     url: "https://www.quickcalcs.app/tools/malaysia-epf-calculator",
     siteName: "QuickCalcs",
     locale: "en_MY",
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Malaysia EPF Calculator 2026 | KWSP Contribution Rate",
-    description: "Free EPF/KWSP calculator with 2026 Third Schedule rates. Foreign worker 2% rule, Akaun Fleksibel, retirement projection. No login needed.",
+    title: "Malaysia EPF / KWSP Calculator 2026 | Free Contribution Tool",
+    description: "Free EPF/KWSP calculator with 2026 Third Schedule rates. Employee 11%, employer 13%/12%, foreign worker 2% (Oct 2025). Akaun Fleksibel breakdown and retirement projection included.",
     images: [
       {
         url: "https://www.quickcalcs.app/tools/malaysia-epf-calculator/opengraph-image",
@@ -85,7 +85,7 @@ const faqItems = [
   {
     question: "What is the EPF contribution rate for foreign workers in Malaysia 2026?",
     answer:
-      "Effective October 2025, EPF contributions became mandatory for all non-Malaysian employees. Both employer and employee each contribute 2% under Third Schedule Part F. Permanent Residents follow standard 11%/13% or 12% rates.",
+      "Since October 2025, employers must contribute 2% of the monthly contributory wage for non-Malaysian employees. Foreign workers do not contribute from their own salary under the rule described on this page. Permanent Residents follow standard Malaysian employee rates.",
   },
   {
     question: "Does the EPF employer contribution rate change at RM5,000 salary?",
@@ -95,37 +95,92 @@ const faqItems = [
   {
     question: "What happens to EPF contributions when an employee turns 60?",
     answer:
-      "At age 60, the employee rate drops from 11% to 5.5% (or 0% mandatory default), and the employer rate drops from 12–13% to 4%. Contributions continue at these reduced rates for as long as the employee remains employed. Members can fully withdraw their EPF balance at age 60.",
+      "At age 60, the employee contribution rate reduces to 5.5%, while employer rates reduce to 6.5% for salaries at or below RM5,000 and 6% for salaries above RM5,000. Members who want to keep contributing at the full 11% employee rate can submit Borang KWSP 17A to their employer.",
   },
   {
     question: "What are the three EPF accounts and how are contributions split?",
     answer:
-      "Since May 2024, EPF contributions are split into three accounts: Akaun Persaraan (75%, retirement only), Akaun Sejahtera (15%, housing/education/health), and Akaun Fleksibel (10%, withdraw anytime). Total contribution amount is unchanged.",
+      "Since May 2024, EPF contributions are split into three accounts: Akaun Persaraan receives 75%, Akaun Sejahtera receives 15%, and Akaun Fleksibel receives 10%. Akaun Fleksibel can be withdrawn anytime, while the other accounts follow EPF withdrawal rules.",
   },
   {
     question: "What is the EPF retirement savings target for 2026 in Malaysia?",
     answer:
-      "Under the Retirement Income Adequacy (RIA) Framework introduced in January 2026, EPF recommends three tiers by age 60: Basic Savings RM390,000, Adequate Savings RM650,000, and Enhanced Savings RM1,300,000.",
+      "Under the Retirement Income Adequacy Framework introduced in January 2026, EPF uses three age-60 benchmarks: Basic Savings RM390,000, Adequate Savings RM600,000, and Enhanced Savings RM1,000,000+. Compare your projected EPF balance against these tiers to see whether you are on track.",
   },
   {
     question: "Is there a maximum salary for EPF contribution calculation?",
     answer:
-      "No. Unlike SOCSO (capped at RM6,000), EPF has no upper salary ceiling. All wages are subject to EPF. For salaries above RM20,000/month, direct percentage calculation applies instead of the Third Schedule bracket table.",
+      "No. Unlike SOCSO, EPF has no upper salary ceiling. For monthly salaries under RM20,000, actual payroll amounts follow EPF Third Schedule bracket values. Above RM20,000, the statutory percentage rate applies directly.",
   },
   {
     question: "Can I contribute more than 11% to my EPF voluntarily?",
     answer:
-      "Yes. EPF members can make voluntary contributions above 11% through the i-Topup facility. Self-employed individuals can use i-Simpan. Voluntary contributions earn the same EPF dividend and qualify for income tax relief up to RM4,000/year.",
+      "Yes. EPF members can make voluntary contributions through channels such as i-Topup, while self-employed individuals can use i-Saraan. Voluntary EPF contributions may qualify for personal tax relief up to RM4,000 per year, subject to current tax rules.",
   },
 ];
+
+const longTailFaqItems = [
+  {
+    question: "How much is EPF deducted from salary in Malaysia?",
+    answer:
+      "For Malaysian employees below 60, EPF deducts 11% from your monthly salary. On a RM5,000 salary, that is RM550 per month. Your employer adds RM650 (13%) on top — meaning your total monthly EPF contribution is RM1,200, with RM550 coming from your pocket and RM650 from your employer.",
+  },
+  {
+    question: "Does the employer EPF rate change at RM5,000?",
+    answer:
+      "Yes. The employer contribution is 13% for employees earning RM5,000 or below, and 12% for those earning above RM5,000. The employee rate stays at 11% regardless. This threshold applies to the monthly contributory wage — not total compensation including allowances.",
+  },
+  {
+    question: "Is EPF contribution calculated on basic salary or gross salary?",
+    answer:
+      "EPF is calculated on your monthly contributory wage, which typically includes basic salary plus certain fixed allowances like housing allowance. It excludes reimbursements, travel claims, and certain bonus types. Check your payslip to see which components your employer includes in the EPF calculation.",
+  },
+  {
+    question: "Does EPF apply to part-time and contract workers?",
+    answer:
+      "Yes. EPF contribution is mandatory for all employees in Malaysia regardless of employment type — full-time, part-time, or fixed-term contract. Employers must register and contribute for all employees including those on short-term contracts. The only exception is self-employed individuals, who contribute voluntarily through i-Saraan.",
+  },
+  {
+    question: "What is the EPF contribution rate for age 60 and above?",
+    answer:
+      "Once you reach age 60, the employee contribution rate reduces to 5.5% and employer rates reduce to 6.5% (salaries ≤RM5,000) or 6% (above RM5,000). You can choose to maintain the full 11% employee rate by submitting Borang KWSP 17A to your HR department.",
+  },
+  {
+    question: "Does EPF contribution apply to bonuses in Malaysia?",
+    answer:
+      "Yes, bonuses are generally subject to EPF contribution as they are considered part of wages under the EPF Act 1991. However, certain ex-gratia payments and approved allowances may be excluded. Your employer's payroll team determines which bonus components are EPF-liable based on EPF guidelines.",
+  },
+  {
+    question: "What happens if my employer does not pay EPF?",
+    answer:
+      "Under the EPF Act 1991, employers who fail to remit contributions face fines up to RM20,000 or imprisonment up to 3 years, or both. You can check whether your employer has been contributing correctly by logging into i-Akaun at kwsp.gov.my. If contributions are missing, you can report to EPF enforcement at 03-8922 6000 or visit any EPF branch.",
+  },
+  {
+    question: "How does voluntary EPF contribution reduce my tax in Malaysia?",
+    answer:
+      "Voluntary EPF contributions — including i-Saraan — qualify for up to RM4,000 in personal tax relief under the Life Insurance and EPF category. For someone in the 24% tax bracket, maximising this relief saves RM960 in income tax per year. Combined with the RM500 government match on i-Saraan, the effective first-year return on voluntary contributions is exceptionally high.",
+  },
+  {
+    question: "What is the EPF RIA Framework and basic savings target?",
+    answer:
+      "The Retirement Income Adequacy (RIA) Framework, launched January 2026, sets three retirement savings benchmarks: Basic (RM390,000), Adequate (RM600,000), and Enhanced (RM1,000,000+) — all at age 60. Check the EPF balance projection in this calculator to see if you are on track for the basic savings benchmark based on your current salary and contribution.",
+  },
+  {
+    question: "Can I withdraw from EPF Akaun Fleksibel anytime?",
+    answer:
+      "Yes. Akaun Fleksibel (10% of your contributions) can be withdrawn at any time through the i-Akaun app or EPF branch with no conditions or minimum amount. The remaining 75% in Akaun Persaraan is locked until age 55, and 15% in Akaun Sejahtera is accessible for approved purposes like housing and medical needs.",
+  },
+];
+
+const schemaFaqItems = [...faqItems, ...longTailFaqItems];
 
 const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Malaysia EPF Calculator 2026 | KWSP Contribution Rate",
+    "name": "Malaysia EPF Calculator 2026 | KWSP Contribution Calculator",
     "url": "https://www.quickcalcs.app/tools/malaysia-epf-calculator",
-    "description": "Calculate Malaysia EPF (KWSP) contributions instantly using 2026 statutory rates for Malaysian employees, age 60+ employees, and foreign workers.",
+    "description": "Calculate Malaysia EPF (KWSP) contributions instantly using 2026 statutory rates for Malaysian employees, age 60+ employees, foreign workers, take-home salary, and retirement projection.",
     "inLanguage": "en-MY",
     "isPartOf": {
       "@type": "WebSite",
@@ -143,7 +198,19 @@ const jsonLd = [
       "name": "Malaysia EPF Calculator 2026",
       "url": "https://www.quickcalcs.app/tools/malaysia-epf-calculator"
     },
-    "dateModified": "2026-05-28"
+    "datePublished": "2025-10-01",
+    "dateModified": "2026-05-28",
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "QuickCalcs"
+    },
+    "citation": [
+      "https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution"
+    ],
+    "about": [
+      { "@type": "Thing", "name": "Employees Provident Fund Malaysia" },
+      { "@type": "Thing", "name": "KWSP contribution rates" }
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -151,7 +218,7 @@ const jsonLd = [
     "name": "Malaysia EPF Calculator 2026",
     "alternateName": "KWSP Contribution Calculator Malaysia",
     "url": "https://www.quickcalcs.app/tools/malaysia-epf-calculator",
-    "description": "Free Malaysia EPF (KWSP) calculator using official 2026 Third Schedule rates. Calculate employee and employer EPF contributions, foreign worker EPF, and retirement projection.",
+    "description": "Free Malaysia EPF (KWSP) calculator using 2026 statutory contribution rates. Calculate employee and employer EPF contributions, foreign worker EPF, take-home salary, and retirement projection.",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -160,9 +227,10 @@ const jsonLd = [
       "priceCurrency": "MYR"
     },
     "featureList": [
-      "EPF contribution calculation using Third Schedule 2026",
+      "EPF contribution calculation using 2026 statutory rates",
       "Foreign worker EPF calculation (Oct 2025 mandatory rule)",
       "Age 60 EPF rate calculation",
+      "Estimated take-home salary after EPF",
       "Malaysia EPF retirement projection",
       "Akaun Fleksibel breakdown",
       "Employer 13% vs 12% threshold calculator"
@@ -178,7 +246,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
+    "mainEntity": schemaFaqItems.map(item => ({
       "@type": "Question",
       "name": item.question,
       "acceptedAnswer": {
@@ -200,8 +268,8 @@ const jsonLd = [
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Finance Tools",
-        "item": "https://www.quickcalcs.app/?category=finance"
+        "name": "QuickCalcs Tools",
+        "item": "https://www.quickcalcs.app"
       },
       {
         "@type": "ListItem",
@@ -214,8 +282,8 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Calculate EPF Contributions in Malaysia 2026",
-    "description": "Step-by-step guide to calculating KWSP EPF employee and employer contributions using the official Third Schedule 2026 rates.",
+    "name": "How to Use the Malaysia EPF Calculator",
+    "description": "Step-by-step guide to using the Malaysia EPF calculator for KWSP employee and employer contributions.",
     "totalTime": "PT2M",
     "estimatedCost": {
       "@type": "MonetaryAmount",
@@ -227,13 +295,13 @@ const jsonLd = [
         "@type": "HowToStep",
         "position": 1,
         "name": "Enter your gross monthly salary",
-        "text": "Type your gross monthly salary in Ringgit. Include all fixed allowances subject to EPF. There is no upper salary ceiling for EPF — all wages are included."
+        "text": "Type your gross monthly salary in Ringgit. Include all fixed allowances subject to EPF."
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "Select your employee category",
-        "text": "Choose Malaysian/PR for standard rates, Age 60+ for reduced rates, or Foreign Worker for the 2% mandatory rule effective October 2025."
+        "text": "Choose Malaysian/PR for standard rates, Age 60+ for reduced rates, or Foreign Worker for the 2% employer contribution rule effective October 2025."
       },
       {
         "@type": "HowToStep",
@@ -248,6 +316,25 @@ const jsonLd = [
         "text": "Optionally enter your current EPF balance and age to see a projection of your savings at age 55, using the 6.15% conventional dividend rate."
       }
     ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Malaysia EPF Calculator 2026 — KWSP Contribution Rates & Take-Home Salary",
+    "datePublished": "2025-10-01",
+    "dateModified": "2026-05-28",
+    "author": {
+      "@type": "Organization",
+      "name": "QuickCalcs",
+      "url": "https://www.quickcalcs.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "QuickCalcs",
+      "url": "https://www.quickcalcs.app"
+    },
+    "mainEntityOfPage": "https://www.quickcalcs.app/tools/malaysia-epf-calculator",
+    "citation": "https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution"
   }
 ];
 
@@ -267,7 +354,7 @@ export default function EpfPage() {
             <Home className="w-3 h-3" /> Home
           </Link>
           <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
-          <Link href="/?category=finance" className="hover:text-[#c9a84c] transition-colors">Finance Tools</Link>
+          <Link href="/" className="hover:text-[#c9a84c] transition-colors">QuickCalcs Tools</Link>
           <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
           <span className="text-[#c9a84c]">EPF Calculator</span>
         </nav>
@@ -282,7 +369,7 @@ export default function EpfPage() {
             Malaysia EPF Calculator 2026
           </h1>
           <p className="text-[#87847d] text-sm max-w-2xl leading-relaxed">
-            Calculate employee & employer contributions instantly — based on official KWSP Third Schedule rates effective October 2025. Includes foreign worker 2% mandate and retirement projections.
+            Calculate your exact EPF and KWSP contributions in seconds — based on the official statutory rates effective for 2026. Whether you are checking your payslip, planning your retirement savings, or figuring out what your employer owes, this free tool gives you the breakdown instantly.
           </p>
           <p className="text-[11px] text-[#3e3c38] mt-3 mb-1">
             Last verified: May 2026{" · "}Source:{" "}
@@ -297,7 +384,7 @@ export default function EpfPage() {
           </p>
 
           <div className="flex flex-wrap gap-3 mt-6">
-            {["✅ Third Schedule Rates", "✅ Foreign Worker 2% Rule", "✅ No Login Required", "✅ Updated Oct 2025"].map((tag) => (
+            {["✅ Statutory KWSP Rates", "✅ Foreign Worker 2% Rule", "✅ Take-Home After EPF", "✅ Updated Oct 2025"].map((tag) => (
               <span key={tag} className="px-3 py-1.5 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] text-[10px] font-medium text-[#87847d]">
                 {tag}
               </span>

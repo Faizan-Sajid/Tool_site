@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.quickcalcs.app";
   const toolLastModified: Record<string, string> = {
     "ksa-gosi-calculator": "2026-05-23",
+    "malaysia-epf-calculator": "2026-05-28",
     // add other tools here as you update them
   };
 

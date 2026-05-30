@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Calculator, RotateCcw, Wallet, Users, Landmark, TrendingUp } from "lucide-react";
+import { RotateCcw, Wallet, Users, Landmark, TrendingUp } from "lucide-react";
 
 export default function EpfCalculator() {
   // EPF Constants
@@ -76,8 +76,6 @@ export default function EpfCalculator() {
 
     let employeeShare = 0;
     let employerShare = 0;
-
-    const rates = EPF_RATES[type];
 
     if (type === "malaysian") {
       const ratesMalaysian = EPF_RATES.malaysian;
@@ -176,6 +174,7 @@ export default function EpfCalculator() {
 
   const isCalculationBlocked = !!validation.salary;
   const epfResult = !isCalculationBlocked ? calculateEPF(salaryNum, employeeType) : { employeeShare: 0, employerShare: 0, totalMonthly: 0 };
+  const estimatedTakeHome = salaryNum - epfResult.employeeShare;
   const retirementResult = !isCalculationBlocked ? calculateRetirement(balanceNum, epfResult.totalMonthly, ageNum) : { projectedBalance: 0, yearsToRetirement: 0, monthsToRetirement: 0 };
 
   const handleReset = () => {
@@ -334,7 +333,7 @@ export default function EpfCalculator() {
         </div>
 
         {/* RESULT GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
           {/* Employee Contribution */}
           <div className="bg-[#0c0e16] p-4 sm:p-6 rounded-[20px] border border-[rgba(255,255,255,0.03)] group hover:border-[#c9a84c]/20 transition-all">
             <p className="text-[10px] uppercase tracking-wider text-[#3e3c38] font-bold mb-2">Employee Contribution</p>
@@ -344,6 +343,17 @@ export default function EpfCalculator() {
               </span>
             </div>
             <p className="text-[10px] text-[#87847d] mt-2 italic">Deducted from your salary monthly</p>
+          </div>
+
+          {/* Estimated Take-Home Salary */}
+          <div className="bg-[#0c0e16] p-4 sm:p-6 rounded-[20px] border border-[rgba(255,255,255,0.03)] group hover:border-[#c9a84c]/20 transition-all">
+            <p className="text-[10px] uppercase tracking-wider text-[#3e3c38] font-bold mb-2">Estimated Take-Home Salary</p>
+            <div className="flex items-baseline gap-2">
+              <span className="text-[#e6e3db] text-2xl sm:text-3xl font-bold">
+                {isCalculationBlocked ? "RM —" : `RM ${formatRM(estimatedTakeHome)}`}
+              </span>
+            </div>
+            <p className="text-[10px] text-[#87847d] mt-2 italic">Before PCB, SOCSO, EIS and other deductions</p>
           </div>
 
           {/* Employer Contribution */}
@@ -397,7 +407,7 @@ export default function EpfCalculator() {
 
         {/* Disclaimer */}
         <p className="mt-10 text-[10px] leading-relaxed text-[#3e3c38] italic text-center max-w-xl mx-auto">
-          Calculations are based on KWSP Third Schedule rates effective October 2025. Results are estimates — for salaries under RM20,000, actual amounts may vary slightly from Third Schedule bracket values. Always verify with your employer or KWSP official portal.
+          Contributions calculated using statutory percentage rates. For monthly salaries under RM20,000, actual payroll amounts follow EPF Third Schedule bracket values and may differ slightly. Always verify with your employer or KWSP official portal.
         </p>
       </div>
     </div>
