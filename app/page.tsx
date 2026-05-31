@@ -61,7 +61,7 @@ const homeFaqs = [
   },
   {
     question: "What is the PSEB tax rate for Pakistani freelancers in 2026?",
-    answer: "PSEB-registered freelancers who are active ATL filers pay 0.25% on foreign IT export remittances under Section 154S. Non-PSEB ATL filers pay 1%. Non-filers do not qualify for either rate and face double withholding tax. To get the PSEB rate, you must register with the Pakistan Software Export Board and ensure 80% of business receipts enter Pakistan through formal banking channels."
+    answer: "PSEB-registered freelancers who are active ATL filers pay 0.25% on foreign IT export remittances under Section 154A. Non-PSEB ATL filers pay 1%. Non-filers do not qualify for either rate and face double withholding tax. To get the PSEB rate, you must register with the Pakistan Software Export Board and ensure 80% of business receipts enter Pakistan through formal banking channels."
   },
   {
     question: "How is Malaysia EPF calculated in 2026?",
@@ -143,7 +143,7 @@ const faqSchema = {
       "name": "What is the PSEB tax rate for Pakistani freelancers in 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "PSEB-registered ATL filers pay 0.25% on foreign IT export remittances under Section 154S of the Income Tax Ordinance. Non-PSEB ATL filers pay 1%. Non-filers do not qualify and face double withholding tax rates."
+        "text": "PSEB-registered ATL filers pay 0.25% on foreign IT export remittances under Section 154A of the Income Tax Ordinance. Non-PSEB ATL filers pay 1%. Non-filers do not qualify and face double withholding tax rates."
       }
     },
     {

@@ -57,15 +57,28 @@ Use this skill when the user asks you to implement SEO, content, metadata, schem
    - Avoid `new Date()` as `lastModified` for every tool URL if it causes noisy daily freshness without content changes.
    - Use a stable per-tool last-modified map for recently updated tools and a stable fallback date for others.
 
-9. **Incremental edits and status updates**
+9. **Strict prompt compliance pass for large SEO rewrites**
+   - After implementing user-provided step-by-step instructions, re-read every required file and compare current code against each prompt step before finalizing.
+   - Use targeted searches for forbidden/required strings in the target route, e.g. `FAQPage`, `jsonLdFAQ`, `<strong>`, blocked query URLs, exact titles, schema types, official source URLs, glossary phrases, and sitemap IDs.
+   - When replacing a long content component, do not merely summarize the requested copy if the user supplied specific tables/rows/sections; preserve all material requirements such as country rows, package-comparison columns, official-source blocks, bilingual glossary rows, and regulatory caveats.
+   - Scope grep carefully: a repo-wide search may show `FAQPage`, `<strong>`, or blocked breadcrumbs on unrelated pages. Report those as out of scope unless the user asked for site-wide cleanup.
+   - If the user forbids `<strong>` only in SEO content prose, remove it from the content component but do not refactor unrelated UI labels unless needed for lint or the specific request.
+
+10. **Incremental edits and status updates**
    - Edit one file or one coherent area at a time.
    - After each file edit, state what changed and why.
-   - Prefer targeted edits over full-file rewrites unless the file is small or structurally broken.
+   - Prefer targeted edits over full-file rewrites unless the file is small or structurally broken, or the user explicitly requested replacing the entire body content.
+   - If the user gives a numbered module sequence, complete modules in order and do not jump ahead to later metadata/schema/button tasks until the current module is done.
+   - When the user explicitly asks to quote exact current code and replacement, read the relevant bytes in the current tool session, show the exact block being replaced, and then make the targeted edit. Embedded context from a prior compacted conversation is useful for orientation but may not satisfy edit-tool read requirements.
+   - If an edit tool says the file has not been read in the current session, stop editing that file, read the smallest relevant range or full file as required, then retry the exact replacement.
+   - After each requested module, use the user's requested completion phrase exactly when provided, e.g. `MODULE X COMPLETE — files edited: [...]`.
 
-10. **Verification**
+11. **Verification**
    - Run lint on the changed files first to isolate new errors.
    - If full lint fails due unrelated existing repo issues, say so and distinguish pre-existing errors from touched-file errors.
    - Fix touched-file lint errors, including unused imports/variables introduced or exposed by the touched files, JSX escaped entities, and Next `<Link />` requirements.
+   - For YMYL/SEO implementation, run targeted searches for forbidden stale legal/fiscal strings, blocked query breadcrumbs, required sitemap IDs/dates, required entity phrases, and button `type="button"` on edited client components.
+   - Scope verification findings carefully: repo-wide searches may surface blocked query URLs or lint errors on unrelated pages. Do not fix them unless the request is site-wide; report them as out of scope.
    - Run `npm run build` when feasible to catch TypeScript and Next integration issues.
    - If a tool/shell rejects an explicit Windows project path even though file tools can access it, rerun commands from the registered project root instead of stopping.
    - For remote OpenGraph image checks, if `curl -I` or `curl.exe -I` returns no visible output in the shell, use PowerShell to print only the status code, e.g. `powershell -NoProfile -Command "try { $r = Invoke-WebRequest -Uri '<url>' -Method Head -UseBasicParsing; Write-Output $r.StatusCode } catch { Write-Output $_.Exception.Response.StatusCode.value__ }"`.

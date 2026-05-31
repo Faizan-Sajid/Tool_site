@@ -112,7 +112,7 @@ export default function HajjUmrahCalculator() {
           <Home className="w-3 h-3" /> Home
         </Link>
         <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
-        <Link href="/?category=finance" className="hover:text-[#c9a84c] transition-colors">Finance</Link>
+        <Link href="/#all-tools" className="hover:text-[#c9a84c] transition-colors">Finance Tools</Link>
         <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
         <span className="text-[#c9a84c]">Hajj &amp; Umrah Budget Calculator</span>
       </nav>
@@ -123,7 +123,7 @@ export default function HajjUmrahCalculator() {
           <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c] animate-pulse" /> Islamic Finance 2026
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-[#e6e3db] leading-[1.1] mb-4">
-          Hajj &amp; Umrah Budget Calculator
+          Hajj &amp; Umrah Cost Calculator 2026
         </h1>
         <p className="text-[#87847d] text-sm max-w-2xl leading-relaxed">
           Estimate your complete Hajj or Umrah journey cost for 2026 — by country, pilgrimage type, package, and group size.
@@ -257,6 +257,7 @@ export default function HajjUmrahCalculator() {
 
         {/* Estimate Button */}
         <button
+          type="button"
           className="w-full bg-[#c9a84c] hover:bg-[#b89844] text-black font-bold py-3 rounded-xl transition-colors"
           onClick={handleEstimate}
         >
@@ -305,7 +306,7 @@ export default function HajjUmrahCalculator() {
               <div className="flex justify-between"><span>🏨 Hotel</span><span>—</span></div>
               <div className="flex justify-between"><span>📋 Visa &amp; Insurance</span><span>—</span></div>
               <div className="flex justify-between"><span>🍽️ Food &amp; Transport</span><span>—</span></div>
-              <hr className="border-[rgba(255,255,255,0.1) my-2" />
+              <hr className="border-[rgba(255,255,255,0.1)] my-2" />
               <div className="flex justify-between font-bold text-[#e6e3db]"><span>Total Estimate</span><span>—</span></div>
             </div>
             <p className="mt-2 text-[#87847d] text-xs">Enter your details above and click Estimate to see your breakdown.</p>

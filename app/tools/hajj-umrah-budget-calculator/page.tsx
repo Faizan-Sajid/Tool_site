@@ -3,48 +3,35 @@ import type { Metadata } from "next";
 import HajjUmrahCalculator from "./HajjUmrahCalculator";
 import HajjUmrahContent from "./HajjUmrahContent";
 import FAQ from "@/components/FAQ";
-import { Home, ChevronRight } from "lucide-react";
-import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Umrah Cost Calculator 2026 – Free Budget Estimator",
+  title: "Hajj 2026 Cost Calculator – Flights, Hotels & Visa",
   description:
-    "Free Umrah cost calculator for 2026. Estimate your complete budget from Pakistan, India, UK, USA, and Canada including flights, hotels, visa, and transport.",
+    "Calculate your 2026 Hajj or Umrah cost by country. See flights, hotels, visa, food and transport in one free pilgrimage budget planner. Pakistan, India, UK, USA included.",
   keywords: [
-    "umrah cost calculator",
-    "umrah budget calculator",
-    "hajj umrah budget calculator",
-    "umrah cost calculator free",
-    "umrah cost calculator online",
-    "umrah expense calculator",
-    "hajj budget calculator 2026",
-    "calculate umrah cost online",
-    "umrah cost calculator pakistan",
-    "umrah budget calculator pakistan 2026",
-    "umrah cost calculator india",
-    "umrah calculator india 2026",
-    "umrah cost calculator uk",
-    "umrah cost calculator bangladesh",
-    "umrah price estimator usa",
-    "umrah price calculator canada",
-    "how much does umrah cost from pakistan 2026",
-    "umrah cost from india 2026",
-    "umrah cost from uk 2026",
-    "umrah package price 2026",
-    "hajj cost 2026",
-    "hajj cost estimator",
+    "Hajj cost calculator 2026",
+    "Umrah budget calculator 2026",
+    "Hajj Umrah cost calculator",
+    "Hajj cost from Pakistan 2026",
+    "Umrah cost from Pakistan 2026",
+    "pilgrimage budget planner",
+    "how much does Hajj cost 2026",
+    "Nusuk Hajj package 2026",
+    "Hajj package price by country",
+    "Umrah cost Ramadan 2026",
+    "Hajj savings plan calculator",
+    "government Hajj package vs private",
   ],
   alternates: {
     canonical: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
   },
   openGraph: {
-    title:
-      "Umrah Cost Calculator 2026 – Free Hajj & Umrah Budget Estimator | QuickCalcs",
+    title: "Hajj & Umrah Cost Calculator 2026 | Free Pilgrimage Budget Planner",
     description:
-      "Instantly calculate your Umrah cost from Pakistan, India, UK, USA, Bangladesh & more. Free online calculator — no login needed.",
+      "Free tool to estimate your complete Hajj or Umrah budget for 2026 — by country, package type, duration and season. Includes flights, hotels, visa, food and transport. No login needed.",
     url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
     siteName: "QuickCalcs",
-    locale: "en_US",
+    locale: "en_SA",
     type: "website",
     images: [
       {
@@ -57,8 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Umrah Cost Calculator 2026 – Free Hajj & Umrah Budget Estimator | QuickCalcs",
-    description: "Instantly calculate your Umrah cost from Pakistan, India, UK, USA, Bangladesh & more.",
+    title: "Hajj & Umrah Cost Calculator 2026 | Free Pilgrimage Budget Planner",
+    description:
+      "Free tool to estimate your complete Hajj or Umrah budget for 2026 — by country, package type, duration and season. Includes flights, hotels, visa, food and transport. No login needed.",
     images: [
       {
         url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator/opengraph-image",
@@ -83,96 +71,129 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    question: "How much does Umrah cost from Pakistan in 2026?",
+    question: "How much does Hajj cost in 2026 from Pakistan?",
     answer:
-      "An economy Umrah package from Pakistan in 2026 costs approximately PKR 250,000–400,000 per person, covering return flights, hotel accommodation, Umrah visa, and basic transport. Standard packages range from PKR 400,000–700,000. Costs rise by 30–50% during Ramadan. Use our free Umrah budget calculator above to get a personalised estimate.",
+      "Private Hajj packages from Pakistan in 2026 start from around PKR 1,375,000 for economy (Maktab C) packages going up to PKR 3,500,000+ for premium. Government packages are generally cheaper but subject to ballot selection. Book early through a Ministry of Religious Affairs-approved operator.",
   },
   {
-    question: "How much does Umrah cost from India in 2026?",
+    question: "Can I use the Nusuk platform directly from Pakistan?",
     answer:
-      "Umrah from India in 2026 costs approximately Rs 85,000–Rs 1,80,000 per person for a budget package, and Rs 1,80,000–Rs 3,00,000 for a standard package. Flights from Mumbai, Delhi, or Kolkata make up 40–50% of the total cost. Our free Umrah cost calculator for India lets you estimate by city, hotel zone, and duration.",
+      "Pakistani passport holders cannot apply directly through Nusuk — you must go through a licensed operator approved by Pakistan's Ministry of Religious Affairs. The operator handles Nusuk registration on your behalf. For countries without a national Hajj authority (UK, USA, Canada, Europe), direct Nusuk registration is available at hajj.nusuk.sa.",
   },
   {
-    question: "How much does Umrah cost from the UK in 2026?",
+    question: "How much does Umrah cost during Ramadan 2026?",
     answer:
-      "Umrah from the UK in 2026 typically costs between 1,500 and 3,000 GBP for an economy package and 3,000 to 6,000 GBP for a standard package per person. Return flights from London to Jeddah generally range from 400 to 700 GBP. The Saudi tourist eVisa costs approximately 100 to 150 GBP including mandatory insurance.",
+      "Ramadan Umrah costs 30-50% more than off-peak travel. From Pakistan, expect PKR 400,000–600,000 for the first 20 nights of Ramadan. The last ten nights (Laylatul Qadr period) can exceed PKR 700,000–900,000 per person. Book at least 6-8 months in advance for Ramadan packages.",
   },
   {
-    question: "What is the cheapest time to do Umrah in 2026?",
+    question: "What is the cheapest time for Umrah in 2026?",
     answer:
-      "The cheapest time for Umrah is January to February (Rajab and Shaban), which can be up to 40% cheaper than peak season. Ramadan packages are the most expensive — typically 30–50% higher than off-peak months. Avoid school holidays and the last 10 nights of Ramadan for the best rates.",
+      "Rajab and Shaban (roughly January–March 2026 outside Ramadan) offer the lowest prices — typically 30-40% below Ramadan rates. Weather is cooler, crowds are smaller, and you have more flexibility with hotels and flights.",
   },
   {
-    question: "What does a typical Umrah budget include?",
+    question: "Is Qurbani included in Hajj package cost?",
     answer:
-      "A complete Umrah budget includes: (1) return flights from your country to Jeddah or Madinah, (2) hotel accommodation in Makkah and Madinah, (3) Umrah visa and mandatory Saudi health insurance, (4) ground transport between cities, and (5) daily food and personal expenses. Our free Umrah expense calculator covers all these components.",
+      "It depends on the package. Some operators include Qurbani in premium packages; most economy packages do not. Budget approximately SAR 350–600 (around PKR 35,000–60,000 or £75–130) for Qurbani if not included. Your operator will confirm the arrangement before departure.",
   },
   {
-    question: "What is the difference between Hajj and Umrah cost?",
+    question: "How do I save for Hajj if I cannot afford it now?",
     answer:
-      "Hajj is 3–5 times more expensive than Umrah. Hajj is performed only during Dhul Hijjah, has government-regulated quotas per country, and requires mandatory tent stays in Mina and Arafat. Umrah can be performed any time of year with no quota, making it significantly more affordable and flexible to plan.",
+      "Start a dedicated Hajj savings account today, even if the amount is small. From Pakistan, saving PKR 25,000 per month for 5 years covers an economy package. From the UK, £92 per month over 5 years covers a standard package. Book early — packages reserved 12+ months ahead consistently cost less than last-minute bookings.",
   },
   {
-    question: "Is this Umrah cost calculator free to use?",
+    question: "What is the difference between shifting and non-shifting Hajj packages?",
     answer:
-      "Yes, the QuickCalcs Umrah Budget Calculator is completely free to use — no account, no login, no subscription required. Simply select your country, package type, number of pilgrims, and duration to get an instant cost estimate for your 2026 Umrah trip.",
+      "A shifting package moves you from accommodation near Mina to a Makkah hotel after the main Hajj days (after Eid and Jamarat). Non-shifting keeps you in one hotel throughout. Shifting packages are cheaper but involve more travel between sites. Non-shifting is recommended for elderly pilgrims or those with mobility concerns.",
   },
   {
-    question: "Does the calculator include Ramadan pricing?",
+    question: "Do women need a mahram for Umrah in 2026?",
     answer:
-      "Yes. Our Umrah cost calculator includes a Ramadan Season toggle. Enabling it automatically applies the typical 30–50% price premium seen during Ramadan across all countries and package types, giving you an accurate estimate for peak-season travel.",
+      "Saudi Arabia updated its rules in 2021 — women aged 45 and above can now perform Umrah in groups without a mahram, provided they travel with other women through a licensed operator. Women under 45 still require a mahram. For Hajj, the rules differ — check with your national Hajj authority for current requirements.",
   },
 ];
 
 export default function HajjUmrahPage() {
   const jsonLdWebPage = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: "Umrah Cost Calculator 2026 – Free Hajj & Umrah Budget Estimator by Country",
-    description:
-      "Free online Umrah cost calculator. Estimate your complete Umrah or Hajj budget from Pakistan, India, UK, USA, Bangladesh, Canada and more for 2026.",
-    url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
-    isPartOf: {
-      "@type": "WebSite",
-      name: "QuickCalcs",
-      url: "https://www.quickcalcs.app",
-    },
-    breadcrumb: {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://www.quickcalcs.app",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: "Hajj & Umrah Cost Calculator 2026 — Complete Budget Guide",
+        description:
+          "Free online Hajj and Umrah cost calculator. Estimate your complete pilgrimage budget from Pakistan, India, UK, USA, Bangladesh, Canada and more for 2026.",
+        url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
+        datePublished: "2025-10-01",
+        dateModified: "2026-05-31",
+        inLanguage: "en",
+        reviewedBy: {
+          "@type": "Organization",
+          name: "QuickCalcs",
         },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Finance Tools",
-          item: "https://www.quickcalcs.app/#all-tools",
+        citation: ["https://www.nusuk.sa", "https://www.haj.gov.sa/en"],
+        about: [
+          { "@type": "Thing", name: "Hajj pilgrimage" },
+          { "@type": "Thing", name: "Umrah pilgrimage" },
+          { "@type": "Thing", name: "Saudi Ministry of Hajj and Umrah" },
+        ],
+        isPartOf: {
+          "@type": "WebSite",
+          name: "QuickCalcs",
+          url: "https://www.quickcalcs.app",
         },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Umrah Cost Calculator 2026",
-          item: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://www.quickcalcs.app",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Finance Tools",
+              item: "https://www.quickcalcs.app/#all-tools",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Hajj & Umrah Cost Calculator 2026",
+              item: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
+            },
+          ],
         },
-      ],
-    },
-  };
-
-  const jsonLdFAQ = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqItems.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
       },
-    })),
+      {
+        "@type": "WebApplication",
+        name: "Hajj & Umrah Cost Calculator 2026",
+        url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
+        applicationCategory: "TravelApplication",
+        operatingSystem: "Any",
+        isAccessibleForFree: true,
+        description:
+          "Free calculator to estimate Hajj and Umrah pilgrimage costs by country, package type, duration and season for 2026.",
+      },
+      {
+        "@type": "Article",
+        headline: "Hajj & Umrah Cost Calculator 2026 — Complete Budget Guide",
+        datePublished: "2025-10-01",
+        dateModified: "2026-05-31",
+        author: {
+          "@type": "Organization",
+          name: "QuickCalcs",
+          url: "https://www.quickcalcs.app",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "QuickCalcs",
+          url: "https://www.quickcalcs.app",
+        },
+        mainEntityOfPage:
+          "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
+        citation: "https://www.nusuk.sa",
+      },
+    ],
   };
 
   return (
@@ -180,10 +201,6 @@ export default function HajjUmrahPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebPage) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFAQ) }}
       />
       <HajjUmrahCalculator />
       <HajjUmrahContent />

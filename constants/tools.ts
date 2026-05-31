@@ -81,7 +81,7 @@ export const TOOLS: Tool[] = [
     country: "all",
     icon: "🧾",
     title: "Pakistan Freelancer Tax Calculator",
-    description: "Calculate your FBR IT export tax for 2026. PSEB-registered ATL filers pay 0.25% under Section 154S. Non-PSEB ATL filers pay 1%. Non-filers face double withholding. Enter your annual income and PSEB/filer status to see your exact tax liability and take-home in PKR.",
+    description: "Calculate Pakistan freelancer tax for 2026 under Section 154A. PSEB-registered ATL filers pay 0.25%, non-PSEB ATL filers pay 1%, and non-filers pay 2% withholding on IT export remittances. Includes net PKR take-home estimates.",
     tags: [
       { text: "PKR", variant: "default" },
       { text: "Finance", variant: "default" },

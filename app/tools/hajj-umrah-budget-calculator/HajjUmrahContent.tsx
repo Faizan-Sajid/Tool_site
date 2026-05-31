@@ -4,387 +4,195 @@ import React from "react";
 export default function HajjUmrahContent() {
   return (
     <section className="max-w-[860px] px-[20px] sm:px-[36px] py-[48px] space-y-16 text-[#87847d]">
-
-      {/* SECTION 1: How to Use */}
-      <div>
-        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
-          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          How to Use This Free Umrah Cost Calculator
-        </h2>
-        <div className="text-sm leading-relaxed space-y-4">
-          <p>
-            Our <strong>free Umrah cost calculator</strong> helps you estimate your complete 2026 Umrah budget in seconds — no travel agent needed, no login required. Select your departure country, choose economy, standard, or premium package, set your number of pilgrims, trip duration, and whether you are travelling during Ramadan. You will instantly see a breakdown of estimated flights, hotel, visa, transport, and daily expenses.
-          </p>
-          <p>
-            This <strong>Umrah budget calculator</strong> covers pilgrims from Pakistan, India, UK, USA, Bangladesh, Canada, UAE, and more — making it one of the most comprehensive free tools available online for calculating Umrah costs in 2026.
-          </p>
+      <div className="rounded-2xl border border-[rgba(201,168,76,0.18)] bg-[#111827] p-5 text-sm leading-relaxed space-y-4">
+        <p className="text-[#e6e3db] font-semibold">Last updated: May 2026</p>
+        <p>
+          Cost estimates are based on 2026 Nusuk platform pricing, licensed operator packages, and official announcements from the Saudi Ministry of Hajj and Umrah. Prices shown are indicative ranges — final costs depend on booking date, package availability, hotel distance from Haram, and currency exchange rates at time of payment.
+        </p>
+        <p>
+          Always confirm final pricing with a licensed Hajj/Umrah operator or directly through the official Nusuk platform.
+        </p>
+        <div>
+          <p className="text-[#e6e3db] font-medium mb-2">Official sources:</p>
+          <ul className="list-disc space-y-2 pl-6">
+            <li>
+              Saudi Ministry of Hajj and Umrah:{" "}
+              <a href="https://www.haj.gov.sa/en" target="_blank" rel="nofollow noopener noreferrer" className="text-[#c9a84c] hover:underline">
+                haj.gov.sa
+              </a>
+            </li>
+            <li>
+              Official Nusuk platform:{" "}
+              <a href="https://www.nusuk.sa" target="_blank" rel="nofollow noopener noreferrer" className="text-[#c9a84c] hover:underline">
+                nusuk.sa
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
-      {/* SECTION 2: Cost by Country */}
       <div>
         <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          Umrah Cost by Country 2026 — Complete Budget Guide
+          How Much Does Hajj Cost in 2026?
         </h2>
         <div className="text-sm leading-relaxed space-y-4 mb-6">
           <p>
-            Umrah cost varies significantly depending on where you depart from, when you travel, and what package you choose. Below is a complete guide to help you <strong>calculate your Umrah cost online</strong> for each major country.
+            This is the most common question — and the most variable. Hajj 2026 costs range from roughly PKR 1,375,000 from Pakistan to over £12,000 from the UK, depending on package tier, hotel proximity to Haram, and whether flights are included.
+          </p>
+          <p>
+            The table below gives realistic estimates by country for 2026. These reflect actual licensed operator pricing and Nusuk platform packages — not guesswork.
           </p>
         </div>
-
-        {/* Pakistan */}
-        <div className="mb-8">
-          <h3 className="text-base font-bold text-[#e6e3db] mb-3">
-            🇵🇰 Umrah Cost Calculator — Pakistan 2026
-          </h3>
-          <div className="text-sm leading-relaxed space-y-3">
-            <p>
-              The <strong>Umrah cost from Pakistan in 2026</strong> ranges from <strong>PKR 250,000 to PKR 400,000</strong> for an economy package per person, covering return flights from Karachi, Lahore, or Islamabad, hotel accommodation, Umrah visa, and basic transport. Standard packages (4-star hotel, better flight times) cost PKR 400,000–700,000, while premium packages exceed PKR 700,000 per person.
-            </p>
-            <p>
-              Key cost factors for Pakistani pilgrims: flight prices vary by departure city (Karachi and Lahore typically offer the most competitive fares), and Ramadan packages cost 30–50% more. The <strong>Umrah budget calculator for Pakistan 2026</strong> above automatically adjusts for these variables.
-            </p>
-          </div>
-        </div>
-
-        {/* India */}
-        <div className="mb-8">
-          <h3 className="text-base font-bold text-[#e6e3db] mb-3">
-            🇮🇳 Umrah Cost Calculator — India 2026
-          </h3>
-          <div className="text-sm leading-relaxed space-y-3">
-            <p>
-              For Indian pilgrims, the <strong>Umrah cost in 2026</strong> starts at approximately <strong>&#8377;85,000–&#8377;1,80,000</strong> for a budget package. Standard packages with 4-star hotels range from &#8377;1,80,000–&#8377;3,00,000, and luxury packages exceed &#8377;3,00,000 per person. Flights from Mumbai, Delhi, Hyderabad, and Kolkata contribute 40–50% of total costs.
-            </p>
-            <p>
-              Booking 3–6 months in advance is strongly recommended for Indian pilgrims. Our <strong>Umrah calculator for India 2026</strong> helps you compare economy vs standard vs premium packages side by side.
-            </p>
-          </div>
-        </div>
-
-        {/* UK */}
-        <div className="mb-8">
-          <h3 className="text-base font-bold text-[#e6e3db] mb-3">
-            🇬🇧 Umrah Cost Calculator — UK 2026
-          </h3>
-          <div className="text-sm leading-relaxed space-y-3">
-            <p>
-              The <strong>Umrah cost from the UK in 2026</strong> typically ranges from <strong>&#163;1,500–&#163;3,000</strong> for economy packages and &#163;3,000–&#163;6,000 for standard packages per person. Return flights from London to Jeddah cost approximately &#163;400–&#163;700 in economy. The Saudi tourist eVisa with mandatory health insurance adds roughly &#163;100–&#163;150 per person.
-            </p>
-            <p>
-              UK pilgrims benefit from shorter flight distances compared to North America, keeping costs relatively competitive. Use our <strong>free Umrah cost calculator for UK</strong> pilgrims above to get a personalised 2026 estimate.
-            </p>
-          </div>
-        </div>
-
-        {/* Bangladesh, USA, Canada */}
-        <div className="mb-8">
-          <h3 className="text-base font-bold text-[#e6e3db] mb-3">
-            🇧🇩 Umrah Cost Calculator — Bangladesh 2026
-          </h3>
-          <div className="text-sm leading-relaxed space-y-3">
-            <p>
-              The <strong>Umrah cost from Bangladesh in 2026</strong> typically falls between BDT 1,80,000–3,00,000 for an economy package and BDT 3,00,000–5,00,000 for standard packages per person. Direct flights from Dhaka (DAC) to Jeddah or Madinah are available with Biman Bangladesh and Saudi airlines. Our <strong>Umrah cost calculator for Bangladesh</strong> gives you a fast, free estimate based on current market rates.
-            </p>
-          </div>
-        </div>
-
-        <div className="mb-8">
-          <h3 className="text-base font-bold text-[#e6e3db] mb-3">
-            🇺🇸🇨🇦 Umrah Price Estimator — USA &amp; Canada 2026
-          </h3>
-          <div className="text-sm leading-relaxed space-y-3">
-            <p>
-              <strong>Umrah from the USA</strong> ranges from $3,000–$5,000 economy and $5,000–$9,000 standard per person. Long-haul flights from New York, Houston, Chicago, and Los Angeles contribute significantly — typically 50–60% of the total budget. <strong>Umrah from Canada</strong> follows similar pricing with slight variations by departure city (Toronto, Montreal, Vancouver). Use our <strong>Umrah price calculator</strong> above to get a personalised estimate for North American pilgrims.
-            </p>
-          </div>
-        </div>
-
-        {/* Summary Table */}
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="border-b border-[rgba(255,255,255,0.07)]">
                 <th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Country</th>
-                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Economy</th>
-                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Standard</th>
-                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Premium</th>
+                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Economy Package</th>
+                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Standard Package</th>
+                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Premium Package</th>
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4">🇵🇰 Pakistan</td>
-                <td className="px-4 text-[#c9a84c]">PKR 250,000–400,000</td>
-                <td className="px-4 text-[#c9a84c]">PKR 400,000–700,000</td>
-                <td className="px-4 text-[#c9a84c]">PKR 700,000+</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4">🇮🇳 India</td>
-                <td className="px-4 text-[#c9a84c]">&#8377;85,000–1,80,000</td>
-                <td className="px-4 text-[#c9a84c]">&#8377;1,80,000–3,00,000</td>
-                <td className="px-4 text-[#c9a84c]">&#8377;3,00,000+</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4">🇬🇧 UK</td>
-                <td className="px-4 text-[#c9a84c]">&#163;1,500–3,000</td>
-                <td className="px-4 text-[#c9a84c]">&#163;3,000–6,000</td>
-                <td className="px-4 text-[#c9a84c]">&#163;6,000+</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4">🇧🇩 Bangladesh</td>
-                <td className="px-4 text-[#c9a84c]">BDT 1,80,000–3,00,000</td>
-                <td className="px-4 text-[#c9a84c]">BDT 3,00,000–5,00,000</td>
-                <td className="px-4 text-[#c9a84c]">BDT 5,00,000+</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4">🇺🇸 USA</td>
-                <td className="px-4 text-[#c9a84c]">$3,000–5,000</td>
-                <td className="px-4 text-[#c9a84c]">$5,000–9,000</td>
-                <td className="px-4 text-[#c9a84c]">$9,000+</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4">🇨🇦 Canada</td>
-                <td className="px-4 text-[#c9a84c]">CAD 4,000–7,000</td>
-                <td className="px-4 text-[#c9a84c]">CAD 7,000–12,000</td>
-                <td className="px-4 text-[#c9a84c]">CAD 12,000+</td>
-              </tr>
-              <tr>
-                <td className="py-4 pr-4">🇦🇪 UAE</td>
-                <td className="px-4 text-[#c9a84c]">AED 5,000–9,000</td>
-                <td className="px-4 text-[#c9a84c]">AED 9,000–15,000</td>
-                <td className="px-4 text-[#c9a84c]">AED 15,000+</td>
-              </tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">🇵🇰 Pakistan</td><td className="px-4 text-[#c9a84c]">PKR 1.4M–1.8M</td><td className="px-4 text-[#c9a84c]">PKR 2.0M–2.8M</td><td className="px-4 text-[#c9a84c]">PKR 3.5M+</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">🇮🇳 India</td><td className="px-4 text-[#c9a84c]">INR 4,00,000–5,50,000</td><td className="px-4 text-[#c9a84c]">INR 6,00,000–8,00,000</td><td className="px-4 text-[#c9a84c]">INR 10,00,000+</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">🇧🇩 Bangladesh</td><td className="px-4 text-[#c9a84c]">BDT 7,00,000–9,00,000</td><td className="px-4 text-[#c9a84c]">BDT 10,00,000–13,00,000</td><td className="px-4 text-[#c9a84c]">BDT 16,00,000+</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">🇬🇧 UK</td><td className="px-4 text-[#c9a84c]">£4,500–£5,700</td><td className="px-4 text-[#c9a84c]">£5,500–£9,500</td><td className="px-4 text-[#c9a84c]">£10,000–£12,000+</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">🇺🇸 USA</td><td className="px-4 text-[#c9a84c]">$11,000–$13,000</td><td className="px-4 text-[#c9a84c]">$13,000–$15,000</td><td className="px-4 text-[#c9a84c]">$15,000+</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">🇦🇪 UAE / GCC</td><td className="px-4 text-[#c9a84c]">AED 18,000–24,000</td><td className="px-4 text-[#c9a84c]">AED 26,000–35,000</td><td className="px-4 text-[#c9a84c]">AED 40,000+</td></tr>
+              <tr><td className="py-4 pr-4">🇮🇩 Indonesia</td><td className="px-4 text-[#c9a84c]">USD 3,400–4,500 subsidized</td><td className="px-4 text-[#c9a84c]">USD 5,000–7,000</td><td className="px-4 text-[#c9a84c]">USD 9,000+</td></tr>
             </tbody>
           </table>
         </div>
         <p className="mt-4 text-xs italic text-[#87847d]">
-          * Hajj packages cost significantly more (3–5x) than Umrah. Ramadan adds 30–50%. All figures are estimates for 2026 only.
+          All prices per person. Economy = shifting packages, quad occupancy, standard flights. Premium = closer hotel, smaller rooms, often with meals included. Source: Nusuk 2026 packages and licensed operator data.
         </p>
       </div>
 
-      {/* SECTION 3: What's Included */}
       <div>
         <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          What is Included in Your Umrah Budget? — Full Cost Breakdown
+          Government Hajj Package vs Private — What Is the Difference?
         </h2>
         <div className="text-sm leading-relaxed space-y-4 mb-6">
           <p>
-            When you <strong>calculate Umrah cost online</strong>, it is essential to account for every expense component. Here is a complete breakdown of what your Umrah budget should cover:
+            Countries like Pakistan, India, Bangladesh, and Indonesia run government-managed Hajj schemes through their religious affairs ministries. These are usually cheaper — but they come with trade-offs worth understanding before you apply.
           </p>
         </div>
-        <ol className="list-decimal space-y-5 pl-6 text-sm">
-          <li>
-            <strong>Flights (40–55% of total cost)</strong> — Return airfare from your country to Jeddah (JED) or Madinah (MED). Book 3–6 months in advance for the best fares. Mid-week departures can save $150–$300 compared to weekends.
-          </li>
-          <li>
-            <strong>Hotel Accommodation (25–35%)</strong> — Hotels in Makkah and Madinah vary significantly by zone. Zone A (steps from Masjid al-Haram) costs $250+ per night. Zone B (5–10 minute walk) runs $100–$250 per night. Zone C (shuttle required) is $50–$100 per night.
-          </li>
-          <li>
-            <strong>Umrah Visa &amp; Health Insurance (5–10%)</strong> — Saudi Arabia requires a Umrah visa plus mandatory health insurance. Total visa cost by country: approx. &#163;100–150 (UK), $150–$300 (USA), PKR 15,000–25,000 (Pakistan), &#8377;10,000–&#8377;15,000 (India).
-          </li>
-          <li>
-            <strong>Ground Transport (5–10%)</strong> — Transfers between Jeddah Airport, Makkah, and Madinah. Shared buses are cheapest; private cars cost more but offer more flexibility. Official taxis from Jeddah Airport to Makkah are typically SAR 250–300.
-          </li>
-          <li>
-            <strong>Food &amp; Daily Expenses (5–10%)</strong> — Budget SAR 50–150 per day for meals. Local restaurants near Haram are affordable; hotel buffets are significantly pricier. Add 10–15% for personal expenses, shopping, laundry, and a local SIM card.
-          </li>
-        </ol>
-      </div>
-
-      {/* SECTION 4: Tips to Save */}
-      <div>
-        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
-          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          7 Tips to Reduce Your Umrah Cost in 2026
-        </h2>
-        <ol className="list-decimal space-y-4 pl-6 text-sm">
-          <li>
-            <strong>Travel in Rajab or Shaban (Jan–Feb)</strong> — Off-peak season is 30–40% cheaper than Ramadan. This is the single biggest saving lever available.
-          </li>
-          <li>
-            <strong>Book 3–6 months in advance</strong> — Early bookings on flights and hotels typically save 15–25% vs last-minute rates.
-          </li>
-          <li>
-            <strong>Stay in Zone B instead of Zone A</strong> — Hotels 5–10 minutes from Masjid al-Haram save &#163;500–&#163;800 per person vs steps-away Zone A hotels while remaining very walkable.
-          </li>
-          <li>
-            <strong>Use the Saudi tourist eVisa if eligible</strong> — Often cheaper than dedicated Umrah visas and allows multiple entries within the validity period.
-          </li>
-          <li>
-            <strong>Fly into Madinah first</strong> — Madinah flights are sometimes cheaper than Jeddah. Start your Ziyarah there and travel to Makkah overland.
-          </li>
-          <li>
-            <strong>Travel in a group of 4 or more</strong> — Shared private transport between cities significantly reduces per-person ground costs compared to individual taxi bookings.
-          </li>
-          <li>
-            <strong>Use our free Umrah expense calculator</strong> — Compare economy, standard, and premium package costs side by side before speaking to any travel agent. Knowledge is the best negotiating tool.
-          </li>
-        </ol>
-      </div>
-
-      {/* SECTION 5: Hajj vs Umrah */}
-      <div>
-        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
-          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          Hajj vs Umrah — Cost &amp; Key Differences
-        </h2>
-        <div className="text-sm leading-relaxed space-y-4 mb-6">
-          <p>
-            Understanding the difference between Hajj and Umrah is important when using a <strong>Hajj Umrah budget calculator</strong>. While both pilgrimages involve travel to Makkah, they differ significantly in obligation, timing, cost, and complexity.
-          </p>
-        </div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto mb-6">
           <table className="w-full text-sm border-collapse">
-            <thead>
-              <tr className="border-b border-[rgba(255,255,255,0.07)]">
-                <th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold" />
-                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Hajj</th>
-                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Umrah</th>
-              </tr>
-            </thead>
+            <thead><tr className="border-b border-[rgba(255,255,255,0.07)]"><th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Factor</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Government Package</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Private Package</th></tr></thead>
             <tbody>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4 font-medium">Obligation</td>
-                <td className="px-4 text-[#c9a84c]">Mandatory (Fard) once in a lifetime</td>
-                <td className="px-4 text-[#c9a84c]">Voluntary (Sunnah), any time</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4 font-medium">Timing</td>
-                <td className="px-4 text-[#c9a84c]">Only during Dhul-Hijjah</td>
-                <td className="px-4 text-[#c9a84c]">Any month of the year</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4 font-medium">Duration</td>
-                <td className="px-4 text-[#c9a84c]">5–6 days (Mina, Arafat, Muzdalifah)</td>
-                <td className="px-4 text-[#c9a84c]">2–3 days (Tawaf &amp; Sai)</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4 font-medium">Relative Cost</td>
-                <td className="px-4 text-[#c9a84c]">3–5x more expensive than Umrah</td>
-                <td className="px-4 text-[#c9a84c]">More affordable, flexible pricing</td>
-              </tr>
-              <tr className="border-b border-[rgba(255,255,255,0.03)]">
-                <td className="py-4 pr-4 font-medium">Quota</td>
-                <td className="px-4 text-[#c9a84c]">Government quota per country applies</td>
-                <td className="px-4 text-[#c9a84c]">No quota, open year-round</td>
-              </tr>
-              <tr>
-                <td className="py-4 pr-4 font-medium">Planning Time</td>
-                <td className="px-4 text-[#c9a84c]">1–2 years in advance typically</td>
-                <td className="px-4 text-[#c9a84c]">As little as 4–6 weeks ahead</td>
-              </tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Price</td><td className="px-4 text-[#c9a84c]">Lower, subsidized</td><td className="px-4 text-[#c9a84c]">Higher, market rate</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Hotel distance</td><td className="px-4 text-[#c9a84c]">Further from Haram, often 1–2km+</td><td className="px-4 text-[#c9a84c]">Often closer</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Booking</td><td className="px-4 text-[#c9a84c]">Apply through ministry, lottery</td><td className="px-4 text-[#c9a84c]">Book through licensed operator</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Group size</td><td className="px-4 text-[#c9a84c]">Large, hundreds per batch</td><td className="px-4 text-[#c9a84c]">Smaller groups</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Flexibility</td><td className="px-4 text-[#c9a84c]">Fixed dates, fixed itinerary</td><td className="px-4 text-[#c9a84c]">More flexibility</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Meals</td><td className="px-4 text-[#c9a84c]">Usually included</td><td className="px-4 text-[#c9a84c]">Varies by package</td></tr>
+              <tr><td className="py-4 pr-4">Waiting list</td><td className="px-4 text-[#c9a84c]">Common in Pakistan, India</td><td className="px-4 text-[#c9a84c]">Depends on operator</td></tr>
             </tbody>
           </table>
         </div>
+        <div className="text-sm leading-relaxed space-y-4">
+          <p>
+            In Pakistan, the government Hajj package is managed by the Ministry of Religious Affairs. Demand exceeds supply every year — the selection process includes a computerized ballot. Applying early in January gives the best chance.
+          </p>
+          <p>
+            In the UK, USA, and most Western countries, there is no government package. All pilgrims book through Nusuk-approved private operators.
+          </p>
+        </div>
       </div>
 
-      {/* SECTION 6: What is Hajj & Umrah */}
       <div>
         <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          What is Hajj &amp; Umrah? — The Sacred Pilgrimages of Islam
+          What Is Included in a Hajj Package?
         </h2>
-        <div className="text-sm leading-relaxed space-y-4">
-          <p>
-            Hajj is the mandatory pilgrimage to Mecca that every Muslim must perform at least once in their lifetime, during the Islamic month of Dhul-Hijjah. It involves a series of rites performed over several days, including staying in Mina, standing on Arafat, and the symbolic stoning of the devil at Jamarat.
-          </p>
-          <p>
-            Umrah is a voluntary pilgrimage that can be undertaken at any time of the year. It includes a subset of the Hajj rites — circling the Kaaba (Tawaf) and walking between Safa and Marwah (Sai) — but does not require the extended stay or the specific seasonal rituals of Hajj. Because Umrah can be performed anytime and has no per-country quota, it is significantly more accessible for most Muslims worldwide.
-          </p>
-          <p>
-            Our <strong>Hajj and Umrah budget calculator</strong> supports both pilgrimages so you can plan and compare costs for either journey in 2026.
-          </p>
+        <p className="text-sm leading-relaxed mb-6">This is where most pilgrims get surprised. The listed price rarely tells the full story.</p>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-sm border-collapse">
+            <thead><tr className="border-b border-[rgba(255,255,255,0.07)]"><th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Cost Component</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Usually Included</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Sometimes Extra</th></tr></thead>
+            <tbody>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Return flights</td><td className="px-4 text-[#c9a84c]">Depends on package</td><td className="px-4 text-[#c9a84c]">Budget packages often exclude</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Makkah hotel</td><td className="px-4 text-[#c9a84c]">Yes</td><td className="px-4 text-[#c9a84c]">Distance and stars vary</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Madinah hotel</td><td className="px-4 text-[#c9a84c]">Yes, 3–5 nights</td><td className="px-4 text-[#c9a84c]">Duration varies</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Mina tent</td><td className="px-4 text-[#c9a84c]">Yes</td><td className="px-4 text-[#c9a84c]">Comfort level varies</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Arafat/Muzdalifah transport</td><td className="px-4 text-[#c9a84c]">Yes</td><td className="px-4 text-[#c9a84c]">Quality varies</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Visa/permit fee</td><td className="px-4 text-[#c9a84c]">Yes</td><td className="px-4 text-[#c9a84c]">Visa fee SAR 300</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Meals</td><td className="px-4 text-[#c9a84c]">Varies</td><td className="px-4 text-[#c9a84c]">Not always full board</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Qurbani sacrifice</td><td className="px-4 text-[#c9a84c]">Sometimes</td><td className="px-4 text-[#c9a84c]">Often extra SAR 350–600</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Ihram clothing</td><td className="px-4 text-[#c9a84c]">No</td><td className="px-4 text-[#c9a84c]">Buy before travel, around PKR 2,000</td></tr>
+              <tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Personal expenses</td><td className="px-4 text-[#c9a84c]">No</td><td className="px-4 text-[#c9a84c]">Budget SAR 500–1,500 extra</td></tr>
+              <tr><td className="py-4 pr-4">Travel insurance</td><td className="px-4 text-[#c9a84c]">Sometimes</td><td className="px-4 text-[#c9a84c]">Verify with operator</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm leading-relaxed">
+          Shifting packages move you from a Mina-area hotel to a Makkah hotel after the peak Hajj days. They cost less — but you spend more time travelling between the two sites. Non-shifting packages keep you in one hotel throughout, which is easier for elderly pilgrims.
+        </p>
+      </div>
+
+      <div>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3"><span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />Umrah Cost by Country 2026 — Complete Budget Guide</h2>
+        <p className="text-sm leading-relaxed mb-6">Umrah is more accessible than Hajj — no quota system, no waiting list, and you can go any time of year. But costs vary significantly depending on season, how close you stay to Masjid al-Haram, and which country you fly from.</p>
+        <div className="text-sm leading-relaxed space-y-6">
+          <div><h3 className="text-base font-bold text-[#e6e3db] mb-2">How Much Does Umrah Cost from Pakistan in 2026?</h3><p>Economy Umrah from Pakistan in 2026 costs between PKR 220,000 and PKR 300,000 for a 7–10 night trip outside Ramadan. Standard packages with better hotels run PKR 350,000–500,000. During Ramadan — especially the last ten nights — prices climb sharply, often exceeding PKR 600,000–800,000 per person.</p><p className="mt-3">The Umrah visa fee is SAR 300, roughly PKR 22,300. Pakistani pilgrims must apply through a licensed operator attested by the Ministry of Religious Affairs — direct Nusuk applications are not available for Pakistani passport holders.</p><p className="mt-3">An important 2026 change: the Umrah visa entry window is now 30 days from issuance, reduced from 90 days. Your stay in Saudi Arabia cannot exceed 30 days, and extensions are not permitted.</p></div>
+          <div><h3 className="text-base font-bold text-[#e6e3db] mb-2">How Much Does Umrah Cost from India in 2026?</h3><p>Economy Umrah from India costs roughly INR 85,000–1,50,000 for a standard 7–10 night package. Premium packages with Haram-view hotels and better flights cost INR 2,00,000–3,50,000.</p><p className="mt-3">India has a large number of licensed Umrah operators — prices vary significantly, so compare at least 3 quotes before booking.</p></div>
+          <div><h3 className="text-base font-bold text-[#e6e3db] mb-2">How Much Does Umrah Cost from the UK in 2026?</h3><p>Umrah from the UK typically costs £1,500–£3,000 for a standard economy package during off-peak months. Ramadan packages, particularly for the last ten nights, regularly exceed £4,000–£6,000 per person depending on hotel proximity.</p><p className="mt-3">British Pakistani pilgrims often find better package value through operators based in Birmingham, Bradford, or Manchester who have direct relationships with Saudi hotels.</p></div>
+          <div><h3 className="text-base font-bold text-[#e6e3db] mb-2">Umrah Cost from USA &amp; Canada 2026</h3><p>Economy Umrah from the USA runs $2,000–$4,000 including flights. During Ramadan, expect $4,000–$7,000+ for a decent package. Canada is broadly similar, often slightly higher due to fewer direct flight options from smaller cities.</p></div>
+          <div><h3 className="text-base font-bold text-[#e6e3db] mb-2">Umrah Cost from Bangladesh 2026</h3><p>Umrah from Bangladesh costs BDT 1,50,000–2,50,000 for a standard package. Ramadan premiums apply here too — last-ten-nights packages often reach BDT 3,50,000–5,00,000. Biman Bangladesh Airlines offers direct Dhaka-Jeddah flights which reduce overall package costs.</p></div>
         </div>
       </div>
 
-      {/* INTERNAL LINKS */}
+      <div>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3"><span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />When Is Umrah Cheapest in 2026?</h2>
+        <div className="text-sm leading-relaxed space-y-4 mb-6"><p>The cheapest Umrah periods are Rajab and Shaban, roughly January to March 2026 outside Ramadan. Prices are 30–50% lower than Ramadan and you still benefit from cooler weather.</p><p>Avoid Ramadan entirely if budget is the priority — prices double during the month and can triple in the last ten nights. If you want the spiritual experience of Ramadan, book at least 6–8 months in advance to get reasonable rates.</p><p>The Muharram and Safar months, post-Hajj in October-November, are also relatively affordable as operators clear inventory.</p></div>
+        <div className="overflow-x-auto"><table className="w-full text-sm border-collapse"><thead><tr className="border-b border-[rgba(255,255,255,0.07)]"><th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Season</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Relative Cost</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Notes</th></tr></thead><tbody><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Rajab/Shaban off-peak</td><td className="px-4 text-[#c9a84c]">Lowest</td><td className="px-4 text-[#c9a84c]">Best value, cooler weather</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Dhul Qa&apos;dah/Dhul Hijjah</td><td className="px-4 text-[#c9a84c]">Medium</td><td className="px-4 text-[#c9a84c]">Post-Hajj, moderate prices</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Muharram/Safar</td><td className="px-4 text-[#c9a84c]">Low-Medium</td><td className="px-4 text-[#c9a84c]">Good availability</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Ramadan first 20 days</td><td className="px-4 text-[#c9a84c]">High</td><td className="px-4 text-[#c9a84c]">30–50% premium</td></tr><tr><td className="py-4 pr-4">Last 10 nights Ramadan</td><td className="px-4 text-[#c9a84c]">Very High</td><td className="px-4 text-[#c9a84c]">2–3x standard price</td></tr></tbody></table></div>
+      </div>
+
+      <div>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3"><span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />Nusuk Hajj 2026 — How Registration Works</h2>
+        <div className="text-sm leading-relaxed space-y-4"><p>Since 2022, Saudi Arabia has centralised all Hajj bookings through the Nusuk platform at hajj.nusuk.sa. Understanding how it works saves time and prevents costly mistakes.</p><p>Registration for 2026, 1447 AH, opened in October 2025. The process has two phases: account registration first, then package selection and payment when your country&apos;s window opens.</p><p>Countries with national Hajj authorities, including Pakistan, India, Bangladesh, Indonesia, Malaysia, Egypt, Nigeria, and Turkey, must register through their government ministry first. The ministry allocates spots based on the quota system — roughly 1 pilgrim per 1,000 Muslim citizens — and may use a lottery when demand exceeds supply.</p><p>Countries without dedicated Hajj authorities, including UK, USA, Canada, Europe, and East Asia, register directly through Nusuk and book packages through Nusuk-approved private operators.</p><p>The ministry issues a strong warning: Nusuk Hajj at hajj.nusuk.sa is the only authorized channel. Any third-party website claiming to offer Hajj registration or package payments outside of Nusuk-approved operators is unauthorized.</p></div>
+      </div>
+
+      <div>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3"><span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />How to Save for Hajj — Monthly Savings Plan</h2>
+        <p className="text-sm leading-relaxed mb-6">For most pilgrims, Hajj is the most significant financial commitment of their lives. Starting a dedicated savings plan early makes it achievable without financial stress.</p>
+        <div className="overflow-x-auto mb-6"><table className="w-full text-sm border-collapse"><thead><tr className="border-b border-[rgba(255,255,255,0.07)]"><th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Country</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Economy Package</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Save over 3 years</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Save over 5 years</th></tr></thead><tbody><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Pakistan</td><td className="px-4 text-[#c9a84c]">PKR 1.5M</td><td className="px-4 text-[#c9a84c]">PKR 41,700/month</td><td className="px-4 text-[#c9a84c]">PKR 25,000/month</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">India</td><td className="px-4 text-[#c9a84c]">INR 4,50,000</td><td className="px-4 text-[#c9a84c]">INR 12,500/month</td><td className="px-4 text-[#c9a84c]">INR 7,500/month</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">UK</td><td className="px-4 text-[#c9a84c]">£5,500</td><td className="px-4 text-[#c9a84c]">£153/month</td><td className="px-4 text-[#c9a84c]">£92/month</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">USA</td><td className="px-4 text-[#c9a84c]">$12,000</td><td className="px-4 text-[#c9a84c]">$333/month</td><td className="px-4 text-[#c9a84c]">$200/month</td></tr><tr><td className="py-4 pr-4">Bangladesh</td><td className="px-4 text-[#c9a84c]">BDT 8,00,000</td><td className="px-4 text-[#c9a84c]">BDT 22,200/month</td><td className="px-4 text-[#c9a84c]">BDT 13,300/month</td></tr></tbody></table></div>
+        <ul className="list-disc space-y-3 pl-6 text-sm"><li>Open a separate savings account labelled Hajj fund — segregating it makes you less likely to dip into it.</li><li>In the UK, consider an ISA or Premium Bonds for the Hajj fund — both are Shariah-compatible savings methods.</li><li>In Pakistan and Bangladesh, Islamic bank savings accounts offer profit sharing without riba.</li><li>Book early — packages booked 12+ months in advance are consistently cheaper than last-minute bookings.</li><li>Avoid Ramadan for first-time pilgrims on a budget — the spiritual reward of Hajj is not diminished by going in a quieter season.</li></ul>
+      </div>
+
+      <div>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3"><span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />Hajj vs Umrah — Key Differences and Cost</h2>
+        <p className="text-sm leading-relaxed mb-6">Most Muslims perform Umrah at least once before Hajj. The two pilgrimages overlap in rituals but differ fundamentally in obligation, timing, and cost.</p>
+        <div className="overflow-x-auto mb-6"><table className="w-full text-sm border-collapse"><thead><tr className="border-b border-[rgba(255,255,255,0.07)]"><th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Factor</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Hajj</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Umrah</th></tr></thead><tbody><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Obligation</td><td className="px-4 text-[#c9a84c]">Fard, required once if able</td><td className="px-4 text-[#c9a84c]">Sunnah, recommended</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Timing</td><td className="px-4 text-[#c9a84c]">Fixed, Dhul Hijjah 8–13</td><td className="px-4 text-[#c9a84c]">Any time of year</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Duration</td><td className="px-4 text-[#c9a84c]">5–6 days minimum</td><td className="px-4 text-[#c9a84c]">3–7 days typical</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Cost</td><td className="px-4 text-[#c9a84c]">3–5x more than Umrah</td><td className="px-4 text-[#c9a84c]">More affordable</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Quota</td><td className="px-4 text-[#c9a84c]">Yes, government-controlled</td><td className="px-4 text-[#c9a84c]">No quota</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Waiting list</td><td className="px-4 text-[#c9a84c]">Common in large Muslim countries</td><td className="px-4 text-[#c9a84c]">No waiting list</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Key rituals</td><td className="px-4 text-[#c9a84c]">Tawaf, Sai, Arafat, Mina, Jamarat</td><td className="px-4 text-[#c9a84c]">Tawaf, Sai</td></tr><tr><td className="py-4 pr-4">Nusuk required</td><td className="px-4 text-[#c9a84c]">Yes, mandatory for all pilgrims</td><td className="px-4 text-[#c9a84c]">Recommended</td></tr></tbody></table></div>
+        <div className="text-sm leading-relaxed space-y-4"><p>The three types of Hajj also affect cost. Hajj Tamattu, most common for non-residents, involves Umrah first then Hajj with a break in between — Qurbani is required, adding SAR 350–600 to the cost.</p><p>Hajj Qiran combines Ihram for both in one — also requires Qurbani. Hajj Ifrad is Hajj alone without Umrah — no Qurbani required, with slightly simpler logistics.</p><p>Most package operators from Pakistan, India, and UK offer Hajj Tamattu packages by default.</p></div>
+      </div>
+
+      <div>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3"><span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />Official Source and Calculation Basis</h2>
+        <div className="text-sm leading-relaxed space-y-4 mb-4"><p>This calculator uses baseline cost data from 2026 Nusuk platform packages, licensed operator pricing, and official announcements from the Saudi Ministry of Hajj and Umrah.</p><p>Cost estimates are indicative. Actual prices depend on operator-specific rates, booking timing, hotel availability, and currency fluctuations. The calculator does not connect to live pricing APIs — always confirm final costs with a licensed Hajj or Umrah operator before making any payment.</p></div>
+        <ul className="list-disc space-y-3 pl-6 text-sm"><li>Official Nusuk Hajj platform: <a href="https://hajj.nusuk.sa" target="_blank" rel="nofollow noopener noreferrer" className="text-[#c9a84c] hover:underline">hajj.nusuk.sa</a></li><li>Saudi Ministry of Hajj and Umrah: <a href="https://www.haj.gov.sa/en" target="_blank" rel="nofollow noopener noreferrer" className="text-[#c9a84c] hover:underline">haj.gov.sa</a></li><li>Ministry of Religious Affairs Pakistan: <a href="https://www.mora.gov.pk" target="_blank" rel="nofollow noopener noreferrer" className="text-[#c9a84c] hover:underline">mora.gov.pk</a></li></ul>
+      </div>
+
+      <div>
+        <h2 className="mb-6 text-lg font-bold text-[#e6e3db] flex items-center gap-3"><span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />Common Hajj and Umrah Terms</h2>
+        <div className="overflow-x-auto"><table className="w-full text-sm border-collapse"><thead><tr className="border-b border-[rgba(255,255,255,0.07)]"><th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">English</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Arabic</th><th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Urdu</th></tr></thead><tbody><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Hajj Cost Calculator</td><td className="px-4 text-[#c9a84c]" dir="rtl">حاسبة تكلفة الحج</td><td className="px-4 text-[#c9a84c]" dir="rtl">حج کا خرچہ کیلکولیٹر</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Umrah Budget</td><td className="px-4 text-[#c9a84c]" dir="rtl">ميزانية العمرة</td><td className="px-4 text-[#c9a84c]" dir="rtl">عمرہ کا بجٹ</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Pilgrimage cost</td><td className="px-4 text-[#c9a84c]" dir="rtl">تكلفة الحج والعمرة</td><td className="px-4 text-[#c9a84c]" dir="rtl">حج عمرہ کا خرچہ</td></tr><tr className="border-b border-[rgba(255,255,255,0.03)]"><td className="py-4 pr-4">Nusuk platform</td><td className="px-4 text-[#c9a84c]" dir="rtl">منصة نسك</td><td className="px-4 text-[#c9a84c]" dir="rtl">نسک پلیٹ فارم</td></tr><tr><td className="py-4 pr-4">Package price</td><td className="px-4 text-[#c9a84c]" dir="rtl">سعر الباقة</td><td className="px-4 text-[#c9a84c]" dir="rtl">پیکج قیمت</td></tr></tbody></table></div>
+        <p className="mt-4 text-xs italic">Muslims searching in Arabic for <span dir="rtl">حاسبة تكلفة الحج 2026</span> or in Urdu for <span dir="rtl">حج کا خرچہ پاکستان سے 2026</span> will find the same calculator above — select your country from the dropdown to get costs in your local currency.</p>
+      </div>
+
       <section className="mt-12">
         <h2 className="text-2xl font-bold mb-6 text-white">Explore Other QuickCalcs Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Link
-            href="/tools/zakat-calculator"
-            className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">🟡</span>
-              <div>
-                <p className="font-semibold text-white">Zakat Calculator</p>
-                <p className="text-sm text-gray-300 mt-1">
-                  Calculate your annual Zakat on savings, gold, and investments. Sharia-compliant 2026.
-                </p>
-              </div>
-            </div>
-          </Link>
-          <Link
-            href="/tools/gold-calculator"
-            className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">💰</span>
-              <div>
-                <p className="font-semibold text-white">Gold Price Calculator</p>
-                <p className="text-sm text-gray-300 mt-1">
-                  Live 24K, 22K, 21K, 18K rates for UAE &amp; GCC. Includes Zakat and unit converter.
-                </p>
-              </div>
-            </div>
-          </Link>
-          <Link
-            href="/tools/uae-gratuity-calculator"
-            className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">🧮</span>
-              <div>
-                <p className="font-semibold text-white">UAE Gratuity Calculator</p>
-                <p className="text-sm text-gray-300 mt-1">
-                  End-of-service benefits as per UAE Labour Law 2026. Limited &amp; unlimited contracts.
-                </p>
-              </div>
-            </div>
-          </Link>
-          <Link
-            href="/tools/ksa-gosi-calculator"
-            className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">🛡️</span>
-              <div>
-                <p className="font-semibold text-white">Saudi GOSI Calculator</p>
-                <p className="text-sm text-gray-300 mt-1">
-                  GOSI contributions for Saudi nationals and expats. Updated 2026 KSA rates.
-                </p>
-              </div>
-            </div>
-          </Link>
-          <Link
-            href="/tools/pakistan-freelancer-tax-calculator"
-            className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">🧾</span>
-              <div>
-                <p className="font-semibold text-white">Pakistan Freelancer Tax Calculator</p>
-                <p className="text-sm text-gray-300 mt-1">
-                  FBR income tax for freelancers. Supports PSEB 0.25%, non‑PSEB 1%, non‑filer 2%.
-                </p>
-              </div>
-            </div>
-          </Link>
-          <Link href="/tools/malaysia-epf-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all">
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">🇲🇾</span>
-              <div>
-                <p className="font-semibold text-white">Malaysia EPF Calculator</p>
-                <p className="text-sm text-gray-300 mt-1">Calculate EPF contributions for employees and employers in Malaysia. Includes 2026 contribution rates and take-home salary breakdown.</p>
-              </div>
-            </div>
-          </Link>
+          <Link href="/tools/zakat-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"><div className="flex items-start gap-3"><span className="text-2xl">🟡</span><div><p className="font-semibold text-white">Zakat Calculator</p><p className="text-sm text-gray-300 mt-1">Calculate your annual Zakat on savings, gold, and investments. Sharia-compliant 2026.</p></div></div></Link>
+          <Link href="/tools/gold-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"><div className="flex items-start gap-3"><span className="text-2xl">💰</span><div><p className="font-semibold text-white">Gold Price Calculator</p><p className="text-sm text-gray-300 mt-1">Live 24K, 22K, 21K, 18K rates for UAE &amp; GCC. Includes Zakat and unit converter.</p></div></div></Link>
+          <Link href="/tools/uae-gratuity-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"><div className="flex items-start gap-3"><span className="text-2xl">🧮</span><div><p className="font-semibold text-white">UAE Gratuity Calculator</p><p className="text-sm text-gray-300 mt-1">End-of-service benefits as per UAE Labour Law 2026. Limited &amp; unlimited contracts.</p></div></div></Link>
+          <Link href="/tools/ksa-gosi-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"><div className="flex items-start gap-3"><span className="text-2xl">🛡️</span><div><p className="font-semibold text-white">Saudi GOSI Calculator</p><p className="text-sm text-gray-300 mt-1">GOSI contributions for Saudi nationals and expats. Updated 2026 KSA rates.</p></div></div></Link>
+          <Link href="/tools/pakistan-freelancer-tax-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"><div className="flex items-start gap-3"><span className="text-2xl">🧾</span><div><p className="font-semibold text-white">Pakistan Freelancer Tax Calculator</p><p className="text-sm text-gray-300 mt-1">FBR income tax for freelancers. Supports PSEB 0.25%, non‑PSEB 1%, non‑filer 2%.</p></div></div></Link>
+          <Link href="/tools/malaysia-epf-calculator" className="block p-4 rounded-xl border border-gray-600 hover:border-blue-400 hover:shadow-md transition-all"><div className="flex items-start gap-3"><span className="text-2xl">🇲🇾</span><div><p className="font-semibold text-white">Malaysia EPF Calculator</p><p className="text-sm text-gray-300 mt-1">Calculate EPF contributions for employees and employers in Malaysia. Includes 2026 contribution rates and take-home salary breakdown.</p></div></div></Link>
         </div>
       </section>
-
     </section>
   );
 }

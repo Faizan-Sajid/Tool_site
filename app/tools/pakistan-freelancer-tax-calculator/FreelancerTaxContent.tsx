@@ -7,7 +7,7 @@ const faqItems = [
   {
     question: "What is the freelancer tax rate in Pakistan for 2026?",
     answer:
-      "For the tax year 2026, FBR applies three rates based on your status. PSEB-registered freelancers pay 0.25% on foreign remittances. Non-PSEB filers pay 1% under Section 154S of the Income Tax Ordinance. Non-filers pay 2% — double the standard rate. These are fixed withholding tax rates on IT export income, not standard income tax slabs.",
+      "For the tax year 2026, FBR applies three rates based on your status. PSEB-registered freelancers pay 0.25% on foreign remittances. Non-PSEB filers pay 1% under Section 154A of the Income Tax Ordinance. Non-filers pay 2% — double the standard rate. These are fixed withholding tax rates on IT export income, not standard income tax slabs.",
   },
   {
     question: "How can I qualify for the 0.25% reduced tax rate?",
@@ -45,14 +45,44 @@ const faqItems = [
       "Non-filers face serious consequences. First, your tax rate doubles — instead of 1%, you pay 2% on every foreign remittance. Second, you are excluded from the Active Taxpayer List which banks and government portals check. Third, FBR can issue notices and audit your income retrospectively. If you have significant undeclared income, penalties and surcharges apply. Filing your annual return costs very little compared to the savings from reduced withholding rates.",
   },
   {
-    question: "What is Section 154S and how does it affect freelancers?",
+    question: "What is Section 154A and how does it affect freelancers?",
     answer:
-      "Section 154S of the Income Tax Ordinance is the legal basis for the reduced IT export tax rates. It makes the withholding tax on IT export remittances a final tax — meaning once deducted by the bank, you do not owe additional income tax on that amount under the normal slabs. This is the key benefit for freelancers. The bank deducts the tax automatically when your remittance arrives, and you report it in your annual return.",
+      "Section 154A of the Income Tax Ordinance is the legal basis for the reduced IT export tax rates. It makes the withholding tax on IT export remittances a final tax — meaning once deducted by the bank, you do not owe additional income tax on that amount under the normal slabs. This is the key benefit for freelancers. The bank deducts the tax automatically when your remittance arrives, and you report it in your annual return.",
   },
   {
     question: "How do I register with PSEB to get the 0.25% rate?",
     answer:
       "Visit pseb.org.pk and apply for freelancer registration. You will need your CNIC, a bank account, and proof of IT-related work such as a Fiverr or Upwork profile or client contracts. Once registered, update your status with your bank so future remittances are processed at the 0.25% rate. PSEB registration is free for individual freelancers.",
+  },
+  {
+    question: "When is the Pakistan income tax return deadline for freelancers?",
+    answer:
+      "For individuals, Pakistan income tax returns are normally filed after the tax year ends on June 30. The usual individual filing deadline is September 30, unless FBR extends it for that tax year. Freelancers should keep PRCs, bank statements, platform invoices, and expense records ready before filing through IRIS.",
+  },
+  {
+    question: "Do Pakistani freelancers need to file a tax return if tax is already deducted?",
+    answer:
+      "Yes. Bank withholding under Section 154A does not remove the need to file an annual income tax return. Filing keeps you on the Active Taxpayer List, helps reconcile withheld tax, and supports your reduced freelancer tax rate in future remittances.",
+  },
+  {
+    question: "What documents should a freelancer keep for FBR filing?",
+    answer:
+      "Keep PRCs, bank statements, platform invoices, client contracts, Payoneer or Wise withdrawal records, withholding certificates, and expense invoices. These records help prove foreign IT export income and support the numbers declared in IRIS.",
+  },
+  {
+    question: "Does PSEB registration alone guarantee the 0.25% tax rate?",
+    answer:
+      "No. PSEB registration must be combined with ATL filer status and proper foreign remittance through banking channels. If your bank cannot confirm the remittance as IT export income, or if you are not on ATL, the reduced 0.25% rate may not apply.",
+  },
+  {
+    question: "Are local Pakistani clients taxed at the same freelancer rate?",
+    answer:
+      "No. The 0.25%, 1%, and 2% IT export withholding rates apply to foreign-sourced IT and ITeS remittances. Local Pakistani client income is normally reported under regular income rules and may follow standard progressive slabs.",
+  },
+  {
+    question: "Can freelancers deduct laptop, software, and internet expenses?",
+    answer:
+      "Freelancers should keep records of genuine business expenses such as laptops, software, hosting, internet, platform fees, training, and accounting costs. Deductibility depends on your exact income type and filing position, so confirm treatment with a tax adviser before claiming.",
   },
 ];
 
@@ -60,18 +90,25 @@ export default function FreelancerTaxContent() {
   return (
     <article className="mt-12 text-[#e6e3db] max-w-[860px] mx-auto px-[20px] sm:px-[36px]">
 
+      <section className="mb-8 rounded-2xl border border-[rgba(201,168,76,0.18)] bg-[rgba(201,168,76,0.05)] p-5 text-sm text-[#87847d]">
+        <p className="text-[#e6e3db] font-semibold mb-2">Last reviewed: May 31, 2026</p>
+        <p>
+          Reviewed against Finance Act 2025-26 references, Federal Board of Revenue (FBR) filer/ATL guidance, TechDestination (PSEB) registration requirements, and standard Pakistan tax-year timing. QuickCalcs is an independent calculator and is not affiliated with FBR, PSEB, IRIS, or any government department.
+        </p>
+      </section>
+
       {/* ── SECTION 1: Introduction ── */}
       <section className="mb-14">
         <h2 className="text-2xl font-bold text-[#e6e3db] mb-4 flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          Pakistan Freelancer Tax 2026 — What You Actually Need to Know
+          How Does Pakistan Freelancer Tax Work in 2026?
         </h2>
         <div className="text-sm leading-relaxed space-y-4 text-[#87847d]">
           <p>
             If you are freelancing in Pakistan and earning in foreign currency — whether through Upwork, Fiverr, direct clients, or any other platform — you fall under a special FBR tax regime designed specifically for IT export income. The good news is that this regime is far more generous than the standard income tax slabs most salaried Pakistanis pay.
           </p>
           <p>
-            The <strong className="text-[#e6e3db]">Pakistan Income Tax Calculator 2026</strong> above is built on the current FBR rules under Section 154S of the Income Tax Ordinance. It covers three situations: PSEB-registered freelancers (0.25%), non-PSEB filers (1%), and non-filers (2%). Enter your income, select your status, and get your exact tax liability instantly — no login, no signup.
+            The <strong className="text-[#e6e3db]">Pakistan Income Tax Calculator 2026</strong> above is built on the current FBR rules under Section 154A of the Income Tax Ordinance. It covers three situations: PSEB-registered freelancers (0.25%), non-PSEB filers (1%), and non-filers (2%). Enter your income, select your status, and get your exact tax liability instantly — no login, no signup.
           </p>
           <p>
             Below, we explain how the system works, how each rate applies, and what you need to do to qualify for the lowest possible tax as a Pakistani freelancer in 2026.
@@ -83,10 +120,10 @@ export default function FreelancerTaxContent() {
       <section className="mb-14">
         <h2 className="text-2xl font-bold text-[#e6e3db] mb-4 flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          FBR Freelancer Tax Rates 2026 — All Three Tiers Explained
+          What Are the FBR Freelancer Tax Rates in Pakistan for 2026?
         </h2>
         <p className="text-sm text-[#87847d] mb-6 leading-relaxed">
-          Pakistan's FBR categorizes freelance IT export income into three tiers based on your registration and filer status. Knowing which tier you fall into is the single most important thing for managing your taxes correctly.
+          Pakistan&apos;s FBR categorizes freelance IT export income into three tiers based on your registration and filer status. Knowing which tier you fall into is the single most important thing for managing your taxes correctly.
         </p>
 
         <div className="grid md:grid-cols-3 gap-4 mb-8">
@@ -110,7 +147,7 @@ export default function FreelancerTaxContent() {
             </div>
             <div className="text-4xl font-black text-white mb-3">1%</div>
             <p className="text-[#87847d] text-xs leading-relaxed">
-              Standard IT export rate under Section 154S. Must be on FBR Active Taxpayer List. No PSEB registration needed for this tier.
+              Standard IT export rate under Section 154A. Must be on FBR Active Taxpayer List. No PSEB registration needed for this tier.
             </p>
           </div>
 
@@ -145,14 +182,14 @@ export default function FreelancerTaxContent() {
                 <td className="text-center px-4 text-[#2dd4a0] font-bold">0.25%</td>
                 <td className="text-center px-4 text-[#2dd4a0]">✓ Yes</td>
                 <td className="text-center px-4 text-[#2dd4a0]">✓ Yes</td>
-                <td className="text-center px-4 text-[#87847d]">Section 154S</td>
+                <td className="text-center px-4 text-[#87847d]">Section 154A</td>
               </tr>
               <tr className="border-b border-[rgba(255,255,255,0.03)]">
                 <td className="py-3 pr-4 text-[#e6e3db] font-medium">Non-PSEB Active Filer</td>
                 <td className="text-center px-4 text-[#c9a84c] font-bold">1%</td>
                 <td className="text-center px-4 text-[#2dd4a0]">✓ Yes</td>
                 <td className="text-center px-4 text-[#3e3c38]">✗ No</td>
-                <td className="text-center px-4 text-[#87847d]">Section 154S</td>
+                <td className="text-center px-4 text-[#87847d]">Section 154A</td>
               </tr>
               <tr className="border-b border-[rgba(255,255,255,0.03)]">
                 <td className="py-3 pr-4 text-[#e6e3db] font-medium">Non-Filer</td>
@@ -170,7 +207,7 @@ export default function FreelancerTaxContent() {
       <section className="mb-14">
         <h2 className="text-2xl font-bold text-[#e6e3db] mb-4 flex items-center gap-3">
           <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
-          Worked Examples — Freelancer Tax Calculation Pakistan 2026
+          How Do You Calculate Freelancer Tax on Upwork and Fiverr Income?
         </h2>
         <p className="text-sm text-[#87847d] mb-6 leading-relaxed">
           Here are three real-world examples showing exactly how much tax applies to a freelancer earning PKR 150,000 per month from Upwork or Fiverr, depending on their registration status.
@@ -225,6 +262,32 @@ export default function FreelancerTaxContent() {
         </div>
       </section>
 
+      <section className="mb-14 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.12)] rounded-2xl p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-white mb-4">Example: $1,000 Upwork Income Remitted to Pakistan</h2>
+        <div className="text-sm leading-relaxed space-y-4 text-[#87847d]">
+          <p>
+            If you withdraw <strong className="text-[#e6e3db]">$1,000 from Upwork</strong> to your Pakistani bank and the bank converts it to PKR 278,000, the withholding tax is calculated on the PKR amount received in your account.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { status: "PSEB registered ATL filer", rate: "0.25%", tax: "PKR 695", net: "PKR 277,305" },
+              { status: "Non-PSEB ATL filer", rate: "1%", tax: "PKR 2,780", net: "PKR 275,220" },
+              { status: "Non-filer", rate: "2%", tax: "PKR 5,560", net: "PKR 272,440" },
+            ].map((item) => (
+              <div key={item.status} className="rounded-xl border border-[rgba(255,255,255,0.07)] bg-[#0c0e16] p-4">
+                <p className="text-[#e6e3db] font-semibold text-xs mb-2">{item.status}</p>
+                <p>Rate: <strong className="text-[#c9a84c]">{item.rate}</strong></p>
+                <p>Tax: <strong className="text-[#c9a84c]">{item.tax}</strong></p>
+                <p>Net received: <strong className="text-[#2dd4a0]">{item.net}</strong></p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-[#3e3c38]">
+            Exchange rates and bank charges vary. Use your actual PKR credit amount from the bank statement for filing records.
+          </p>
+        </div>
+      </section>
+
       {/* ── SECTION 4: Section 65F & 80% Rule ── */}
       <section className="mb-14 bg-[#12141c] border border-[rgba(255,255,255,0.05)] rounded-2xl p-6 sm:p-8">
         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
@@ -233,8 +296,11 @@ export default function FreelancerTaxContent() {
         </h2>
         <div className="text-sm leading-relaxed space-y-4 text-[#87847d]">
           <p>
-            Under <strong className="text-[#e6e3db]">Section 65F of the Income Tax Ordinance</strong>, the reduced IT export tax rates — 0.25% and 1% — are conditional. The condition that trips up most freelancers is the <strong className="text-[#e6e3db]">80% foreign remittance rule</strong>.
+            Under <strong className="text-[#e6e3db]">Section 65F of the Income Tax Ordinance</strong>, eligible IT export income can qualify for a 100% tax credit / 0% exemption where statutory conditions are met. This relief is available until June 30, 2026, and the condition that trips up most freelancers is the <strong className="text-[#e6e3db]">80% foreign remittance rule</strong>.
           </p>
+          <div className="bg-[rgba(255,255,255,0.03)] p-4 rounded-lg border border-[rgba(255,255,255,0.05)]">
+            <strong className="text-[#e6e3db]">Calculator note:</strong> This calculator estimates bank withholding under Section 154A. It does not apply a Section 65F 0% exemption automatically because eligibility depends on your return filing, export documentation, and FBR compliance position.
+          </div>
           <div className="bg-[rgba(255,255,255,0.03)] p-4 rounded-lg border border-[rgba(255,255,255,0.05)]">
             <strong className="text-[#e6e3db]">The Rule:</strong> At least 80% of your total business receipts must be brought into Pakistan through formal banking channels — meaning your Pakistani bank account, not a foreign wallet like Payoneer USD balance.
           </div>
@@ -243,6 +309,54 @@ export default function FreelancerTaxContent() {
           </p>
           <p>
             The practical advice: withdraw your full earnings to your Pakistani bank account every month and ensure the transaction is tagged under IT Export Code 9062. This creates a clean paper trail that protects your reduced tax status.
+          </p>
+          <p>
+            Non-filers are also affected by the 10th Schedule to the Income Tax Ordinance, which can increase withholding exposure until the taxpayer appears on the Active Taxpayer List.
+          </p>
+          <p>
+            The rates and treatment summarized here are based on the Income Tax Ordinance as updated through the Finance Act 2025-26 and should be verified against the latest FBR notifications before filing.
+          </p>
+        </div>
+      </section>
+
+      <section className="mb-14">
+        <h2 className="text-2xl font-bold text-[#e6e3db] mb-4 flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          Annual Return Deadline and Records Freelancers Should Keep
+        </h2>
+        <div className="text-sm leading-relaxed space-y-4 text-[#87847d]">
+          <p>
+            Pakistan&apos;s tax year runs from July 1 to June 30. Individual income tax returns are normally due by <strong className="text-[#e6e3db]">September 30</strong>, unless FBR announces an extension for that tax year.
+          </p>
+          <p>
+            Keep PRCs, bank credit advices, Upwork/Fiverr invoices, Payoneer or Wise withdrawal records, client contracts, and any withholding certificates. These records help reconcile the tax already deducted by banks with the income reported in your annual return.
+          </p>
+        </div>
+      </section>
+
+      <section className="mb-14 bg-[#12141c] border border-[rgba(255,255,255,0.05)] rounded-2xl p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-white mb-4">Deductible Business Expenses for Pakistani Freelancers</h2>
+        <div className="text-sm leading-relaxed space-y-4 text-[#87847d]">
+          <p>
+            IT export remittance withholding under Section 154A is generally a final tax on that remitted income. Still, freelancers should track legitimate business expenses because they may matter for local income, mixed-income reporting, documentation, or adviser review.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {[
+              "Laptop, monitor, and work equipment used for client projects",
+              "Software subscriptions such as design, development, hosting, or productivity tools",
+              "Internet, phone, and cloud service costs used for freelance work",
+              "Platform fees, payment processing charges, and bank charges",
+              "Professional training, certifications, and relevant online courses",
+              "Tax adviser, accounting, and business registration costs",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2dd4a0] mt-0.5 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-[#3e3c38]">
+            Keep invoices and payment proof. Do not claim personal expenses as business costs unless your tax adviser confirms the allocation.
           </p>
         </div>
       </section>
@@ -255,7 +369,7 @@ export default function FreelancerTaxContent() {
         </h2>
         <div className="text-sm leading-relaxed space-y-4 text-[#87847d]">
           <p>
-            Whether you earn through Fiverr, Upwork, Freelancer.com, direct PayPal transfers, or Wise from a foreign client — the tax treatment is the same as long as the money enters Pakistan through your bank account. FBR does not distinguish between platforms. What matters is the nature of the income (IT services) and the channel through which it arrives.
+            Whether you earn through Fiverr, Upwork, Freelancer.com, direct PayPal transfers, or Wise from a foreign client — the tax treatment is the same as long as the money enters Pakistan through your bank account. FBR does not distinguish between platforms. What matters is the nature of the income, including IT and IT-enabled services (ITeS), and the channel through which it arrives.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4 mt-4">
@@ -384,10 +498,11 @@ export default function FreelancerTaxContent() {
             <tbody>
               {[
                 { income: "Up to 600,000", slab: "0%", nonPseb: "1%", pseb: "0.25%" },
-                { income: "600,001 – 1,200,000", slab: "5%", nonPseb: "1%", pseb: "0.25%" },
-                { income: "1,200,001 – 2,400,000", slab: "15%", nonPseb: "1%", pseb: "0.25%" },
-                { income: "2,400,001 – 3,600,000", slab: "25%", nonPseb: "1%", pseb: "0.25%" },
-                { income: "Above 3,600,000", slab: "35%", nonPseb: "1%", pseb: "0.25%" },
+                { income: "600,001 – 1,200,000", slab: "15%", nonPseb: "1%", pseb: "0.25%" },
+                { income: "1,200,001 – 1,600,000", slab: "20%", nonPseb: "1%", pseb: "0.25%" },
+                { income: "1,600,001 – 3,200,000", slab: "25%", nonPseb: "1%", pseb: "0.25%" },
+                { income: "3,200,001 – 5,600,000", slab: "30%", nonPseb: "1%", pseb: "0.25%" },
+                { income: "Above 5,600,000", slab: "35%", nonPseb: "1%", pseb: "0.25%" },
               ].map((row) => (
                 <tr key={row.income} className="border-b border-[rgba(255,255,255,0.03)]">
                   <td className="py-3 pr-4 text-[#87847d]">{row.income}</td>
@@ -400,7 +515,7 @@ export default function FreelancerTaxContent() {
           </table>
         </div>
         <p className="text-xs text-[#3e3c38] mt-3">
-          * Standard tax slabs for individual filers (Tax Year 2026). IT export rates are final tax — no additional slab tax applies on that income.
+          * Standard tax slabs for individual filers (Tax Year 2026). IT export rates are final tax — no additional slab tax applies on that income. Exact slab tax includes fixed amounts plus marginal rates; this table highlights marginal rate bands for comparison.
         </p>
       </section>
 
@@ -415,7 +530,7 @@ export default function FreelancerTaxContent() {
             { title: "All three FBR rates covered:", body: "0.25% PSEB, 1% non-PSEB filer, and 2% non-filer — switch between them in one click." },
             { title: "Monthly and yearly modes:", body: "Enter your income in whatever frequency you think in and get results for both periods instantly." },
             { title: "Net take-home calculation:", body: "See exactly how much lands in your account after tax is deducted — not just the tax amount." },
-            { title: "Updated for 2026:", body: "Built on current FBR rules under Section 154S and the Budget 2025-26 provisions." },
+            { title: "Updated for 2026:", body: "Built on current FBR rules under Section 154A and the Budget 2025-26 provisions." },
             { title: "100% private:", body: "All calculations run in your browser. No data is stored or sent to any server." },
             { title: "Free forever:", body: "No login, no signup, no paywall. Use it as many times as you need." },
           ].map((item) => (
@@ -425,6 +540,61 @@ export default function FreelancerTaxContent() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="mb-14">
+        <h2 className="text-2xl font-bold text-[#e6e3db] mb-4 flex items-center gap-3">
+          <span className="h-[2px] w-8 bg-[#c9a84c] flex-shrink-0" />
+          Urdu Glossary for Freelancer Tax Terms
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-[rgba(255,255,255,0.07)]">
+                <th className="text-left py-3 pr-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">English term</th>
+                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Urdu / Roman Urdu meaning</th>
+                <th className="text-left py-3 px-4 text-xs uppercase tracking-wider text-[#3e3c38] font-bold">Why it matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { term: "Filer / ATL", urdu: "Active Taxpayer List par shamil taxpayer", why: "Needed for 1% or 0.25% rates." },
+                { term: "Non-filer", urdu: "Jo annual return file nahin karta", why: "Usually faces double withholding." },
+                { term: "Remittance", urdu: "Bahar se bank ke zariye aane wali raqam", why: "IT export rates apply to formal foreign remittance." },
+                { term: "PRC", urdu: "Bank ka Proceeds Realization Certificate", why: "Proof that income came from foreign IT exports." },
+                { term: "Withholding tax", urdu: "Bank ke zariye source par deduct hone wala tax", why: "The calculator estimates this deduction." },
+              ].map((row) => (
+                <tr key={row.term} className="border-b border-[rgba(255,255,255,0.03)]">
+                  <td className="py-3 pr-4 text-[#e6e3db] font-medium">{row.term}</td>
+                  <td className="py-3 px-4 text-[#87847d]">{row.urdu}</td>
+                  <td className="py-3 px-4 text-[#87847d]">{row.why}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="mb-14 rounded-2xl border border-[rgba(255,255,255,0.07)] bg-[#12141c] p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-white mb-4">Official Sources Used</h2>
+        <ul className="space-y-3 text-sm text-[#87847d]">
+          {[
+            { href: "https://fbr.gov.pk/", title: "Federal Board of Revenue (FBR)", desc: "Income tax law, withholding tax guidance, Active Taxpayer List, and return filing resources." },
+            { href: "https://iris.fbr.gov.pk/", title: "FBR IRIS", desc: "Official portal for NTN registration, income tax return filing, and compliance records." },
+            { href: "https://pseb.org.pk/", title: "Pakistan Software Export Board (PSEB)", desc: "Freelancer and IT exporter registration guidance for reduced IT export rates." },
+            { href: "https://fbr.gov.pk/atl", title: "FBR Active Taxpayer List (ATL)", desc: "Official ATL lookup used to confirm filer status." },
+          ].map((source) => (
+            <li key={source.href}>
+              <Link href={source.href} className="text-[#c9a84c] hover:text-[#d4b96d] font-semibold" target="_blank" rel="noopener noreferrer">
+                {source.title}
+              </Link>
+              <span> — {source.desc}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-5 text-xs text-[#3e3c38] leading-relaxed">
+          Disclaimer: This calculator is for educational estimates only and is not tax, legal, or accounting advice. QuickCalcs is not affiliated with FBR, IRIS, PSEB, or the Government of Pakistan. Confirm your filing position with a qualified tax adviser.
+        </p>
       </section>
 
       {/* ── SECTION 10: Internal Links ── */}

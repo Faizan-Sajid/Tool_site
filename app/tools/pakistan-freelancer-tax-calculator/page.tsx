@@ -8,32 +8,20 @@ import Link from "next/link";
 // METADATA — fully updated, robots included
 // ─────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Pakistan Freelancer Tax Calculator 2026 | FBR 0.25%, 1% & 2% Rates",
+  title: "Pakistan Freelancer Tax Calculator 2026 | FBR & PSEB Rates",
   description:
-     "Calculate your 2026 FBR freelancer tax instantly. Supports 0.25% PSEB rates, 1% filers, 2% non-filers, and Section 154S for Upwork, Fiverr & Payoneer.",
+     "Calculate Pakistan freelancer tax for 2026: PSEB 0.25%, ATL filer 1%, non-filer 2% under Section 154A. Free FBR tax tool.",
   keywords: [
     "Pakistan freelancer tax calculator 2026",
     "FBR tax on Upwork income Pakistan",
     "freelancer tax Pakistan 2026",
     "PSEB tax rate 0.25 percent",
     "non filer tax rate Pakistan freelancer",
-    "Section 154S income tax ordinance",
+    "Section 154A income tax ordinance",
     "Fiverr tax Pakistan 2026",
-    "how to calculate freelancer tax Pakistan",
-    "FBR tax on Fiverr earnings Pakistan",
-    "income tax on remittance Pakistan 2026",
-    "freelancer ATL registration Pakistan",
     "Payoneer income tax Pakistan",
     "IT export tax rate Pakistan",
-    "freelancer tax rate Pakistan 1 percent",
-    "PSEB registered freelancer tax",
-    "proceeds realization certificate PRC Pakistan",
     "FBR active taxpayer list freelancer",
-    "Pakistan IT export income tax",
-    "how to file tax as freelancer Pakistan",
-    "Section 65F income tax ordinance Pakistan",
-    "80 percent remittance rule Pakistan",
-    "FBR freelancer income tax 2025-26",
   ],
   openGraph: {
     title: "Pakistan Freelancer Tax Calculator 2026 | FBR 0.25%, 1% & 2% Rates",
@@ -89,7 +77,7 @@ const faqItems = [
   {
     question: "What is the freelancer tax rate in Pakistan for 2026?",
     answer:
-      "For the tax year 2026, FBR applies three rates based on your status. PSEB-registered freelancers pay 0.25% on foreign remittances. Non-PSEB filers pay 1% under Section 154S of the Income Tax Ordinance. Non-filers pay 2% — double the standard rate. These are fixed withholding tax rates on IT export income, not standard income tax slabs.",
+      "For the tax year 2026, FBR applies three rates based on your status. PSEB-registered freelancers pay 0.25% on foreign remittances. Non-PSEB filers pay 1% under Section 154A of the Income Tax Ordinance. Non-filers pay 2% — double the standard rate. These are fixed withholding tax rates on IT export income, not standard income tax slabs.",
   },
   {
     question: "How can I qualify for the 0.25% reduced tax rate?",
@@ -127,14 +115,44 @@ const faqItems = [
       "Non-filers face double withholding tax rates — 2% instead of 1% on every foreign remittance. They are also excluded from the Active Taxpayer List. FBR can issue notices and audit income retrospectively. At PKR 150,000 per month income, being a non-filer costs an extra PKR 18,000 per year compared to being a regular filer.",
   },
   {
-    question: "What is Section 154S and how does it affect freelancers?",
+    question: "What is Section 154A and how does it affect freelancers?",
     answer:
-      "Section 154S of the Income Tax Ordinance is the legal basis for the reduced IT export tax rates. It makes the withholding tax on IT export remittances a final tax — once deducted by the bank, you do not owe additional income tax on that amount under normal slabs. The bank deducts the tax automatically when your remittance arrives.",
+      "Section 154A of the Income Tax Ordinance is the legal basis for the reduced IT export tax rates. It makes the withholding tax on IT export remittances a final tax — once deducted by the bank, you do not owe additional income tax on that amount under normal slabs. The bank deducts the tax automatically when your remittance arrives.",
   },
   {
     question: "How do I register with PSEB to get the 0.25% rate?",
     answer:
       "Visit pseb.org.pk and apply for freelancer registration. You need your CNIC, a bank account, and proof of IT-related work such as a Fiverr or Upwork profile or client contracts. PSEB registration is free for individual freelancers. Once registered, inform your bank so future remittances are processed at 0.25%.",
+  },
+  {
+    question: "When is the Pakistan income tax return deadline for freelancers?",
+    answer:
+      "For individuals, Pakistan income tax returns are normally filed after the tax year ends on June 30. The usual individual filing deadline is September 30, unless FBR extends it for that tax year. Freelancers should keep PRCs, bank statements, platform invoices, and expense records ready before filing through IRIS.",
+  },
+  {
+    question: "Do Pakistani freelancers need to file a tax return if tax is already deducted?",
+    answer:
+      "Yes. Bank withholding under Section 154A does not remove the need to file an annual income tax return. Filing keeps you on the Active Taxpayer List, helps reconcile withheld tax, and supports your reduced freelancer tax rate in future remittances.",
+  },
+  {
+    question: "What documents should a freelancer keep for FBR filing?",
+    answer:
+      "Keep PRCs, bank statements, platform invoices, client contracts, Payoneer or Wise withdrawal records, withholding certificates, and expense invoices. These records help prove foreign IT export income and support the numbers declared in IRIS.",
+  },
+  {
+    question: "Does PSEB registration alone guarantee the 0.25% tax rate?",
+    answer:
+      "No. PSEB registration must be combined with ATL filer status and proper foreign remittance through banking channels. If your bank cannot confirm the remittance as IT export income, or if you are not on ATL, the reduced 0.25% rate may not apply.",
+  },
+  {
+    question: "Are local Pakistani clients taxed at the same freelancer rate?",
+    answer:
+      "No. The 0.25%, 1%, and 2% IT export withholding rates apply to foreign-sourced IT and ITeS remittances. Local Pakistani client income is normally reported under regular income rules and may follow standard progressive slabs.",
+  },
+  {
+    question: "Can freelancers deduct laptop, software, and internet expenses?",
+    answer:
+      "Freelancers should keep records of genuine business expenses such as laptops, software, hosting, internet, platform fees, training, and accounting costs. Deductibility depends on your exact income type and filing position, so confirm treatment with a tax adviser before claiming.",
   },
 ];
 
@@ -151,14 +169,22 @@ const jsonLd = {
       url: "https://www.quickcalcs.app/tools/pakistan-freelancer-tax-calculator",
       name: "Pakistan Freelancer Tax Calculator 2026 | FBR 0.25%, 1% & 2% Rates",
       description:
-        "Calculate your exact FBR freelancer tax for 2026. PSEB 0.25%, non-PSEB filer 1%, non-filer 2%. Covers Upwork, Fiverr, Payoneer income under Section 154S.",
-      dateModified: "2026-05-18",
+        "Calculate your exact FBR freelancer tax for 2026. PSEB 0.25%, non-PSEB filer 1%, non-filer 2%. Covers Upwork, Fiverr, Payoneer income under Section 154A.",
+      dateModified: "2026-05-31",
+      reviewedBy: { "@type": "Organization", name: "QuickCalcs" },
+      publisher: { "@type": "Organization", name: "QuickCalcs", url: "https://www.quickcalcs.app" },
+      isBasedOn: [
+        "https://fbr.gov.pk/",
+        "https://iris.fbr.gov.pk/",
+        "https://pseb.org.pk/",
+        "https://fbr.gov.pk/atl"
+      ],
       isPartOf: { "@id": "https://www.quickcalcs.app/" },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: "https://www.quickcalcs.app/" },
-          { "@type": "ListItem", position: 2, name: "Finance Tools", item: "https://www.quickcalcs.app/tools" },
+          { "@type": "ListItem", position: 2, name: "Financial Calculators", item: "https://www.quickcalcs.app/#all-tools" },
           {
             "@type": "ListItem",
             position: 3,
@@ -178,21 +204,28 @@ const jsonLd = {
         "Free online FBR tax calculator for Pakistani freelancers. Calculates IT export withholding tax for PSEB registered (0.25%), non-PSEB filers (1%), and non-filers (2%). Covers Upwork, Fiverr, Payoneer, and direct client income.",
       featureList: [
         "PSEB registered rate: 0.25% on foreign remittance",
-        "Non-PSEB active filer rate: 1% under Section 154S",
+        "Non-PSEB active filer rate: 1% under Section 154A",
         "Non-filer penalty rate: 2%",
         "Monthly and yearly income modes",
         "Net income after tax calculation",
         "Annual and monthly tax breakdown",
-        "Section 154S compliant — Budget 2025-26 updated",
+        "Section 154A compliant — Finance Act 2025-26",
       ],
       offers: { "@type": "Offer", price: "0", priceCurrency: "PKR" },
+      author: { "@type": "Organization", name: "QuickCalcs" },
+      publisher: { "@type": "Organization", name: "QuickCalcs", url: "https://www.quickcalcs.app" },
+      isBasedOn: [
+        "https://fbr.gov.pk/",
+        "https://iris.fbr.gov.pk/",
+        "https://pseb.org.pk/"
+      ],
       brand: { "@type": "Brand", name: "QuickCalcs" },
     },
     {
       "@type": "HowTo",
       name: "How to Calculate Freelancer Tax in Pakistan 2026",
       description:
-        "Step by step guide to calculate FBR income tax on freelance IT export income in Pakistan using the correct PSEB, non-PSEB, and non-filer rates under Section 154S.",
+        "Step by step guide to calculate FBR income tax on freelance IT export income in Pakistan using the correct PSEB, non-PSEB, and non-filer rates under Section 154A.",
       totalTime: "PT2M",
       tool: [
         {
@@ -266,8 +299,8 @@ export default function PakistanFreelancerTaxPage() {
               <Home className="w-3 h-3" /> Home
             </Link>
             <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
-            <Link href="/?category=finance" className="hover:text-[#c9a84c] transition-colors">
-              Finance
+            <Link href="/#all-tools" className="hover:text-[#c9a84c] transition-colors">
+              Financial Calculators
             </Link>
             <ChevronRight className="w-3 h-3 text-[#1a1c24]" />
             <span className="text-[#c9a84c]">Freelancer Tax Calculator</span>
@@ -286,8 +319,8 @@ export default function PakistanFreelancerTaxPage() {
             </h1>
             <p className="text-[#87847d] text-sm max-w-2xl leading-relaxed">
               Calculate your exact FBR tax on Upwork, Fiverr, Payoneer, and direct client income.
-              Supports PSEB registered (0.25%), non-PSEB filers (1%), and non-filers (2%) under Section 154S.
-              Free, instant, updated for Budget 2026–27.
+              Supports PSEB registered (0.25%), non-PSEB filers (1%), and non-filers (2%) under Section 154A.
+              Free, instant, updated for Finance Act 2025-26.
             </p>
           </header>
 

@@ -87,7 +87,7 @@ export default function FreelancerTaxCalculator() {
           </h2>
           <p className="mt-1 text-sm text-[#87847d]">Instant tax estimate based on FBR &amp; PSEB rules</p>
           <span className="inline-block mt-2 px-3 py-1 text-xs font-medium text-[#2dd4a0] bg-[rgba(45,212,160,0.08)] border border-[rgba(45,212,160,0.15)] rounded-full">
-            🟢 Updated: Budget 2026–27
+            🟢 Updated: Finance Act 2025-26
           </span>
         </header>
 
@@ -155,12 +155,14 @@ export default function FreelancerTaxCalculator() {
           {/* Action buttons */}
           <div className="flex flex-col gap-3 md:flex-row md:gap-4 mt-4">
             <button
+              type="button"
               onClick={calculate}
               className="flex-1 min-h-[48px] bg-[#c9a84c] hover:bg-[#d4b96d] text-[#0c0e16] font-bold rounded-lg transition-all hover:scale-[1.01] active:scale-[0.99]"
             >
               Calculate
             </button>
             <button
+              type="button"
               onClick={reset}
               className="flex-1 min-h-[48px] border border-[rgba(255,255,255,0.07)] text-[#87847d] hover:text-[#e6e3db] hover:border-[rgba(255,255,255,0.15)] font-medium rounded-lg transition-all"
             >
@@ -191,6 +193,7 @@ export default function FreelancerTaxCalculator() {
             >
               <div className="w-12 h-1 bg-[rgba(255,255,255,0.1)] rounded-full mx-auto mb-4 sm:hidden" />
               <button
+                type="button"
                 onClick={() => setShowModal(false)}
                 className="absolute top-3 right-4 text-[#87847d] hover:text-[#e6e3db] text-xl"
                 aria-label="Close"

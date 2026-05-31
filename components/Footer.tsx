@@ -9,6 +9,7 @@ const FOOTER_LINKS = {
     { name: "Zakat Calculator", href: "/tools/zakat-calculator" },
     { name: "UAE Gratuity", href: "/tools/uae-gratuity-calculator" },
     { name: "Saudi GOSI", href: "/tools/ksa-gosi-calculator" },
+    { name: "Pakistan Freelancer Tax", href: "/tools/pakistan-freelancer-tax-calculator" },
     { name: "Malaysia EPF", href: "/tools/malaysia-epf-calculator" },
     { name: "Business Tools", href: "/#all-tools" },
   ],
