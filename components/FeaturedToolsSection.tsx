@@ -1,12 +1,14 @@
-"use client";
-
-import React, { Suspense } from "react";
+import React from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { TOOLS, Tool } from "@/constants/tools";
+import CategoryFilter from "@/components/CategoryFilter";
 
 interface ToolCardProps {
   tool: Tool;
+}
+
+interface FeaturedToolsSectionProps {
+  searchParams?: { category?: string };
 }
 
 const ToolCard = ({ tool }: ToolCardProps) => {
@@ -38,9 +40,9 @@ const ToolCard = ({ tool }: ToolCardProps) => {
       </div>
 
       {/* Title */}
-      <h2 className="text-[16px] font-bold tracking-[-0.2px] text-[#e6e3db]">
+      <h3 className="text-[16px] font-bold tracking-[-0.2px] text-[#e6e3db]">
         {title}
-      </h2>
+      </h3>
 
       {/* Description */}
       <p className="flex-1 text-[13px] sm:text-[14px] leading-relaxed text-[#87847d]">
@@ -70,32 +72,35 @@ const ToolCard = ({ tool }: ToolCardProps) => {
   );
 };
 
-const FeaturedToolsContent = () => {
-  const searchParams = useSearchParams();
-  const categoryParam = searchParams.get("category");
+const filterToolsByCategory = (tools: Tool[], category: string) => {
+  if (category === "all") return tools;
+  return tools.filter((tool) => tool.category === category);
+};
 
-  // Determine what to show based on the category param
-  const showFinance = !categoryParam || categoryParam === "finance";
-  const showHR = !categoryParam || categoryParam === "hr";
-  const showDigitalGrowth = !categoryParam || categoryParam === "seo" || categoryParam === "digital-growth";
+const FeaturedToolsSection = ({ searchParams }: FeaturedToolsSectionProps) => {
+  const category = searchParams?.category ?? "all";
 
-  // Filter tools based on the param
-  const filterTools = (tools: Tool[]) => {
-    if (!categoryParam) return tools;
-    return tools.filter(t => t.category === categoryParam);
-  };
+  const financeTools = filterToolsByCategory(
+    TOOLS.filter((tool) => tool.category === "finance" && tool.country === "all"),
+    category
+  );
+  const regionalTools = TOOLS.filter(
+    (tool) => tool.country !== "all" || (tool.category !== "finance" && tool.category !== "visa")
+  );
+  const filteredRegionalTools = filterToolsByCategory(regionalTools, category);
+  const digitalGrowthTools = filterToolsByCategory(TOOLS.filter((tool) => tool.category === "business"), category);
 
-  const financeTools = filterTools(TOOLS.filter(t => t.category === "finance" && t.country === "all"));
-  // Include regional tools if we are showing all tools, or if the regional tool matches the current category
-  const regionalTools = TOOLS.filter(t => t.country !== "all" || (t.category !== "finance" && t.category !== "visa"));
-  const filteredRegionalTools = filterTools(regionalTools);
-  const showRegional = !categoryParam || filteredRegionalTools.length > 0;
+  const showFinance = financeTools.length > 0;
+  const showRegional = filteredRegionalTools.length > 0;
+  const showDigitalGrowth = digitalGrowthTools.length > 0;
 
   return (
     /* Main Section: Added max-w-[1280px] and mx-auto to perfectly contain and center the content on large screens */
     <section id="all-tools" className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 py-8 lg:py-12 scroll-mt-20 overflow-x-hidden">
+      <CategoryFilter activeCategory={category} />
+
       {/* Category: Finance */}
-      {showFinance && financeTools.length > 0 && (
+      {showFinance && (
         <>
           <div className="mb-4 mt-0 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#8b8a87]">
             <span>💰 Finance</span>
@@ -103,7 +108,7 @@ const FeaturedToolsContent = () => {
           </div>
           {/* Changed xl:grid-cols-4 to xl:grid-cols-3 for a solid 3-card structure */}
           <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
-            {financeTools.map(tool => (
+            {financeTools.map((tool) => (
               <ToolCard key={tool.id || tool.title} tool={tool} />
             ))}
           </div>
@@ -111,7 +116,7 @@ const FeaturedToolsContent = () => {
       )}
 
       {/* Category: Regional Specialties */}
-      {showRegional && filteredRegionalTools.length > 0 && (
+      {showRegional && (
         <>
           <div className="mb-4 mt-0 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#8b8a87]">
             <span>🌍 Regional Specialties</span>
@@ -119,7 +124,7 @@ const FeaturedToolsContent = () => {
           </div>
           {/* Changed xl:grid-cols-4 to xl:grid-cols-3 */}
           <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
-            {filteredRegionalTools.map(tool => (
+            {filteredRegionalTools.map((tool) => (
               <ToolCard key={tool.id} tool={tool} />
             ))}
           </div>
@@ -133,17 +138,14 @@ const FeaturedToolsContent = () => {
             <span>🚀 Digital Growth</span>
             <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
           </div>
+          <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
+            {digitalGrowthTools.map((tool) => (
+              <ToolCard key={tool.id} tool={tool} />
+            ))}
+          </div>
         </>
       )}
     </section>
-  );
-};
-
-const FeaturedToolsSection = () => {
-  return (
-    <Suspense fallback={<div className="h-40 flex items-center justify-center text-[#87847d]">Loading tools...</div>}>
-      <FeaturedToolsContent />
-    </Suspense>
   );
 };
 

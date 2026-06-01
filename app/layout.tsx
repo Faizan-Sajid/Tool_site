@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { Suspense } from "react";
 import { SidebarProvider } from "@/context/SidebarContext";
 import Script from 'next/script';
-// 1. Speed Insights ko yahan import karen
+// Speed Insights import.
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Font optimization: display: 'swap' ensures text is visible immediately with system font fallback
@@ -171,14 +171,14 @@ export default function RootLayout({
             </main>
           </div>
         </SidebarProvider>
-        
+
         {/* Google Analytics - lazyOnload defers script execution until browser idle */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VJNR9Q5GEF"
           strategy="lazyOnload"
           async
         />
-        
+
         {/* Initialize gtag with same non-blocking strategy */}
         <Script
           id="google-analytics-init"
@@ -196,7 +196,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* 2. Speed Insights component ko body ke bilkul aakhir ma add kar dein */}
+        {/* Speed Insights component. */}
         <SpeedInsights />
       </body>
     </html>

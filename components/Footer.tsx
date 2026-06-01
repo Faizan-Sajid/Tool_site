@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 
@@ -7,6 +5,7 @@ const FOOTER_LINKS = {
   tools: [
     { name: "Gold Calculator", href: "/tools/gold-calculator" },
     { name: "Zakat Calculator", href: "/tools/zakat-calculator" },
+    { name: "Hajj & Umrah Budget", href: "/tools/hajj-umrah-budget-calculator" },
     { name: "UAE Gratuity", href: "/tools/uae-gratuity-calculator" },
     { name: "Saudi GOSI", href: "/tools/ksa-gosi-calculator" },
     { name: "Pakistan Freelancer Tax", href: "/tools/pakistan-freelancer-tax-calculator" },
@@ -40,7 +39,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-6 group transition-transform hover:scale-[1.01] min-h-[44px]">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#c9a84c] to-[#a88a3d] font-black text-[#0c0e16] text-sm">
-                G
+                Q
               </div>
               <span className="text-lg font-bold tracking-tight text-white leading-tight">
                 QuickCalcs
@@ -97,7 +96,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-[rgba(255,255,255,0.05)] mt-12 sm:mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <p className="text-[11px] font-medium text-[#8b8a87] tracking-wider uppercase">
-            © 2026 QuickCalcs Professional · All Rights Reserved
+            © {new Date().getFullYear()} QuickCalcs Professional · All Rights Reserved
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
             <Link href="/about" className="text-[11px] text-[#8b8a87] hover:text-[#87847d] uppercase tracking-widest transition-colors min-h-[44px] flex items-center">

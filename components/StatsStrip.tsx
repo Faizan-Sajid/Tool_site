@@ -1,8 +1,9 @@
 import React from "react";
+import { TOOLS } from "@/constants/tools";
 
 const StatsStrip = () => {
   const stats = [
-    { num: "24+", label: "Free Tools" },
+    { num: `${TOOLS.length}+`, label: "Free Tools" },
     { num: "200+", label: "Countries Supported" },
     { num: "100%", label: "Free Forever" },
     { num: "No Login", label: "Required" },

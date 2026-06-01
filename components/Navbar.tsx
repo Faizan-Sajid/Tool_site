@@ -19,12 +19,12 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 z-[200] h-[62px] w-full bg-[#0c0e16]/90 backdrop-blur-xl border-b border-[rgba(255,255,255,0.07)]">
       <nav className="mx-auto flex h-full max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-9">
-        
+
         {/* Left: Logo Section */}
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2.5 group transition-transform hover:scale-[1.02] active:scale-[0.98]">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#c9a84c] to-[#a88a3d] font-black text-[#0c0e16] text-lg shadow-[0_0_20px_rgba(201,168,76,0.2)] group-hover:shadow-[0_0_25px_rgba(201,168,76,0.35)] transition-all">
-              G
+              Q
             </div>
             <div className="flex flex-col">
               <span className="text-[17px] font-bold tracking-tight text-white leading-tight">
@@ -39,9 +39,12 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           {/* Unified Search Input (Desktop) */}
           <div className="hidden md:flex relative group">
+            <label htmlFor="navbar-search" className="sr-only">Search tools</label>
             <Search className={`absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 transition-colors ${searchQuery ? 'text-[#c9a84c]' : 'text-[#87847d] group-focus-within:text-[#c9a84c]'}`} />
-            <input 
+            <input
+              id="navbar-search"
               type="text"
+              aria-label="Search tools"
               placeholder="Quick search tools..."
               value={searchQuery}
               onChange={(e) => {
@@ -54,7 +57,9 @@ const Navbar = () => {
               className="h-10 w-48 lg:w-64 rounded-xl border border-[rgba(255,255,255,0.05)] bg-[#131620] pl-9 pr-10 py-2 text-[13px] text-[#e6e3db] placeholder:text-[#8b8a87] focus:outline-none focus:border-[rgba(201,168,76,0.3)] focus:bg-[#1a1e2e] transition-all"
             />
             {searchQuery && (
-              <button 
+              <button
+                type="button"
+                aria-label="Clear search"
                 onClick={() => setSearchQuery("")}
                 className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 rounded-md hover:bg-[#252a41] text-[#8b8a87] hover:text-[#e6e3db] transition-colors"
               >
@@ -70,9 +75,9 @@ const Navbar = () => {
 
           {/* Mobile Search Icon (Triggers Sidebar) */}
           <button
+            type="button"
             onClick={() => {
               openSidebar();
-              // In a real app, you'd focus the sidebar input here
             }}
             aria-label="Search Tools"
             className="flex md:hidden items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-xl bg-[#131620] border border-[rgba(255,255,255,0.05)] text-[#87847d] hover:text-[#c9a84c] transition-colors"
@@ -82,6 +87,7 @@ const Navbar = () => {
 
           {/* Sidebar Toggle (Hamburger) */}
           <button
+            type="button"
             onClick={toggleSidebar} aria-label="Toggle Menu"
             className={`inline-flex items-center justify-center rounded-xl h-11 w-11 min-w-[44px] min-h-[44px] border transition-all duration-300 md:hidden
               ${isSidebarOpen

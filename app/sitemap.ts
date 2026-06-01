@@ -33,19 +33,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Static legal/info pages (manually listed — yeh kabhi dynamic nahi honge)
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
+      lastModified: new Date("2026-05-07"),
       changeFrequency: 'monthly' as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-of-use`,
-      lastModified: new Date(),
+      lastModified: new Date("2026-05-07"),
       changeFrequency: 'monthly' as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: new Date("2026-05-21"),
       changeFrequency: 'monthly' as const,
       priority: 0.4,
     },

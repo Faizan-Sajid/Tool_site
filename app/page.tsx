@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
 import StatsStrip from "@/components/StatsStrip";
 import FeaturedToolsSection from "@/components/FeaturedToolsSection";
@@ -77,7 +76,9 @@ const homeFaqs = [
   }
 ];
 
-// ── FAQ SCHEMA FOR GSC ──
+// ── FAQ SCHEMA FOR STRUCTURED DATA ──
+// Note: Google deprecated FAQ rich results for most sites in May 2026.
+// Keeping FAQPage JSON-LD for Bing and other structured data consumers.
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -191,7 +192,13 @@ const websiteSchema = {
   }
 };
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const resolvedSearchParams = await searchParams;
+
   return (
     <main className="bg-[#0c0e16] overflow-x-hidden">
       <script
@@ -203,7 +210,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
       />
-      {/* FAQ Schema Fix for Google Search Console */}
+      {/* FAQ Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -212,9 +219,7 @@ export default function Home() {
       <div className="flex flex-col w-full">
         <HeroSection />
         <StatsStrip />
-        <Suspense fallback={<div className="h-40 flex items-center justify-center text-[#87847d]">Loading tools...</div>}>
-          <FeaturedToolsSection />
-        </Suspense>
+        <FeaturedToolsSection searchParams={resolvedSearchParams} />
         <FAQ items={homeFaqs} />
       </div>
     </main>

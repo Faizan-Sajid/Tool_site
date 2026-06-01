@@ -1,13 +1,29 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // 1. Force strict URLs without trailing slashes (Sitemap ke sath match karne ke liye)
+  // Keep canonical URLs strict and aligned with sitemap entries.
   trailingSlash: false,
+
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'quickcalcs.app',
+          },
+        ],
+        destination: 'https://www.quickcalcs.app/:path*',
+        permanent: true,
+      },
+    ];
+  },
 
   async headers() {
     return [
       {
-        // Global Security Headers for all pages
+        // Global security headers for all pages.
         source: "/(.*)",
         headers: [
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
@@ -17,8 +33,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // 2. Heavy caching for Next.js Static Chunks (CSS, JS, Fonts)
-        // Is se Googlebot ko files instantly milengi aur "Other Error" nahi aayega
+        // Long-term caching for Next.js static chunks.
         source: "/_next/static/:path*",
         headers: [
           {

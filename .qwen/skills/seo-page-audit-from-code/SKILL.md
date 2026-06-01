@@ -50,10 +50,24 @@ Use this skill when the user asks for a complete SEO/GEO audit of a specific Nex
 
 6. **Audit performance risks from architecture**
    - Identify whether static SEO/explanatory content lives inside a `"use client"` component and recommend moving it to a server component where practical.
+   - For homepage or landing-page audits, trace every imported section from `app/page.tsx` and `app/layout.tsx`, especially client components wrapped in `Suspense`. If a primary content section uses `useSearchParams()`, `useRouter()`, `useState()`, or `useEffect()`, quote the exact hook and Suspense fallback because this can hide crawl-critical HTML behind hydration.
+   - When auditing a reported loading text such as `Loading tools...`, inspect both the page-level Suspense boundary and any nested Suspense inside the client component. Compare fallback reserved height/classes (for example `h-40`) against the final section height to assess likely CLS; flag plain text fallbacks that should be skeleton-sized or server-rendered.
+   - Check whether static navigational elements such as footers, tool registries, and card grids are unnecessarily marked `"use client"`; this is both a bundle-size and crawlability risk when links are important for discovery.
+   - Count registry items from source arrays such as `TOOLS` and compare them with homepage claims (`24+ tools`, stats bars, category counts) and footer coverage. Flag missing footer links for existing tools and any visible claim that overstates the actual registry.
+   - Flag user-facing internal comments accidentally rendered in JSX text (for example `// FIX...` inside a `<p>`), stale/debug comments visible to users, and contradictions between content blocks and FAQ/schema claims.
    - Flag unnecessary third-party scripts, heavy images, missing image dimensions, unused imports/icons, missing button types, malformed Tailwind classes, and mobile table overflow risks.
    - If no Lighthouse/browser data is available, say the assessment is code-review based rather than measured Core Web Vitals.
 
-7. **Keyword and intent analysis**
+7. **Homepage UX and accessibility audit additions**
+   - For full homepage audits, inspect Navbar, Hero, stats strip, primary grid/cards, FAQ, Footer, sidebar/search/context providers, and any overlay components, not just `app/page.tsx`.
+   - Map the heading hierarchy from actual JSX. Flag card titles using the same heading level as section titles when it flattens structure, and confirm exactly one H1.
+   - Check mobile/touch behavior from Tailwind classes: grid columns, wrapping vs horizontal overflow, min touch target sizes, and fixed/sticky navigation behavior.
+   - Check interactive accessibility: search inputs need labels beyond placeholders, icon-only buttons need `aria-label`, accordions need real buttons plus `aria-expanded`, and mobile toggles should expose `aria-expanded`/`aria-controls`.
+   - Check no-JS and crawl implications: client-only FAQ, footer, navbar, or primary grids may still work after hydration but should be reported when the content is important static HTML.
+   - Search for `<img>`, `next/image`, CSS background images, `console.log`, `dynamic(`, animation libraries (`framer-motion`, GSAP, Lottie), and large icon imports. Distinguish homepage imports from dependencies used only on other routes.
+   - For third-party scripts in `app/layout.tsx`, quote `next/script` strategies; treat `lazyOnload` analytics as a pass unless other evidence shows blocking behavior.
+
+8. **Keyword and intent analysis**
    - Extract current primary, secondary, and supporting entity keywords from metadata, H1, first paragraph, headings, body, FAQ, and schema.
    - Distinguish good keyword placement from over-expanded/repetitive metadata keywords.
    - Map the user’s named search intents one by one as `YES`, `NO`, or `PARTIAL`, citing the exact content evidence or gap.

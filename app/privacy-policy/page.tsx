@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Learn how QuickCalcs collects data, uses Google Analytics and Google AdSense, and your privacy rights under GDPR and CCPA.",
     images: [
       {
-        url: "https://www.quickcalcs.app/opengraph-image.png",
+        url: "https://www.quickcalcs.app/opengraph-image",
         width: 1200,
         height: 630,
         alt: "QuickCalcs – Free Universal Online Calculators & Tools",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy – QuickCalcs",
     description:
       "Learn how QuickCalcs collects data, uses Google Analytics and Google AdSense, and your privacy rights under GDPR and CCPA.",
-    images: ["https://www.quickcalcs.app/opengraph-image.png"],
+    images: ["https://www.quickcalcs.app/opengraph-image"],
   },
   robots: {
     index: true,

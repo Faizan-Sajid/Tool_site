@@ -83,6 +83,13 @@ Use this skill when the user asks you to implement SEO, content, metadata, schem
    - If a tool/shell rejects an explicit Windows project path even though file tools can access it, rerun commands from the registered project root instead of stopping.
    - For remote OpenGraph image checks, if `curl -I` or `curl.exe -I` returns no visible output in the shell, use PowerShell to print only the status code, e.g. `powershell -NoProfile -Command "try { $r = Invoke-WebRequest -Uri '<url>' -Method Head -UseBasicParsing; Write-Output $r.StatusCode } catch { Write-Output $_.Exception.Response.StatusCode.value__ }"`.
 
+12. **Surgical technical SEO fixes**
+   - When the user explicitly limits scope to named files, inspect and edit only those files unless a read-only check is necessary for a requested fact (for example, git history to choose stable sitemap dates).
+   - For broken OG image URLs, replace only the stale URL string and verify with a targeted search that the bad extension/path has zero occurrences in the touched file.
+   - For canonical host fixes in `next.config.ts`, add `async redirects()` inside the existing config object without changing `trailingSlash`, `headers()`, or other config values. Use a host `has` condition for exact non-www host redirects so canonical www traffic is unaffected.
+   - For sitemap crawl-budget fixes, avoid `new Date()` on static legal/about pages. If the user allows actual creation dates, check `git log --follow` one file at a time because `--follow` accepts exactly one pathspec; otherwise use the requested fallback date. Do not alter homepage freshness, tool URL maps, `changeFrequency`, or priorities unless explicitly requested.
+   - After surgical edits, use `git diff -- <requested files>` plus targeted searches to verify the checklist. If `git status` shows other modified files from prior work, explicitly state they were pre-existing/out of scope and do not revert or modify them unless asked.
+
 ## Output Pattern
 
 - Briefly confirm full read completion before edits when the user explicitly required it.

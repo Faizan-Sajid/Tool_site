@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useState, useMemo, Suspense } from "react";
+import React, { useMemo, Suspense } from "react";
 import Link from "next/link";
 import { Search, X } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useSidebar } from "@/context/SidebarContext";
 import { TOOLS } from "@/constants/tools";
-import { useSearchParams } from "next/navigation";
 
 const SidebarContent = () => {
+  const router = useRouter();
   const { isSidebarOpen, closeSidebar, searchQuery, setSearchQuery } = useSidebar();
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
@@ -23,10 +24,10 @@ const SidebarContent = () => {
   ], []);
 
   const countries = [
-    { id: "uae", name: "UAE", icon: "🇦🇪" },
-    { id: "sa", name: "Saudi Arabia", icon: "🇸🇦" },
-    { id: "kw", name: "Kuwait", icon: "🇰🇼" },
-    { id: "uk", name: "United Kingdom", icon: "🇬🇧" },
+    { id: "uae", name: "UAE", href: "/tools/uae-gratuity-calculator", icon: "🇦🇪" },
+    { id: "sa", name: "Saudi Arabia", href: "/tools/ksa-gosi-calculator", icon: "🇸🇦" },
+    { id: "kw", name: "Kuwait", href: "/#all-tools", icon: "🇰🇼" },
+    { id: "uk", name: "United Kingdom", href: "/tools/hajj-umrah-budget-calculator", icon: "🇬🇧" },
   ];
 
   const popularTools = [
@@ -45,7 +46,8 @@ const SidebarContent = () => {
     );
   }, [searchQuery]);
 
-  const handleItemClick = (id: string) => {
+  const handleCountryClick = (href: string) => {
+    router.push(href);
     if (window.innerWidth <= 768) {
       closeSidebar();
     }
@@ -53,6 +55,7 @@ const SidebarContent = () => {
 
   return (
     <aside
+      id="mobile-sidebar"
       className={`fixed left-0 top-[62px] h-[calc(100vh-62px)] w-[230px] bg-[#0c0e16] border-r border-[rgba(255,255,255,0.07)] z-[100] transition-transform duration-300 ease-in-out md:w-[200px] lg:w-[230px] overflow-y-auto p-[20px_14px] custom-scrollbar
         ${isSidebarOpen ? "translate-x-0 shadow-[4px_0_30px_rgba(0,0,0,0.5)]" : "-translate-x-full md:translate-x-0"}
       `}
@@ -65,9 +68,12 @@ const SidebarContent = () => {
 
       <div className="mb-6 px-1">
         <div className="relative group">
+          <label htmlFor="sidebar-search" className="sr-only">Search tools</label>
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#8b8a87] group-focus-within:text-[#c9a84c] transition-colors" />
           <input
+            id="sidebar-search"
             type="text"
+            aria-label="Search tools"
             placeholder="Search tools..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -75,6 +81,8 @@ const SidebarContent = () => {
           />
           {searchQuery && (
             <button
+              type="button"
+              aria-label="Clear search"
               onClick={() => setSearchQuery("")}
               className="absolute right-2.5 top-1/2 -translate-y-1/2 p-0.5 rounded-md hover:bg-[#252a41] text-[#8b8a87] hover:text-[#e6e3db] transition-colors"
             >
@@ -118,7 +126,7 @@ const SidebarContent = () => {
                 <li key={item.id}>
                   <Link
                     href={item.id === "all" ? "/" : `/?category=${item.id}`}
-                    onClick={(e) => { if (window.innerWidth <= 768) closeSidebar(); }}
+                    onClick={() => { if (window.innerWidth <= 768) closeSidebar(); }}
                     className={`flex items-center gap-[9px] w-full p-[7px_10px] rounded-[9px] text-[13px] font-medium transition-all duration-[0.18s] cursor-pointer border border-transparent
                       ${activeFilter === item.id ? "bg-[rgba(201,168,76,0.11)] text-[#c9a84c] border-[rgba(201,168,76,0.2)]" : "text-[#87847d] hover:bg-[#1a1e2e] hover:text-[#e6e3db]"}
                     `}
@@ -158,15 +166,12 @@ const SidebarContent = () => {
               {countries.map((item) => (
                 <li key={item.id}>
                   <button
+                    type="button"
                     data-country={item.id}
-                    onClick={() => handleItemClick(item.id)}
-                    className={`flex items-center gap-[9px] w-full p-[7px_10px] rounded-[9px] text-[13px] font-medium transition-all duration-[0.18s] cursor-pointer border border-transparent
-                      ${activeFilter === item.id ? "bg-[rgba(201,168,76,0.11)] text-[#c9a84c] border-[rgba(201,168,76,0.2)]" : "text-[#87847d] hover:bg-[#1a1e2e] hover:text-[#e6e3db]"}
-                    `}
+                    onClick={() => handleCountryClick(item.href)}
+                    className="flex items-center gap-[9px] w-full p-[7px_10px] rounded-[9px] text-[13px] font-medium transition-all duration-[0.18s] cursor-pointer border border-transparent text-[#87847d] hover:bg-[#1a1e2e] hover:text-[#e6e3db]"
                   >
-                    <div className={`flex items-center justify-center w-[26px] h-[26px] rounded-[6px] bg-[#1a1e2e] text-[12px] flex-shrink-0
-                      ${activeFilter === item.id ? "bg-[rgba(201,168,76,0.14)]" : ""}
-                    `}>{item.icon}</div>
+                    <div className="flex items-center justify-center w-[26px] h-[26px] rounded-[6px] bg-[#1a1e2e] text-[12px] flex-shrink-0">{item.icon}</div>
                     <span>{item.name}</span>
                   </button>
                 </li>
@@ -182,7 +187,7 @@ const SidebarContent = () => {
 const Sidebar = () => {
   const { isSidebarOpen } = useSidebar();
 
-  // FALLBACK: Structural aside with identical classes to prevent layout shift
+  // Fallback: Structural aside with identical classes to prevent layout shift
   const sidebarFallback = (
     <aside
       className={`fixed left-0 top-[62px] h-[calc(100vh-62px)] w-[230px] bg-[#0c0e16] border-r border-[rgba(255,255,255,0.07)] z-[100] transition-transform duration-300 ease-in-out md:w-[200px] lg:w-[230px] overflow-y-auto p-[20px_14px] custom-scrollbar
