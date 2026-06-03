@@ -15,16 +15,16 @@ export const TOOLS: Tool[] = [
   {
     id: "gold-calculator",
     href: "/tools/gold-calculator",
-    ariaLabel: "Gold Price Calculator",
+    ariaLabel: "Gold Value Calculator UAE and Pakistan",
     category: "finance",
     country: "all",
     icon: "💰",
-    title: "Live Gold Price Calculator",
-    description: "Real-time 24K, 22K, 21K, and 18K gold prices for UAE, Saudi Arabia, Kuwait, Qatar, and Bahrain. Enter weight in grams, tolas, or troy ounces and get instant values in AED, SAR, or USD. Includes Zakat calculation tab based on today's live gold rate.",
+    title: "Gold Value Calculator UAE & Pakistan",
+    description: "Estimate 24K, 22K, 21K, and 18K gold value in AED, PKR, SAR, QAR, BHD, KWD, and USD. Enter weight in grams, tola, masha, ratti, or troy ounces. Includes making charges and Zakat planning.",
     tags: [
       { text: "Gold", variant: "gold" },
-      { text: "Finance", variant: "default" },
-      { text: "New", variant: "teal" },
+      { text: "AED · PKR", variant: "default" },
+      { text: "Zakat", variant: "teal" },
     ],
   },
   {
@@ -35,7 +35,7 @@ export const TOOLS: Tool[] = [
     country: "all",
     icon: "☪️",
     title: "Zakat Calculator 2026",
-    description: "Calculate your annual Zakat obligation with live gold-price Nisab thresholds. Supports AED, SAR, USD, and PKR. Enter cash, gold, investments, and business assets — the calculator subtracts liabilities and returns your exact 2.5% Zakat amount with a full asset breakdown.",
+    description: "Calculate your annual Zakat obligation with gold and silver Nisab thresholds. Supports AED, SAR, USD, and PKR. Enter cash, gold, investments, and business assets — the calculator subtracts liabilities and returns your exact 2.5% Zakat amount with a full asset breakdown.",
     isTeal: true,
     tags: [
       { text: "Islamic", variant: "gold" },
@@ -46,11 +46,11 @@ export const TOOLS: Tool[] = [
   {
     id: "uae-gratuity-calculator",
     href: "/tools/uae-gratuity-calculator",
-    ariaLabel: "UAE Gratuity Calculator",
+    ariaLabel: "UAE Gratuity Calculator 2026",
     category: "hr",
     country: "uae",
     icon: "🧮",
-    title: "UAE Gratuity Calculator",
+    title: "UAE Gratuity Calculator 2026",
     description: "Calculate your UAE end-of-service gratuity (EOSB) under Federal Decree-Law No. 33 of 2021. Covers limited and unlimited contracts, the 21-day/30-day formula, 2-year salary cap, and MOHRE 14-day payment rule. Enter your salary and service dates for an instant breakdown.",
     tags: [
       { text: "UAE", variant: "gold" },
@@ -61,11 +61,11 @@ export const TOOLS: Tool[] = [
   {
     id: "ksa-gosi-calculator",
     href: "/tools/ksa-gosi-calculator",
-    ariaLabel: "Saudi GOSI Calculator (2026)",
+    ariaLabel: "Saudi GOSI Calculator 2026",
     category: "finance",
     country: "sa",
     icon: "🛡️",
-    title: "Saudi GOSI Calculator",
+    title: "Saudi GOSI Calculator 2026",
     description: "Calculate Saudi payroll deduction and net salary after GOSI for Saudi nationals and expats in 2026. Includes basic salary, housing allowance, SANED, employer contribution, SAR 45,000 cap, and old vs new GOSI rate logic.",
     tags: [
       { text: "KSA", variant: "gold" },
@@ -76,11 +76,11 @@ export const TOOLS: Tool[] = [
   {
     id: "pakistan-freelancer-tax-calculator",
     href: "/tools/pakistan-freelancer-tax-calculator",
-    ariaLabel: "Pakistan Freelancer Tax Calculator",
+    ariaLabel: "Pakistan Freelancer Tax Calculator 2026",
     category: "finance",
     country: "all",
     icon: "🧾",
-    title: "Pakistan Freelancer Tax Calculator",
+    title: "Pakistan Freelancer Tax Calculator 2026",
     description: "Calculate Pakistan freelancer tax for 2026 under Section 154A. PSEB-registered ATL filers pay 0.25%, non-PSEB ATL filers pay 1%, and non-filers pay 2% withholding on IT export remittances. Includes net PKR take-home estimates.",
     tags: [
       { text: "PKR", variant: "default" },
@@ -92,13 +92,17 @@ export const TOOLS: Tool[] = [
   {
     id: "hajj-umrah-budget-calculator",
     href: "/tools/hajj-umrah-budget-calculator",
-    ariaLabel: "Hajj & Umrah Budget Calculator",
+    ariaLabel: "Hajj & Umrah Budget Calculator 2026",
     category: "finance",
     country: "all",
     icon: "🕋",
-    title: "Umrah Cost Calculator 2026",
-    description: "Estimate your full Umrah budget from Pakistan, UK, USA, Canada, and 6 other countries. Breaks down flights, hotel zone (3-star/4-star/5-star), Umrah visa, ground transport, and daily expenses. Economy packages from Pakistan start at PKR 250,000–400,000 in 2026.",
-    tags: [],
+    title: "Hajj & Umrah Cost Calculator 2026",
+    description: "Estimate your Hajj or Umrah budget by departure country, package type, hotel zone, and season. Covers flights, visa, accommodation, ground transport, food, and Ramadan premium. Economy packages from Pakistan from PKR 250,000.",
+    tags: [
+      { text: "Hajj", variant: "gold" },
+      { text: "Umrah", variant: "default" },
+      { text: "2026", variant: "teal" },
+    ],
   },
   {
     id: "malaysia-epf-calculator",

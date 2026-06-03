@@ -124,14 +124,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en-MY"
+      lang="en"
       className={`h-full ${jakartaPlus.variable} ${lora.variable}`}
     >
       <head>
-        {/* SEO UPDATE 2026: hreflang for worldwide English + Gulf English targeting */}
+        {/* SEO UPDATE 2026: hreflang for worldwide English targeting */}
         <link rel="alternate" hrefLang="x-default" href="https://www.quickcalcs.app/" />
         <link rel="alternate" hrefLang="en" href="https://www.quickcalcs.app/" />
-        <link rel="alternate" hrefLang="en-sa" href="https://www.quickcalcs.app/" />
         {/* Critical CSS for LCP element (h1 heading) - inline to avoid render blocking */}
         <style dangerouslySetInnerHTML={{
           __html: `

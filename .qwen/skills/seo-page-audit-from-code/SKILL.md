@@ -46,7 +46,9 @@ Use this skill when the user asks for a complete SEO/GEO audit of a specific Nex
    - List H2/H3 coverage and identify hierarchy issues.
    - Assess whether the content satisfies calculator intent, informational intent, expat/national variants, examples, FAQs, methodology, and E-E-A-T needs.
    - For YMYL religious/financial/travel pages, explicitly check visible last-updated date, official source links, reviewer/author signals, methodology, disclaimers, and source-backed assumptions.
+   - For financial price/rate calculators, reconcile every freshness claim (`live`, `real-time`, `updated just now`, `today`, `daily`) against the actual data source and caching code. If the source is mocked, hardcoded, stale, or only simulated, treat the mismatch as a critical trust issue and recommend either a real API/revalidation path or copy that says `estimate` instead of `live`.
    - Look for contradiction between formula code, comments, visible content, FAQ, and schema. Treat contradictions as high priority even if the visible output currently works.
+   - Check for accidentally visible content-quality defects in JSX, including mojibake characters (`â‰ˆ`, `â€”`), markdown markers rendered as literal text (`**bold**`), stale placeholder copy, and buttons/links whose labels promise unavailable functionality.
 
 6. **Audit performance risks from architecture**
    - Identify whether static SEO/explanatory content lives inside a `"use client"` component and recommend moving it to a server component where practical.
@@ -67,7 +69,16 @@ Use this skill when the user asks for a complete SEO/GEO audit of a specific Nex
    - Search for `<img>`, `next/image`, CSS background images, `console.log`, `dynamic(`, animation libraries (`framer-motion`, GSAP, Lottie), and large icon imports. Distinguish homepage imports from dependencies used only on other routes.
    - For third-party scripts in `app/layout.tsx`, quote `next/script` strategies; treat `lazyOnload` analytics as a pass unless other evidence shows blocking behavior.
 
-8. **Keyword and intent analysis**
+8. **Homepage audit from multiple tool pages**
+   - When the user asks for a homepage audit/update plan based on all tools, read every included tool `page.tsx` before producing recommendations, then read global layout, sitemap, homepage, and the homepage components/registries that render visible sections (for example Hero, StatsStrip, FeaturedToolsSection, FAQ data, and `constants/tools.ts`).
+   - For each tool, extract a source-of-truth row: metadata title/description/keywords, visible H1, target audience, core features, FAQ count/coverage, schema types, canonical route, and primary keyword cluster. Do not infer a feature for the homepage unless it appears in the current tool code or registry.
+   - Compare homepage metadata, H1, hero copy, trust pills, stats, cards, FAQ, schema, and sitemap against that source-of-truth table. Flag omissions when a major current tool (for example EPF/KWSP) is missing from homepage positioning, and flag stale overclaims such as `live`, `real-time`, or broad country counts when the underlying tool now uses estimates or the registry has fewer/limited tools.
+   - Inspect card text in the registry, not only visible homepage JSX, because homepage grids often render from `TOOLS`. Recommend registry copy changes when cards contradict the tool page (for example a card still says `Live Gold Price` after the calculator moved to estimated gold value language).
+   - For homepage structured data, recommend `ItemList` for all current tool URLs and generate it from the verified tool set. Only keep `SearchAction` if a real search route exists; do not point `SearchAction` at guessed dynamic tool paths.
+   - Check global language/hreflang against the whole site. If `<html lang>` is country-specific but the homepage targets multiple regions, recommend a neutral `en` plus page-specific alternates where applicable.
+   - Produce a section-by-section update plan with exact replacement copy for metadata, H1, hero badge/paragraph, trust pills, tool cards, FAQ entries, JSON-LD, sitemap dates, and a ranked developer checklist. Keep it audit-only unless the user explicitly asks for implementation.
+
+9. **Keyword and intent analysis**
    - Extract current primary, secondary, and supporting entity keywords from metadata, H1, first paragraph, headings, body, FAQ, and schema.
    - Distinguish good keyword placement from over-expanded/repetitive metadata keywords.
    - Map the user’s named search intents one by one as `YES`, `NO`, or `PARTIAL`, citing the exact content evidence or gap.

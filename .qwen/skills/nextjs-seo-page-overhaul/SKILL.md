@@ -53,7 +53,19 @@ Use this skill when the user asks you to implement SEO, content, metadata, schem
    - Add homepage FAQs only if a homepage FAQ section already exists or there is a natural placement.
    - Use descriptive internal-link anchors such as “GOSI calculator”, “Saudi GOSI calculator”, or “calculate GOSI deduction”; avoid generic anchors.
 
-8. **Sitemap freshness**
+8. **Homepage SEO/GEO execution prompts with numbered issues**
+   - When the user asks to fix a numbered homepage audit plan in order, first read every file they named, including `app/page.tsx`, `app/layout.tsx`, `app/sitemap.ts`, homepage sections, and the tool registry. Briefly record one key finding per file before editing if the prompt asks for read-first proof.
+   - Apply issue order strictly for observable edits, but group a coherent `app/page.tsx` rewrite only when multiple consecutive issues change shared metadata, FAQ arrays, JSON-LD, and rendered section order. Otherwise prefer targeted edits.
+   - For global homepage language targeting, change country-specific `<html lang>` values such as `en-MY` to neutral `en` when the page targets multiple regions, and remove unsupported regional hreflang links such as `en-sa`; keep `x-default` and `en` if those are the only valid alternates.
+   - For homepage metadata and hero copy, include every active major tool/entity shown in the registry, especially newly added tools, and remove stale capability claims like `live`, `real-time`, `today`, broad unsupported country counts, or automatic price-fetch language unless code proves it.
+   - If a “How these calculators work” section is too high inside the hero, move it out of the hero component and render it after the featured tools grid or near FAQ. Reintroduce all requested rows in the new location so the section is not accidentally lost.
+   - Keep homepage FAQ as a single source of truth: define `homeFaqs`, render it visibly, and generate `FAQPage.mainEntity` from `homeFaqs.map`. Do not maintain a divergent hardcoded FAQ schema.
+   - Add homepage `ItemList` schema from the verified `TOOLS` registry when the page is a tool hub. Remove `SearchAction` unless a real search endpoint exists; never point it at guessed tool paths.
+   - For tool-card registry edits, update titles, aria labels, descriptions, and tags together so visible cards, accessibility labels, and schema generated from `TOOLS` stay consistent.
+   - For final reporting when the user explicitly requested `OLD code → NEW code → explanation`, preserve old snippets from the pre-edit reads and pair them with the new snippets for each numbered issue, then include verification results and the complete updated files the user requested.
+   - Run targeted searches for forbidden stale wording across touched homepage/card files before build, for example `live gold|live gold price|live gold rates|live gold-price|live international gold`. If a FAQ question still contains the forbidden phrase even in a negated question, reword it to avoid the exact stale phrase.
+
+9. **Sitemap freshness**
    - Avoid `new Date()` as `lastModified` for every tool URL if it causes noisy daily freshness without content changes.
    - Use a stable per-tool last-modified map for recently updated tools and a stable fallback date for others.
 

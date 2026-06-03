@@ -35,7 +35,14 @@ Use this skill when the user asks to add a new calculator/tool card to the relat
    - Re-run the search for the new `href` under `app/tools/`.
    - Confirm matches appear in every intended file and not in the target tool’s own related-tools section.
 
-6. **Validation**
+6. **Move misplaced related-tools sections lower when requested**
+   - If a user says an `Explore Other QuickCalcs Tools` section is appearing too high on a tool page, first determine whether it lives inside the route's client calculator component or the server `page.tsx`.
+   - Prefer moving the full related-tools block out of the interactive client component and into the server page near the visible FAQ/lower content area, rather than adding CSS spacing or duplicating the block.
+   - Insert it immediately after `<FAQ items={...} />` when the user asks for it to be "with FAQ" or near FAQ, unless they specify a different exact location.
+   - Remove now-unused imports from the client component, such as `Link` from `next/link`, and add the required import to `page.tsx` if the moved block uses `<Link>`.
+   - Verify with targeted search that the section heading appears only in the intended file/location and that the old component no longer imports or renders `Link` unnecessarily.
+
+7. **Validation**
    - Run `npx eslint` on all changed files, exactly as the user requested when possible.
    - If ESLint fails on pre-existing unrelated issues in changed files, do not fix unrelated code unless asked. Report the failures clearly and distinguish them from the new link changes.
    - Run `npm run build` after edits when requested or feasible.

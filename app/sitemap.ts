@@ -8,6 +8,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "malaysia-epf-calculator": "2026-05-28",
     "hajj-umrah-budget-calculator": "2026-05-31",
     "pakistan-freelancer-tax-calculator": "2026-05-31",
+    "gold-calculator": "2026-06-03",
+    "uae-gratuity-calculator": "2026-05-31",
+    "zakat-calculator": "2026-05-31",
     // add other tools here as you update them
   };
 

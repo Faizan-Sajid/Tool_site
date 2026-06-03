@@ -2,194 +2,140 @@ import HeroSection from "@/components/HeroSection";
 import StatsStrip from "@/components/StatsStrip";
 import FeaturedToolsSection from "@/components/FeaturedToolsSection";
 import FAQ from "@/components/FAQ";
+import { TOOLS } from "@/constants/tools";
 import { Metadata } from "next";
 
-// ── SEO METADATA (Added Title/Description for SEO Score) ──
 export const metadata: Metadata = {
-  // SEO UPDATE 2026: Homepage metadata — global tools platform positioning
-  title: "Free EPF, GOSI, Gratuity & Zakat Calculators 2026 | QuickCalcs",
-  description: "Calculate Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free global calculators, no login.",
+  title: "Free 2026 Financial Calculators for EPF, GOSI, Gratuity, Zakat & Tax | QuickCalcs",
+  description:
+    "Use free 2026 calculators for Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold value, Pakistan freelancer tax, and Hajj or Umrah budgets. No login required.",
+  keywords: [
+    "free financial calculators 2026",
+    "Malaysia EPF calculator 2026",
+    "KWSP calculator 2026",
+    "Saudi GOSI calculator 2026",
+    "UAE gratuity calculator 2026",
+    "Zakat calculator 2026",
+    "gold value calculator UAE Pakistan",
+    "Pakistan freelancer tax calculator 2026",
+    "Hajj Umrah cost calculator 2026",
+    "QuickCalcs",
+  ],
   alternates: {
     canonical: "https://www.quickcalcs.app/",
   },
   openGraph: {
-    title: "Free EPF, GOSI, Gratuity & Zakat Calculators 2026 | QuickCalcs",
-    description: "Calculate Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold prices & Pakistan freelancer tax instantly. Free global calculators, no login.",
+    title: "Free 2026 Financial Calculators for EPF, GOSI, Gratuity, Zakat & Tax | QuickCalcs",
+    description:
+      "Use free 2026 calculators for Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold value, Pakistan freelancer tax, and Hajj or Umrah budgets. No login required.",
     url: "https://www.quickcalcs.app/",
+    siteName: "QuickCalcs",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "QuickCalcs free 2026 financial calculators",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free 2026 Financial Calculators for EPF, GOSI, Gratuity, Zakat & Tax | QuickCalcs",
+    description:
+      "Use free 2026 calculators for Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold value, Pakistan freelancer tax, and Hajj or Umrah budgets. No login required.",
+    images: ["/opengraph-image"],
   },
 };
 
-const organizationLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "QuickCalcs",
-  "url": "https://www.quickcalcs.app",
-  "logo": "https://www.quickcalcs.app/favicon.ico"
-};
-
-// ── HOME FAQ DATA ──
 const homeFaqs = [
   {
-    question: "What is GOSI in Saudi Arabia?",
-    answer: "GOSI is Saudi Arabia's General Organization for Social Insurance, the system used for social insurance contributions on eligible payroll wages. It covers Saudi national pension and SANED unemployment insurance, while non-Saudi expats are generally covered only for occupational hazard insurance through an employer contribution. Use the Saudi GOSI calculator to estimate deductions from basic salary and housing allowance."
+    question: "What can you calculate on QuickCalcs?",
+    answer:
+      "QuickCalcs helps you estimate Malaysia EPF/KWSP contributions, Saudi GOSI payroll deductions, UAE end-of-service gratuity, Zakat, gold value, Pakistan freelancer tax, and Hajj or Umrah travel budgets using free 2026 calculators.",
   },
   {
-    question: "How much GOSI is deducted from salary?",
-    answer: "For Saudi nationals under the 2026 rate, the employee GOSI deduction is 10.75% of contributory wage, which is usually basic salary plus housing allowance capped at SAR 45,000 per month. Non-Saudi expats have 0% employee deduction, while the employer pays 2% for occupational hazard insurance."
-  },
-  {
-    question: "Does GOSI apply to expats in Saudi Arabia?",
-    answer: "Yes, but expats are treated differently from Saudi nationals. Non-Saudi expatriate employees do not pay GOSI from their own salary; only the employer contributes 2% of contributory wage for occupational hazard insurance. Calculate GOSI deduction for expats by selecting 'Expat (Non-Saudi)' in the calculator."
-  },
-  {
-    question: "How much gratuity do you get after 3 years in the UAE?",
-    answer: "For a 3-year service period with a monthly basic salary of AED 6,000: your daily rate is AED 6,000 ÷ 30 = AED 200. Multiply by 21 days × 3 years = AED 12,600. This applies whether you resigned or were terminated on a limited (fixed-term) contract. Our UAE gratuity calculator gives you the exact figure for your specific salary and service dates."
-  },
-  {
-    question: "What is the Zakat Nisab threshold in 2026?",
-    answer: "The gold Nisab in 2026 is based on 87.48 grams of 24K gold. At current gold prices, this is approximately AED 28,000–30,000, SAR 30,000–32,000, or USD 7,500–8,000. Because gold prices move daily, the Nisab value changes accordingly. Our Zakat calculator uses live gold price data to always show today's accurate Nisab."
-  },
-  {
-    question: "What is the difference between limited and unlimited contracts for UAE gratuity?",
-    answer: "All employment contracts signed after February 2022 are limited (fixed-term) contracts under the new UAE Labour Law. For limited contracts, employees receive full gratuity after completing one year. Unlimited (legacy) contracts — signed before February 2022 — use a sliding scale for resignation: one-third of gratuity for 1–3 years, two-thirds for 3–5 years, and full gratuity for 5+ years."
-  },
-  {
-    question: "How much does Umrah cost from Pakistan in 2026?",
-    answer: "Economy packages from Pakistan in 2026 range from PKR 250,000–400,000 per person (return flights, 3-star hotel, visa, basic transport). Standard packages with 4-star hotels cost PKR 400,000–700,000. Ramadan packages are 30–50% more expensive. Use our Umrah budget calculator to break down the cost by component and compare economy vs standard vs premium."
-  },
-  {
-    question: "What is the PSEB tax rate for Pakistani freelancers in 2026?",
-    answer: "PSEB-registered freelancers who are active ATL filers pay 0.25% on foreign IT export remittances under Section 154A. Non-PSEB ATL filers pay 1%. Non-filers do not qualify for either rate and face double withholding tax. To get the PSEB rate, you must register with the Pakistan Software Export Board and ensure 80% of business receipts enter Pakistan through formal banking channels."
+    question: "Is QuickCalcs free to use?",
+    answer:
+      "Yes. QuickCalcs calculators are free to use and do not require an account, email address, or login.",
   },
   {
     question: "How is Malaysia EPF calculated in 2026?",
-    answer: "Malaysia EPF/KWSP contributions are estimated from statutory employee and employer rates. For Malaysian citizens and permanent residents under age 60, the standard employee rate is 11%. Employer contributions depend on the monthly wage threshold, with higher employer rates for wages at or below RM5,000 and lower rates above RM5,000. The calculator also supports age 60+ and foreign-worker categories, then applies upward Ringgit rounding."
+    answer:
+      "Malaysia EPF/KWSP contributions are estimated from employee and employer statutory rates. The calculator supports Malaysian citizens, permanent residents, age 60+ categories, foreign workers, wage thresholds, employer rates, and upward Ringgit rounding.",
   },
   {
-    question: "Are QuickCalcs tools compliant with 2026 UAE Labour Law and Saudi GOSI regulations?",
-    answer: "Yes. All calculators are reviewed quarterly against official sources. UAE gratuity follows Federal Decree-Law No. 33 of 2021 (MOHRE 2026 interpretation). GOSI follows Royal Decree M/33 with the current 2026 rate of 10.75% employee and 12.75% employer for Saudi nationals. Zakat Nisab uses live gold prices from international spot markets."
+    question: "How much GOSI is deducted from salary in Saudi Arabia?",
+    answer:
+      "Saudi GOSI deductions depend on nationality, salary components, and contribution caps. Saudi nationals usually have employee pension and SANED deductions, while non-Saudi expats generally do not pay employee GOSI deductions and are covered through employer occupational hazard contributions.",
   },
   {
-    question: "Do I need to create an account to use QuickCalcs?",
-    answer: "No. Every calculator on QuickCalcs is completely free and requires no account, email address, or login. All calculations happen inside your browser and no data is sent to any server. You can bookmark any calculator and return to it at any time without signing in."
-  }
+    question: "How is UAE gratuity calculated?",
+    answer:
+      "UAE gratuity is generally calculated from basic salary, service length, contract type, and the 21-day or 30-day end-of-service benefit formula under UAE labour rules. The calculator estimates the amount from your salary and service dates.",
+  },
+  {
+    question: "How does the Zakat calculator estimate Nisab and Zakat?",
+    answer:
+      "The Zakat calculator compares eligible assets with gold and silver Nisab thresholds, subtracts liabilities, and estimates the 2.5% Zakat amount on qualifying wealth.",
+  },
+  {
+    question: "Does the gold calculator fetch prices automatically?",
+    answer:
+      "No. The gold value calculator is designed for manual price entry. You can enter the gold rate you want to use, then estimate value by purity, weight unit, currency, and making charges.",
+  },
+  {
+    question: "What is the Pakistan freelancer tax calculator for?",
+    answer:
+      "The Pakistan freelancer tax calculator estimates withholding tax and net PKR take-home income for IT export remittances under Section 154A, including PSEB-registered filer, ATL filer, and non-filer scenarios.",
+  },
+  {
+    question: "How much does Hajj or Umrah cost in 2026?",
+    answer:
+      "Hajj and Umrah costs vary by departure country, package tier, hotel zone, season, flights, visa, transport, food, and Ramadan premium. The calculator breaks these budget components into an estimated total.",
+  },
+  {
+    question: "Are QuickCalcs results official financial advice?",
+    answer:
+      "No. QuickCalcs provides educational estimates based on stated inputs and public rule references. Always confirm final payroll, tax, Zakat, travel, or employment decisions with official sources or a qualified adviser.",
+  },
 ];
 
-// ── FAQ SCHEMA FOR STRUCTURED DATA ──
-// Note: Google deprecated FAQ rich results for most sites in May 2026.
-// Keeping FAQPage JSON-LD for Bing and other structured data consumers.
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is GOSI in Saudi Arabia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "GOSI is Saudi Arabia's General Organization for Social Insurance, the system used for social insurance contributions on eligible payroll wages. It covers Saudi national pension and SANED unemployment insurance, while non-Saudi expats are generally covered only for occupational hazard insurance through an employer contribution."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much GOSI is deducted from salary?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For Saudi nationals under the 2026 rate, the employee GOSI deduction is 10.75% of contributory wage, which is usually basic salary plus housing allowance capped at SAR 45,000 per month. Non-Saudi expats have 0% employee deduction, while the employer pays 2% for occupational hazard insurance."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does GOSI apply to expats in Saudi Arabia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, but expats are treated differently from Saudi nationals. Non-Saudi expatriate employees do not pay GOSI from their own salary; only the employer contributes 2% of contributory wage for occupational hazard insurance."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much gratuity do you get after 3 years in the UAE?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For a 3-year service period with a monthly basic salary of AED 6,000: daily rate is AED 200 (AED 6,000 ÷ 30). Total gratuity = AED 200 × 21 days × 3 years = AED 12,600. This applies for both resignation and termination on a limited (fixed-term) contract."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the Zakat Nisab threshold in 2026?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The gold Nisab in 2026 is based on 87.48 grams of 24K gold — approximately AED 28,000–30,000, SAR 30,000–32,000, or USD 7,500–8,000 at current gold prices. The threshold changes daily as gold prices move."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between limited and unlimited contracts for UAE gratuity?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "All contracts signed after February 2022 are limited (fixed-term) under UAE Labour Law — employees get full gratuity after one year regardless of resignation or termination. Unlimited (legacy) contracts use a sliding scale for resignation: one-third for 1–3 years, two-thirds for 3–5 years, full gratuity for 5+ years."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does Umrah cost from Pakistan in 2026?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Economy packages from Pakistan in 2026 range from PKR 250,000–400,000 per person, covering return flights, 3-star hotel, Umrah visa, and basic transport. Standard 4-star packages cost PKR 400,000–700,000. Ramadan packages are 30–50% more expensive than off-peak travel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the PSEB tax rate for Pakistani freelancers in 2026?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "PSEB-registered ATL filers pay 0.25% on foreign IT export remittances under Section 154A of the Income Tax Ordinance. Non-PSEB ATL filers pay 1%. Non-filers do not qualify and face double withholding tax rates."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is Malaysia EPF calculated in 2026?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Malaysia EPF/KWSP contributions are estimated from statutory employee and employer rates. For Malaysian citizens and permanent residents under age 60, the standard employee rate is 11%. Employer contributions depend on the monthly wage threshold, with higher employer rates for wages at or below RM5,000 and lower rates above RM5,000. The calculator also supports age 60+ and foreign-worker categories, then applies upward Ringgit rounding."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are QuickCalcs tools compliant with 2026 UAE Labour Law and Saudi GOSI regulations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. UAE gratuity follows Federal Decree-Law No. 33 of 2021 (MOHRE 2026 interpretation). GOSI follows Royal Decree M/33 — 10.75% employee and 12.75% employer for Saudi nationals in 2026. Zakat Nisab uses live international gold spot prices. All calculators are reviewed quarterly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to create an account to use QuickCalcs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Every calculator is completely free with no account, email address, or login required. All calculations happen inside your browser — no data is sent to any server, stored, or shared."
-      }
-    }
-  ]
-};
-
-// ── WEBSITE SCHEMA FOR SEARCH BOX ──
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "QuickCalcs",
-  "url": "https://www.quickcalcs.app",
-  "description": "Free global financial calculators for Malaysia, Saudi Arabia, UAE, Pakistan, and more. EPF/KWSP, GOSI, gratuity, Zakat, gold price, Umrah budget, and freelancer tax tools.",
-  "inLanguage": "en",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://www.quickcalcs.app/tools/{search_term_string}"
+  name: "QuickCalcs",
+  url: "https://www.quickcalcs.app",
+  description:
+    "Free 2026 financial calculators for Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold value, Pakistan freelancer tax, and Hajj or Umrah budgets.",
+  inLanguage: "en",
+};
+
+const toolsItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "QuickCalcs 2026 financial calculators",
+  itemListElement: TOOLS.map((tool, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: tool.title,
+    url: `https://www.quickcalcs.app${tool.href}`,
+    description: tool.description,
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
     },
-    "query-input": "required name=search_term_string"
-  }
+  })),
 };
 
 export default async function Home({
@@ -205,12 +151,10 @@ export default async function Home({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
-      {/* Organization Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolsItemListSchema) }}
       />
-      {/* FAQ Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -220,6 +164,67 @@ export default async function Home({
         <HeroSection />
         <StatsStrip />
         <FeaturedToolsSection searchParams={resolvedSearchParams} />
+
+        <section className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 md:px-8 py-10 lg:py-14">
+          <div className="mb-4 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#8b8a87]">
+            <span>2026 quick reference — Malaysia · UAE · KSA · Pakistan</span>
+            <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
+          </div>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {[
+              {
+                title: "Malaysia EPF/KWSP",
+                body: "Estimate employee and employer EPF contributions for Malaysian citizens, permanent residents, age 60+ workers, and foreign workers using 2026 wage categories and Ringgit rounding.",
+              },
+              {
+                title: "UAE gratuity",
+                body: "Calculate end-of-service benefits from basic salary, service dates, contract type, and the 21-day or 30-day formula used for UAE gratuity estimates.",
+              },
+              {
+                title: "Saudi GOSI",
+                body: "Estimate payroll deductions and net salary after GOSI using nationality, basic salary, housing allowance, SANED, and contribution-cap logic.",
+              },
+              {
+                title: "Zakat, gold, tax, and travel",
+                body: "Plan Zakat, estimate gold value from your entered market rate, calculate Pakistan freelancer withholding, and compare Hajj or Umrah budget components.",
+              },
+            ].map((item) => (
+              <article
+                key={item.title}
+                className="rounded-[14px] border border-[rgba(255,255,255,0.07)] bg-[#131620] p-5"
+              >
+                <h2 className="mb-2 text-[16px] font-bold text-[#e6e3db]">{item.title}</h2>
+                <p className="text-[14px] leading-relaxed text-[#87847d]">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-[960px] px-4 sm:px-6 md:px-8 py-8 lg:py-12">
+          <div className="rounded-[18px] border border-[rgba(201,168,76,0.18)] bg-[#131620] p-6 sm:p-8">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[1.3px] text-[#c9a84c]">
+              QuickCalcs answer summary
+            </p>
+            <h2 className="mb-4 font-[family-name:var(--font-serif)] text-2xl sm:text-3xl italic text-[#e6e3db]">
+              What can you calculate on QuickCalcs?
+            </h2>
+            <p className="mb-4 text-[15px] leading-relaxed text-[#87847d]">
+              QuickCalcs provides free 2026 financial calculators for Malaysia EPF/KWSP,
+              Saudi GOSI, UAE gratuity, Zakat, gold value, Pakistan freelancer tax, and
+              Hajj or Umrah budgets. The tools are built for fast estimates, clear inputs,
+              and no-login access.
+            </p>
+            <ul className="grid grid-cols-1 gap-3 text-[14px] leading-relaxed text-[#87847d] sm:grid-cols-2">
+              <li>• EPF/KWSP employee and employer contributions</li>
+              <li>• Saudi GOSI deductions and net salary</li>
+              <li>• UAE end-of-service gratuity estimates</li>
+              <li>• Zakat, Nisab, and gold-value planning</li>
+              <li>• Pakistan freelancer withholding tax</li>
+              <li>• Hajj and Umrah travel budget estimates</li>
+            </ul>
+          </div>
+        </section>
+
         <FAQ items={homeFaqs} />
       </div>
     </main>
