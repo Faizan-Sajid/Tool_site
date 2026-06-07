@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: {
     absolute: "Malaysia EPF Calculator 2026 | KWSP Contribution Calculator",
   },
-  description: "Calculate EPF/KWSP contributions instantly — 11% employee, 13%/12% employer, foreign worker 2% rule. Akaun Fleksibel split, take-home salary & retirement projection. Free, no login.",
+  description: "You pay 11%. Employer pays 13% (salary ≤RM5,000) or 12% (above). Instant EPF/KWSP amount, Akaun Fleksibel split & retirement projection. Free, no login.",
   keywords: [
     "malaysia epf calculator 2026",
     "epf calculator malaysia",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Malaysia EPF / KWSP Calculator 2026 | Free Contribution Tool",
-    description: "Free EPF/KWSP calculator with 2026 Third Schedule rates. Employee 11%, employer 13%/12%, foreign worker 2% (Oct 2025). Akaun Fleksibel breakdown and retirement projection included.",
+    description: "You pay 11%. Employer pays 13% (salary ≤RM5,000) or 12% (above). Instant EPF/KWSP amount, Akaun Fleksibel split & retirement projection. Free, no login.",
     url: "https://www.quickcalcs.app/tools/malaysia-epf-calculator",
     siteName: "QuickCalcs",
     locale: "en_MY",
@@ -47,20 +47,20 @@ export const metadata: Metadata = {
         url: "https://www.quickcalcs.app/tools/malaysia-epf-calculator/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Malaysia EPF Calculator | QuickCalcs",
+        alt: "Malaysia EPF KWSP Calculator 2026 — Employee & Employer Contribution Rates",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Malaysia EPF / KWSP Calculator 2026 | Free Contribution Tool",
-    description: "Free EPF/KWSP calculator with 2026 Third Schedule rates. Employee 11%, employer 13%/12%, foreign worker 2% (Oct 2025). Akaun Fleksibel breakdown and retirement projection included.",
+    description: "You pay 11%. Employer pays 13% (salary ≤RM5,000) or 12% (above). Instant EPF/KWSP amount, Akaun Fleksibel split & retirement projection. Free, no login.",
     images: [
       {
         url: "https://www.quickcalcs.app/tools/malaysia-epf-calculator/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Malaysia EPF Calculator | QuickCalcs",
+        alt: "Malaysia EPF KWSP Calculator 2026 — Employee & Employer Contribution Rates",
       },
     ],
   },

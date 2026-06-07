@@ -1,8 +1,8 @@
 ---
 name: cross-tool-internal-link-update
-description: Add or update a tool link across repeated "Explore Other QuickCalcs Tools" sections by scanning all tool pages, preserving each section pattern, skipping self-links, and verifying changed files.
+description: Add or update a tool link across repeated "Explore Other Tools" sections. Ensures anchor text is entity-rich (not generic) for 2026 GEO and topical authority signals. Preserves existing section pattern, skips self-links, verifies changes.
 source: auto-skill
-extracted_at: '2026-05-29T12:00:31.759Z'
+updated_at: '2026-06-01T00:00:00.000Z'
 ---
 
 # Cross-Tool Internal Link Update
@@ -21,9 +21,9 @@ Use this skill when the user asks to add a new calculator/tool card to the relat
    - Do not assume every page uses the same implementation. Some sections may use literal `<Link>` blocks; others may map an array of tool objects.
    - Identify whether the grid is a `<nav>` or a `<div>`; preserve the existing wrapper unless the user explicitly asks to refactor.
 
-3. **Skip the target tool’s own page**
+3. **Skip the target tool's own page**
    - Do not add a link to a page that links to itself.
-   - If the target tool’s own page contains the section, report that it was intentionally skipped.
+   - If the target tool's own page contains the section, report that it was intentionally skipped.
 
 4. **Add the new tool as the last item**
    - For literal grids, insert the requested `<Link>` block immediately before the closing `</nav>` or `</div>` for that grid.
@@ -31,9 +31,16 @@ Use this skill when the user asks to add a new calculator/tool card to the relat
    - If the user provides an exact block, use it verbatim where the section is literal and compatible. For array-rendered sections, translate the same content into the existing data shape rather than replacing the renderer.
    - Do not change unrelated formatting, descriptions, order of existing links, imports, or styling.
 
+4b. **Anchor Text Quality for GEO (NEW)**
+   When writing the `<Link>` text or `title` field for the new tool card:
+   - **Use entity-rich anchor text.** Instead of the generic tool name alone, use a descriptive phrase: `"Saudi GOSI Calculator"` not just `"GOSI Calculator"`. `"Malaysian EPF/KWSP Calculator"` not just `"EPF Calculator"`.
+   - **Avoid generic anchors** like "Click here", "Learn more", "View tool". These carry zero topical authority signal.
+   - **The `desc` or subtitle field** should contain the tool's primary keyword cluster in natural language: "Calculate your monthly EPF contribution and employer match for Malaysia" — not a marketing tagline.
+   - Entity-rich internal links reinforce topical authority, which is how Google evaluates whether a site is an expert in its domain — a key May 2026 core update signal.
+
 5. **Verify coverage**
    - Re-run the search for the new `href` under `app/tools/`.
-   - Confirm matches appear in every intended file and not in the target tool’s own related-tools section.
+   - Confirm matches appear in every intended file and not in the target tool's own related-tools section.
 
 6. **Move misplaced related-tools sections lower when requested**
    - If a user says an `Explore Other QuickCalcs Tools` section is appearing too high on a tool page, first determine whether it lives inside the route's client calculator component or the server `page.tsx`.
@@ -50,7 +57,7 @@ Use this skill when the user asks to add a new calculator/tool card to the relat
 ## Output Pattern
 
 - Start with the scan result: every file containing the target section.
-- State which files were updated and which, if any, were skipped because they are the target tool’s own page.
+- State which files were updated and which, if any, were skipped because they are the target tool's own page.
 - Include verification results:
   - changed-file ESLint command and pass/fail
   - build command and pass/fail

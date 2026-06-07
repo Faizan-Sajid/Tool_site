@@ -148,6 +148,25 @@ export default function RootLayout({
             }
           `
         }} />
+        {/* Organization schema for GEO entity signals */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "QuickCalcs",
+              url: "https://www.quickcalcs.app",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.quickcalcs.app/logo.png",
+              },
+              description:
+                "Free 2026 financial calculators for Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold value, Pakistan freelancer tax, and Hajj/Umrah budgets.",
+              sameAs: [],
+            }),
+          }}
+        />
       </head>
       <body className="bg-[#0c0e16] text-[#e6e3db] min-h-screen antialiased overflow-x-hidden">
         <SidebarProvider>

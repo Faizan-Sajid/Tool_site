@@ -112,7 +112,7 @@ export const TOOLS: Tool[] = [
     country: "my",
     icon: "🇲🇾",
     title: "Malaysia EPF Calculator 2026",
-    description: "Calculate your exact EPF (KWSP) contributions for 2026. Covers Malaysian citizen rates (11% employee / 13% employer for salary ≤RM5,000, 12% above), age 60+ reduced rates, foreign worker mandatory 2% rate effective October 2025, and full take-home salary breakdown. Official KWSP Third Schedule rates.",
+    description: "You pay 11%. Employer pays 13% (salary ≤RM5,000) or 12% (above). Instant EPF/KWSP amount, Akaun Fleksibel split & retirement projection. Free, no login.",
     isTeal: false,
     tags: [
       { text: "Malaysia", variant: "gold" },
