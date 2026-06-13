@@ -39,15 +39,13 @@ export default function FAQ({ items = [] }: FAQProps) {
                 ? "bg-[#131620] border-[#c9a84c40] shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
                 : "bg-[#0c0e16] hover:bg-[#131620]/60 hover:border-[rgba(255,255,255,0.1)]"
             }`}
-            itemScope
-            itemType="https://schema.org/Question"
           >
             <button
               onClick={() => toggleAccordion(index)}
               className="w-full min-h-[48px] flex justify-between items-center p-5 md:p-6 cursor-pointer font-medium text-white text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] transition-all"
               aria-expanded={activeIndex === index}
             >
-              <span className="pr-6 text-base md:text-lg leading-relaxed group-hover:text-[#c9a84c] transition-colors" itemProp="name">
+              <span className="pr-6 text-base md:text-lg leading-relaxed group-hover:text-[#c9a84c] transition-colors">
                 {item.question}
               </span>
               <div
@@ -67,11 +65,9 @@ export default function FAQ({ items = [] }: FAQProps) {
               className={`transition-all duration-500 ease-in-out overflow-hidden ${
                 activeIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
               }`}
-              itemScope
-              itemType="https://schema.org/Answer"
             >
               <div className="p-5 md:p-6 pt-0 border-t border-[rgba(255,255,255,0.03)]">
-                <p className="text-base leading-relaxed text-[#87847d]" itemProp="text">
+                <p className="text-base leading-relaxed text-[#87847d]">
                   {item.answer}
                 </p>
               </div>

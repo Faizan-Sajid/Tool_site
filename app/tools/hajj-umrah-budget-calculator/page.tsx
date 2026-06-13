@@ -5,30 +5,54 @@ import HajjUmrahContent from "./HajjUmrahContent";
 import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
-  title: "Hajj 2026 Cost Calculator – Flights, Hotels & Visa",
+  title: "Hajj & Umrah Cost Calculator 2026 – Complete Pilgrimage Budget (Pakistan, India, UK, USA)",
   description:
-    "Calculate your 2026 Hajj or Umrah cost by country. See flights, hotels, visa, food and transport in one free pilgrimage budget planner. Pakistan, India, UK, USA included.",
+    "Planning Hajj or Umrah in 2026? See exact cost from Pakistan (PKR 1.4M+), India (INR 4L+), UK (£4.5k+), USA ($11k+). Free calculator includes flights, hotels, visa. No login.",
   keywords: [
-    "Hajj cost calculator 2026",
-    "Umrah budget calculator 2026",
-    "Hajj Umrah cost calculator",
-    "Hajj cost from Pakistan 2026",
-    "Umrah cost from Pakistan 2026",
-    "pilgrimage budget planner",
-    "how much does Hajj cost 2026",
-    "Nusuk Hajj package 2026",
-    "Hajj package price by country",
-    "Umrah cost Ramadan 2026",
-    "Hajj savings plan calculator",
-    "government Hajj package vs private",
+    // Primary (from GSC high-impression)
+    "hajj calculator",
+    "hajj cost calculator 2026",
+    "umrah cost calculator 2026",
+    "how much does umrah cost",
+    "umrah expense",
+    "umrah expenses",
+    "hajj price",
+    "hajj cost",
+    "hajj price per person 2026",
+    "umrah vs hajj cost",
+    // Geo-specific
+    "hajj cost from Pakistan 2026",
+    "hajj cost from India 2026",
+    "hajj cost from UK 2026",
+    "hajj cost from USA 2026",
+    "umrah cost from Pakistan 2026",
+    "umrah cost from India 2026",
+    "umrah cost from UK 2026",
+    "umrah cost from USA 2026",
+    "hajj from uae cost",
+    "hajj price 2026 in india",
+    // Visa & packages
+    "how to get umrah visa online",
+    "hajj package",
+    "hajj package price by country",
+    "government hajj package vs private",
+    "nusuk hajj package 2026",
+    // Long-tail intent
+    "cheapest time for umrah",
+    "hajj savings plan",
+    "qurbani cost in hajj",
+    "shifting vs non-shifting hajj package",
+    // Non-English (low volume but easy wins)
+    "wie viel kostet hajj 2026 pro person",
+    "это цены 2026 года?",
+    "narxlarichi",
   ],
   alternates: {
     canonical: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
   },
   openGraph: {
-    title: "Hajj & Umrah Cost Calculator 2026 | Free Pilgrimage Budget Planner",
-    description:
-      "Free tool to estimate your complete Hajj or Umrah budget for 2026 — by country, package type, duration and season. Includes flights, hotels, visa, food and transport. No login needed.",
+    title: "Hajj & Umrah Cost Calculator 2026 – Free Pilgrimage Budget Planner",
+    description: "Planning Hajj or Umrah in 2026? See exact cost from Pakistan (PKR 1.4M+), India (INR 4L+), UK (£4.5k+), USA ($11k+). Free, no login.",
     url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
     siteName: "QuickCalcs",
     locale: "en_SA",
@@ -38,21 +62,21 @@ export const metadata: Metadata = {
         url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Hajj & Umrah Budget Calculator | QuickCalcs",
+        alt: "Hajj & Umrah Cost Calculator 2026 | QuickCalcs",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hajj & Umrah Cost Calculator 2026 | Free Pilgrimage Budget Planner",
+    title: "Hajj & Umrah Cost Calculator 2026 – Complete Budget Guide",
     description:
-      "Free tool to estimate your complete Hajj or Umrah budget for 2026 — by country, package type, duration and season. Includes flights, hotels, visa, food and transport. No login needed.",
+      "Exact pilgrimage costs by country. Pakistan, India, UK, USA. Includes flights, hotels, visa, food, transport. Free calculator.",
     images: [
       {
         url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Hajj & Umrah Budget Calculator | QuickCalcs",
+        alt: "Hajj & Umrah Cost Calculator 2026 | QuickCalcs",
       },
     ],
   },
@@ -123,8 +147,21 @@ export default function HajjUmrahPage() {
           "Free online Hajj and Umrah cost calculator. Estimate your complete pilgrimage budget from Pakistan, India, UK, USA, Bangladesh, Canada and more for 2026.",
         url: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
         datePublished: "2025-10-01",
-        dateModified: "2026-05-31",
+        dateModified: "2026-06-01",
         inLanguage: "en",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: [
+            ".hajj-quick-answer",
+            "h1",
+            "h2",
+            "h3"
+          ]
+        },
+        potentialAction: {
+          "@type": "UseAction",
+          target: "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator"
+        },
         reviewedBy: {
           "@type": "Organization",
           name: "QuickCalcs",
@@ -133,6 +170,8 @@ export default function HajjUmrahPage() {
         about: [
           { "@type": "Thing", name: "Hajj pilgrimage" },
           { "@type": "Thing", name: "Umrah pilgrimage" },
+          { "@type": "Thing", name: "Hajj cost 2026" },
+          { "@type": "Thing", name: "Umrah cost 2026" },
           { "@type": "Thing", name: "Saudi Ministry of Hajj and Umrah" },
         ],
         isPartOf: {
@@ -173,21 +212,30 @@ export default function HajjUmrahPage() {
         isAccessibleForFree: true,
         description:
           "Free calculator to estimate Hajj and Umrah pilgrimage costs by country, package type, duration and season for 2026.",
+        areaServed: ["PK", "IN", "GB", "US", "BD", "ID", "AE", "SA"],
+        audience: {
+          "@type": "Audience",
+          audienceType: "Muslims planning Hajj or Umrah from South Asia, Middle East, UK, USA, Canada"
+        },
       },
       {
         "@type": "Article",
         headline: "Hajj & Umrah Cost Calculator 2026 — Complete Budget Guide",
         datePublished: "2025-10-01",
-        dateModified: "2026-05-31",
+        dateModified: "2026-06-01",
         author: {
           "@type": "Organization",
           name: "QuickCalcs",
-          url: "https://www.quickcalcs.app",
+          url: "https://www.quickcalcs.app"
         },
         publisher: {
           "@type": "Organization",
           name: "QuickCalcs",
           url: "https://www.quickcalcs.app",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://www.quickcalcs.app/logo.png"
+          }
         },
         mainEntityOfPage:
           "https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator",
@@ -204,11 +252,11 @@ export default function HajjUmrahPage() {
       />
       <HajjUmrahCalculator />
       <HajjUmrahContent />
-      <section className="px-[20px] sm:px-[36px] mt-12">
+      <section className="px-[20px] sm:px-[36px] mt-12 max-w-[860px]">
         <h2 className="text-2xl font-bold mb-6 text-white">
           Frequently Asked Questions
         </h2>
-        <FAQ items={faqItems} />
+      <FAQ items={faqItems} />
       </section>
     </main>
   );

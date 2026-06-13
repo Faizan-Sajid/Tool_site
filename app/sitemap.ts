@@ -4,9 +4,9 @@ import { TOOLS } from '@/constants/tools';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.quickcalcs.app";
   const toolLastModified: Record<string, string> = {
-    "ksa-gosi-calculator": "2026-05-23",
+    "ksa-gosi-calculator": "2026-06-01",
     "malaysia-epf-calculator": "2026-05-28",
-    "hajj-umrah-budget-calculator": "2026-05-31",
+    "hajj-umrah-budget-calculator": "2026-06-01",
     "pakistan-freelancer-tax-calculator": "2026-05-31",
     "gold-calculator": "2026-06-03",
     "uae-gratuity-calculator": "2026-05-31",

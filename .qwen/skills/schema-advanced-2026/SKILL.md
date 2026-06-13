@@ -104,7 +104,75 @@ const webPageSchema = {
 };
 ```
 
-### 5. Organization Schema (Site-Level)
+### 5. Geo-Targeting Fields — areaServed, audience, inLanguage, speakable, potentialAction
+
+For tool pages targeting a specific country or region, add these geo-targeting fields to the schema. They signal geographic relevance to Google and AI engines without needing a separate country-specific page.
+
+**In WebPage schema:**
+```typescript
+{
+  "@type": "WebPage",
+  // ... existing fields
+  
+  "inLanguage": "en",                              // Primary page language
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [                               // Classes matching answer blocks
+      ".quick-answer",                             // AI Overview box
+      "h1",
+      "h2",
+      "h3"
+    ]
+  },
+  "potentialAction": {
+    "@type": "UseAction",
+    "target": "https://yoursite.com/tools/your-tool" // Page URL
+  },
+}
+```
+
+**In SoftwareApplication/WebApplication schema:**
+```typescript
+{
+  "@type": "SoftwareApplication",
+  // ... existing fields
+  
+  "areaServed": {
+    "@type": "Country",
+    "name": "Saudi Arabia",
+    "sameAs": "https://www.wikidata.org/wiki/Q851"  // Wikidata entry for the country
+  },
+  // For multi-country pages, use an array:
+  // "areaServed": ["PK", "IN", "GB", "US", "BD", "ID", "AE", "SA"],
+  
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Private sector employees in Saudi Arabia, HR managers, payroll teams, Saudi nationals, non-Saudi expats in KSA"
+  },
+}
+```
+
+**When to use each field:**
+| Field | When to add | Example |
+|---|---|---|
+| `inLanguage` | Every page | `"en"`, `"ar"`, `"fr"` |
+| `speakable` | Any page with answer-first content blocks | cssSelector targets `.quick-answer` class |
+| `potentialAction` | Calculator/tool pages | `UseAction` targeting the tool URL |
+| `areaServed` | Pages targeting specific countries | Single `Country` object with Wikidata `sameAs` OR array of ISO codes |
+| `audience` | Pages serving a specific user segment | Describe who should use the tool |
+
+**Wikidata `sameAs` references for common countries:**
+| Country | Wikidata URL |
+|---|---|
+| Saudi Arabia | `https://www.wikidata.org/wiki/Q851` |
+| UAE | `https://www.wikidata.org/wiki/Q878` |
+| Pakistan | `https://www.wikidata.org/wiki/Q843` |
+| India | `https://www.wikidata.org/wiki/Q668` |
+| UK | `https://www.wikidata.org/wiki/Q145` |
+| USA | `https://www.wikidata.org/wiki/Q30` |
+| Malaysia | `https://www.wikidata.org/wiki/Q833` |
+
+### 6. Organization Schema (Site-Level)
 
 Add once to `app/layout.tsx` or a global `<JsonLd>` component. Do not repeat per page:
 
