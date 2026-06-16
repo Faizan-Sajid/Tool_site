@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { TOOLS } from '@/constants/tools';
+import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.quickcalcs.app";
@@ -23,6 +24,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // Blog posts
+  const posts = getAllPosts();
+  const blogUrls = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.lastModified || post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   return [
     // Homepage
     {
@@ -31,6 +41,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily' as const,
       priority: 1,
     },
+    // Blog index page
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.6,
+    },
+    // Dynamic blog posts
+    ...blogUrls,
     // Dynamic tool pages (TOOLS array se auto)
     ...toolUrls,
     // Static legal/info pages (manually listed — yeh kabhi dynamic nahi honge)

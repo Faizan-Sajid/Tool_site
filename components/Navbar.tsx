@@ -105,7 +105,13 @@ const Navbar = () => {
             )}
           </button>
 
-          {/* Desktop "All Tools" Action */}
+          {/* Desktop nav links */}
+          <Link
+            href="/blog"
+            className="hidden lg:flex items-center justify-center h-10 px-5 rounded-xl border border-[rgba(255,255,255,0.07)] bg-[#131620] text-[#87847d] text-[13px] font-bold hover:text-white hover:bg-[#1a1e2e] transition-all active:scale-[0.98]"
+          >
+            Guides
+          </Link>
           <Link
             href="/#all-tools"
             className="hidden lg:flex items-center justify-center h-10 px-6 rounded-xl bg-[#c9a84c] text-[#0c0e16] text-[13px] font-bold hover:bg-[#e2bd56] hover:shadow-[0_0_20px_rgba(201,168,76,0.3)] transition-all active:scale-[0.98]"

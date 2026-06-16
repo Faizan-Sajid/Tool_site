@@ -1,0 +1,136 @@
+Project: QuickCalcs (gulftools)
+Router:  App Router (app/ directory present)
+Root:    F:\tools_site\gulftools
+
+F:\tools_site\gulftools\
+├── .gitignore                          # Git ignore rules
+├── AGENTS.md                           # Agent context file (Next.js rules)
+├── CLAUDE.md                           # Claude Code context (SEO/GEO skills)
+├── eslint.config.mjs                   # ESLint flat config
+├── next-env.d.ts                       # Next.js TypeScript declarations (auto-generated)
+├── next.config.ts                      # Next.js configuration
+├── package.json                        # Dependencies & scripts
+├── package-lock.json                   # Dependency lockfile
+├── postcss.config.mjs                  # PostCSS config (Tailwind)
+├── README.md                           # Project readme
+├── security.md                         # Security policy
+├── tree.txt                            # This file — project directory tree
+├── tsconfig.json                       # TypeScript configuration
+│
+├── app/                                # -> Next.js App Router routes & pages
+│   ├── favicon.ico                     # Favicon
+│   ├── globals.css                     # Global CSS (Tailwind base)
+│   ├── layout.tsx                      # Root layout (HTML shell, nav, footer)
+│   ├── not-found.tsx                   # Custom 404 page
+│   ├── opengraph-image.tsx             # Default OG image generator (dynamic)
+│   ├── page.tsx                        # Homepage (landing page)
+│   ├── robots.ts                       # robots.txt generation
+│   ├── sitemap.ts                      # sitemap.xml generation
+│   │
+│   ├── about/                          # /about page
+│   │   └── page.tsx
+│   │
+│   ├── blog/                           # # Blog feature
+│   │   ├── page.tsx                    #   Blog listing page
+│   │   └── [slug]/                     #   Dynamic blog post route
+│   │       └── page.tsx
+│   │
+│   ├── llms.txt/                       # /llms.txt route (AI crawler instructions)
+│   │   └── route.ts
+│   │
+│   ├── privacy-policy/                 # /privacy-policy page
+│   │   └── page.tsx
+│   │
+│   ├── terms-of-use/                   # /terms-of-use page
+│   │   └── page.tsx
+│   │
+│   └── tools/                          # -> All calculator tool routes
+│       ├── [toolId]/                   # Dynamic OG image route
+│       │   └── opengraph-image.tsx
+│       │
+│       ├── gold-calculator/            # Gold Price Calculator tool
+│       │   ├── actions.ts              # Server actions (fetch gold price)
+│       │   ├── GoldCalculator.tsx       # Calculator component
+│       │   └── page.tsx
+│       │
+│       ├── hajj-umrah-budget-calculator/  # Hajj & Umrah Budget Calculator tool
+│       │   ├── HajjUmrahCalculator.tsx
+│       │   ├── HajjUmrahContent.tsx     # SEO content section
+│       │   └── page.tsx
+│       │
+│       ├── ksa-gosi-calculator/        # KSA GOSI Calculator tool
+│       │   ├── GosiCalculator.tsx
+│       │   ├── GosiContent.tsx          # SEO content section
+│       │   └── page.tsx
+│       │
+│       ├── malaysia-epf-calculator/    # Malaysia EPF Calculator tool
+│       │   ├── EpfCalculator.tsx
+│       │   ├── EpfContent.tsx           # SEO content section
+│       │   └── page.tsx
+│       │
+│       ├── pakistan-freelancer-tax-calculator/  # Pakistan Freelancer Tax Calculator tool
+│       │   ├── FreelancerTaxCalculator.tsx
+│       │   ├── FreelancerTaxContent.tsx
+│       │   └── page.tsx
+│       │
+│       ├── uae-gratuity-calculator/    # UAE Gratuity Calculator tool
+│       │   ├── GratuityCalculator.tsx
+│       │   ├── GratuityContent.tsx
+│       │   └── page.tsx
+│       │
+│       └── zakat-calculator/           # Zakat Calculator tool
+│           ├── ZakatCalculator.tsx
+│           ├── ZakatContent.tsx
+│           └── page.tsx
+│
+├── components/                         # -> Reusable UI components
+│   ├── CategoryFilter.tsx              # Category filter for tools listing
+│   ├── FAQ.tsx                         # Reusable FAQ accordion component
+│   ├── FeaturedToolsSection.tsx        # Featured tools section
+│   ├── Footer.tsx                      # Site footer
+│   ├── FreelancerTaxFAQ.tsx            # Freelancer tax-specific FAQ
+│   ├── HeroSection.tsx                 # Homepage hero section
+│   ├── Navbar.tsx                      # Navigation bar
+│   ├── Sidebar.tsx                     # Sidebar navigation
+│   ├── SidebarOverlay.tsx             # Sidebar mobile overlay
+│   ├── StatsStrip.tsx                  # Stats strip (site metrics)
+│   │
+│   ├── ads/                            # # Ad component
+│   │   └── AdSlot.tsx                  #   Ad placement slot
+│   │
+│   ├── blog/                           # # Blog components
+│   │   └── BlogCategoryFilter.tsx      #   Blog category filter
+│   │
+│   └── cards/                          # -> Tool card components
+│       └── FreelancerTaxCard.tsx       # Freelancer tax tool card
+│
+├── constants/                          # -> Data constants & configuration
+│   └── tools.ts                        # Tools definitions array (all tools metadata)
+│
+├── content/                            # # Content directory
+│   └── blog/                           #   Blog posts (markdown)
+│       └── example-post.md             #   Example blog post
+│
+├── context/                            # -> React context providers
+│   └── SidebarContext.tsx              # Sidebar open/close state context
+│
+├── lib/                                # # Utility / library modules
+│   └── blog.ts                         #   Blog helper functions
+│
+├── public/                             # -> Static assets (served at /)
+│   ├── about.txt                       # About text (AdSense E-E-A-T)
+│   ├── android-chrome-192x192.png      # PWA icon
+│   ├── android-chrome-512x512.png      # PWA icon
+│   ├── apple-touch-icon.png            # Apple touch icon
+│   ├── favicon-16x16.png               # Favicon (16x16)
+│   ├── favicon-32x32.png               # Favicon (32x32)
+│   ├── favicon.ico                     # Favicon (legacy)
+│   ├── manifest.json                   # Web app manifest
+│   └── site.webmanifest               # Site webmanifest
+│
+├── .qwen/                              # Qwen Code agent files (tooling)
+│   └── skills/                         # Auto-loaded skills
+│
+├── .next/                              # Next.js build output (excluded)
+├── .git/                               # Git repository (excluded)
+└── node_modules/                       # NPM dependencies (excluded)

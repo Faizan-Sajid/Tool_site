@@ -165,7 +165,7 @@ export default async function Home({
         <StatsStrip />
         <FeaturedToolsSection searchParams={resolvedSearchParams} />
 
-        <section className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 md:px-8 py-10 lg:py-14">
+        {/* <section className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 md:px-8 py-10 lg:py-14">
           <div className="mb-4 flex items-center gap-[10px] text-[11px] font-bold uppercase tracking-[1.3px] text-[#8b8a87]">
             <span>2026 quick reference — Malaysia · UAE · KSA · Pakistan</span>
             <span className="h-[1px] flex-1 bg-[rgba(255,255,255,0.07)]" />
@@ -198,7 +198,7 @@ export default async function Home({
               </article>
             ))}
           </div>
-        </section>
+        </section> */}
 
         <section className="mx-auto w-full max-w-[960px] px-4 sm:px-6 md:px-8 py-8 lg:py-12">
           <div className="rounded-[18px] border border-[rgba(201,168,76,0.18)] bg-[#131620] p-6 sm:p-8">
