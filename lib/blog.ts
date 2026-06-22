@@ -28,6 +28,7 @@ export interface BlogFrontmatter {
   ogImage?: string;
   tags?: string[];
   primaryKeyword?: string;
+  secondaryKeywords?: string[];
   faqItems?: FaqItem[];
 }
 
@@ -67,6 +68,7 @@ export function getAllPosts(): BlogFrontmatter[] {
       ogImage: data.ogImage as string | undefined,
       tags: data.tags as string[] | undefined,
       primaryKeyword: data.primaryKeyword as string | undefined,
+      secondaryKeywords: data.secondaryKeywords as string[] | undefined,
       faqItems: Array.isArray(data.faqItems) ? data.faqItems as FaqItem[] : undefined,
     };
   });
@@ -111,6 +113,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
         ogImage: data.ogImage as string | undefined,
         tags: data.tags as string[] | undefined,
         primaryKeyword: data.primaryKeyword as string | undefined,
+        secondaryKeywords: data.secondaryKeywords as string[] | undefined,
         faqItems: Array.isArray(data.faqItems) ? data.faqItems as FaqItem[] : undefined,
         content,
       };

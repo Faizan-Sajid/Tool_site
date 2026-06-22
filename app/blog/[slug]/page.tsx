@@ -114,13 +114,32 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-[#0c0e16]">
-      {/* ── JSON-LD Schema ── */}
+      {/* ── JSON-LD Schema: WebPage + Article + BreadcrumbList ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": `https://www.quickcalcs.app/blog/${post.slug}`,
+                url: `https://www.quickcalcs.app/blog/${post.slug}`,
+                name: post.title,
+                description: post.metaDescription || post.description,
+                datePublished: post.date,
+                dateModified: post.lastModified || post.date,
+                inLanguage: "en-US",
+                isPartOf: {
+                  "@type": "Blog",
+                  "@id": "https://www.quickcalcs.app/blog",
+                  name: "QuickCalcs Guides & Updates",
+                },
+                speakable: {
+                  "@type": "SpeakableSpecification",
+                  cssSelector: ["h1", "h2", ".prose-custom p:first-of-type"],
+                },
+              },
               {
                 "@type": "Article",
                 "@id": `https://www.quickcalcs.app/blog/${post.slug}#article`,
@@ -132,8 +151,8 @@ export default async function BlogPostPage({ params }: Props) {
                   ? {
                       "@type": "Person",
                       name: post.author,
-                      ...(post.authorTitle ? { jobTitle: post.authorTitle } : {}),
-                      ...(post.authorLinkedIn ? { url: post.authorLinkedIn } : {}),
+                      ...(post.authorTitle ? { knowsAbout: post.authorTitle } : {}),
+                      url: "https://www.quickcalcs.app/about",
                     }
                   : undefined,
                 publisher: {
@@ -151,6 +170,20 @@ export default async function BlogPostPage({ params }: Props) {
                 },
                 ...(post.ogImage
                   ? { image: `https://www.quickcalcs.app${post.ogImage}` }
+                  : {}),
+                keywords: [
+                  post.primaryKeyword,
+                  ...(post.secondaryKeywords || []),
+                ]
+                  .filter(Boolean)
+                  .join(", "),
+                ...(post.tags && post.tags.length > 0
+                  ? {
+                      about: post.tags.map((tag) => ({
+                        "@type": "Thing",
+                        name: tag,
+                      })),
+                    }
                   : {}),
               },
               {
@@ -180,26 +213,6 @@ export default async function BlogPostPage({ params }: Props) {
           }),
         }}
       />
-      {/* ── FAQPage JSON-LD (dynamic from frontmatter faqItems) ── */}
-      {post.hasFAQ === true && post.faqItems && post.faqItems.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: post.faqItems.map((item) => ({
-                "@type": "Question",
-                name: item.question,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: item.answer,
-                },
-              })),
-            }),
-          }}
-        />
-      )}
       <article className="mx-auto max-w-[860px] px-4 sm:px-6 md:px-8 py-12 sm:py-16">
         {/* ── Breadcrumbs ── */}
         <nav className="mb-8 flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#8b8a87]">

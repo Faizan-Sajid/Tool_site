@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import HajjUmrahCalculator from "./HajjUmrahCalculator";
 import HajjUmrahContent from "./HajjUmrahContent";
 import FAQ from "@/components/FAQ";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "Hajj & Umrah Cost Calculator 2026 – Complete Pilgrimage Budget (Pakistan, India, UK, USA)",
@@ -252,12 +253,15 @@ export default function HajjUmrahPage() {
       />
       <HajjUmrahCalculator />
       <HajjUmrahContent />
+      <RelatedGuides relatedTool="/tools/hajj-umrah-budget-calculator" />
       <section className="px-[20px] sm:px-[36px] mt-12 max-w-[860px]">
         <h2 className="text-2xl font-bold mb-6 text-white">
           Frequently Asked Questions
         </h2>
       <FAQ items={faqItems} />
       </section>
+
+      
     </main>
   );
 }

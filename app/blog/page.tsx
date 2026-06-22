@@ -198,6 +198,62 @@ export default async function BlogPage({
 
   return (
     <main className="min-h-screen bg-[#0c0e16]">
+      {/* ── JSON-LD Schema: CollectionPage + ItemList + BreadcrumbList ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "CollectionPage",
+                "@id": "https://www.quickcalcs.app/blog",
+                url: "https://www.quickcalcs.app/blog",
+                name: "Guides & Updates — Free Financial Calculator Tips | QuickCalcs",
+                description:
+                  "Read expert guides on UAE gratuity, Saudi GOSI, Zakat, EPF, Pakistan freelancer tax, and more. QuickCalcs blog helps you understand financial calculations across the Gulf and Asia.",
+                inLanguage: "en-US",
+                isPartOf: {
+                  "@type": "WebSite",
+                  "@id": "https://www.quickcalcs.app/",
+                  name: "QuickCalcs",
+                },
+                dateModified: new Date().toISOString().split("T")[0],
+                breadcrumb: {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    {
+                      "@type": "ListItem",
+                      position: 1,
+                      name: "Home",
+                      item: "https://www.quickcalcs.app/",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 2,
+                      name: "Guides & Updates",
+                      item: "https://www.quickcalcs.app/blog",
+                    },
+                  ],
+                },
+              },
+              {
+                "@type": "ItemList",
+                url: "https://www.quickcalcs.app/blog",
+                name: "QuickCalcs Guides & Updates",
+                itemListElement: allPosts.map((post, index) => ({
+                  "@type": "ListItem",
+                  position: index + 1,
+                  url: `https://www.quickcalcs.app/blog/${post.slug}`,
+                  name: post.title,
+                  description: post.description,
+                })),
+                numberOfItems: allPosts.length,
+              },
+            ],
+          }),
+        }}
+      />
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-20">
         {/* ── Header ── */}
         <header className="mb-6">

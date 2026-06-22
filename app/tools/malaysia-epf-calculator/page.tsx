@@ -5,6 +5,7 @@ import EpfContent from "./EpfContent";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 
 export const metadata: Metadata = {
   title: {
@@ -412,6 +413,8 @@ export default function EpfPage() {
         {/* Content Section */}
         <EpfContent faqItems={faqItems} />
       </div>
+
+      <RelatedGuides relatedTool="/tools/malaysia-epf-calculator" />
     </main>
   );
 }

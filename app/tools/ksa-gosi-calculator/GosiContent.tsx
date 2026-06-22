@@ -11,6 +11,25 @@ export default function GosiContent() {
         </p>
       </div>
 
+      {/* AUTHOR/REVIEWER CREDENTIALS — YMYL E-E-A-T trust signal */}
+      <div className="rounded-[14px] border border-[rgba(201,168,76,0.1)] bg-[rgba(201,168,76,0.02)] p-4 text-xs leading-relaxed text-[#87847d]">
+        <p>
+          <strong className="text-[#e6e3db]">Reviewed by:</strong>{" "}
+          Faizan Sajid (Payroll Compliance Specialist).{" "}
+          <strong className="text-[#e6e3db]">Sources:</strong>{" "}
+          Royal Decree M/33,{" "}
+          <a
+            href="https://www.gosi.gov.sa/en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-[#c9a84c]"
+          >
+            GOSI Official Portal
+          </a>
+          , Saudi Ministry of Human Resources and Social Development.
+        </p>
+      </div>
+
       {/* AI OVERVIEW / FEATURED SNIPPET BOX */}
       <div className="gosi-quick-answer rounded-[14px] border border-[rgba(201,168,76,0.2)] bg-[rgba(201,168,76,0.04)] p-5 text-sm leading-relaxed">
         <p className="text-[#c9a84c] text-xs font-bold mb-3 uppercase tracking-wider">
@@ -73,7 +92,7 @@ export default function GosiContent() {
             <a
               href="https://www.gosi.gov.sa/en"
               target="_blank"
-              rel="nofollow noopener noreferrer"
+              rel="noopener noreferrer"
               className="underline hover:text-[#c9a84c]"
             >
               General Organization for Social Insurance (Official Portal)
@@ -350,7 +369,7 @@ export default function GosiContent() {
             <a
               href="https://www.gosi.gov.sa/en"
               target="_blank"
-              rel="nofollow noopener noreferrer"
+              rel="noopener noreferrer"
               className="underline hover:text-[#c9a84c]"
             >
               GOSI official portal

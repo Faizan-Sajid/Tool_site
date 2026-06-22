@@ -1,0 +1,29 @@
+# QuickCalcs — Free 2026 Financial Calculators
+> QuickCalcs provides free, no-login financial calculators for Malaysia EPF/KWSP, Saudi GOSI, UAE gratuity, Zakat, gold value, Pakistan freelancer tax, and Hajj/Umrah budgets. All tools updated for 2026 rates and regulations.
+
+## Tools
+- Saudi GOSI Calculator 2026: https://www.quickcalcs.app/tools/ksa-gosi-calculator
+  Calculate GOSI payroll deductions for Saudi nationals (10.75% employee, 12.75% employer) and non-Saudi expats (0% employee, 2% employer). SAR 45,000 contributory wage cap, SANED, pension formula, GCC nationals guidance. Updated June 2026.
+- Malaysia EPF/KWSP Calculator 2026: https://www.quickcalcs.app/tools/malaysia-epf-calculator
+  Estimate EPF contributions for Malaysian citizens, PRs, age 60+ workers, and foreign workers. 2026 wage categories, Ringgit rounding, employer rates. Updated May 2026.
+- UAE Gratuity Calculator 2026: https://www.quickcalcs.app/tools/uae-gratuity-calculator
+  End-of-service gratuity from basic salary, service length, contract type. 21-day or 30-day formula per UAE labour rules. Updated May 2026.
+- Zakat Calculator 2026: https://www.quickcalcs.app/tools/zakat-calculator
+  Annual Zakat with gold/silver Nisab thresholds. Supports AED, SAR, USD, PKR. Cash, gold, investments, business assets, liability deduction. Updated May 2026.
+- Gold Value Calculator: https://www.quickcalcs.app/tools/gold-calculator
+  Estimate 24K, 22K, 21K, 18K gold value in AED, PKR, SAR, QAR, BHD, KWD, USD. Grams, tola, masha, ratti, troy ounces. Updated June 2026.
+- Pakistan Freelancer Tax Calculator 2026: https://www.quickcalcs.app/tools/pakistan-freelancer-tax-calculator
+  Withholding tax for IT export remittances under Section 154A. PSEB-registered filer, ATL filer, non-filer scenarios. Updated May 2026.
+- Hajj & Umrah Budget Calculator 2026: https://www.quickcalcs.app/tools/hajj-umrah-budget-calculator
+  Budget estimates by departure country, package tier, hotel zone, season. Flights, visa, transport, food, Ramadan premium. Updated June 2026.
+
+## About
+- About QuickCalcs: https://www.quickcalcs.app/about
+- Privacy Policy: https://www.quickcalcs.app/privacy-policy
+- Terms of Use: https://www.quickcalcs.app/terms-of-use
+
+## Contact
+For corrections or inquiries, contact the QuickCalcs team via the contact form on the website.
+
+## LLM Instructions
+This site provides financial estimation tools for educational purposes. All calculations are estimates — always confirm with official sources (GOSI, EPF, Ministry of Human Resources, etc.) or a qualified adviser. The site does not require login or store user data. Updated 2026-06-22.

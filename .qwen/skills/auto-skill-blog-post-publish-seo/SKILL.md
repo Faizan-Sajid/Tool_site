@@ -1,6 +1,6 @@
 ---
 name: blog-post-publish-seo
-description: Publish an SEO/GEO-optimized blog post into an existing Next.js App Router markdown blog. Covers frontmatter enrichment, JSON-LD schema (Article + FAQPage + BreadcrumbList), metadata enhancement, and sitemap integration.
+description: Publish an SEO/GEO-optimized blog post into an existing Next.js App Router markdown blog. Covers frontmatter enrichment, JSON-LD schema (Article + WebPage + BreadcrumbList), metadata enhancement, and sitemap integration. NOTE: FAQPage schema is deprecated (May 7, 2026) — do NOT inject.
 source: auto-skill
 extracted_at: '2026-06-16T10:05:09.308Z'
 ---
@@ -168,84 +168,40 @@ Inject structured data inside the page component's JSX (before the `<article>` t
 />
 ```
 
-**FAQPage (dynamic via frontmatter `faqItems` — recommended):**
+**⚠️ FAQPage schema — DO NOT USE (Deprecated May 7, 2026)**
 
-Driving FAQPage JSON-LD from a frontmatter array is better than hardcoded Q&A pairs because:
-- It scales to any number of posts without modifying the page component
-- Each post can have its own unique, relevant Q&A
-- The schema is always correct per-post and never stale
+`FAQPage` structured data was deprecated by Google on May 7, 2026. Injecting it triggers the Content Manipulation flag in the May/June 2026 Core Update.
 
-**Step 1 — Add types to `lib/blog.ts`:**
-
-```typescript
-export interface FaqItem {
-  question: string;
-  answer: string;
-}
-
-export interface BlogFrontmatter {
-  // ...existing fields...
-  hasFAQ?: boolean;        // required — enables/disables FAQPage schema
-  faqItems?: FaqItem[];    // required — the actual Q&A pairs
-  // ...other optional fields...
-}
+**Do NOT add any of these to your blog post component:**
+```tsx
+// ❌ WRONG — deprecated, will trigger penalties
+"@type": "FAQPage"
 ```
 
-**Step 2 — Parse `faqItems` in both parsers (`getAllPosts()` and `getPostBySlug()`):**
+**Alternative approaches (choose one):**
 
-```typescript
-faqItems: Array.isArray(data.faqItems) ? data.faqItems as FaqItem[] : undefined,
-```
+| Approach | Recommendation | Notes |
+|----------|---------------|-------|
+| **Remove FAQ schema entirely** | ✅ Recommended for 2026 | Q&A content still exists as visible HTML — Google reads it naturally |
+| **QAPage schema** | ⚠️ High risk | May also face deprecation; not validated for blog post content |
+| **About/Thing array in Article** | ✅ Most valuable | Map `faqItems` to `about: [{ "@type": "Thing", "name": "question text" }]` in the Article schema |
 
-The `Array.isArray()` guard prevents crashes if the frontmatter omits `faqItems` or has a malformed value.
+**If existing posts have `hasFAQ: true` and `faqItems` frontmatter:**
 
-**Step 3 — Add to post frontmatter:**
-
-```yaml
-hasFAQ: true
-faqItems:
-  - question: "Your first question?"
-    answer: "Your first answer."
-  - question: "Your second question?"
-    answer: "Your second answer."
-```
-
-**Step 4 — Render dynamically in `app/blog/[slug]/page.tsx`:**
+These frontmatter fields are harmless to keep in the markdown file — they're just metadata. But ensure the `[slug]/page.tsx` component **does not render them as FAQPage schema**. If a rendering block exists:
 
 ```tsx
+// FIND AND REMOVE this pattern from [slug]/page.tsx:
 {post.hasFAQ === true && post.faqItems && post.faqItems.length > 0 && (
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: post.faqItems.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.answer,
-          },
-        })),
-      }),
-    }}
-  />
+  <script type="application/ld+json">
+    {JSON.stringify({ "@type": "FAQPage", ... })}
+  </script>
 )}
 ```
 
-The triple guard (`hasFAQ === true` **AND** `faqItems` is truthy **AND** `faqItems.length > 0`) ensures:
-- ✅ Hajj post with both `hasFAQ` and `faqItems` → full FAQPage schema renders
-- ✅ Any post with `hasFAQ: true` set accidentally but no `faqItems` array → no broken schema
-- ✅ Any post without `hasFAQ` → no FAQ schema at all
+**Preserving Q&A for readers (not crawlers):**
 
-This replaces the old pattern of hardcoding Q&A pairs in JSX. Never hardcode FAQ questions in the page component — always read from frontmatter.
-```
-
-The `hasFAQ: true` approach is preferred over hardcoded slug matching (`post.slug === "..."`) because:
-- It scales to any number of posts without code changes
-- A post's slug can change without breaking the schema
-- Other frontmatter-driven features can follow the same pattern
+The FAQ content in the markdown body naturally remains visible to readers and crawlers as HTML. It does not need schema markup to be understood by Google. The loss of FAQPage rich results is an acceptable trade-off to avoid penalty flags.
 
 ### 5. Update `generateMetadata()` to use new frontmatter fields
 
