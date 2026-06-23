@@ -170,14 +170,14 @@ const jsonLd = {
       name: "Pakistan Freelancer Tax Calculator 2026 | FBR 0.25%, 1% & 2% Rates",
       description:
         "Calculate your exact FBR freelancer tax for 2026. PSEB 0.25%, non-PSEB filer 1%, non-filer 2%. Covers Upwork, Fiverr, Payoneer income under Section 154A.",
-      dateModified: "2026-05-31",
+      dateModified: "2026-06-23",
       reviewedBy: { "@type": "Organization", name: "QuickCalcs" },
       publisher: { "@type": "Organization", name: "QuickCalcs", url: "https://www.quickcalcs.app" },
       isBasedOn: [
-        "https://fbr.gov.pk/",
-        "https://iris.fbr.gov.pk/",
-        "https://pseb.org.pk/",
-        "https://fbr.gov.pk/atl"
+        { "@type": "CreativeWork", name: "FBR Pakistan — Official Tax Portal", url: "https://fbr.gov.pk/" },
+        { "@type": "CreativeWork", name: "FBR IRIS — Return Filing Portal", url: "https://iris.fbr.gov.pk/" },
+        { "@type": "CreativeWork", name: "PSEB — Pakistan Software Export Board", url: "https://pseb.org.pk/" },
+        { "@type": "CreativeWork", name: "FBR Active Taxpayer List", url: "https://fbr.gov.pk/atl" }
       ],
       isPartOf: { "@id": "https://www.quickcalcs.app/" },
       breadcrumb: {
@@ -212,12 +212,15 @@ const jsonLd = {
         "Section 154A compliant — Finance Act 2025-26",
       ],
       offers: { "@type": "Offer", price: "0", priceCurrency: "PKR" },
-      author: { "@type": "Organization", name: "QuickCalcs" },
+      author: [
+        { "@type": "Organization", name: "QuickCalcs" },
+        { "@type": "Person", name: "QuickCalcs Financial Content Team" }
+      ],
       publisher: { "@type": "Organization", name: "QuickCalcs", url: "https://www.quickcalcs.app" },
       isBasedOn: [
-        "https://fbr.gov.pk/",
-        "https://iris.fbr.gov.pk/",
-        "https://pseb.org.pk/"
+        { "@type": "CreativeWork", name: "FBR Pakistan — Official Tax Portal", url: "https://fbr.gov.pk/" },
+        { "@type": "CreativeWork", name: "FBR IRIS — Return Filing Portal", url: "https://iris.fbr.gov.pk/" },
+        { "@type": "CreativeWork", name: "PSEB — Pakistan Software Export Board", url: "https://pseb.org.pk/" }
       ],
       brand: { "@type": "Brand", name: "QuickCalcs" },
     },

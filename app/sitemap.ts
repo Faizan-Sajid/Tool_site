@@ -4,27 +4,31 @@ import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.quickcalcs.app";
+
+  // Individual tools ki real modification dates (taake fuzool re-crawl ruke)
   const toolLastModified: Record<string, string> = {
     "ksa-gosi-calculator": "2026-06-01",
     "malaysia-epf-calculator": "2026-05-28",
     "hajj-umrah-budget-calculator": "2026-06-01",
-    "pakistan-freelancer-tax-calculator": "2026-05-31",
+    "pakistan-freelancer-tax-calculator": "2026-06-23",
     "gold-calculator": "2026-06-03",
     "uae-gratuity-calculator": "2026-05-31",
     "zakat-calculator": "2026-05-31",
-    // add other tools here as you update them
   };
 
+  // Latest global fallback date
+  const siteLastUpdated = new Date("2026-06-23");
+
+  // Saare tools ko equal treat karne ke liye map function
   const toolUrls = TOOLS.map((tool) => ({
     url: `${baseUrl}${tool.href}`,
     lastModified: toolLastModified[tool.id]
       ? new Date(toolLastModified[tool.id])
-      : new Date("2026-05-01"),
-    changeFrequency: 'daily' as const,
-    priority: 0.9,
+      : siteLastUpdated,
+    changeFrequency: 'weekly' as const,
+    priority: 0.95, // ✅ SAF CORRECTION: Sabhi tools ko equal aur high priority de di!
   }));
 
-  // Blog posts
   const posts = getAllPosts();
   const blogUrls = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -34,41 +38,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   return [
-    // Homepage
     {
       url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily' as const,
-      priority: 1,
+      lastModified: siteLastUpdated,
+      changeFrequency: 'weekly' as const,
+      priority: 1.0, // Homepage sab se top par rahegi
     },
-    // Blog index page
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'daily' as const,
-      priority: 0.6,
+      lastModified: siteLastUpdated,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
     },
-    // Dynamic blog posts
     ...blogUrls,
-    // Dynamic tool pages (TOOLS array se auto)
-    ...toolUrls,
-    // Static legal/info pages (manually listed — yeh kabhi dynamic nahi honge)
+    ...toolUrls, // Saare equal tools yahan list honge
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date("2026-05-07"),
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-of-use`,
       lastModified: new Date("2026-05-07"),
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/about`,
       lastModified: new Date("2026-05-21"),
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'yearly' as const,
       priority: 0.4,
     },
   ];
